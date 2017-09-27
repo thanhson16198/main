@@ -716,22 +716,82 @@ See this https://github.com/se-edu/addressbook-level4/pull/599[PR] for the step-
 [appendix]
 == User Stories
 
-Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (unlikely to have) - `*`
+Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (very unlikely to have) - `*`
 
 [width="59%",cols="22%,<23%,<25%,<30%",options="header",]
 |=======================================================================
 |Priority |As a ... |I want to ... |So that I can...
-|`* * *` |new user |see usage instructions |refer to instructions when I forget how to use the App
 
-|`* * *` |user |add a new person |
+|`* * *` |new user |view the user guide easily |learn more about the functions of addressbook as and when I need
 
-|`* * *` |user |delete a person |remove entries that I no longer need
+|`* * *` |user |see all places at a glance |determine where to go
 
-|`* * *` |user |find a person by name |locate details of persons without having to go through the entire list
+|`* * *` |user |use shorter versions of a commandn |use it faster
 
-|`* *` |user |hide link:#private-contact-detail[private contact details] by default |minimize chance of someone else seeing them by accident
+|`* * *` |user |bookmark my favorite places |easily reference them later
 
-|`*` |user with many persons in the address book |sort persons by name |locate a person easily
+|`* * *` |user |remove my bookmark |update my latest preferences
+
+|`* * *` |user |find places with a certain tag |narrow down my search result
+
+|`* * *` |user |see all the places  |choose where I want to go
+
+|`* * *` |user |see the history of the command that I entered |keep track of the changes that I made
+
+|`* * *` |user |undo and redo commands |revert back any mistakes that I made
+
+|`* * *` |user |add places to address book |easily view the summary of each place
+
+|`* * *` |user |be able to search all places by name |I am able to find a specific place
+
+|`* * *` |user |edit the existing places |fix any errors or update information
+
+|`* * *` |user |delete a place  |not have it  appear anymore in my search results
+
+|`* * *` |user |exit the program  |stop it from consuming background resources
+
+|`* *` |user |see the basic laws of Singapore  |avoid getting into trouble
+
+|`* *` |user |go to a attraction's homepage  |see the attraction's profile and description
+
+|`* *` |user |search for places from names, phone numbers, emails and tags  |search for it just by knowing 1
+
+|`* *` |user |search the place address via google map  |see the location details 
+
+|`* *` |user |view the weather  |plan my day around Singapore
+
+|`* *` |user |not see duplicate entries  |avoid removing redundant entries 
+
+|`* *` |user |see the direction from place A to place B  |do navigation
+
+|`* *` |user |open up the public transport map  |plan my journey
+
+|`* *` |user |see Singapore's emergency hotlines  |know who to call during an emergency
+
+|`* *` |user |view the PSI of the day  |plan my day around Singapore
+
+|`*` |user |easily customize the color scheme |make it to my liking
+
+|`*` |user |set notification ringtone to the certain places |I can differentiate what type of place is it from
+
+|`*` |user | add the places founded date to the calendar |I can make keep track of it's anniversary.
+
+|`*` |user |hide certain places |ignore places that I visited
+
+|`*` |user |see the clock |know what the time it is
+
+|`*` |user |the person in charge of the places |contact when necessary
+
+|`*` |user |be notified of promotions ongoing at different places |visit the places during the promotional period
+
+|`*` |user |see the events happening in Singapore |have a rough idea of where I'm going to go
+
+|`*` |user |print my address book |bring it around without logging on to my laptop
+
+|`*` |user |see the exchange rate for Singapore |budget my expenses
+
+|`*` |user |book tickets online for the attractions |avoid needing to queue at the ticketing counter
+
 |=======================================================================
 
 {More to be added}
