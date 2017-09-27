@@ -742,7 +742,7 @@ Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (un
 (For all use cases below, the *System* is the `AddressBook` and the *Actor* is the `user`, unless specified otherwise)
 
 [discrete]
-=== Use case: Delete person
+=== Use case: Example Delete person
 
 *MSS*
 
@@ -766,6 +766,116 @@ Use case ends.
 ** 3a1. AddressBook shows an error message.
 +
 Use case resumes at step 2.
+
+=== Use case: 01 Bookmark a place
+
+*MSS*
+
+1.  User starts AB
+2.  AB lists all places entries
+3.  User selects which entry to bookmark
+4.  AB adds bookmark tag to place 
+5.  User searches for bookmarks and place will be listed
++
+Use case ends.
+
+*Extensions*
+
+[none]
+* 2a1. User searches for place to bookmark
+* 2a2. AB lists results
+* Steps 2a1-2a2 are repeated until user is satisfied with result
+Use case continue from step 3.
+
+=== Use case: 02 Rate a place
+
+*MSS*
+
+1.  User starts AB
+2.  AB lists all places entries
+3.  User enter number from "1 to 10" to rate the particular location selected.
+4.  AB adds rating to the place
+5.  User searches for the place and rating of the place will be listed
++
+Use case ends.
+
+*Extensions*
+
+[none]
+* 2a. AB detected an error in the entered keyword
++
+** 2a1. AB request for new entry
+** 2a2. User enter new keyword
+** Steps 2a1-2a2 are repeated until the keyword entered is correct
+Use case continue from step 3.
+
+* 3a. The rating index is invalid.
++
+[none]
+** 3a1. AddressBook shows an error message.
++
+Use case ends.
+
+=== Use case: 03 Search by tag
+
+*MSS*
+
+1.  User starts AB
+2.  User type in the command box "find" followed by the tag keyword
+3.  GUI display the attractions having the tag
+4.  User see all attractions with  the particular tag
++
+Use case ends.
+
+*Extensions*
+
+[none]
+* 2a. AB detected an error in the entered keyword
++
+** 2a1. AB request for new entry
+** 2a2. User enter new keyword
+** Steps 2a1-2a2 are repeated until the keyword entered is correct
+Use case continue from step 3.
+
+=== Use case: 04 Remove a place
+
+*MSS*
+
+1.  User starts AB
+2.  User selects which index to remove from the list
+3.  AB removes the selected attraction from the list
++
+Use case ends.
+
+*Extensions*
+
+[none]
+* 2a. AB detected an error in the entered keyword
++
+** 2a1. AB request for new entry
+** 2a2. User enter new keyword
+** Steps 2a1-2a2 are repeated until the keyword entered is correct
+Use case continue from step 3.
+
+=== Use case: 05 Add a new place
+
+*MSS*
+
+1.  User starts AB
+2.  User types the 'add' command in the command line interface, followed by n/NAME p/Phone e/Email a/Address pc/Postal code t/Tag
+3.  GUI displays: "New attraction added" followed by the information of the place that was added
++
+Use case ends.
+
+*Extensions*
+
+[none]
+* 2a. AB detected an error in the data
++
+** 2a1. AB request for new entry
+** 2a2. User enter new data
+** Steps 2a1-2a2 are repeated until the data entered is correct
+Use case continue from step 3.
 
 {More to be added}
 
