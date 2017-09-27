@@ -942,11 +942,54 @@ Use case continue from step 3.
 [appendix]
 == Non Functional Requirements
 
-.  Should work on any link:#mainstream-os[mainstream OS] as long as it has Java `1.8.0_60` or higher installed.
-.  Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
-.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
+[[quality-requirements]]
+Quality Requirements
 
-{More to be added}
+.... 
+.  The application must be usable by a novice who has never use a CLI application before.
+.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
+....
+
+[[geographical-location]]
+Geographical Location
+
+.... 
+.  Program should work for all weather conditions.
+.  Program is optimized for Singapore usage only.
+....
+
+[[technical-requirements]]
+Technical Requirements
+
+....
+.  Should work on any link:#mainstream-os[mainstream OS] as long as it has Java `1.8.0_60` or higher installed.
+.  The application should work on both 32-bit and 64-bit environments.
+.  The application should be backward compatible with data produced by earlier versions of the application.
+....
+
+[[performance-requirements]]
+Performance Requirements
+
+....
+.  Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
+.  Program should provide a response time of <5 seconds when returning search results from the browser.
+.  Program should provide a response time of <2 seconds when executing commands.
+....
+
+[[process-requirements]]
+Process Requirements
+
+....
+.  The project is expected to adhere to a schedule that delivers a new version every week.
+....
+
+[[documentation]]
+Documentation
+
+....
+.  The developer guide should be updated with the most updated user stories and use cases with every incremental version.
+.  The user guide should be updated with the most updated functions of the application with every incremental version.
+....
 
 [appendix]
 == Glossary
