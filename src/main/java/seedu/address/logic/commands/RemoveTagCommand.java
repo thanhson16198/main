@@ -1,13 +1,15 @@
 package seedu.address.logic.commands;
 
-import java.util.List;
+import static seedu.address.logic.commands.AddCommand.MESSAGE_DUPLICATE_PERSON;
+import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.person.exceptions.DuplicatePersonException;
 import seedu.address.model.person.exceptions.PersonNotFoundException;
 import seedu.address.model.tag.Tag;
 
-import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
+
+
 
 /**
  * Deletes a person identified using it's last displayed index from the address book.
@@ -38,9 +40,9 @@ public class RemoveTagCommand extends UndoableCommand {
         try {
             model.removeTag(toRemove);
         } catch (DuplicatePersonException dpe) {
-
+            throw new CommandException(MESSAGE_DUPLICATE_PERSON);
         } catch (PersonNotFoundException pnfe) {
-
+            assert false : "The target person cannot be missing";
         }
 
         return new CommandResult(String.format(MESSAGE_DELETE_PERSON_SUCCESS, toRemove.toString()));

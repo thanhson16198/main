@@ -3,7 +3,6 @@ package seedu.address.model;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
-import java.util.AbstractSet;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -87,11 +86,18 @@ public class ModelManager extends ComponentManager implements Model {
         indicateAddressBookChanged();
     }
 
+    /**
+     * Removes given Tag from all persons in address book
+     * @param tag
+     * @throws PersonNotFoundException
+     * @throws DuplicatePersonException
+     */
+
     public void removeTag(Tag tag) throws PersonNotFoundException, DuplicatePersonException {
         Predicate oldPredicate = filteredPersons.getPredicate();
         filteredPersons.setPredicate(PREDICATE_SHOW_ALL_PERSONS);
 
-        for(int i = 0; i < addressBook.getPersonList().size(); i++){
+        for (int i = 0; i < addressBook.getPersonList().size(); i++) {
             ReadOnlyPerson currentPerson = addressBook.getPersonList().get(i);
             Person updatedPerson = new Person(currentPerson);
 
@@ -100,9 +106,9 @@ public class ModelManager extends ComponentManager implements Model {
 
             Iterator<Tag> iter = currentTags.iterator();
 
-            while(iter.hasNext()){
+            while (iter.hasNext()) {
                 Tag currTag = iter.next();
-                if(!currTag.tagName.equals(tag.tagName)){
+                if (!currTag.tagName.equals(tag.tagName)) {
                     updatedTags.add(currTag);
                 }
             }
