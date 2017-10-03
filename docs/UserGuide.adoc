@@ -132,6 +132,26 @@ Deletes the 2nd person in the address book.
 `delete 1` +
 Deletes the 1st person in the results of the `find` command.
 
+=== Removing a tag : `remove_tag`
+
+Removes the specified tag from all persons in the address book. +
+Format: `remove_tag TAG_NAME`
+
+****
+* Removes specified tag from address book
+* Ignores multiple TAG_NAME, only takes the first one
+* Does nothing when TAG_NAME is not found
+* TAG_NAME *must be alphanumeric*
+****
+
+Examples:
+
+* `remove_tag friends` +
+friends will be removed from addressbook
+
+* `remove_tag banker lawyer` +
+only banker tag will be removed, lawyer tag is ignored
+
 === Selecting a person : `select`
 
 Selects the person identified by the index number used in the last person listing. +
