@@ -18,8 +18,8 @@ public class PersonCard extends UiPart<Region> {
 
     private static final String FXML = "PersonListCard.fxml";
     private static String[] colors = { "red", "yellow", "blue", "orange", "brown", "green", "black", "grey",
-                                        "burlywood", "coral", "cyan", "lavenderblush", "dodgerblue", "olivedrab",
-                                         "papayawhip", "turquoise", "darksalmon", "slategray", "slategray" };
+            "burlywood", "coral", "cyan", "lavenderblush", "dodgerblue", "olivedrab",
+            "papayawhip", "turquoise", "darksalmon", "slategray", "slategray" };
     private static HashMap<String, String> tagColors = new HashMap<String, String>();
     private static Random random = new Random();
 
@@ -57,7 +57,7 @@ public class PersonCard extends UiPart<Region> {
     }
 
     /** Assign a random color from String[] colors
-     *  Ensure each tag has a different color by using HashMap <String> tagColors
+     *  Ensure each tag has a different color by using HashMap tagColors
      */
     private static String getColorForTag(String tagValue) {
         if (!tagColors.containsKey(tagValue)) {
@@ -82,14 +82,16 @@ public class PersonCard extends UiPart<Region> {
         });
     }
 
-
+    /**
+     * Assign a tag with color to a person
+     */
     private void initTags(ReadOnlyPerson person) {
         //person.getTags().forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
         person.getTags().forEach(tag -> {
             Label tagLabel = new Label(tag.tagName);
             tagLabel.setStyle("-fx-background-color: " + getColorForTag(tag.tagName));
             tags.getChildren().add(tagLabel);
-            });
+        });
     }
 
     @Override
