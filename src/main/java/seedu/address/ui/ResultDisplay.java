@@ -51,8 +51,8 @@ public class ResultDisplay extends UiPart<Region> {
       * Sets the {@code ResultDisplay} style to use the default style.
       */
     private void setStyleToDefault() {
-                resultDisplay.getStyleClass().remove(ERROR_STYLE_CLASS);
-            }
+        resultDisplay.getStyleClass().remove(ERROR_STYLE_CLASS);
+    }
 
 
     /**
