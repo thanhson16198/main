@@ -38,7 +38,7 @@ Responsibilities: Storage
 '''
 
 === Nguyen Thanh Son
-image::thanhson.jpg[width="150", align="left"]
+image::nguyenthanhson.JPG[width="150", align="left"]
 {empty}[http://github.com/thanhson16198[github]] [<<nguyenthanhson#, portfolio>>]
 
 Role: Developer +
