@@ -18,7 +18,7 @@ public class MrtWindow extends UiPart<Region> {
     public static final String USERGUIDE_FILE_PATH = "/docs/MrtMap.html";
 
     private static final Logger logger = LogsCenter.getLogger(MrtWindow.class);
-    private static final String ICON = "/images/help_icon.png";
+    private static final String ICON = "/images/mrt_logo.png";
     private static final String FXML = "MrtMapWindow.fxml";
     private static final String TITLE = "MRT Map";
 
