@@ -197,6 +197,9 @@ public class MainWindow extends UiPart<Region> {
         helpWindow.show();
     }
 
+    /**
+     * Opents the mrt map window.
+     */
     @FXML
     public void handleMrtMap() {
         MrtWindow mrtWindow = new MrtWindow();
