@@ -55,6 +55,9 @@ public class MainWindow extends UiPart<Region> {
     private MenuItem helpMenuItem;
 
     @FXML
+    private MenuItem mrtMapItem;
+
+    @FXML
     private StackPane personListPanelPlaceholder;
 
     @FXML
@@ -192,6 +195,12 @@ public class MainWindow extends UiPart<Region> {
     public void handleHelp() {
         HelpWindow helpWindow = new HelpWindow();
         helpWindow.show();
+    }
+
+    @FXML
+    public void handleMrtMap() {
+        MrtWindow mrtWindow = new MrtWindow();
+        mrtWindow.show();
     }
 
     void show() {

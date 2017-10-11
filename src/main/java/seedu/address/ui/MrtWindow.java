@@ -35,8 +35,8 @@ public class MrtWindow extends UiPart<Region> {
         dialogStage.setMaximized(true); //TODO: set a more appropriate initial size
         FxViewUtil.setStageIcon(dialogStage, ICON);
 
-        String userGuideUrl = getClass().getResource(USERGUIDE_FILE_PATH).toString();
-        browser.getEngine().load(userGuideUrl);
+        String mrtMapUrl = getClass().getResource(USERGUIDE_FILE_PATH).toString();
+        browser.getEngine().load(mrtMapUrl);
     }
 
     /**
