@@ -24,7 +24,7 @@ public class ClearBookmarkCommandParser implements Parser<ClearBookmarkCommand> 
 
         Tag toRemove;
 
-        if(!args.trim().equals(emptyString)){
+        if (!args.trim().equals(emptyString)) {
             throw new ParseException(
                     String.format(MESSAGE_INVALID_COMMAND_FORMAT, ClearBookmarkCommand.MESSAGE_USAGE));
         }

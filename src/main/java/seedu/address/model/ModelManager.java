@@ -15,7 +15,6 @@ import javafx.collections.transformation.FilteredList;
 import seedu.address.commons.core.ComponentManager;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.events.model.AddressBookChangedEvent;
-import seedu.address.commons.exceptions.DuplicateDataException;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.ReadOnlyPerson;
 import seedu.address.model.person.exceptions.DuplicatePersonException;
@@ -96,8 +95,8 @@ public class ModelManager extends ComponentManager implements Model {
      * @throws PersonNotFoundException
      * @throws UniqueTagList.DuplicateTagException
      */
-    public void addTag(ReadOnlyPerson target, Tag newTag) throws DuplicatePersonException, PersonNotFoundException
-                                                                    ,UniqueTagList.DuplicateTagException {
+    public void addTag(ReadOnlyPerson target, Tag newTag) throws DuplicatePersonException, PersonNotFoundException,
+                                                                    UniqueTagList.DuplicateTagException {
         Predicate oldPredicate = filteredPersons.getPredicate();
         filteredPersons.setPredicate(PREDICATE_SHOW_ALL_PERSONS);
 
@@ -108,7 +107,7 @@ public class ModelManager extends ComponentManager implements Model {
 
         updatedTags.addAll(currentTags);
 
-        if(updatedTags.contains(newTag)) {
+        if (updatedTags.contains(newTag)) {
             throw new UniqueTagList.DuplicateTagException();
         } else {
             updatedTags.add(newTag);

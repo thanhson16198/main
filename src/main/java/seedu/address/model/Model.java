@@ -39,8 +39,8 @@ public interface Model {
      *
      * @throws UniqueTagList.DuplicateTagException if added tag is a duplicate.
      */
-    void addTag(ReadOnlyPerson person, Tag tag) throws DuplicatePersonException, PersonNotFoundException
-                                                    ,UniqueTagList.DuplicateTagException;
+    void addTag(ReadOnlyPerson person, Tag tag) throws DuplicatePersonException, PersonNotFoundException,
+                                                    UniqueTagList.DuplicateTagException;
 
     /**
      * Removes given tag from all persons in address book.
