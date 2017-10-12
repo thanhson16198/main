@@ -35,7 +35,7 @@ public class ClearBookmarkCommand extends UndoableCommand {
         model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
 
         try {
-            model.removeTag(toRemove);
+            model.removeAllTags(toRemove);
         } catch (DuplicatePersonException dpe) {
             throw new CommandException(MESSAGE_DUPLICATE_PERSON);
         } catch (PersonNotFoundException pnfe) {

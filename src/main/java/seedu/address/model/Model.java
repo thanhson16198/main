@@ -7,6 +7,7 @@ import seedu.address.model.person.ReadOnlyPerson;
 import seedu.address.model.person.exceptions.DuplicatePersonException;
 import seedu.address.model.person.exceptions.PersonNotFoundException;
 import seedu.address.model.tag.Tag;
+import seedu.address.model.tag.UniqueTagList;
 
 /**
  * The API of the Model component.
@@ -27,8 +28,29 @@ public interface Model {
     /** Adds the given person */
     void addPerson(ReadOnlyPerson person) throws DuplicatePersonException;
 
-    /** Removes the given tag */
-    void removeTag(Tag tagName) throws PersonNotFoundException, DuplicatePersonException;
+
+    /**
+     * Adds tag to target person in address book.
+     *
+     * @throws PersonNotFoundException if person cannot be found in the list.
+     *
+     * @throws DuplicatePersonException if after removal, the person's details causes the person to be
+     *      equivalent to another existing person in the list.
+     *
+     * @throws UniqueTagList.DuplicateTagException if added tag is a duplicate.
+     */
+    void addTag(ReadOnlyPerson person, Tag tag) throws DuplicatePersonException, PersonNotFoundException
+                                                    ,UniqueTagList.DuplicateTagException;
+
+    /**
+     * Removes given tag from all persons in address book.
+     *
+     * @throws PersonNotFoundException if person cannot be found in the list.
+     *
+     * @throws DuplicatePersonException if after removal, the person's details causes the person to be
+     *      equivalent to another existing person in the list.
+     */
+    void removeAllTags(Tag tagName) throws PersonNotFoundException, DuplicatePersonException;
 
     /**
      * Replaces the given person {@code target} with {@code editedPerson}.
