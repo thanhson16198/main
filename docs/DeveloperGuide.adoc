@@ -756,11 +756,11 @@ Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (ve
 
 |`* *` |user |search for places from names, phone numbers, emails and tags  |search for it just by knowing 1
 
-|`* *` |user |search the place address via google map  |see the location details 
+|`* *` |user |search the place address via google map  |see the location details
 
 |`* *` |user |view the weather  |plan my day around Singapore
 
-|`* *` |user |not see duplicate entries  |avoid removing redundant entries 
+|`* *` |user |not see duplicate entries  |avoid removing redundant entries
 
 |`* *` |user |see the direction from place A to place B  |do navigation
 
@@ -834,7 +834,7 @@ Use case resumes at step 2.
 1.  User starts AB
 2.  AB lists all places entries
 3.  User selects which entry to bookmark
-4.  AB adds bookmark tag to place 
+4.  AB adds bookmark tag to place
 5.  User searches for bookmarks and place will be listed
 +
 Use case ends.
@@ -945,7 +945,7 @@ Use case continue from step 3.
 [[quality-requirements]]
 Quality Requirements
 
-.... 
+....
 .  The application must be usable by a novice who has never use a CLI application before.
 .  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
 ....
@@ -953,7 +953,7 @@ Quality Requirements
 [[geographical-location]]
 Geographical Location
 
-.... 
+....
 .  Program should work for all weather conditions.
 .  Program is optimized for Singapore usage only.
 ....

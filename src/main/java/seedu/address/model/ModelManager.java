@@ -3,6 +3,9 @@ package seedu.address.model;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 import java.util.function.Predicate;
 import java.util.logging.Logger;
 
@@ -12,9 +15,11 @@ import javafx.collections.transformation.FilteredList;
 import seedu.address.commons.core.ComponentManager;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.events.model.AddressBookChangedEvent;
+import seedu.address.model.person.Person;
 import seedu.address.model.person.ReadOnlyPerson;
 import seedu.address.model.person.exceptions.DuplicatePersonException;
 import seedu.address.model.person.exceptions.PersonNotFoundException;
+import seedu.address.model.tag.Tag;
 
 /**
  * Represents the in-memory model of the address book data.
@@ -79,6 +84,41 @@ public class ModelManager extends ComponentManager implements Model {
 
         addressBook.updatePerson(target, editedPerson);
         indicateAddressBookChanged();
+    }
+
+    /**
+     * Removes given Tag from all persons in address book
+     * @param tag
+     * @throws PersonNotFoundException
+     * @throws DuplicatePersonException
+     */
+
+    public void removeTag(Tag tag) throws PersonNotFoundException, DuplicatePersonException {
+        Predicate oldPredicate = filteredPersons.getPredicate();
+        filteredPersons.setPredicate(PREDICATE_SHOW_ALL_PERSONS);
+
+        for (int i = 0; i < addressBook.getPersonList().size(); i++) {
+            ReadOnlyPerson currentPerson = addressBook.getPersonList().get(i);
+            Person updatedPerson = new Person(currentPerson);
+
+            Set<Tag> currentTags = updatedPerson.getTags();
+            Set<Tag> updatedTags = new HashSet<Tag>();
+
+            Iterator<Tag> iter = currentTags.iterator();
+
+            while (iter.hasNext()) {
+                Tag currTag = iter.next();
+                if (!currTag.tagName.equals(tag.tagName)) {
+                    updatedTags.add(currTag);
+                }
+            }
+
+            updatedPerson.setTags(updatedTags);
+
+            addressBook.updatePerson(currentPerson, updatedPerson);
+        }
+
+        filteredPersons.setPredicate(oldPredicate);
     }
 
     //=========== Filtered Person List Accessors =============================================================
