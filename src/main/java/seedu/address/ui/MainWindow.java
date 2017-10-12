@@ -196,6 +196,9 @@ public class MainWindow extends UiPart<Region> {
         helpWindow.show();
     }
 
+    /**
+     * Opens the useful contacts window.
+     */
     @FXML
     public void showNumbers() {
         ContactWindow contactWindow = new ContactWindow();
