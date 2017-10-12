@@ -53,6 +53,7 @@ public class MainWindow extends UiPart<Region> {
 
     @FXML
     private MenuItem helpMenuItem;
+    private MenuItem contactsMenuItem;
 
     @FXML
     private StackPane personListPanelPlaceholder;
@@ -90,6 +91,7 @@ public class MainWindow extends UiPart<Region> {
 
     private void setAccelerators() {
         setAccelerator(helpMenuItem, KeyCombination.valueOf("F1"));
+        //setAccelerator(contactsMenuItem, KeyCombination.valueOf("F2"));
     }
 
     /**
@@ -192,6 +194,12 @@ public class MainWindow extends UiPart<Region> {
     public void handleHelp() {
         HelpWindow helpWindow = new HelpWindow();
         helpWindow.show();
+    }
+
+    @FXML
+    public void showNumbers() {
+        ContactWindow contactWindow = new ContactWindow();
+        contactWindow.show();
     }
 
     void show() {
