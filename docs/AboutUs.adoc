@@ -14,7 +14,7 @@ We are students studying in the http://www.comp.nus.edu.sg[School of Computing, 
 image::aungmyin23.jpg[width="150", align="left"]
 {empty}[https://github.com/aungmyin23[github]] [<<aungmyinkyaw#, portfolio>>]
 
-Role: Developer +
+Role: Testing/Developer +
 Responsibilities: In charge of Logic
 
 '''
@@ -23,7 +23,7 @@ Responsibilities: In charge of Logic
 image::chng-zhi-xuan.jpg[width="150", align="left"]
 {empty}[http://github.com/Chng-Zhi-Xuan[github]] [<<chngzhixuan#, portfolio>>]
 
-Role: Team Lead +
+Role: Team Lead/Developer +
 Responsibilities: In charge of Model
 
 '''
@@ -32,7 +32,7 @@ Responsibilities: In charge of Model
 image::huyuanrong.jpg[width="150", align="left"]
 {empty}[http://github.com/huyuanrong[github]] [<<huyuanrong#, portfolio>>]
 
-Role: Documentation +
+Role: Documentation/Developer +
 Responsibilities: In charge of Storage
 
 '''
@@ -41,5 +41,5 @@ Responsibilities: In charge of Storage
 image::thanhson16198.JPG[width="150", align="left"]
 {empty}[http://github.com/thanhson16198[github]] [<<nguyenthanhson#, portfolio>>]
 
-Role: Developer +
+Role: Code Quality/Developer +
 Responsibilities: In charge of UI
