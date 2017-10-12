@@ -9,25 +9,22 @@ import seedu.address.model.person.exceptions.PersonNotFoundException;
 import seedu.address.model.tag.Tag;
 
 
-
-
 /**
- * Deletes a person identified using it's last displayed index from the address book.
+ * Clears all bookmark tags from all persons
  */
-public class RemoveTagCommand extends UndoableCommand {
+public class ClearBookmarkCommand extends UndoableCommand {
 
-    public static final String COMMAND_WORD = "remove_tag";
+    public static final String COMMAND_WORD = "clear_bookmark";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
-            + ": Removes the tag from all persons in address book\n"
-            + "Parameters: TAG_NAME\n"
-            + "Example: " + COMMAND_WORD + " friends";
+            + ": clears all bookmarks in address book\n"
+            + "Example: " + COMMAND_WORD;
 
-    public static final String MESSAGE_DELETE_PERSON_SUCCESS = "Removed: %1$s";
+    public static final String MESSAGE_CLEAR_BOOKMARK_SUCCESS = "Cleared bookmarks";
 
     private final Tag toRemove;
 
-    public RemoveTagCommand(Tag toRemove) {
+    public ClearBookmarkCommand(Tag toRemove) {
         this.toRemove = toRemove;
     }
 
@@ -45,7 +42,7 @@ public class RemoveTagCommand extends UndoableCommand {
             assert false : "The target person cannot be missing";
         }
 
-        return new CommandResult(String.format(MESSAGE_DELETE_PERSON_SUCCESS, toRemove.toString()));
+        return new CommandResult(String.format(MESSAGE_CLEAR_BOOKMARK_SUCCESS, toRemove.toString()));
     }
 }
 
