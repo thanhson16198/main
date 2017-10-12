@@ -1,7 +1,7 @@
 package seedu.address.ui;
 
-import java.util.logging.Logger;
 import java.util.Random;
+import java.util.logging.Logger;
 
 import com.google.common.eventbus.Subscribe;
 
