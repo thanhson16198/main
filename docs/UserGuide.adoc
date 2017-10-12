@@ -282,7 +282,6 @@ e.g.`select 2`
 
 == Coming in v2.0
 === To add in
-loren ipsum 
+loren ipsum
 === To add in
-loren ipsum 
-
+loren ipsum
