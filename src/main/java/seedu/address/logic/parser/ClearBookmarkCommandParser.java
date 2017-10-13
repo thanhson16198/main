@@ -27,15 +27,8 @@ public class ClearBookmarkCommandParser implements Parser<ClearBookmarkCommand> 
         if (!args.trim().equals(emptyString)) {
             throw new ParseException(
                     String.format(MESSAGE_INVALID_COMMAND_FORMAT, ClearBookmarkCommand.MESSAGE_USAGE));
-        }
-
-        try {
-            toRemove = new Tag(bookmarkTag);
-
-            return new ClearBookmarkCommand(toRemove);
-        } catch (IllegalValueException ive) {
-            throw new ParseException(
-                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, ClearBookmarkCommand.MESSAGE_USAGE));
+        } else {
+            return new ClearBookmarkCommand();
         }
     }
 

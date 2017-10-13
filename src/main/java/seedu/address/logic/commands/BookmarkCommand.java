@@ -6,6 +6,7 @@ import java.util.List;
 
 import seedu.address.commons.core.Messages;
 import seedu.address.commons.core.index.Index;
+import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.person.ReadOnlyPerson;
 import seedu.address.model.person.exceptions.DuplicatePersonException;
@@ -31,10 +32,9 @@ public class BookmarkCommand extends UndoableCommand {
     private static final String MESSAGE_DUPLICATE_TAGS = "Person already has that tag.";
 
     private final Index targetIndex;
-    private final Tag bookmarkTag;
+    private final String BOOKMARK_STRING = "Bookmarked";
 
-    public BookmarkCommand(Index targetIndex, Tag bookmarkTag) {
-        this.bookmarkTag = bookmarkTag;
+    public BookmarkCommand(Index targetIndex) {
         this.targetIndex = targetIndex;
     }
 
@@ -51,6 +51,7 @@ public class BookmarkCommand extends UndoableCommand {
         ReadOnlyPerson personToBookmark = lastShownList.get(targetIndex.getZeroBased());
 
         try {
+            Tag bookmarkTag = new Tag(BOOKMARK_STRING);
             model.addTag(personToBookmark, bookmarkTag);
         } catch (DuplicatePersonException dpe) {
             throw new CommandException(MESSAGE_DUPLICATE_PERSON);
@@ -58,6 +59,8 @@ public class BookmarkCommand extends UndoableCommand {
             assert false : "The target person cannot be missing";
         } catch (UniqueTagList.DuplicateTagException dte) {
             throw new CommandException(MESSAGE_DUPLICATE_TAGS);
+        } catch (IllegalValueException e) {
+            assert false : "Tag cannot be invalid";
         }
 
         return new CommandResult(String.format(MESSAGE_BOOKMARK_SUCCESS, personToBookmark));

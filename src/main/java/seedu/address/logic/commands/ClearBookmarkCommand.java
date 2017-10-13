@@ -3,6 +3,7 @@ package seedu.address.logic.commands;
 import static seedu.address.logic.commands.AddCommand.MESSAGE_DUPLICATE_PERSON;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 
+import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.person.exceptions.DuplicatePersonException;
 import seedu.address.model.person.exceptions.PersonNotFoundException;
@@ -21,28 +22,39 @@ public class ClearBookmarkCommand extends UndoableCommand {
             + "Example: " + COMMAND_WORD;
 
     public static final String MESSAGE_CLEAR_BOOKMARK_SUCCESS = "Cleared bookmarks";
+    private final String BOOKMARK_STRING = "Bookmarked";
 
-    private final Tag toRemove;
+    public ClearBookmarkCommand() {
 
-    public ClearBookmarkCommand(Tag toRemove) {
-        this.toRemove = toRemove;
     }
 
 
     @Override
     public CommandResult executeUndoableCommand() throws CommandException {
 
+        Tag toRemove = null;
+
         model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
 
+
         try {
+            toRemove = new Tag (BOOKMARK_STRING);
             model.removeAllTags(toRemove);
         } catch (DuplicatePersonException dpe) {
             throw new CommandException(MESSAGE_DUPLICATE_PERSON);
         } catch (PersonNotFoundException pnfe) {
             assert false : "The target person cannot be missing";
+        } catch (IllegalValueException e) {
+            assert false : "Tag cannot be invalid";
         }
 
         return new CommandResult(String.format(MESSAGE_CLEAR_BOOKMARK_SUCCESS, toRemove.toString()));
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        return other == this // short circuit if same object
+                || (other instanceof ClearBookmarkCommand); // instanceof handles nulls
     }
 }
 

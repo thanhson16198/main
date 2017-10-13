@@ -13,8 +13,6 @@ import seedu.address.model.tag.Tag;
  */
 public class BookmarkCommandParser implements Parser<BookmarkCommand> {
 
-    private final String bookmarkTag = "Bookmarked";
-
     /**
      * Parses the given {@code String} of arguments in the context of the BookmarkCommand
      * and returns an BookmarkCommand object for execution.
@@ -22,10 +20,8 @@ public class BookmarkCommandParser implements Parser<BookmarkCommand> {
      */
     public BookmarkCommand parse(String args) throws ParseException {
         try {
-            Tag bookmark = new Tag (bookmarkTag);
             Index index = ParserUtil.parseIndex(args);
-
-            return new BookmarkCommand(index, bookmark);
+            return new BookmarkCommand(index);
         } catch (IllegalValueException ive) {
             throw new ParseException(
                     String.format(MESSAGE_INVALID_COMMAND_FORMAT, BookmarkCommand.MESSAGE_USAGE));
