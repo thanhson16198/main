@@ -716,7 +716,7 @@ See this https://github.com/se-edu/addressbook-level4/pull/599[PR] for the step-
 [appendix]
 == User Stories
 === Target User
-We are targeting tourists who are visiting Singapore and are generally unaware of the attractions here
+We are targeting tourists who are visiting Singapore and are generally unaware of the attractions here.
 
 === Problem statement
 Due to a large number of attractions and different websites, we want a platform that is intuitive to find attractions.
