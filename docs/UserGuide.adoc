@@ -1,4 +1,4 @@
-= TouristBook - User Guide
+= Tourist Book - User Guide
 :toc:
 :toc-title:
 :toc-placement: preamble
@@ -39,7 +39,7 @@ e.g. typing *`help`* and pressing kbd:[Enter] will open the help window.
 
 .  Refer to the link:#features[Features] section below for details of each command.
 
-== Features
+== Features in v1.0
 
 ====
 *Command Format*
@@ -255,6 +255,65 @@ Format: `exit` or `ex`
 TouristBook data are saved in the hard disk automatically after any command that changes the data. +
 There is no need to save manually.
 
+== Changes in v1.1
+=== Useful contact numbers in Singapore
+
+*Display a list of useful contact numbers by clicking on `Help -> Useful Contacts`
+
+== Coming in v2.0
+=== Changing the display color of a tag
+Changes the color of a selected tag to a colour of choice. +
+Format: `color /t TAG` or `col t/TAG`
+
+=== View current weather
+Displays the current weather of Singapore. +
+Format: `weather`
+
+=== View current PSI
+Displays the current PSI levels in Singapore. +
+Format: `psi`
+
+=== Get directions to selected destination
+Displays the directions from location A to selected destination. +
+Format: `dir [INDEX_FROM] [INDEX_TO]`
+
+****
+* Displays the location from `INDEX_FROM` to `INDEX_TO`. The index refers to the index number shown in the last place listing.
+* Both fields must be provided.
+* The index *must be a positive integer* >= 0 and within the range of the last places listing.
+* An index which is 0 indicates to or from current location.
+****
+
+Examples:
+
+* `dir 1 2` +
+Returns the directions from the location at index 1 to index 2 of the places listing.
+* `dir 2 0` +
+Returns the directions from the location at index 2 to current location (index 0).
+
+=== Tourist Book save files are now exportable to .csv format
+Export your data to .csv file format for printing purposes. +
+Format: `export [TAG]`
+
+or
+
+Format: `export all`
+
+=== Common statutes/laws in Singapore
+Display a list of common statutes/laws for quick reference.
+
+=== Displays the selected place's website (if any)
+Displays the selected place's homepage if available, otherwise it will perform a Google search. +
+Format: `select 1`
+
+=== Rating system
+Add and edit a rating to a place in the Tourist Book. +
+Format: `rate [INDEX] [RATING]`
+
+=== Exchange Rate
+Get the latest exchange rates of currencies in Singaore. +
+Format: `[VALUE] [CURRENCY] to [DESIRED_CURRENCY]`
+
 == FAQ
 
 *Q*: How do I transfer my data to another Computer? +
@@ -279,9 +338,3 @@ e.g.`select 2`
 * *History* : `history` or `hy`
 * *Undo* : `undo` or `un`
 * *Redo* : `redo` or `re`
-
-== Coming in v2.0
-=== To add in
-loren ipsum
-=== To add in
-loren ipsum
