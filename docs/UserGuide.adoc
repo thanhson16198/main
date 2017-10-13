@@ -33,7 +33,7 @@ e.g. typing *`help`* and pressing kbd:[Enter] will open the help window.
 .  Some example commands you can try:
 
 * *`list`* : lists all places
-* **`add`**`n/Marina Bay Sands a/10 Bayfront Avenue, Singapore 018956` : adds a place named `Marina Bay Sands` to the TouristBook.
+* **`add`**`n/Marina Bay Sands a/10 Bayfront Avenue, Singapore 018956` : adds a place named `Marina Bay Sands` to the Tourist Book.
 * **`delete`**`3` : deletes the 3rd place shown in the current list
 * *`exit`* : exits the app
 
@@ -56,7 +56,7 @@ Format: `help` or `h`
 
 === Adding a place: `add` or `a`
 
-Adds a place to the TouristBook +
+Adds a place to the Tourist Book +
 Format: `add n/NAME a/ADDRESS [t/TAG]...`
 
 or
@@ -73,7 +73,7 @@ Examples:
 
 === Listing all places : `list` or `l`
 
-Shows a list of all places in the TouristBook. +
+Shows a list of all places in the Tourist Book. +
 Format: `list` or `l`
 
 === Editing a place : `edit` or `ed`
@@ -122,7 +122,7 @@ Returns any place having names `Singapore`, `Sands`, or `Botanic`
 
 === Deleting a place : `delete` or `del`
 
-Deletes the specified place from the TouristBook. +
+Deletes the specified place from the Tourist Book. +
 Format: `delete INDEX` or `del INDEX`
 
 ****
@@ -146,7 +146,7 @@ Removes the specified tag from all places in the address book. +
 Format: `remove_tag TAG_NAME`
 
 ****
-* Removes specified tag from TouristBook
+* Removes specified tag from Tourist Book
 * Ignores multiple TAG_NAME, only takes the first one
 * Does nothing when TAG_NAME is not found
 * TAG_NAME *must be alphanumeric*
@@ -155,7 +155,7 @@ Format: `remove_tag TAG_NAME`
 Examples:
 
 * `remove_tag attractions` +
-attractions will be removed from TouristBook
+attractions will be removed from Tourist Book
 
 * `remove_tag onestar twostar` +
 only onestar tag will be removed, twostar tag is ignored
@@ -193,12 +193,12 @@ Pressing the kbd:[&uarr;] and kbd:[&darr;] arrows will display the previous and 
 // tag::undoredo[]
 === Undoing previous command : `undo` or `un`
 
-Restores the TouristBook to the state before the previous _undoable_ command was executed. +
+Restores the Tourist Book to the state before the previous _undoable_ command was executed. +
 Format: `undo` or `un`
 
 [NOTE]
 ====
-Undoable commands: those commands that modify the TouristBook's content (`add`, `delete`, `edit` and `clear`).
+Undoable commands: those commands that modify the Tourist Book's content (`add`, `delete`, `edit` and `clear`).
 ====
 
 Examples:
@@ -242,7 +242,7 @@ The `redo` command fails as there are no `undo` commands executed previously.
 
 === Clearing all entries : `clear` or `c`
 
-Clears all entries from the TouristBook. +
+Clears all entries from the Tourist Book. +
 Format: `clear` or `c`
 
 === Exiting the program : `exit` or `ex`
@@ -252,7 +252,7 @@ Format: `exit` or `ex`
 
 === Saving the data
 
-TouristBook data are saved in the hard disk automatically after any command that changes the data. +
+Tourist Book data are saved in the hard disk automatically after any command that changes the data. +
 There is no need to save manually.
 
 == Changes in v1.1
@@ -317,7 +317,7 @@ Format: `[VALUE] [CURRENCY] to [DESIRED_CURRENCY]`
 == FAQ
 
 *Q*: How do I transfer my data to another Computer? +
-*A*: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous TouristBook folder.
+*A*: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Tourist Book folder.
 
 == Command Summary
 
