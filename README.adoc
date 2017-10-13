@@ -1,4 +1,4 @@
-= TouristBook
+= Tourist Book
 ifdef::env-github,env-browser[:relfileprefix: docs/]
 ifdef::env-github,env-browser[:outfilesuffix: .adoc]
 
@@ -15,7 +15,7 @@ ifndef::env-github[]
 image::images/Ui.png[width="600"]
 endif::[]
 
-* This is a desktop TouristBook application. It has a GUI but most of the user interactions happen using a CLI (Command Line Interface).
+* This is a desktop Tourist Book application. It has a GUI but most of the user interactions happen using a CLI (Command Line Interface).
 * It is a Java application intended for tourists coming to Singapore for sightseeing.
 * It provides a comprehensive list of the popular attractions in Singapore, as well as some *useful features* like a MRT map and a list of useful numbers.
 * What's different from https://github.com/se-edu/addressbook-level4[level 4]:
