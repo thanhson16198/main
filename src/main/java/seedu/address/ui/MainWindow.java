@@ -48,7 +48,7 @@ public class MainWindow extends UiPart<Region> {
     private Logic logic;
 
     // Independent Ui parts residing in this Ui container
-    private BrowserPanel browserPanel;
+    private BrowserPanel browserPanel = new BrowserPanel();
     private PersonListPanel personListPanel;
     private Config config;
     private UserPrefs prefs;
@@ -58,6 +58,9 @@ public class MainWindow extends UiPart<Region> {
 
     @FXML
     private StackPane commandBoxPlaceholder;
+
+    @FXML
+    private MenuItem weatherItem;
 
     @FXML
     private MenuItem helpMenuItem;
@@ -134,8 +137,10 @@ public class MainWindow extends UiPart<Region> {
      * Fills up all the placeholders of this window.
      */
     void fillInnerParts() {
-        browserPanel = new BrowserPanel();
+        //browserPanel = new BrowserPanel();
         browserPlaceholder.getChildren().add(browserPanel.getRoot());
+
+        //browserPanel.loadPage("http://www.nea.gov.sg/weather-climate/forecasts/24-hour-forecast");
 
         personListPanel = new PersonListPanel(logic.getFilteredPersonList());
         personListPanelPlaceholder.getChildren().add(personListPanel.getRoot());
@@ -200,6 +205,14 @@ public class MainWindow extends UiPart<Region> {
     public void handleHelp() {
         HelpWindow helpWindow = new HelpWindow();
         helpWindow.show();
+    }
+
+    /**
+     * Opens the Weather on browser.
+     */
+    @FXML
+    public void handleWeather() {
+        browserPanel.loadPage("http://www.nea.gov.sg/weather-climate/forecasts/24-hour-forecast");
     }
 
     void show() {
