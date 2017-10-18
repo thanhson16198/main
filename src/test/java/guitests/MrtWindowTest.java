@@ -23,7 +23,7 @@ public class MrtWindowTest extends AddressBookGuiTest {
     }
 
     /**
-     * Asserts that the help window is open, and closes it after checking.
+     * Asserts that the mrt window is open, and closes it after checking.
      */
     private void assertMrtWindowOpen() {
         assertTrue(ERROR_MESSAGE, MrtWindowHandle.isWindowPresent());
