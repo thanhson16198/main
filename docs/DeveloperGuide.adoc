@@ -1,4 +1,4 @@
-= AddressBook Level 4 - Developer Guide
+= Tourist Book - Developer Guide
 :toc:
 :toc-title:
 :toc-placement: preamble
@@ -715,6 +715,13 @@ See this https://github.com/se-edu/addressbook-level4/pull/599[PR] for the step-
 
 [appendix]
 == User Stories
+=== Target User
+We are targeting tourists who are visiting Singapore and are generally unaware of the attractions here.
+
+=== Problem statement
+Due to a large number of attractions and different websites, we want a platform that is intuitive to find attractions.
+The user should not need to view multiple sources to decide where to go. Relevant information to aid their decision making
+should also be provided.
 
 Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (very unlikely to have) - `*`
 
