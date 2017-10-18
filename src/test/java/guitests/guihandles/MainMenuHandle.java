@@ -36,4 +36,11 @@ public class MainMenuHandle extends NodeHandle<Node> {
     private void clickOnMenuItemsSequentially(String... menuItems) {
         Arrays.stream(menuItems).forEach(guiRobot::clickOn);
     }
+
+    /**
+     * Opens the {@code MrtWindow} using the menu bar in {@code MainWindow}.
+     */
+    public void openMrtWindowUsingMenu() {
+        clickOnMenuItemsSequentially("MRT Map", "MRT Map");
+    }
 }
