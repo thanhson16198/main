@@ -36,14 +36,11 @@ public class BrowserPanel extends UiPart<Region> {
 
         // To prevent triggering events for typing inside the loaded Web page.
         getRoot().setOnKeyPressed(Event::consume);
-<<<<<<< HEAD
+
         // Load the Weather page upon starting
         //loadDefaultPage();
         logger.info("Open a weather forecast for today on BrowerPanel.");
-=======
-
         loadDefaultPage();
->>>>>>> 6da6c45165c8926b3bbaf36c1d23106f0a5779fa
         loadPage("https://www.accuweather.com/en/sg/singapore/300597/hourly-weather-forecast/300597");
         registerAsAnEventHandler(this);
     }
