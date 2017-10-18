@@ -35,8 +35,13 @@ public class MainWindow extends UiPart<Region> {
     //Random the theme color to use
     //private static final String FXML = "MainWindow.fxml";
     private static Random random = new Random();
+<<<<<<< HEAD
     private static String[] colors = {"MainWindow_Black.fxml", "MainWindow_White.fxml"};
     private static final String FXML = colors[random.nextInt(colors.length)];
+=======
+    private static String[] themeColors = {"MainWindow_Black.fxml", "MainWindow_White.fxml"};
+    private static final String FXML = themeColors[random.nextInt(themeColors.length)];
+>>>>>>> 6da6c45165c8926b3bbaf36c1d23106f0a5779fa
 
     private static final int MIN_HEIGHT = 600;
     private static final int MIN_WIDTH = 450;
@@ -207,12 +212,21 @@ public class MainWindow extends UiPart<Region> {
     }
 
     /**
+<<<<<<< HEAD
      * Opens the Weather on browser.
      */
     @FXML
     public void handleWeather() {
         logger.info("Open a weather forecast for today on BrowerPanel.");
         browserPanel.loadPage("https://www.accuweather.com/en/sg/singapore/300597/hourly-weather-forecast/300597");
+=======
+     * Opens the Weather window on BrowserPanel.
+     */
+    @FXML
+    public void handleWeather() {
+        browserPanel.loadPage("https://www.accuweather.com/en/sg/singapore/300597/hourly-weather-forecast/300597");
+        logger.info("Open a Weather forecast website on BrowserPanel.");
+>>>>>>> 6da6c45165c8926b3bbaf36c1d23106f0a5779fa
     }
 
     void show() {
