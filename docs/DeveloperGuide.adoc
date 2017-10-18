@@ -739,7 +739,7 @@ Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (un
 [appendix]
 == Use Cases
 
-(For all use cases below, the *System* is the `AddressBook` and the *Actor* is the `user`, unless specified otherwise)
+(For all use cases below, the *System* is the `Tourist Book` and the *Tourist* is the `user`, unless specified otherwise)
 
 [discrete]
 === Use case: Example Delete person
@@ -754,7 +754,6 @@ Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (un
 Use case ends.
 
 *Extensions*
-
 [none]
 * 2a. The list is empty.
 +
@@ -767,7 +766,8 @@ Use case ends.
 +
 Use case resumes at step 2.
 
-=== Use case: 01 Bookmark a place
+[discrete]
+=== Use case: Bookmark a place
 
 *MSS*
 
@@ -785,9 +785,11 @@ Use case ends.
 * 2a1. User searches for place to bookmark
 * 2a2. AB lists results
 * Steps 2a1-2a2 are repeated until user is satisfied with result
+
 Use case continue from step 3.
 
-=== Use case: 02 Rate a place
+[discrete]
+=== Use case: Rate a place
 
 *MSS*
 
@@ -807,6 +809,7 @@ Use case ends.
 ** 2a1. AB request for new entry
 ** 2a2. User enter new keyword
 ** Steps 2a1-2a2 are repeated until the keyword entered is correct
+
 Use case continue from step 3.
 
 * 3a. The rating index is invalid.
@@ -816,7 +819,8 @@ Use case continue from step 3.
 +
 Use case ends.
 
-=== Use case: 03 Search by tag
+[discrete]
+=== Use case: Search by tag
 
 *MSS*
 
@@ -835,9 +839,11 @@ Use case ends.
 ** 2a1. AB request for new entry
 ** 2a2. User enter new keyword
 ** Steps 2a1-2a2 are repeated until the keyword entered is correct
+
 Use case continue from step 3.
 
-=== Use case: 04 Remove a place
+[discrete]
+=== Use case: Remove a place
 
 *MSS*
 
@@ -855,9 +861,11 @@ Use case ends.
 ** 2a1. AB request for new entry
 ** 2a2. User enter new keyword
 ** Steps 2a1-2a2 are repeated until the keyword entered is correct
+
 Use case continue from step 3.
 
-=== Use case: 05 Add a new place
+[discrete]
+=== Use case: Add a new place
 
 *MSS*
 
@@ -875,9 +883,8 @@ Use case ends.
 ** 2a1. AB request for new entry
 ** 2a2. User enter new data
 ** Steps 2a1-2a2 are repeated until the data entered is correct
-Use case continue from step 3.
 
-{More to be added}
+Use case continue from step 3.
 
 [appendix]
 == Non Functional Requirements
