@@ -22,7 +22,7 @@ public class ClearBookmarkCommand extends UndoableCommand {
             + "Example: " + COMMAND_WORD;
 
     public static final String MESSAGE_CLEAR_BOOKMARK_SUCCESS = "Cleared bookmarks";
-    private final String BOOKMARK_STRING = "Bookmarked";
+    private final String bookmarkString = "Bookmarked";
 
     public ClearBookmarkCommand() {
 
@@ -38,7 +38,7 @@ public class ClearBookmarkCommand extends UndoableCommand {
 
 
         try {
-            toRemove = new Tag (BOOKMARK_STRING);
+            toRemove = new Tag (bookmarkString);
             model.removeAllTags(toRemove);
         } catch (DuplicatePersonException dpe) {
             throw new CommandException(MESSAGE_DUPLICATE_PERSON);

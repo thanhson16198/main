@@ -32,7 +32,7 @@ public class BookmarkCommand extends UndoableCommand {
     private static final String MESSAGE_DUPLICATE_TAGS = "Person already has that tag.";
 
     private final Index targetIndex;
-    private final String BOOKMARK_STRING = "Bookmarked";
+    private final String bookmarkString = "Bookmarked";
 
     public BookmarkCommand(Index targetIndex) {
         this.targetIndex = targetIndex;
@@ -51,7 +51,7 @@ public class BookmarkCommand extends UndoableCommand {
         ReadOnlyPerson personToBookmark = lastShownList.get(targetIndex.getZeroBased());
 
         try {
-            Tag bookmarkTag = new Tag(BOOKMARK_STRING);
+            Tag bookmarkTag = new Tag(bookmarkString);
             model.addTag(personToBookmark, bookmarkTag);
         } catch (DuplicatePersonException dpe) {
             throw new CommandException(MESSAGE_DUPLICATE_PERSON);
