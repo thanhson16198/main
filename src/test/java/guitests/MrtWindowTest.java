@@ -6,6 +6,7 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 import guitests.guihandles.MrtWindowHandle;
+import seedu.address.logic.commands.MrtCommand;
 
 
 public class MrtWindowTest extends AddressBookGuiTest {
@@ -19,6 +20,10 @@ public class MrtWindowTest extends AddressBookGuiTest {
 
         //use menu button
         getMainMenu().openMrtWindowUsingMenu();
+        assertMrtWindowOpen();
+
+        //use command box
+        runCommand(MrtCommand.COMMAND_WORD);
         assertMrtWindowOpen();
     }
 

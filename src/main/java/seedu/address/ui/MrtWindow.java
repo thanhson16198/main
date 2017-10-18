@@ -15,7 +15,7 @@ import seedu.address.commons.util.FxViewUtil;
  */
 public class MrtWindow extends UiPart<Region> {
 
-    public static final String USERGUIDE_FILE_PATH = "/docs/MrtMap.html";
+    public static final String MRT_FILE_PATH = "/docs/MrtMap.html";
 
     private static final Logger logger = LogsCenter.getLogger(MrtWindow.class);
     private static final String ICON = "/images/mrt_logo.png";
@@ -35,7 +35,7 @@ public class MrtWindow extends UiPart<Region> {
         dialogStage.setMaximized(true);
         FxViewUtil.setStageIcon(dialogStage, ICON);
 
-        String mrtMapUrl = getClass().getResource(USERGUIDE_FILE_PATH).toString();
+        String mrtMapUrl = getClass().getResource(MRT_FILE_PATH).toString();
         browser.getEngine().load(mrtMapUrl);
     }
 

@@ -1,7 +1,7 @@
 package seedu.address.ui;
 
 import static org.junit.Assert.assertEquals;
-import static seedu.address.ui.MrtWindow.USERGUIDE_FILE_PATH;
+import static seedu.address.ui.MrtWindow.MRT_FILE_PATH;
 
 import java.net.URL;
 
@@ -27,7 +27,7 @@ public class MrtWindowTest extends GuiUnitTest {
 
     @Test
     public void display() {
-        URL expectedHelpPage = HelpWindow.class.getResource(USERGUIDE_FILE_PATH);
-        assertEquals(expectedHelpPage, mrtWindowHandle.getLoadedUrl());
+        URL expectedMrtPage = MrtWindow.class.getResource(MRT_FILE_PATH);
+        assertEquals(expectedMrtPage, mrtWindowHandle.getLoadedUrl());
     }
 }

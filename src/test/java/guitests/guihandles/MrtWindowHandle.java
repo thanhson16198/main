@@ -10,7 +10,7 @@ import javafx.stage.Stage;
  */
 public class MrtWindowHandle extends StageHandle {
 
-    public static final String MRT_WINDOW_TITLE = "MRT";
+    public static final String MRT_WINDOW_TITLE = "MRT Map";
 
     private static final String MRT_WINDOW_BROWSER_ID = "#browser";
 
