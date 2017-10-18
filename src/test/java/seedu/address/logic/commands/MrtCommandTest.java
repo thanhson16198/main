@@ -1,13 +1,14 @@
 package seedu.address.logic.commands;
 
-import org.junit.Rule;
-import org.junit.Test;
-import seedu.address.commons.events.ui.ShowMrtRequestEvent;
-import seedu.address.ui.testutil.EventsCollectorRule;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static seedu.address.logic.commands.MrtCommand.SHOWING_MRT_MESSAGE;
+
+import org.junit.Rule;
+import org.junit.Test;
+
+import seedu.address.commons.events.ui.ShowMrtRequestEvent;
+import seedu.address.ui.testutil.EventsCollectorRule;
 
 public class MrtCommandTest {
     @Rule
