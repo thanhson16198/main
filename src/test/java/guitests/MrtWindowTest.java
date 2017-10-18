@@ -1,10 +1,12 @@
 package guitests;
 
-import guitests.guihandles.MrtWindowHandle;
-import org.junit.Test;
-
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+
+import guitests.guihandles.MrtWindowHandle;
+
 
 public class MrtWindowTest extends AddressBookGuiTest {
     private static final String ERROR_MESSAGE = "ATTENTION!!!! : On some computers, this test may fail when run on "
