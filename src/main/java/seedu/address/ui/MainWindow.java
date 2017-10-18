@@ -23,6 +23,7 @@ import seedu.address.commons.events.ui.ShowHelpRequestEvent;
 import seedu.address.commons.util.FxViewUtil;
 import seedu.address.logic.Logic;
 import seedu.address.model.UserPrefs;
+import seedu.address.ui.BrowserPanel;
 
 /**
  * The Main Window. Provides the basic application layout containing
@@ -47,7 +48,7 @@ public class MainWindow extends UiPart<Region> {
     private Logic logic;
 
     // Independent Ui parts residing in this Ui container
-    private BrowserPanel browserPanel;
+    private BrowserPanel browserPanel = new BrowserPanel();
     private PersonListPanel personListPanel;
     private Config config;
     private UserPrefs prefs;
@@ -57,6 +58,9 @@ public class MainWindow extends UiPart<Region> {
 
     @FXML
     private StackPane commandBoxPlaceholder;
+
+    @FXML
+    private MenuItem weatherItem;
 
     @FXML
     private MenuItem helpMenuItem;
@@ -133,7 +137,7 @@ public class MainWindow extends UiPart<Region> {
      * Fills up all the placeholders of this window.
      */
     void fillInnerParts() {
-        browserPanel = new BrowserPanel();
+        //browserPanel = new BrowserPanel();
         browserPlaceholder.getChildren().add(browserPanel.getRoot());
 
         personListPanel = new PersonListPanel(logic.getFilteredPersonList());
@@ -199,6 +203,15 @@ public class MainWindow extends UiPart<Region> {
     public void handleHelp() {
         HelpWindow helpWindow = new HelpWindow();
         helpWindow.show();
+    }
+
+    /**
+     * Opens the Weather window on BrowserPanel.
+     */
+    @FXML
+    public void handleWeather() {
+        browserPanel.loadPage("https://www.accuweather.com/en/sg/singapore/300597/hourly-weather-forecast/300597");
+        logger.info("Open a Weather forecast website on BrowserPanel.");
     }
 
     void show() {
