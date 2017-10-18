@@ -28,15 +28,15 @@ public class BookmarkCommandTest {
     private final String bookmarkTagString = "Bookmarked";
 
 
-    private void createTag(){
+    private void createTag() {
         try {
-            bookmarkTag = new Tag (bookmarkTagString);
+            bookmarkTag = new Tag(bookmarkTagString);
         } catch (IllegalValueException ive) {
             assert false : "Tag cannot be invalid";
         }
     }
 
-    public BookmarkCommandTest(){
+    public BookmarkCommandTest() {
         createTag();
     }
 
@@ -108,5 +108,4 @@ public class BookmarkCommandTest {
 
         assert model.getFilteredPersonList().isEmpty();
     }
-
 }
