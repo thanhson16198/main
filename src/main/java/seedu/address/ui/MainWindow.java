@@ -58,10 +58,10 @@ public class MainWindow extends UiPart<Region> {
 
     @FXML
     private MenuItem contactsMenuItem;
-  
+
     @FXML
     private MenuItem mrtMapItem;
-  
+
     @FXML
     private StackPane personListPanelPlaceholder;
 
@@ -211,8 +211,8 @@ public class MainWindow extends UiPart<Region> {
         ContactWindow contactWindow = new ContactWindow();
         contactWindow.show();
     }
-  
-    /** 
+
+    /**
      * Opens the mrt map window.
      */
     @FXML
@@ -251,7 +251,7 @@ public class MainWindow extends UiPart<Region> {
         logger.info(LogsCenter.getEventHandlingLogMessage(event));
         showNumbers();
     }
-  
+
     @Subscribe
     private void handleShowMrtEvent(ShowMrtRequestEvent event) {
         logger.info(LogsCenter.getEventHandlingLogMessage(event));
