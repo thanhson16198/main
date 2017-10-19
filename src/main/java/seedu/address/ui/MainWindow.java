@@ -18,6 +18,7 @@ import seedu.address.commons.core.Config;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.events.ui.ExitAppRequestEvent;
+import seedu.address.commons.events.ui.ShowContactsEvent;
 import seedu.address.commons.events.ui.ShowHelpRequestEvent;
 import seedu.address.commons.util.FxViewUtil;
 import seedu.address.logic.Logic;
@@ -53,6 +54,8 @@ public class MainWindow extends UiPart<Region> {
 
     @FXML
     private MenuItem helpMenuItem;
+
+    @FXML
     private MenuItem contactsMenuItem;
 
     @FXML
@@ -91,7 +94,7 @@ public class MainWindow extends UiPart<Region> {
 
     private void setAccelerators() {
         setAccelerator(helpMenuItem, KeyCombination.valueOf("F1"));
-        //setAccelerator(contactsMenuItem, KeyCombination.valueOf("F2"));
+        setAccelerator(contactsMenuItem, KeyCombination.valueOf("F2"));
     }
 
     /**
@@ -229,5 +232,10 @@ public class MainWindow extends UiPart<Region> {
     private void handleShowHelpEvent(ShowHelpRequestEvent event) {
         logger.info(LogsCenter.getEventHandlingLogMessage(event));
         handleHelp();
+    }
+    @Subscribe
+    private void handleShowContactsEvent(ShowContactsEvent event) {
+        logger.info(LogsCenter.getEventHandlingLogMessage(event));
+        showNumbers();
     }
 }
