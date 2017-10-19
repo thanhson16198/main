@@ -364,6 +364,33 @@ We are using `java.util.logging` package for logging. The `LogsCenter` class is 
 
 Certain properties of the application can be controlled (e.g App name, logging level) through the configuration file (default: `config.json`).
 
+=== MRT Map mechanism
+
+MRT Map mechanism displays the latest Singapore MRT map from LTA website using the browser display.
+It can be access by using `Command Line` and `UI`.
+Figure 3.4.1 shows the new structure of the UI component.
+
+image::UiComponentwithMrtClassDiagram.png[width="800"]
+_Figure 3.4.1 : Structure of the UI Component with MRTWindow_
+
+Command `mrt` is used to open mrt map window from Command Line.
+Following Figure 3.4.2 shows the sequence when `mrt` is key in by the user.
+
+image::MRTSequenceDiagrams.jpg[width="600"]
+_Figure 3.4.2 : Structure of the UI Component with MRTWindow_
+
+==== Design Considerations
+
+**Aspect:** Differnt approach on displaying mrt map  +
+**Alternative 1 (current choice):** Access from the internet +
+**Pros:** Can get the latest information and easier to implement as using the web browser+
+**Cons:** Slow in accessing the web page and its depending on the internet speed +
+**Alternative 2:** Include MRT map picture +
+**Pros:** Load faster in accessing the map +
+**Cons:** Complexity in implementing the ImageView functionality.
+
+---
+
 == Documentation
 
 We use asciidoc for writing documentation.
