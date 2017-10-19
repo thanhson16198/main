@@ -263,14 +263,20 @@ Tourist Book data are saved in the hard disk automatically after any command tha
 There is no need to save manually.
 
 
-=== MRT map of Singapore: `map`
+=== MRT map of Singapore: `mrt`
 
-Display the latest MRT map of Singapore by clicking on "MRT map" button or typing command `map`
+Display the latest MRT map of Singapore by clicking on "MRT map" button or typing command `mrt`
 
 == Changes in v1.1
 === Useful contact numbers in Singapore
 
 *Display a list of useful contact numbers by clicking on `Help -> Useful Contacts`
+
+== Changes in v1.2
+=== Displaying MRT map of Singapore
+
+*Display MRT map of Singapore by clicking on `MRT Map` -> `MRT Map` +
+*Display MRT map of Singapore by typing in Command Line `mrt`
 
 == Coming in v2.0
 === Changing the display color of a tag
@@ -288,6 +294,10 @@ Format: `psi`
 === Get directions to selected destination
 Displays the directions from location A to selected destination. +
 Format: `dir [INDEX_FROM] [INDEX_TO]`
+
+=== Displaying the MRT map
+Displays the Singapore MRT map. +
+Format: `mrt`
 
 ****
 * Displays the location from `INDEX_FROM` to `INDEX_TO`. The index refers to the index number shown in the last place listing.
