@@ -15,7 +15,7 @@ import seedu.address.commons.util.FxViewUtil;
  */
 public class MrtWindow extends UiPart<Region> {
 
-    public static final String MRT_FILE_PATH = "/docs/MrtMap.html";
+    public static final String MRT_FILE_PATH = "/images/MrtMap.jpg";
 
     private static final Logger logger = LogsCenter.getLogger(MrtWindow.class);
     private static final String ICON = "/images/mrt_logo.png";
