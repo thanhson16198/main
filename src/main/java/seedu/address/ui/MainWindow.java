@@ -18,7 +18,9 @@ import seedu.address.commons.core.Config;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.events.ui.ExitAppRequestEvent;
+import seedu.address.commons.events.ui.ShowContactsEvent;
 import seedu.address.commons.events.ui.ShowHelpRequestEvent;
+import seedu.address.commons.events.ui.ShowMrtRequestEvent;
 import seedu.address.commons.util.FxViewUtil;
 import seedu.address.logic.Logic;
 import seedu.address.model.UserPrefs;
@@ -62,6 +64,12 @@ public class MainWindow extends UiPart<Region> {
     private MenuItem helpMenuItem;
 
     @FXML
+    private MenuItem contactsMenuItem;
+
+    @FXML
+    private MenuItem mrtMapItem;
+
+    @FXML
     private StackPane personListPanelPlaceholder;
 
     @FXML
@@ -97,6 +105,7 @@ public class MainWindow extends UiPart<Region> {
 
     private void setAccelerators() {
         setAccelerator(helpMenuItem, KeyCombination.valueOf("F1"));
+        setAccelerator(contactsMenuItem, KeyCombination.valueOf("F2"));
     }
 
     /**
@@ -201,6 +210,24 @@ public class MainWindow extends UiPart<Region> {
         helpWindow.show();
     }
 
+    /**
+     * Opens the useful contacts window.
+     */
+    @FXML
+    public void showNumbers() {
+        ContactWindow contactWindow = new ContactWindow();
+        contactWindow.show();
+    }
+
+    /**
+     * Opens the mrt map window.
+     */
+    @FXML
+    public void handleMrtMap() {
+        MrtWindow mrtWindow = new MrtWindow();
+        mrtWindow.show();
+    }
+
     void show() {
         primaryStage.show();
     }
@@ -225,5 +252,16 @@ public class MainWindow extends UiPart<Region> {
     private void handleShowHelpEvent(ShowHelpRequestEvent event) {
         logger.info(LogsCenter.getEventHandlingLogMessage(event));
         handleHelp();
+    }
+    @Subscribe
+    private void handleShowContactsEvent(ShowContactsEvent event) {
+        logger.info(LogsCenter.getEventHandlingLogMessage(event));
+        showNumbers();
+    }
+
+    @Subscribe
+    private void handleShowMrtEvent(ShowMrtRequestEvent event) {
+        logger.info(LogsCenter.getEventHandlingLogMessage(event));
+        handleMrtMap();
     }
 }
