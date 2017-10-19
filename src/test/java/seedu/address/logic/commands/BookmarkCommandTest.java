@@ -1,6 +1,16 @@
 package seedu.address.logic.commands;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
+import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
+import static seedu.address.logic.commands.CommandTestUtil.showFirstPersonOnly;
+import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_PERSON;
+import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_PERSON;
+import static seedu.address.testutil.TypicalPersons.getTypicalAddressBook;
+
 import org.junit.Test;
+
 import seedu.address.commons.core.Messages;
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.exceptions.IllegalValueException;
@@ -12,22 +22,19 @@ import seedu.address.model.UserPrefs;
 import seedu.address.model.person.ReadOnlyPerson;
 import seedu.address.model.tag.Tag;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
-import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
-import static seedu.address.logic.commands.CommandTestUtil.showFirstPersonOnly;
-import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_PERSON;
-import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_PERSON;
-import static seedu.address.testutil.TypicalPersons.getTypicalAddressBook;
-
 public class BookmarkCommandTest {
 
     private Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
     private Tag bookmarkTag;
     private final String bookmarkTagString = "Bookmarked";
 
+    public BookmarkCommandTest() {
+        createTag();
+    }
 
+    /**
+     *  Creates Tag during class construction
+     */
     private void createTag() {
         try {
             bookmarkTag = new Tag(bookmarkTagString);
@@ -36,22 +43,18 @@ public class BookmarkCommandTest {
         }
     }
 
-    public BookmarkCommandTest() {
-        createTag();
-    }
-
     @Test
     public void execute_validIndexUnfilteredList_success() throws Exception {
 
         ReadOnlyPerson placeToBookmark = model.getFilteredPersonList().get(INDEX_FIRST_PERSON.getZeroBased());
-        BookmarkCommand BookmarkCommand = prepareCommand(INDEX_FIRST_PERSON);
+        BookmarkCommand bookmarkCommand = prepareCommand(INDEX_FIRST_PERSON);
 
-        String expectedMessage = String.format(BookmarkCommand.MESSAGE_BOOKMARK_SUCCESS, placeToBookmark);
+        String expectedMessage = String.format(bookmarkCommand.MESSAGE_BOOKMARK_SUCCESS, placeToBookmark);
 
         ModelManager expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
         expectedModel.addTag(placeToBookmark, bookmarkTag);
 
-        assertCommandSuccess(BookmarkCommand, model, expectedMessage, expectedModel);
+        assertCommandSuccess(bookmarkCommand, model, expectedMessage, expectedModel);
     }
 
     @Test
