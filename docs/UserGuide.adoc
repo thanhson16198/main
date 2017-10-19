@@ -250,6 +250,11 @@ Format: `clear` or `c`
 Exits the program. +
 Format: `exit` or `ex`
 
+=== Viewing MRT map: `mrt`
+
+View the MRT map. +
+Format: `mrt`
+
 === Saving the data
 
 Address book data are saved in the hard disk automatically after any command that changes the data. +
