@@ -270,7 +270,12 @@ Display the latest MRT map of Singapore by clicking on "MRT map" button or typin
 == Changes in v1.1
 === Useful contact numbers in Singapore
 
-*Display a list of useful contact numbers by clicking on `Help -> Useful Contacts`
+Display a list of useful contact numbers by clicking on `Help -> Useful Contacts` +
+
+or
+
+Display a list of useful contact numbers by using the CLI. +
+Format: `emergency` or `sos`
 
 == Coming in v2.0
 === Changing the display color of a tag
