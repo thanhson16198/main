@@ -34,9 +34,10 @@ import seedu.address.model.UserPrefs;
 public class MainWindow extends UiPart<Region> {
 
     private static final String ICON = "/images/address_book_32.png";
-
-    //Random the theme color to use
+    
     //private static final String FXML = "MainWindow.fxml";
+
+    //Randomize the theme color
     private static Random random = new Random();
     private static String[] themeColors = {"MainWindow_Black.fxml", "MainWindow_White.fxml"};
     private static final String FXML = themeColors[random.nextInt(themeColors.length)];
