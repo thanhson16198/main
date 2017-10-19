@@ -42,7 +42,6 @@ public class MainWindow extends UiPart<Region> {
     private static String[] themeColors = {"MainWindow_Black.fxml", "MainWindow_White.fxml"};
     private static final String FXML = themeColors[random.nextInt(themeColors.length)];
 
-
     private static final int MIN_HEIGHT = 600;
     private static final int MIN_WIDTH = 450;
 
