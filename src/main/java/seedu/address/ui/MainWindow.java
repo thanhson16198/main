@@ -250,6 +250,7 @@ public class MainWindow extends UiPart<Region> {
     private void handleShowContactsEvent(ShowContactsEvent event) {
         logger.info(LogsCenter.getEventHandlingLogMessage(event));
         showNumbers();
+    }
   
     @Subscribe
     private void handleShowMrtEvent(ShowMrtRequestEvent event) {
