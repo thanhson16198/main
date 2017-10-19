@@ -41,6 +41,6 @@ public class MainMenuHandle extends NodeHandle<Node> {
      * Opens the {@code MrtWindow} using the menu bar in {@code MainWindow}.
      */
     public void openMrtWindowUsingMenu() {
-        clickOnMenuItemsSequentially("MRT Map", "MRT Map");
+        clickOnMenuItemsSequentially("MRT Map");
     }
 }
