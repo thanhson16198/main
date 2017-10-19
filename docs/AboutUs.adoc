@@ -11,35 +11,35 @@ We are students studying in the http://www.comp.nus.edu.sg[School of Computing, 
 == Project Team
 
 === Aung Myin Kyaw
-image::myinkyaw.jpg[width="150", align="left"]
+image::aungmyin23.jpg[width="150", align="left"]
 {empty}[https://github.com/aungmyin23[github]] [<<aungmyinkyaw#, portfolio>>]
 
-Role: Developer +
-Responsibilities: Logic
+Role: Testing/Developer +
+Responsibilities: In charge of Logic
 
 '''
 
 === Chng Zhi Xuan
-image::zhixuan.jpg[width="150", align="left"]
+image::chng-zhi-xuan.jpg[width="150", align="left"]
 {empty}[http://github.com/Chng-Zhi-Xuan[github]] [<<chngzhixuan#, portfolio>>]
 
-Role: Developer +
-Responsibilities: Model
+Role: Team Lead/Developer +
+Responsibilities: In charge of Model
 
 '''
 
 === Hu Yuanrong
-image::yuanrong.jpg[width="150", align="left"]
+image::huyuanrong.jpg[width="150", align="left"]
 {empty}[http://github.com/huyuanrong[github]] [<<huyuanrong#, portfolio>>]
 
-Role: Developer +
-Responsibilities: Storage
+Role: Documentation/Developer +
+Responsibilities: In charge of Storage
 
 '''
 
 === Nguyen Thanh Son
-image::nguyenthanhson.JPG[width="150", align="left"]
+image::thanhson16198.JPG[width="150", align="left"]
 {empty}[http://github.com/thanhson16198[github]] [<<nguyenthanhson#, portfolio>>]
 
-Role: Developer +
-Responsibilities: UI
+Role: Code Quality/Developer +
+Responsibilities: In charge of UI

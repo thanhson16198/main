@@ -7,6 +7,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import seedu.address.logic.commands.AddCommand;
+import seedu.address.logic.commands.BookmarkCommand;
+import seedu.address.logic.commands.ClearBookmarkCommand;
 import seedu.address.logic.commands.ClearCommand;
 import seedu.address.logic.commands.Command;
 import seedu.address.logic.commands.ContactsCommand;
@@ -17,8 +19,8 @@ import seedu.address.logic.commands.FindCommand;
 import seedu.address.logic.commands.HelpCommand;
 import seedu.address.logic.commands.HistoryCommand;
 import seedu.address.logic.commands.ListCommand;
+import seedu.address.logic.commands.MrtCommand;
 import seedu.address.logic.commands.RedoCommand;
-import seedu.address.logic.commands.RemoveTagCommand;
 import seedu.address.logic.commands.SelectCommand;
 import seedu.address.logic.commands.UndoCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
@@ -98,8 +100,14 @@ public class AddressBookParser {
         case RedoCommand.COMMAND_WORD_ALIAS:
             return new RedoCommand();
 
-        case RemoveTagCommand.COMMAND_WORD:
-            return new RemoveTagCommandParser().parse(arguments);
+        case ClearBookmarkCommand.COMMAND_WORD:
+            return new ClearBookmarkCommandParser().parse(arguments);
+
+        case BookmarkCommand.COMMAND_WORD:
+            return new BookmarkCommandParser().parse(arguments);
+
+        case MrtCommand.COMMAND_WORD:
+            return new MrtCommand();
 
         case ContactsCommand.COMMAND_WORD:
         case ContactsCommand.COMMAND_WORD_ALIAS:

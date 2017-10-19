@@ -1,4 +1,4 @@
-= AddressBook Level 4 - Developer Guide
+= Tourist Book - Developer Guide
 :toc:
 :toc-title:
 :toc-placement: preamble
@@ -344,6 +344,51 @@ image::UndoRedoActivityDiagram.png[width="200"]
 **Pros:** We do not need to maintain a separate stack, and just reuse what is already in the codebase. +
 **Cons:** Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as `HistoryManager` now needs to do two different things. +
 // end::undoredo[]
+
+// tag::bookmark
+=== Bookmark & Clear Bookmark mechanism
+
+The underlying implementation of Bookmark (BM) and Clear Bookmark (CBM) is tag manipulation in the model component.
+Two methods were added to `Model` interface to support this feature (`addTag` and `removeAllTags`).
+
+Both BM and CBM extends from `UndoableCommand` as shown in **Figure 2.3.2** , which allows Undo/Redo by the user.
+Also, BM is an index based command like (`delete` or `edit`) +
+
+The following are the sequence diagrams each command +
+
+`bookmark` command
+[NOTE]
+Bookmarking a place which is already bookmarked will throw `DuplicateTagException` since `addTag` can
+be used by other commands or methods.
+
+image::BookmarkSequenceDiagram.png[width="800"]
+
+`clear_bookmark` command
+
+image::ClearBookmarkSequenceDiagram.png[width="800"]
+
+Both commands are quite similar, only slightly difference is additional index argument for `bookmark`, and calling different
+methods in `ModelManager`.
+
+==== Design Considerations
+**Aspect:** Implementation of `bookmark` / `clear_bookmark`  +
+**Alternative 1 (current choice)** `Tag` manipulation through methods in `ModelManager` +
+**Pros:** Easy to implement over existing `Tag` class. +
+**Cons:** Tags are randomly ordered, bookmark tag position is not consistent in the person list.  +
+**Alternative 2:** Create a new class and have it as a new attribute in `Person` +
+**Pros:** Able to have fixed positioning of bookmark when listing persons. +
+**Cons:** Tedious to implement, testing has added complexity. +
+
+---
+
+**Aspect:** User experience for `bookmark` / `clear_bookmark`  +
+**Alternative 1 (current choice)** Have 2 dedicated commands for manipulation on single specific tag +
+**Pros:** Standardization of "bookmark" tag, user cannot vary the tag for the same purpose E.G ("favourite", "saved", "like"). +
+**Cons:** Only 1 bookmark "list" for user to put their favourite persons. +
+**Alternative 2:** A more general command for user to change tags of specific person +
+**Pros:** More concise version of `edit`, allows user to have different bookmark "lists" E.G ("Near_West", "Near_East"). +
+**Cons:** A general version of `clear_bookmark` will be `remove_tag`, which would allow the user to delete important pre-allocated tags in the initial list. +
+// end::bookmark
 
 === Logging
 
@@ -715,6 +760,13 @@ See this https://github.com/se-edu/addressbook-level4/pull/599[PR] for the step-
 
 [appendix]
 == User Stories
+=== Target User
+We are targeting tourists who are visiting Singapore and are generally unaware of the attractions here.
+
+=== Problem statement
+Due to a large number of attractions and different websites, we want a platform that is intuitive to find attractions.
+The user should not need to view multiple sources to decide where to go. Relevant information to aid their decision making
+should also be provided.
 
 Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (very unlikely to have) - `*`
 
