@@ -3,6 +3,9 @@ package seedu.address.logic.commands;
 import seedu.address.commons.core.EventsCenter;
 import seedu.address.commons.events.ui.ShowContactsEvent;
 
+/**
+ * Format useful contact instructions for every command for display.
+ */
 public class ContactsCommand extends Command {
 
     public static final String COMMAND_WORD = "emergency";
