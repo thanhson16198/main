@@ -21,8 +21,8 @@ import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.events.ui.ExitAppRequestEvent;
 import seedu.address.commons.events.ui.ShowContactsEvent;
 import seedu.address.commons.events.ui.ShowHelpRequestEvent;
-import seedu.address.commons.events.ui.ShowWeatherRequestEvent;
 import seedu.address.commons.events.ui.ShowMrtRequestEvent;
+import seedu.address.commons.events.ui.ShowWeatherRequestEvent;
 import seedu.address.commons.util.FxViewUtil;
 import seedu.address.logic.Logic;
 import seedu.address.model.UserPrefs;
@@ -36,10 +36,10 @@ public class MainWindow extends UiPart<Region> {
     private static final String ICON = "/images/address_book_32.png";
 
     //Random the theme color to use
-    private static final String FXML = "MainWindow.fxml";
-    //private static Random random = new Random();
-    //private static String[] themeColors = {"MainWindow_Black.fxml", "MainWindow_White.fxml"};
-    //private static final String FXML = themeColors[random.nextInt(themeColors.length)];
+    //private static final String FXML = "MainWindow.fxml";
+    private static Random random = new Random();
+    private static String[] themeColors = {"MainWindow_Black.fxml", "MainWindow_White.fxml"};
+    private static final String FXML = themeColors[random.nextInt(themeColors.length)];
 
 
     private static final int MIN_HEIGHT = 600;
