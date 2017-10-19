@@ -39,7 +39,7 @@ public class MrtWindowTest extends AddressBookGuiTest {
     }
 
     /**
-     * Asserts that the help window isn't open.
+     * Asserts that the mrt window isn't open.
      */
     private void assertMrtWindowNotOpen() {
         assertFalse(ERROR_MESSAGE, MrtWindowHandle.isWindowPresent());

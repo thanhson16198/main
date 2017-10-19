@@ -12,7 +12,7 @@ public class MrtWindowHandle extends StageHandle {
 
     public static final String MRT_WINDOW_TITLE = "MRT Map";
 
-    private static final String MRT_WINDOW_BROWSER_ID = "#browser";
+    private static final String MRT_WINDOW_BROWSER_ID = "#mrtbrowser";
 
     public MrtWindowHandle(Stage mrtWindowStage) {
         super(mrtWindowStage);
