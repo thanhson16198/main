@@ -140,25 +140,32 @@ Deletes the 2nd place in the address book.
 `del 1` +
 Deletes the 1st place in the results of the `find` command.
 
-=== Removing a tag : `remove_tag`
+=== Bookmark a place: bookmark
 
-Removes the specified tag from all places in the address book. +
-Format: `remove_tag TAG_NAME`
+
+Adds a bookmark tag to the specified place from the address book. +
+Format: `bookmark INDEX`
 
 ****
-* Removes specified tag from Tourist Book
-* Ignores multiple TAG_NAME, only takes the first one
-* Does nothing when TAG_NAME is not found
-* TAG_NAME *must be alphanumeric*
+* Bookmarks the place at the specified `INDEX`.
+* The index refers to the index number shown in the most recent listing.
+* The index *must be a positive integer* 1, 2, 3, ...
 ****
 
 Examples:
 
-* `remove_tag attractions` +
-attractions will be removed from Tourist Book
+* `list` +
+`bookmark 1` +
+Bookmarks the first place in the address book.
 
-* `remove_tag onestar twostar` +
-only onestar tag will be removed, twostar tag is ignored
+* `find attractions` +
+`bookmark 3` +
+Bookmarks the 3rd place in the results of the `find` command.
+
+=== Clearing all bookmarks: clear_bookmark
+
+Clears all bookmarks from the address book. +
+Format: `clear_bookmark`
 
 === Selecting a place : `select` or `se`
 
@@ -322,7 +329,7 @@ Format: `[VALUE] [CURRENCY] to [DESIRED_CURRENCY]`
 == Command Summary
 
 * *Add* `add n/NAME a/ADDRESS [t/TAG]...` +
-e.g. `add n/Marina Bay Sands a/10 Bayfront Avenue, Singapore 018956`
+e.g. `add n/Marina Bay Sands a/10 Bayfront Avenue, Singapore 018956`f
 or `a n/Marina Bay Sands a/10 Bayfront Avenue, Singapore 018956 t/attractions`
 * *Clear* : `clear` or `c`
 * *Delete* : `delete INDEX`  or `del INDEX` +
