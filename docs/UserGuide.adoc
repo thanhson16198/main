@@ -262,6 +262,11 @@ Format: `exit` or `ex`
 Tourist Book data are saved in the hard disk automatically after any command that changes the data. +
 There is no need to save manually.
 
+
+=== MRT map of Singapore: `map`
+
+Display the latest MRT map of Singapore by clicking on "MRT map" button or typing command `map`
+
 == Changes in v1.1
 === Useful contact numbers in Singapore
 
@@ -321,6 +326,7 @@ Format: `rate [INDEX] [RATING]`
 Get the latest exchange rates of currencies in Singaore. +
 Format: `[VALUE] [CURRENCY] to [DESIRED_CURRENCY]`
 
+
 == FAQ
 
 *Q*: How do I transfer my data to another Computer? +
@@ -345,3 +351,4 @@ e.g.`select 2`
 * *History* : `history` or `hy`
 * *Undo* : `undo` or `un`
 * *Redo* : `redo` or `re`
+* *Map* : `map`

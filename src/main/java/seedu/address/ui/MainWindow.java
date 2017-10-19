@@ -19,6 +19,7 @@ import seedu.address.commons.core.GuiSettings;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.events.ui.ExitAppRequestEvent;
 import seedu.address.commons.events.ui.ShowHelpRequestEvent;
+import seedu.address.commons.events.ui.ShowMrtRequestEvent;
 import seedu.address.commons.util.FxViewUtil;
 import seedu.address.logic.Logic;
 import seedu.address.model.UserPrefs;
@@ -53,6 +54,9 @@ public class MainWindow extends UiPart<Region> {
 
     @FXML
     private MenuItem helpMenuItem;
+
+    @FXML
+    private MenuItem mrtMapItem;
 
     @FXML
     private StackPane personListPanelPlaceholder;
@@ -194,6 +198,15 @@ public class MainWindow extends UiPart<Region> {
         helpWindow.show();
     }
 
+    /**
+     * Opents the mrt map window.
+     */
+    @FXML
+    public void handleMrtMap() {
+        MrtWindow mrtWindow = new MrtWindow();
+        mrtWindow.show();
+    }
+
     void show() {
         primaryStage.show();
     }
@@ -218,5 +231,11 @@ public class MainWindow extends UiPart<Region> {
     private void handleShowHelpEvent(ShowHelpRequestEvent event) {
         logger.info(LogsCenter.getEventHandlingLogMessage(event));
         handleHelp();
+    }
+
+    @Subscribe
+    private void handleShowMrtEvent(ShowMrtRequestEvent event) {
+        logger.info(LogsCenter.getEventHandlingLogMessage(event));
+        handleMrtMap();
     }
 }
