@@ -390,6 +390,41 @@ methods in `ModelManager`.
 **Cons:** A general version of `clear_bookmark` will be `remove_tag`, which would allow the user to delete important pre-allocated tags in the initial list. +
 // end::bookmark
 
+//tag::emergency
+=== Emergency/Useful Contacts
+
+The Emergency/Useful Contacts function allows the user to quickly view a pre-defined list of contact numbers. +
+The underlying implementation is by invoking the browser window and changing the information it displays to the user. +
+The Emergency/Useful Contacts function is a CL command that can be invoked by the user. +
+
+The following is the class diagram of Emergency/Useful Contacts.
+
+image::UsefulContactsClassDiagram.PNG[width="800"]
+
+The following is the sequence diagram of the Emergency/Useful contacts command.
+
+`emergency` or `sos` command
+
+image::ContactsSequenceDiagram.PNG[width="800"]
+
+Both commands will invoke the same contacts page.
+
+==== Design Considerations
+**Aspect:** Implementation of `emergency` / `sos`  +
+**Alternative 1 (current choice)** Making use of the browser window to display the contacts information. +
+**Pros:** Easy to implement. +
+**Cons:** HTML file is hard to edit / cannot be edited.  +
+**Alternative 2:** Create a new UI element (e.g. Text panel) and display when called. +
+**Pros:** Able to display contacts within the app itself. +
+**Cons:** Tedious to implement, GUI testing has added complexity. +
+
+---
+
+**Aspect:** User experience for `emergency` / `sos`  +
+**Alternative 1 (current choice)** Have 2 dedicated commands and quick key button (F2). +
+**Pros:** Allows user a more flexible choice of invoking the contacts list. +
+**Cons:** Takes up a quick key combination which can be used to invoke other shortcuts.
+
 === Logging
 
 We are using `java.util.logging` package for logging. The `LogsCenter` class is used to manage the logging levels and logging destinations.
