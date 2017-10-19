@@ -245,6 +245,11 @@ The `redo` command fails as there are no `undo` commands executed previously.
 Clears all entries from the address book. +
 Format: `clear` or `c`
 
+=== Display Singapore weather : `weather`
+
+Display Singapore weather of that day on the browser. +
+Format: `weather`
+
 === Exiting the program : `exit` or `ex`
 
 Exits the program. +
@@ -274,6 +279,7 @@ e.g. `edit 2 n/James Lee e/jameslee@example.com` or ``ed 2 n/James Lee e/jamesle
 e.g. `find James Jake`
 * *List* : `list` or `l`
 * *Help* : `help` or `h`
+* *Weather* : 'weather'
 * *Select* : `select INDEX`  or `s` +
 e.g.`select 2`
 * *History* : `history` or `hy`
