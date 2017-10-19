@@ -19,8 +19,10 @@ import seedu.address.commons.core.Config;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.events.ui.ExitAppRequestEvent;
+import seedu.address.commons.events.ui.ShowContactsEvent;
 import seedu.address.commons.events.ui.ShowHelpRequestEvent;
 import seedu.address.commons.events.ui.ShowWeatherRequestEvent;
+import seedu.address.commons.events.ui.ShowMrtRequestEvent;
 import seedu.address.commons.util.FxViewUtil;
 import seedu.address.logic.Logic;
 import seedu.address.model.UserPrefs;
@@ -34,10 +36,10 @@ public class MainWindow extends UiPart<Region> {
     private static final String ICON = "/images/address_book_32.png";
 
     //Random the theme color to use
-    //private static final String FXML = "MainWindow.fxml";
-    private static Random random = new Random();
-    private static String[] themeColors = {"MainWindow_Black.fxml", "MainWindow_White.fxml"};
-    private static final String FXML = themeColors[random.nextInt(themeColors.length)];
+    private static final String FXML = "MainWindow.fxml";
+    //private static Random random = new Random();
+    //private static String[] themeColors = {"MainWindow_Black.fxml", "MainWindow_White.fxml"};
+    //private static final String FXML = themeColors[random.nextInt(themeColors.length)];
 
 
     private static final int MIN_HEIGHT = 600;
@@ -65,6 +67,12 @@ public class MainWindow extends UiPart<Region> {
 
     @FXML
     private MenuItem helpMenuItem;
+
+    @FXML
+    private MenuItem contactsMenuItem;
+
+    @FXML
+    private MenuItem mrtMapItem;
 
     @FXML
     private StackPane personListPanelPlaceholder;
@@ -102,6 +110,7 @@ public class MainWindow extends UiPart<Region> {
 
     private void setAccelerators() {
         setAccelerator(helpMenuItem, KeyCombination.valueOf("F1"));
+        setAccelerator(contactsMenuItem, KeyCombination.valueOf("F2"));
     }
 
     /**
@@ -217,6 +226,24 @@ public class MainWindow extends UiPart<Region> {
         browserPanel.loadPage("https://www.accuweather.com/en/sg/singapore/300597/hourly-weather-forecast/300597");
     }
 
+    /**
+     * Opens the useful contacts window.
+     */
+    @FXML
+    public void showNumbers() {
+        ContactWindow contactWindow = new ContactWindow();
+        contactWindow.show();
+    }
+
+    /**
+     * Opens the mrt map window.
+     */
+    @FXML
+    public void handleMrtMap() {
+        MrtWindow mrtWindow = new MrtWindow();
+        mrtWindow.show();
+    }
+
     void show() {
         primaryStage.show();
     }
@@ -247,5 +274,18 @@ public class MainWindow extends UiPart<Region> {
     private void handleShowWeatherEvent(ShowWeatherRequestEvent event) {
         logger.info(LogsCenter.getEventHandlingLogMessage(event));
         handleWeather();
+    }
+
+    @Subscribe
+    private void handleShowContactsEvent(ShowContactsEvent event) {
+        logger.info(LogsCenter.getEventHandlingLogMessage(event));
+        showNumbers();
+    }
+
+    @Subscribe
+    private void handleShowMrtEvent(ShowMrtRequestEvent event) {
+        logger.info(LogsCenter.getEventHandlingLogMessage(event));
+        handleMrtMap();
+
     }
 }

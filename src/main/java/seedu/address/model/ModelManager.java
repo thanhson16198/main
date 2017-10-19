@@ -20,6 +20,7 @@ import seedu.address.model.person.ReadOnlyPerson;
 import seedu.address.model.person.exceptions.DuplicatePersonException;
 import seedu.address.model.person.exceptions.PersonNotFoundException;
 import seedu.address.model.tag.Tag;
+import seedu.address.model.tag.UniqueTagList;
 
 /**
  * Represents the in-memory model of the address book data.
@@ -87,13 +88,45 @@ public class ModelManager extends ComponentManager implements Model {
     }
 
     /**
+     * Adds given tag to target person
+     * @param target
+     * @param newTag
+     * @throws DuplicatePersonException
+     * @throws PersonNotFoundException
+     * @throws UniqueTagList.DuplicateTagException
+     */
+    public void addTag(ReadOnlyPerson target, Tag newTag) throws DuplicatePersonException, PersonNotFoundException,
+                                                                    UniqueTagList.DuplicateTagException {
+        Predicate oldPredicate = filteredPersons.getPredicate();
+        filteredPersons.setPredicate(PREDICATE_SHOW_ALL_PERSONS);
+
+        Person updatedPerson = new Person(target);
+
+        Set<Tag> currentTags = updatedPerson.getTags();
+        Set<Tag> updatedTags = new HashSet<Tag>();
+
+        updatedTags.addAll(currentTags);
+
+        if (updatedTags.contains(newTag)) {
+            throw new UniqueTagList.DuplicateTagException();
+        } else {
+            updatedTags.add(newTag);
+            updatedPerson.setTags(updatedTags);
+            addressBook.updatePerson(target, updatedPerson);
+            indicateAddressBookChanged();
+        }
+
+        filteredPersons.setPredicate(oldPredicate);
+    }
+
+    /**
      * Removes given Tag from all persons in address book
      * @param tag
      * @throws PersonNotFoundException
      * @throws DuplicatePersonException
      */
 
-    public void removeTag(Tag tag) throws PersonNotFoundException, DuplicatePersonException {
+    public void removeAllTags(Tag tag) throws PersonNotFoundException, DuplicatePersonException {
         Predicate oldPredicate = filteredPersons.getPredicate();
         filteredPersons.setPredicate(PREDICATE_SHOW_ALL_PERSONS);
 
@@ -114,6 +147,7 @@ public class ModelManager extends ComponentManager implements Model {
             }
 
             updatedPerson.setTags(updatedTags);
+            indicateAddressBookChanged();
 
             addressBook.updatePerson(currentPerson, updatedPerson);
         }
