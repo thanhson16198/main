@@ -11,6 +11,7 @@ import seedu.address.logic.commands.BookmarkCommand;
 import seedu.address.logic.commands.ClearBookmarkCommand;
 import seedu.address.logic.commands.ClearCommand;
 import seedu.address.logic.commands.Command;
+import seedu.address.logic.commands.ContactsCommand;
 import seedu.address.logic.commands.DeleteCommand;
 import seedu.address.logic.commands.EditCommand;
 import seedu.address.logic.commands.ExitCommand;
@@ -107,6 +108,10 @@ public class AddressBookParser {
 
         case MrtCommand.COMMAND_WORD:
             return new MrtCommand();
+
+        case ContactsCommand.COMMAND_WORD:
+        case ContactsCommand.COMMAND_WORD_ALIAS:
+            return new ContactsCommand();
 
         default:
             throw new ParseException(MESSAGE_UNKNOWN_COMMAND);
