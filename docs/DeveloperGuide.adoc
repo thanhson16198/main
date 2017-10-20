@@ -363,11 +363,11 @@ The following are the sequence diagrams each command +
 Bookmarking a place which is already bookmarked will throw `DuplicateTagException` since `addTag` can
 be used by other commands or methods.
 
-image::BookmarkSequenceDiagram.png[width="800"]
+image::BookmarkSequenceDiagram.PNG[width="800"]
 
 `clear_bookmark` command
 
-image::ClearBookmarkSequenceDiagram.png[width="800"]
+image::ClearBookmarkSequenceDiagram.PNG[width="800"]
 
 Both commands are quite similar, only slightly difference is additional index argument for `bookmark`, and calling different
 methods in `ModelManager`.
@@ -465,6 +465,44 @@ Where `browserPanel` is the object link:{repoURL}/src/main/java/seedu/address/ui
 === Configuration
 
 Certain properties of the application can be controlled (e.g App name, logging level) through the configuration file (default: `config.json`).
+
+=== MRT Map mechanism
+
+MRT Map mechanism displays the latest Singapore MRT map from LTA website using the browser display.
+It can be access by using `Command Line` and `UI`.
+Figure 3.4.1 shows the new structure of the UI component.
+
+image::UiComponentwithMrtClassDiagram.png[width="800"]
+_Figure 3.4.1 : Structure of the UI Component with MRTWindow_
+
+Command `mrt` is used to open mrt map window from Command Line.
+Following Figure 3.4.2 shows the sequence when `mrt` is key in by the user.
+
+image::MRTSequenceDiagrams.jpg[width="600"]
+_Figure 3.4.2 : Structure of the UI Component with MRTWindow_
+
+----
+public static final String MRT_FILE_PATH = "/docs/MrtMap.html";
+
+private static final Logger logger = LogsCenter.getLogger(MrtWindow.class);
+private static final String ICON = "/images/mrt_logo.png";
+private static final String FXML = "MrtMapWindow.fxml";
+private static final String TITLE = "MRT Map";
+----
+
+The code above shows the setting up of `MrtWindow.java` for MrtWindow Browser.
+
+==== Design Considerations
+
+**Aspect:** Different approach on displaying mrt map  +
+**Alternative 1 (current choice):** Access from the internet +
+**Pros:** Can get the latest information and easier to implement as using the web browser+
+**Cons:** Slow in accessing the web page and its depending on the internet speed +
+**Alternative 2:** Include MRT map picture +
+**Pros:** Load faster in accessing the map +
+**Cons:** Complexity in implementing the ImageView functionality.
+
+---
 
 == Documentation
 
@@ -908,7 +946,7 @@ Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (ve
 [appendix]
 == Use Cases
 
-(For all use cases below, the *System* is the `AddressBook` and the *Actor* is the `user`, unless specified otherwise)
+(For all use cases below, the *System* is the `Tourist Book` and the *Tourist* is the `user`, unless specified otherwise)
 
 [discrete]
 === Use case: Example Delete person
@@ -923,7 +961,6 @@ Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (ve
 Use case ends.
 
 *Extensions*
-
 [none]
 * 2a. The list is empty.
 +
@@ -936,7 +973,8 @@ Use case ends.
 +
 Use case resumes at step 2.
 
-=== Use case: 01 Bookmark a place
+[discrete]
+=== Use case: Bookmark a place
 
 *MSS*
 
@@ -954,9 +992,11 @@ Use case ends.
 * 2a1. User searches for place to bookmark
 * 2a2. AB lists results
 * Steps 2a1-2a2 are repeated until user is satisfied with result
+
 Use case continue from step 3.
 
-=== Use case: 02 Rate a place
+[discrete]
+=== Use case: Rate a place
 
 *MSS*
 
@@ -976,6 +1016,7 @@ Use case ends.
 ** 2a1. AB request for new entry
 ** 2a2. User enter new keyword
 ** Steps 2a1-2a2 are repeated until the keyword entered is correct
+
 Use case continue from step 3.
 
 * 3a. The rating index is invalid.
@@ -985,7 +1026,8 @@ Use case continue from step 3.
 +
 Use case ends.
 
-=== Use case: 03 Search by tag
+[discrete]
+=== Use case: Search by tag
 
 *MSS*
 
@@ -1004,9 +1046,11 @@ Use case ends.
 ** 2a1. AB request for new entry
 ** 2a2. User enter new keyword
 ** Steps 2a1-2a2 are repeated until the keyword entered is correct
+
 Use case continue from step 3.
 
-=== Use case: 04 Remove a place
+[discrete]
+=== Use case: Remove a place
 
 *MSS*
 
@@ -1024,9 +1068,11 @@ Use case ends.
 ** 2a1. AB request for new entry
 ** 2a2. User enter new keyword
 ** Steps 2a1-2a2 are repeated until the keyword entered is correct
+
 Use case continue from step 3.
 
-=== Use case: 05 Add a new place
+[discrete]
+=== Use case: Add a new place
 
 *MSS*
 
@@ -1044,9 +1090,8 @@ Use case ends.
 ** 2a1. AB request for new entry
 ** 2a2. User enter new data
 ** Steps 2a1-2a2 are repeated until the data entered is correct
-Use case continue from step 3.
 
-{More to be added}
+Use case continue from step 3.
 
 [appendix]
 == Non Functional Requirements
