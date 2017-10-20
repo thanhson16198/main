@@ -1,6 +1,5 @@
 package seedu.address.ui;
 
-import java.util.Random;
 import java.util.logging.Logger;
 
 import com.google.common.eventbus.Subscribe;
@@ -35,12 +34,12 @@ public class MainWindow extends UiPart<Region> {
 
     private static final String ICON = "/images/address_book_32.png";
 
-    //private static final String FXML = "MainWindow.fxml";
+    private static final String FXML = "MainWindow.fxml";
 
     //Randomize the theme color
-    private static Random random = new Random();
-    private static String[] themeColors = {"MainWindow_Black.fxml", "MainWindow_White.fxml"};
-    private static final String FXML = themeColors[random.nextInt(themeColors.length)];
+    //private static Random random = new Random();
+    //private static String[] themeColors = {"MainWindow_Black.fxml", "MainWindow_White.fxml"};
+    //private static final String FXML = themeColors[random.nextInt(themeColors.length)];
 
     private static final int MIN_HEIGHT = 600;
     private static final int MIN_WIDTH = 450;
