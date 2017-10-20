@@ -21,6 +21,7 @@ import seedu.address.commons.events.ui.ExitAppRequestEvent;
 import seedu.address.commons.events.ui.ShowContactsEvent;
 import seedu.address.commons.events.ui.ShowHelpRequestEvent;
 import seedu.address.commons.events.ui.ShowMrtRequestEvent;
+import seedu.address.commons.events.ui.ShowWeatherRequestEvent;
 import seedu.address.commons.util.FxViewUtil;
 import seedu.address.logic.Logic;
 import seedu.address.model.UserPrefs;
@@ -32,7 +33,14 @@ import seedu.address.model.UserPrefs;
 public class MainWindow extends UiPart<Region> {
 
     private static final String ICON = "/images/address_book_32.png";
+
     private static final String FXML = "MainWindow.fxml";
+
+    //Randomize the theme color
+    //private static Random random = new Random();
+    //private static String[] themeColors = {"MainWindow_Black.fxml", "MainWindow_White.fxml"};
+    //private static final String FXML = themeColors[random.nextInt(themeColors.length)];
+
     private static final int MIN_HEIGHT = 600;
     private static final int MIN_WIDTH = 450;
 
@@ -42,7 +50,7 @@ public class MainWindow extends UiPart<Region> {
     private Logic logic;
 
     // Independent Ui parts residing in this Ui container
-    private BrowserPanel browserPanel;
+    private BrowserPanel browserPanel = new BrowserPanel();
     private PersonListPanel personListPanel;
     private Config config;
     private UserPrefs prefs;
@@ -52,6 +60,9 @@ public class MainWindow extends UiPart<Region> {
 
     @FXML
     private StackPane commandBoxPlaceholder;
+
+    @FXML
+    private MenuItem weatherItem;
 
     @FXML
     private MenuItem helpMenuItem;
@@ -135,8 +146,10 @@ public class MainWindow extends UiPart<Region> {
      * Fills up all the placeholders of this window.
      */
     void fillInnerParts() {
-        browserPanel = new BrowserPanel();
+        //browserPanel = new BrowserPanel();
         browserPlaceholder.getChildren().add(browserPanel.getRoot());
+
+        //browserPanel.loadPage("http://www.nea.gov.sg/weather-climate/forecasts/24-hour-forecast");
 
         personListPanel = new PersonListPanel(logic.getFilteredPersonList());
         personListPanelPlaceholder.getChildren().add(personListPanel.getRoot());
@@ -204,6 +217,15 @@ public class MainWindow extends UiPart<Region> {
     }
 
     /**
+     * Opens the Weather on browser.
+     */
+    @FXML
+    public void handleWeather() {
+        logger.info("Open a weather forecast for today on BrowerPanel.");
+        browserPanel.loadPage("https://www.accuweather.com/en/sg/singapore/300597/hourly-weather-forecast/300597");
+    }
+
+    /**
      * Opens the useful contacts window.
      */
     @FXML
@@ -246,6 +268,13 @@ public class MainWindow extends UiPart<Region> {
         logger.info(LogsCenter.getEventHandlingLogMessage(event));
         handleHelp();
     }
+
+    @Subscribe
+    private void handleShowWeatherEvent(ShowWeatherRequestEvent event) {
+        logger.info(LogsCenter.getEventHandlingLogMessage(event));
+        handleWeather();
+    }
+
     @Subscribe
     private void handleShowContactsEvent(ShowContactsEvent event) {
         logger.info(LogsCenter.getEventHandlingLogMessage(event));
@@ -256,5 +285,6 @@ public class MainWindow extends UiPart<Region> {
     private void handleShowMrtEvent(ShowMrtRequestEvent event) {
         logger.info(LogsCenter.getEventHandlingLogMessage(event));
         handleMrtMap();
+
     }
 }
