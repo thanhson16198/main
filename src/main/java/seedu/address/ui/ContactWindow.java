@@ -11,11 +11,11 @@ import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.util.FxViewUtil;
 
 /**
- * Controller for a help page
+ * Controller for a Useful Coontacts page
  */
 public class ContactWindow extends UiPart<Region> {
 
-    public static final String USERGUIDE_FILE_PATH = "/images/UsefulNumbers.PNG";
+    public static final String USERGUIDE_FILE_PATH = "/images/UsefulContacts.png";
 
     private static final Logger logger = LogsCenter.getLogger(ContactWindow.class);
     private static final String ICON = "/images/help_icon.png";
@@ -40,7 +40,7 @@ public class ContactWindow extends UiPart<Region> {
     }
 
     /**
-     * Shows the help window.
+     * Shows the Useful Contacts window.
      * @throws IllegalStateException
      * <ul>
      *     <li>
