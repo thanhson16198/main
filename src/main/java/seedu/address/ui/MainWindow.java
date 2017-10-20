@@ -36,6 +36,7 @@ public class MainWindow extends UiPart<Region> {
 
     private static final String FXML = "MainWindow.fxml";
 
+
     //Randomize the theme color
     //private static Random random = new Random();
     //private static String[] themeColors = {"MainWindow_Black.fxml", "MainWindow_White.fxml"};
