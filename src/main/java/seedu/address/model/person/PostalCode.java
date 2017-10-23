@@ -5,36 +5,36 @@ import static java.util.Objects.requireNonNull;
 import seedu.address.commons.exceptions.IllegalValueException;
 
 /**
- * Represents a Person's phone number in the address book.
- * Guarantees: immutable; is valid as declared in {@link #isValidPhone(String)}
+ * Represents a Atrraction's postal code in the Tourist-book.
+ * Guarantees: immutable; is valid as declared in {@link #isValidPostalCode(String)}
  */
-public class Phone {
+public class PostalCode {
 
 
-    public static final String MESSAGE_PHONE_CONSTRAINTS =
-            "Phone numbers can only contain numbers, and should be at least 3 digits long";
-    public static final String PHONE_VALIDATION_REGEX = "\\d{3,}";
+    public static final String MESSAGE_POSTAL_CODE_CONSTRAINTS =
+            "Postal Code can only contain numbers, and should be at least 6 digits long";
+    public static final String POSTAL_CODE_VALIDATION_REGEX = "\\d{6,}";
     public final String value;
 
     /**
-     * Validates given phone number.
+     * Validates given postal ccode.
      *
      * @throws IllegalValueException if given phone string is invalid.
      */
-    public Phone(String phone) throws IllegalValueException {
-        requireNonNull(phone);
-        String trimmedPhone = phone.trim();
-        if (!isValidPhone(trimmedPhone)) {
-            throw new IllegalValueException(MESSAGE_PHONE_CONSTRAINTS);
+    public PostalCode(String postalCode) throws IllegalValueException {
+        requireNonNull(postalCode);
+        String trimmedPostalCode = postalCode.trim();
+        if (!isValidPostalCode(trimmedPostalCode)) {
+            throw new IllegalValueException(MESSAGE_POSTAL_CODE_CONSTRAINTS);
         }
-        this.value = trimmedPhone;
+        this.value = trimmedPostalCode;
     }
 
     /**
-     * Returns true if a given string is a valid person phone number.
+     * Returns true if a given string is a valid attraction postal code.
      */
-    public static boolean isValidPhone(String test) {
-        return test.matches(PHONE_VALIDATION_REGEX);
+    public static boolean isValidPostalCode(String test) {
+        return test.matches(POSTAL_CODE_VALIDATION_REGEX);
     }
 
     @Override
@@ -45,8 +45,8 @@ public class Phone {
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
-                || (other instanceof Phone // instanceof handles nulls
-                && this.value.equals(((Phone) other).value)); // state check
+                || (other instanceof PostalCode // instanceof handles nulls
+                && this.value.equals(((PostalCode) other).value)); // state check
     }
 
     @Override
