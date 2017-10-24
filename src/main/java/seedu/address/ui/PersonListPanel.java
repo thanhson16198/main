@@ -82,7 +82,6 @@ public class PersonListPanel extends UiPart<Region> {
         logger.info(LogsCenter.getEventHandlingLogMessage(event));
         goTo(event.targetIndex);
     }
-    
     /**
      * Custom {@code ListCell} that displays the graphics of a {@code PersonCard}.
      */
