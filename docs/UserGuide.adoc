@@ -306,7 +306,7 @@ Format: `emergency` or `sos`
 *Display Weather of Singapore by typing in Command Line `weather`
 
 == Changes in v1.3
-=== Display the location of the place 
+=== Display the location of the place
 
 *Display the location of the place in Google Map by typing in Command 'goto' followed by the INDEX of the place
 
