@@ -502,6 +502,19 @@ The code above shows the setting up of `MrtWindow.java` for MrtWindow Browser.
 **Pros:** Load faster in accessing the map +
 **Cons:** Complexity in implementing the ImageView functionality.
 
+=== Location on Google Map
+
+The command `goto` followed by an INDEX (must be positive) shows the location of the place on Google Map in the `BrowserPanel`.
+
+The command takes the INDEX from the argument and get the name of the `person` in the list, in link:{repoURL}/src/main/java/seedu/address/logic/commands/BrowserPanel.java[`GotoCommand.java`], and pass it to the method `loadUrl` in `browserPanel' in link:{repoURL}/src/main/java/seedu/address/ui/MainWindow.java[`MainWindow`].
+
+The method `loadUrl` will pass the Google Map url to link:{repoURL}/src/main/java/seedu/address/ui/BrowserPanel.java[`BrowserPanel`] to display the location in `BrowserPanel`.
+
+----
+MainWindow.loadUrl("https://www.google.com.sg/maps/place/"
+                + locationToGo.getName().fullName.replaceAll(" ", "+"));
+----
+
 ---
 
 == Documentation

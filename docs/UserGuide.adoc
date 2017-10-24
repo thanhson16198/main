@@ -267,6 +267,13 @@ Format: `exit` or `ex`
 View the MRT map. +
 Format: `mrt`
 
+=== Show the location: `goto` + INDEX
+
+Show the location on Google Map. +
+Format: `goto` + INDEX (must be positive)
+Examples:
+* `goto 1`
+
 === Saving the data
 
 Tourist Book data are saved in the hard disk automatically after any command that changes the data. +
@@ -292,6 +299,16 @@ Format: `emergency` or `sos`
 
 *Display MRT map of Singapore by clicking on `MRT Map` -> `MRT Map` +
 *Display MRT map of Singapore by typing in Command Line `mrt`
+
+=== Displaying Weather of Singapore
+
+*Display Weather of Singapore by clicking on `Help` -> `Weather` +
+*Display Weather of Singapore by typing in Command Line `weather`
+
+== Changes in v1.3
+=== Display the location of the place 
+
+*Display the location of the place in Google Map by typing in Command 'goto' followed by the INDEX of the place
 
 == Coming in v2.0
 === Changing the display color of a tag
@@ -374,6 +391,7 @@ e.g. `find Bay Park`
 * *Weather* : 'weather'
 * *Select* : `select INDEX`  or `s` +
 e.g.`select 2`
+* *Goto* : `goto` or `Goto`
 * *History* : `history` or `hy`
 * *Undo* : `undo` or `un`
 * *Redo* : `redo` or `re`
