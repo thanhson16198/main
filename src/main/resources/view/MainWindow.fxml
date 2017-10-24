@@ -27,6 +27,7 @@
     <Menu mnemonicParsing="false" text="Help">
       <MenuItem fx:id="helpMenuItem" mnemonicParsing="false" onAction="#handleHelp" text="Help" />
       <MenuItem fx:id="contactsMenuItem" mnemonicParsing="false" onAction="#showNumbers" text="Useful Numbers" />
+	  <MenuItem fx:id="weatherItem" mnemonicParsing="false" onAction="#handleWeather" text="Weather" />
     </Menu>
   </MenuBar>
 

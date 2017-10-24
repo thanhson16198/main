@@ -22,6 +22,9 @@
     <Menu mnemonicParsing="false" text="Help">
       <MenuItem fx:id="helpMenuItem" mnemonicParsing="false" onAction="#handleHelp" text="Help" />
     </Menu>
+	<Menu mnemonicParsing="false" text="Services">
+      <MenuItem fx:id="weatherItem" mnemonicParsing="false" onAction="#handleWeather" text="Weather" />
+    </Menu>
   </MenuBar>
 
   <StackPane VBox.vgrow="NEVER" fx:id="commandBoxPlaceholder" styleClass="pane-with-border">

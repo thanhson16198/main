@@ -19,8 +19,15 @@
     <Menu mnemonicParsing="false" text="File">
       <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit" />
     </Menu>
+      <Menu mnemonicParsing="false" text="MRT Map">
+        <items>
+          <MenuItem fx:id="mrtmap" mnemonicParsing="false" onAction="#handleMrtMap" text="MRT Map" />
+        </items>
+      </Menu>
     <Menu mnemonicParsing="false" text="Help">
       <MenuItem fx:id="helpMenuItem" mnemonicParsing="false" onAction="#handleHelp" text="Help" />
+      <MenuItem fx:id="contactsMenuItem" mnemonicParsing="false" onAction="#showNumbers" text="Useful Numbers" />
+	  <MenuItem fx:id="weatherItem" mnemonicParsing="false" onAction="#handleWeather" text="Weather" />
     </Menu>
   </MenuBar>
 
