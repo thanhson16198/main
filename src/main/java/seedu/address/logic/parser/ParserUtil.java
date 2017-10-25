@@ -63,7 +63,8 @@ public class ParserUtil {
     }
 
     /**
-     * Parses a {@code Optional<String> postalcode} into an {@code Optional<PostalCode>} if {@code PostalCode} is present.
+     * Parses a {@code Optional<String> postalcode} into an {@code Optional<PostalCode>} if {@code PostalCode}
+     * is present.
      * See header comment of this class regarding the use of {@code Optional} parameters.
      */
     public static Optional<PostalCode> parsePostalCode(Optional<String> postalcode) throws IllegalValueException {
