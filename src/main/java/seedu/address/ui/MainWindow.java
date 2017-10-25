@@ -36,6 +36,7 @@ public class MainWindow extends UiPart<Region> {
 
     private static final String FXML = "MainWindow.fxml";
 
+    private static BrowserPanel browserPanel = new BrowserPanel();
     //Randomize the theme color
     //private static Random random = new Random();
     //private static String[] themeColors = {"MainWindow_Black.fxml", "MainWindow_White.fxml"};
@@ -50,7 +51,6 @@ public class MainWindow extends UiPart<Region> {
     private Logic logic;
 
     // Independent Ui parts residing in this Ui container
-    private BrowserPanel browserPanel = new BrowserPanel();
     private PersonListPanel personListPanel;
     private Config config;
     private UserPrefs prefs;
@@ -197,6 +197,10 @@ public class MainWindow extends UiPart<Region> {
     private void setWindowMinSize() {
         primaryStage.setMinHeight(MIN_HEIGHT);
         primaryStage.setMinWidth(MIN_WIDTH);
+    }
+
+    public static void loadUrl(String url) {
+        browserPanel.loadPage(url);
     }
 
     /**
