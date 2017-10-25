@@ -142,7 +142,7 @@ Deletes the 1st place in the results of the `find` command.
 
 === Selecting a place : `select` or `se`
 
-Selects the place identified by the index number used in the last person listing. +
+Selects the place identified by the index number used in the last place listing. +
 Format: `select INDEX` or `se INDEX`
 
 ****
