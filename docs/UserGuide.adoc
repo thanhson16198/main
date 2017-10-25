@@ -272,11 +272,6 @@ Format: `mrt`
 Tourist Book data are saved in the hard disk automatically after any command that changes the data. +
 There is no need to save manually.
 
-
-=== MRT map of Singapore: `mrt`
-
-Display the latest MRT map of Singapore by clicking on "MRT map" button or typing command `mrt`
-
 == Changes in v1.1
 === Useful contact numbers in Singapore
 
