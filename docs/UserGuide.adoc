@@ -236,6 +236,7 @@ Tourist Book data are saved in the hard disk automatically after any command tha
 There is no need to save manually.
 
 == Changes from v1.2
+
 === Displaying MRT map of Singapore
 
 *Display MRT map of Singapore by clicking on `MRT Map` -> `MRT Map` +
@@ -281,6 +282,7 @@ Clears all bookmarks from the address book. +
 Format: `clear_bookmark`
 
 == Coming in v2.0
+
 === Changing the display color of a tag
 Changes the color of a selected tag to a colour of choice. +
 Format: `color /t TAG` or `col t/TAG`
@@ -329,7 +331,6 @@ Format: `rate [INDEX] [RATING]`
 === Exchange Rate
 Get the latest exchange rates of currencies in Singaore. +
 Format: `[VALUE] [CURRENCY] to [DESIRED_CURRENCY]`
-
 
 == FAQ
 
