@@ -12,14 +12,14 @@ public class PostalCode {
 
 
     public static final String MESSAGE_POSTAL_CODE_CONSTRAINTS =
-            "Postal Code can only contain numbers, and should be at least 6 digits long";
-    public static final String POSTAL_CODE_VALIDATION_REGEX = "\\d{6,}";
+            "Singapore Postal Code can only contain numbers, and should be just 6 digits long";
+    public static final String POSTAL_CODE_VALIDATION_REGEX = "\\d{6,6}";
     public final String value;
 
     /**
      * Validates given postal ccode.
      *
-     * @throws IllegalValueException if given phone string is invalid.
+     * @throws IllegalValueException if given postal code string is invalid.
      */
     public PostalCode(String postalCode) throws IllegalValueException {
         requireNonNull(postalCode);
