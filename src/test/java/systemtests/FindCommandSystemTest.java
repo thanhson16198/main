@@ -261,7 +261,7 @@ public class FindCommandSystemTest extends AddressBookSystemTest {
         /* Case: find while a person is selected -> selected card deselected */
         showAllPersons();
         selectPerson(Index.fromOneBased(1));
-        assert !getPersonListPanel().getHandleToSelectedCard().getTags().equals(AMY.getTags().toString());
+        assert !getPersonListPanel().getHandleToSelectedCard().getTags().toString().equals(AMY.getTags().toString());
         command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_TAG_PREFIX + "Friend";
         ModelHelper.setFilteredList(expectedModel, AMY, BOB);
         assertCommandSuccess(command, expectedModel);
