@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import seedu.address.logic.commands.FindCommand;
 import seedu.address.model.person.NameContainsKeywordsPredicate;
+import seedu.address.model.person.TagContainsKeywordsPredicate;
 
 public class FindCommandParserTest {
 
@@ -21,7 +22,7 @@ public class FindCommandParserTest {
     }
 
     @Test
-    public void parse_validArgs_returnsFindCommand() {
+    public void parse_validNameArgs_returnsFindCommand() {
         // no leading and trailing whitespaces
         FindCommand expectedFindCommand =
                 new FindCommand(new NameContainsKeywordsPredicate(Arrays.asList("Alice", "Bob")));
@@ -29,6 +30,17 @@ public class FindCommandParserTest {
 
         // multiple whitespaces between keywords
         assertParseSuccess(parser, " \n n/Alice \t Bob  \t", expectedFindCommand);
+    }
+
+    @Test
+    public void parse_validTagArgs_returnsFindCommand() {
+        //no leading and trailing whitespaces
+        FindCommand expectedFindCommand =
+                new FindCommand(new TagContainsKeywordsPredicate(Arrays.asList("friend", "husband")));
+        assertParseSuccess(parser, "t/friend husband", expectedFindCommand);
+
+        // multiple whitespace between keywords
+        assertParseSuccess(parser, " \n t/friend \t husband  \t", expectedFindCommand);
     }
 
 }
