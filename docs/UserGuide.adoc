@@ -346,7 +346,6 @@ Format: `rate [INDEX] [RATING]`
 Get the latest exchange rates of currencies in Singaore. +
 Format: `[VALUE] [CURRENCY] to [DESIRED_CURRENCY]`
 
-
 == FAQ
 
 *Q*: How do I transfer my data to another Computer? +
@@ -357,6 +356,9 @@ Format: `[VALUE] [CURRENCY] to [DESIRED_CURRENCY]`
 * *Add* `add n/NAME a/ADDRESS [t/TAG]...` +
 e.g. `add n/Marina Bay Sands a/10 Bayfront Avenue, Singapore 018956`f
 or `a n/Marina Bay Sands a/10 Bayfront Avenue, Singapore 018956 t/attractions`
+* *Bookmark* : `bookmark INDEX` +
+e.g. `bookmark 2`
+* *Clear Bookmarks*: `clear_bookmark`
 * *Clear* : `clear` or `c`
 * *Delete* : `delete INDEX`  or `del INDEX` +
 e.g. `delete 3`
