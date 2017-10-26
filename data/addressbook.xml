@@ -5,6 +5,7 @@
         <phone>87438807</phone>
         <email>alexyeoh@example.com</email>
         <address>Blk 30 Geylang Street 29, #06-40</address>
+        <postalcode>139349</postalcode>
         <tagged>friends</tagged>
     </persons>
     <persons>
@@ -12,6 +13,7 @@
         <phone>99272758</phone>
         <email>berniceyu@example.com</email>
         <address>Blk 30 Lorong 3 Serangoon Gardens, #07-18</address>
+        <postalcode>609690</postalcode>
         <tagged>colleagues</tagged>
         <tagged>friends</tagged>
     </persons>
@@ -20,6 +22,7 @@
         <phone>93210283</phone>
         <email>charlotte@example.com</email>
         <address>Blk 11 Ang Mo Kio Street 74, #11-04</address>
+        <postalcode>609690</postalcode>
         <tagged>neighbours</tagged>
     </persons>
     <persons>
@@ -27,6 +30,7 @@
         <phone>91031282</phone>
         <email>lidavid@example.com</email>
         <address>Blk 436 Serangoon Gardens Street 26, #16-43</address>
+        <postalcode>119077</postalcode>
         <tagged>family</tagged>
     </persons>
     <persons>
@@ -34,6 +38,7 @@
         <phone>92492021</phone>
         <email>irfan@example.com</email>
         <address>Blk 47 Tampines Street 20, #17-35</address>
+        <postalcode>129588</postalcode>
         <tagged>classmates</tagged>
     </persons>
     <persons>
@@ -41,6 +46,7 @@
         <phone>92624417</phone>
         <email>royb@example.com</email>
         <address>Blk 45 Aljunied Street 85, #11-31</address>
+        <postalcode>119081</postalcode>
         <tagged>colleagues</tagged>
     </persons>
     <persons>
@@ -48,6 +54,7 @@
         <phone>98765432</phone>
         <email>johnd@example.com</email>
         <address>311, Clementi Ave 2, #02-25</address>
+        <postalcode>119078</postalcode>
         <tagged>owesMoney</tagged>
         <tagged>friends</tagged>
     </persons>
@@ -56,6 +63,7 @@
         <phone>98765432</phone>
         <email>johnd@example.com</email>
         <address>311, Clementi Ave 2, #02-25</address>
+        <postalcode>119078</postalcode>
         <tagged>owesMoney</tagged>
         <tagged>friends</tagged>
     </persons>
@@ -64,6 +72,7 @@
         <phone>98765432</phone>
         <email>johnd@example.com</email>
         <address>311, Clementi Ave 2, #02-25</address>
+        <postalcode>119078</postalcode>
         <tagged>owesMoney</tagged>
         <tagged>friends</tagged>
     </persons>
