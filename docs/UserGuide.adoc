@@ -57,19 +57,19 @@ Format: `help` or `h`
 === Adding a place: `add` or `a`
 
 Adds a place to the Tourist Book +
-Format: `add n/NAME a/ADDRESS [t/TAG]...`
+Format: `add n/NAME a/ADDRESS p/POSTALCODE [t/TAG]...`
 
 or
 
-Format: `a n/NAME a/ADDRESS [t/TAG]...`
+Format: `a n/NAME a/ADDRESS p/POSTALCODE [t/TAG]...`
 
 [TIP]
 A place can have any number of tags (including 0)
 
 Examples:
 
-* `add n/Marina Bay Sands a/10 Bayfront Avenue, Singapore 018956`
-* `a n/Marina Bay Sands a/10 Bayfront Avenue, Singapore 018956 t/attractions`
+* `add n/Marina Bay Sands a/10 Bayfront Avenue p/018956`
+* `a n/Marina Bay Sands a/10 Bayfront Avenue p/018956 t/attractions`
 
 === Listing all places : `list` or `l`
 
@@ -79,11 +79,11 @@ Format: `list` or `l`
 === Editing a place : `edit` or `ed`
 
 Edits an existing place in the address book. +
-Format: `edit INDEX [n/NAME] [a/ADDRESS] [t/TAG]...`
+Format: `edit INDEX [n/NAME] [a/ADDRESS] [p/POSTALCODE] [t/TAG]...`
 
 or
 
-Format: `ed INDEX [n/NAME] [a/ADDRESS] [t/TAG]...`
+Format: `ed INDEX [n/NAME] [a/ADDRESS] [p/POSTALCODE] [t/TAG]...`
 
 ****
 * Edits the place at the specified `INDEX`. The index refers to the index number shown in the last place listing. The index *must be a positive integer* 1, 2, 3, ...
@@ -95,7 +95,7 @@ Format: `ed INDEX [n/NAME] [a/ADDRESS] [t/TAG]...`
 
 Examples:
 
-* `edit 1 a/20 Bayfront Avenue, Singapore 000001 t/bookmarks` +
+* `edit 1 a/20 Bayfront Avenue p/000001 t/bookmarks` +
 Edits the address and tag of the 1st place to be `20 Bayfront Avenue` and `bookmarks` respectively.
 * `ed 2 n/Singapore Zoo t/` +
 Edits the name of the 2nd place to be `Singapore Zoo` and clears all existing tags.
@@ -140,36 +140,9 @@ Deletes the 2nd place in the address book.
 `del 1` +
 Deletes the 1st place in the results of the `find` command.
 
-=== Bookmark a place: bookmark
-
-
-Adds a bookmark tag to the specified place from the address book. +
-Format: `bookmark INDEX`
-
-****
-* Bookmarks the place at the specified `INDEX`.
-* The index refers to the index number shown in the most recent listing.
-* The index *must be a positive integer* 1, 2, 3, ...
-****
-
-Examples:
-
-* `list` +
-`bookmark 1` +
-Bookmarks the first place in the address book.
-
-* `find attractions` +
-`bookmark 3` +
-Bookmarks the 3rd place in the results of the `find` command.
-
-=== Clearing all bookmarks: clear_bookmark
-
-Clears all bookmarks from the address book. +
-Format: `clear_bookmark`
-
 === Selecting a place : `select` or `se`
 
-Selects the place identified by the index number used in the last person listing. +
+Selects the place identified by the index number used in the last place listing. +
 Format: `select INDEX` or `se INDEX`
 
 ****
@@ -252,11 +225,6 @@ The `redo` command fails as there are no `undo` commands executed previously.
 Clears all entries from the Tourist Book. +
 Format: `clear` or `c`
 
-=== Display Singapore weather : `weather`
-
-Display Singapore weather of that day on the browser. +
-Format: `weather`
-
 === Exiting the program : `exit` or `ex`
 
 Exits the program. +
@@ -267,12 +235,15 @@ Format: `exit` or `ex`
 Tourist Book data are saved in the hard disk automatically after any command that changes the data. +
 There is no need to save manually.
 
-
-=== MRT map of Singapore: `mrt`
-
-Display the latest MRT map of Singapore by clicking on "MRT map" button or typing command `mrt`
-
 == Changes in v1.1
+
+== Changes from v1.2
+
+=== Displaying MRT map of Singapore
+
+*Display MRT map of Singapore by clicking on `MRT Map` -> `MRT Map` +
+*Display MRT map of Singapore by typing in Command Line `mrt`
+
 === Useful contact numbers in Singapore
 
 Display a list of useful contact numbers by clicking on `Help -> Useful Contacts` +
@@ -282,20 +253,56 @@ or
 Display a list of useful contact numbers by using the CLI. +
 Format: `emergency` or `sos`
 
-== Changes in v1.2
-=== Displaying MRT map of Singapore
+=== Bookmark a place: `bookmark`
 
-*Display MRT map of Singapore by clicking on `MRT Map` -> `MRT Map` +
-*Display MRT map of Singapore by typing in Command Line `mrt`
+Adds a bookmark tag to the specified place from the address book. +
+Format: `bookmark INDEX`
+
+****
+* Bookmarks the place at the specified `INDEX`.
+* The index refers to the index number shown in the most recent listing.
+* The index *must be a positive integer* 1, 2, 3, ...
+****
+
+Examples:
+
+* `list` +
+`bookmark 1` +
+Bookmarks the first place in the address book.
+
+* `find attractions` +
+`bookmark 3` +
+Bookmarks the 3rd place in the results of the `find` command.
+
+=== Display Singapore weather: `weather`
+Displays the current weather of Singapore. +
+Format: `weather`
+
+=== Clearing all bookmarks: `clear_bookmark`
+
+Clears all bookmarks from the address book. +
+Format: `clear_bookmark`
+
+=== Displaying Weather of Singapore
+
+*Display Weather of Singapore by clicking on `Help` -> `Weather` +
+*Display Weather of Singapore by typing in Command Line `weather`
+Format: `weather`
+
+== Changes in v1.3
+
+=== Display the location of the place
+
+*Display the location of the place in Google Map by typing in Command 'goto' followed by the INDEX of the place
+Format: `goto` + INDEX (must be positive)
+Examples:
+* `goto 1`
 
 == Coming in v2.0
+
 === Changing the display color of a tag
 Changes the color of a selected tag to a colour of choice. +
 Format: `color /t TAG` or `col t/TAG`
-
-=== View current weather
-Displays the current weather of Singapore. +
-Format: `weather`
 
 === View current PSI
 Displays the current PSI levels in Singapore. +
@@ -304,10 +311,6 @@ Format: `psi`
 === Get directions to selected destination
 Displays the directions from location A to selected destination. +
 Format: `dir [INDEX_FROM] [INDEX_TO]`
-
-=== Displaying the MRT map
-Displays the Singapore MRT map. +
-Format: `mrt`
 
 ****
 * Displays the location from `INDEX_FROM` to `INDEX_TO`. The index refers to the index number shown in the last place listing.
@@ -353,17 +356,23 @@ Format: `[VALUE] [CURRENCY] to [DESIRED_CURRENCY]`
 
 == Command Summary
 
+<<<<<<< HEAD
 * *Add* `add n/NAME a/ADDRESS [t/TAG]...` +
 e.g. `add n/Marina Bay Sands a/10 Bayfront Avenue, Singapore 018956`f
 or `a n/Marina Bay Sands a/10 Bayfront Avenue, Singapore 018956 t/attractions`
+=======
+* *Add* `add n/NAME a/ADDRESS p/POSTALCODE [t/TAG]...` +
+e.g. `add n/Marina Bay Sands a/10 Bayfront Avenue p/018956`
+or `a n/Marina Bay Sands a/10 Bayfront Avenue p/018956 t/attractions`
+>>>>>>> upstream/master
 * *Bookmark* : `bookmark INDEX` +
 e.g. `bookmark 2`
 * *Clear Bookmarks*: `clear_bookmark`
 * *Clear* : `clear` or `c`
 * *Delete* : `delete INDEX`  or `del INDEX` +
 e.g. `delete 3`
-* *Edit* : `edit INDEX [n/NAME] [p/PHONE_NUMBER] [t/TAG]...` +
-e.g. `edit 2 a/20 Bayfront Avenue, Singapore 000001 t/bookmarks` or ``ed 2 a/20 Bayfront Avenue, Singapore 000001`
+* *Edit* : `edit INDEX [n/NAME] [a/ADDRESS] [p/POSTALCODE] [t/TAG]...` +
+e.g. `edit 2 a/20 Bayfront Avenue t/bookmarks` or ``ed 2 a/20 Bayfront Avenue`
 * *Find* : `find KEYWORD [MORE_KEYWORDS]`  or `fd KEYWORD` +
 e.g. `find Bay Park`
 * *List* : `list` or `l`
@@ -374,4 +383,4 @@ e.g.`select 2`
 * *History* : `history` or `hy`
 * *Undo* : `undo` or `un`
 * *Redo* : `redo` or `re`
-* *Map* : `map`
+* *MRT Map* : `mrt`

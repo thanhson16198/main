@@ -15,7 +15,7 @@ import seedu.address.commons.util.FxViewUtil;
  */
 public class ContactWindow extends UiPart<Region> {
 
-    public static final String USERGUIDE_FILE_PATH = "/images/UsefulContacts.png";
+    public static final String USERGUIDE_FILE_PATH = "/docs/UsefulContacts.html";
 
     private static final Logger logger = LogsCenter.getLogger(ContactWindow.class);
     private static final String ICON = "/images/help_icon.png";

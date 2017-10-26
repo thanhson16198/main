@@ -466,6 +466,85 @@ Where `browserPanel` is the object link:{repoURL}/src/main/java/seedu/address/ui
 
 Certain properties of the application can be controlled (e.g App name, logging level) through the configuration file (default: `config.json`).
 
+=== MRT Map mechanism
+
+MRT Map mechanism displays the latest Singapore MRT map from LTA website using the browser display.
+It can be access by using `Command Line` and `UI`.
+Figure 3.4.1 shows the new structure of the UI component.
+
+image::UiComponentwithMrtClassDiagram.png[width="800"]
+_Figure 3.4.1 : Structure of the UI Component with MRTWindow_
+
+Command `mrt` is used to open mrt map window from Command Line.
+Following Figure 3.4.2 shows the sequence when `mrt` is key in by the user.
+
+image::MRTSequenceDiagrams.jpg[width="600"]
+_Figure 3.4.2 : Structure of the UI Component with MRTWindow_
+
+----
+public static final String MRT_FILE_PATH = "/docs/MrtMap.html";
+
+private static final Logger logger = LogsCenter.getLogger(MrtWindow.class);
+private static final String ICON = "/images/mrt_logo.png";
+private static final String FXML = "MrtMapWindow.fxml";
+private static final String TITLE = "MRT Map";
+----
+
+The code above shows the setting up of `MrtWindow.java` for MrtWindow Browser.
+
+==== Design Considerations
+
+**Aspect:** Different approach on displaying mrt map  +
+**Alternative 1 (current choice):** Access from the internet +
+**Pros:** Can get the latest information and easier to implement as using the web browser+
+**Cons:** Slow in accessing the web page and its depending on the internet speed +
+**Alternative 2:** Include MRT map picture +
+**Pros:** Load faster in accessing the map +
+**Cons:** Complexity in implementing the ImageView functionality.
+
+=== Location on Google Map
+
+The command `goto` followed by an INDEX (must be positive) shows the location of the place on Google Map in the `BrowserPanel`.
+
+The command takes the INDEX from the argument and get the name of the `place` in the list, in link:{repoURL}/src/main/java/seedu/address/logic/commands/BrowserPanel.java[`GotoCommand.java`], and pass it to the method `loadUrl` in `browserPanel' in link:{repoURL}/src/main/java/seedu/address/ui/MainWindow.java[`MainWindow`].
+
+The method `loadUrl` will pass the Google Map url to link:{repoURL}/src/main/java/seedu/address/ui/BrowserPanel.java[`BrowserPanel`] to display the location in `BrowserPanel`.
+
+----
+MainWindow.loadUrl("https://www.google.com.sg/maps/place/"
+                + locationToGo.getName().fullName.replaceAll(" ", "+"));
+----
+
+
+---
+
+=== Editing the Find Command to search by Name and Tag
+
+The Find command is able to search the Tourist Book by Name of the place of by the Tags of the place.
+
+The user is able to invoke the command with `find` or `fd`, followed by a PREFIX.
+
+*Prefixes*
+* `n/` : prefix for searching by Name.
+* `t/` : prefix for searching by Tag.
+
+==== Design Considerations
+
+**Aspect:** Implementation of `find` +
+**Alternative 1 (current choice)** Enhancing the find command to find by name and tags. +
+**Pros:** User does not need to remember many commands. +
+**Cons:** User has to use prefixes to search for name or tags.  +
+**Alternative 2:** Create a new command to search by other details. +
+**Pros:** Relatively easier to implement. +
+**Cons:** Tedious to test, not very intuitive for the user. +
+
+---
+
+**Aspect:** User experience for `find`  +
+**Alternative 1 (current choice)** Have 1 command and 2 dedicated prefixes. +
+**Pros:** Allows user a more flexible choice of find through the contacts list. +
+**Cons:** Can only search for one type of attribute at any time.
+
 == Documentation
 
 We use asciidoc for writing documentation.
