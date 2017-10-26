@@ -63,7 +63,7 @@ public class PersonListPanel extends UiPart<Region> {
     }
 
     /**
-     * Scrolls to the {@code PersonCard} at the {@code index} and display the location on Google Map.
+     * Scrolls to the {@code PlaceCard} at the {@code index} and display the location on Google Map.
      */
     private void goTo(int index) {
         Platform.runLater(() -> {
