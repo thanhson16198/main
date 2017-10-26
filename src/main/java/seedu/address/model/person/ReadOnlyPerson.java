@@ -7,7 +7,7 @@ import seedu.address.model.tag.Tag;
 import seedu.address.model.tag.UniqueTagList;
 
 /**
- * A read-only immutable interface for an Attractions in the Tourist-Book.
+ * A read-only immutable interface for the places in the Tourist-Book.
  * Implementations should guarantee: details are present and not null, field values are validated.
  */
 public interface ReadOnlyPerson {

@@ -5,7 +5,7 @@ import static java.util.Objects.requireNonNull;
 import seedu.address.commons.exceptions.IllegalValueException;
 
 /**
- * Represents a Atrraction's postal code in the Tourist-book.
+ * Represents a place's postal code in the Tourist-book.
  * Guarantees: immutable; is valid as declared in {@link #isValidPostalCode(String)}
  */
 public class PostalCode {
@@ -31,7 +31,7 @@ public class PostalCode {
     }
 
     /**
-     * Returns true if a given string is a valid attraction postal code.
+     * Returns true if a given string is a valid postal code of the place.
      */
     public static boolean isValidPostalCode(String test) {
         return test.matches(POSTAL_CODE_VALIDATION_REGEX);
