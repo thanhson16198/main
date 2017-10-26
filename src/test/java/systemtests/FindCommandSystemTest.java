@@ -68,8 +68,8 @@ public class FindCommandSystemTest extends AddressBookSystemTest {
         /* Case: find multiple persons in address book, 2 matching keywords and 1 non-matching keyword
          * -> 2 persons found
          */
-        command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_NAME_PREFIX +
-                "Daniel Benson NonMatchingKeyWord";
+        command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_NAME_PREFIX
+                + "Daniel Benson NonMatchingKeyWord";
         assertCommandSuccess(command, expectedModel);
         assertSelectedCardUnchanged();
 
