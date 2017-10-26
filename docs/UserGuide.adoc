@@ -57,19 +57,19 @@ Format: `help` or `h`
 === Adding a place: `add` or `a`
 
 Adds a place to the Tourist Book +
-Format: `add n/NAME a/ADDRESS [t/TAG]...`
+Format: `add n/NAME a/ADDRESS p/POSTALCODE [t/TAG]...`
 
 or
 
-Format: `a n/NAME a/ADDRESS [t/TAG]...`
+Format: `a n/NAME a/ADDRESS p/POSTALCODE [t/TAG]...`
 
 [TIP]
 A place can have any number of tags (including 0)
 
 Examples:
 
-* `add n/Marina Bay Sands a/10 Bayfront Avenue, Singapore 018956`
-* `a n/Marina Bay Sands a/10 Bayfront Avenue, Singapore 018956 t/attractions`
+* `add n/Marina Bay Sands a/10 Bayfront Avenue p/018956`
+* `a n/Marina Bay Sands a/10 Bayfront Avenue p/018956 t/attractions`
 
 === Listing all places : `list` or `l`
 
@@ -79,11 +79,11 @@ Format: `list` or `l`
 === Editing a place : `edit` or `ed`
 
 Edits an existing place in the address book. +
-Format: `edit INDEX [n/NAME] [a/ADDRESS] [t/TAG]...`
+Format: `edit INDEX [n/NAME] [a/ADDRESS] [p/POSTALCODE] [t/TAG]...`
 
 or
 
-Format: `ed INDEX [n/NAME] [a/ADDRESS] [t/TAG]...`
+Format: `ed INDEX [n/NAME] [a/ADDRESS] [p/POSTALCODE] [t/TAG]...`
 
 ****
 * Edits the place at the specified `INDEX`. The index refers to the index number shown in the last place listing. The index *must be a positive integer* 1, 2, 3, ...
@@ -95,7 +95,7 @@ Format: `ed INDEX [n/NAME] [a/ADDRESS] [t/TAG]...`
 
 Examples:
 
-* `edit 1 a/20 Bayfront Avenue, Singapore 000001 t/bookmarks` +
+* `edit 1 a/20 Bayfront Avenue p/000001 t/bookmarks` +
 Edits the address and tag of the 1st place to be `20 Bayfront Avenue` and `bookmarks` respectively.
 * `ed 2 n/Singapore Zoo t/` +
 Edits the name of the 2nd place to be `Singapore Zoo` and clears all existing tags.
@@ -235,6 +235,8 @@ Format: `exit` or `ex`
 Tourist Book data are saved in the hard disk automatically after any command that changes the data. +
 There is no need to save manually.
 
+== Changes in v1.1
+
 == Changes from v1.2
 
 === Displaying MRT map of Singapore
@@ -339,17 +341,17 @@ Format: `[VALUE] [CURRENCY] to [DESIRED_CURRENCY]`
 
 == Command Summary
 
-* *Add* `add n/NAME a/ADDRESS [t/TAG]...` +
-e.g. `add n/Marina Bay Sands a/10 Bayfront Avenue, Singapore 018956`f
-or `a n/Marina Bay Sands a/10 Bayfront Avenue, Singapore 018956 t/attractions`
+* *Add* `add n/NAME a/ADDRESS p/POSTALCODE [t/TAG]...` +
+e.g. `add n/Marina Bay Sands a/10 Bayfront Avenue p/018956`
+or `a n/Marina Bay Sands a/10 Bayfront Avenue p/018956 t/attractions`
 * *Bookmark* : `bookmark INDEX` +
 e.g. `bookmark 2`
 * *Clear Bookmarks*: `clear_bookmark`
 * *Clear* : `clear` or `c`
 * *Delete* : `delete INDEX`  or `del INDEX` +
 e.g. `delete 3`
-* *Edit* : `edit INDEX [n/NAME] [p/PHONE_NUMBER] [t/TAG]...` +
-e.g. `edit 2 a/20 Bayfront Avenue, Singapore 000001 t/bookmarks` or ``ed 2 a/20 Bayfront Avenue, Singapore 000001`
+* *Edit* : `edit INDEX [n/NAME] [a/ADDRESS] [p/POSTALCODE] [t/TAG]...` +
+e.g. `edit 2 a/20 Bayfront Avenue t/bookmarks` or ``ed 2 a/20 Bayfront Avenue`
 * *Find* : `find KEYWORD [MORE_KEYWORDS]`  or `fd KEYWORD` +
 e.g. `find Bay Park`
 * *List* : `list` or `l`
@@ -360,4 +362,4 @@ e.g.`select 2`
 * *History* : `history` or `hy`
 * *Undo* : `undo` or `un`
 * *Redo* : `redo` or `re`
-* *Map* : `map`
+* *MRT Map* : `mrt`
