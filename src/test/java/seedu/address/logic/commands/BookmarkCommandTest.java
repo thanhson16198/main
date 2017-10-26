@@ -4,10 +4,10 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
-import static seedu.address.logic.commands.CommandTestUtil.showFirstPersonOnly;
-import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_PERSON;
-import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_PERSON;
-import static seedu.address.testutil.TypicalPersons.getTypicalAddressBook;
+import static seedu.address.logic.commands.CommandTestUtil.showFirstPlaceOnly;
+import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_PLACE;
+import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_PLACE;
+import static seedu.address.testutil.TypicalPlaces.getTypicalAddressBook;
 
 import org.junit.Test;
 
@@ -19,7 +19,7 @@ import seedu.address.logic.UndoRedoStack;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
-import seedu.address.model.person.ReadOnlyPerson;
+import seedu.address.model.place.ReadOnlyPlace;
 import seedu.address.model.tag.Tag;
 
 public class BookmarkCommandTest {
@@ -46,8 +46,8 @@ public class BookmarkCommandTest {
     @Test
     public void execute_validIndexUnfilteredList_success() throws Exception {
 
-        ReadOnlyPerson placeToBookmark = model.getFilteredPersonList().get(INDEX_FIRST_PERSON.getZeroBased());
-        BookmarkCommand bookmarkCommand = prepareCommand(INDEX_FIRST_PERSON);
+        ReadOnlyPlace placeToBookmark = model.getFilteredPlaceList().get(INDEX_FIRST_PLACE.getZeroBased());
+        BookmarkCommand bookmarkCommand = prepareCommand(INDEX_FIRST_PLACE);
 
         String expectedMessage = String.format(bookmarkCommand.MESSAGE_BOOKMARK_SUCCESS, placeToBookmark);
 
@@ -59,35 +59,35 @@ public class BookmarkCommandTest {
 
     @Test
     public void execute_invalidIndexUnfilteredList_throwsCommandException() throws Exception {
-        Index outOfBoundIndex = Index.fromOneBased(model.getFilteredPersonList().size() + 1);
+        Index outOfBoundIndex = Index.fromOneBased(model.getFilteredPlaceList().size() + 1);
         BookmarkCommand bookmarkCommand = prepareCommand(outOfBoundIndex);
 
-        assertCommandFailure(bookmarkCommand, model, Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
+        assertCommandFailure(bookmarkCommand, model, Messages.MESSAGE_INVALID_PLACE_DISPLAYED_INDEX);
     }
 
     @Test
     public void execute_invalidIndexFilteredList_throwsCommandException() {
-        showFirstPersonOnly(model);
+        showFirstPlaceOnly(model);
 
-        Index outOfBoundIndex = INDEX_SECOND_PERSON;
+        Index outOfBoundIndex = INDEX_SECOND_PLACE;
         // ensures that outOfBoundIndex is still in bounds of address book list
-        assertTrue(outOfBoundIndex.getZeroBased() < model.getAddressBook().getPersonList().size());
+        assertTrue(outOfBoundIndex.getZeroBased() < model.getAddressBook().getPlaceList().size());
 
         BookmarkCommand bookmarkCommand = prepareCommand(outOfBoundIndex);
 
-        assertCommandFailure(bookmarkCommand, model, Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
+        assertCommandFailure(bookmarkCommand, model, Messages.MESSAGE_INVALID_PLACE_DISPLAYED_INDEX);
     }
 
     @Test
     public void equals() {
-        BookmarkCommand bookmarkFirstCommand = new BookmarkCommand(INDEX_FIRST_PERSON);
-        BookmarkCommand bookmarkSecondCommand = new BookmarkCommand(INDEX_SECOND_PERSON);
+        BookmarkCommand bookmarkFirstCommand = new BookmarkCommand(INDEX_FIRST_PLACE);
+        BookmarkCommand bookmarkSecondCommand = new BookmarkCommand(INDEX_SECOND_PLACE);
 
         // same object -> returns true
         assertTrue(bookmarkFirstCommand.equals(bookmarkFirstCommand));
 
         // same values -> returns true
-        BookmarkCommand bookmarkFirstCommandCopy = new BookmarkCommand(INDEX_FIRST_PERSON);
+        BookmarkCommand bookmarkFirstCommandCopy = new BookmarkCommand(INDEX_FIRST_PLACE);
         assertTrue(bookmarkFirstCommand.equals(bookmarkFirstCommandCopy));
 
         // different types -> returns false
@@ -96,7 +96,7 @@ public class BookmarkCommandTest {
         // null -> returns false
         assertFalse(bookmarkFirstCommand.equals(null));
 
-        // different person -> returns false
+        // different place -> returns false
         assertFalse(bookmarkFirstCommand.equals(bookmarkSecondCommand));
     }
 
@@ -106,9 +106,9 @@ public class BookmarkCommandTest {
         return bookmarkCommand;
     }
 
-    private void showNoPerson(Model model) {
-        model.updateFilteredPersonList(p -> false);
+    private void showNoPlace(Model model) {
+        model.updateFilteredPlaceList(p -> false);
 
-        assert model.getFilteredPersonList().isEmpty();
+        assert model.getFilteredPlaceList().isEmpty();
     }
 }

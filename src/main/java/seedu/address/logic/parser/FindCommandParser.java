@@ -10,8 +10,8 @@ import java.util.regex.Pattern;
 
 import seedu.address.logic.commands.FindCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.model.person.NameContainsKeywordsPredicate;
-import seedu.address.model.person.TagContainsKeywordsPredicate;
+import seedu.address.model.place.NameContainsKeywordsPredicate;
+import seedu.address.model.place.TagContainsKeywordsPredicate;
 
 /**
  * Parses input arguments and creates a new FindCommand object

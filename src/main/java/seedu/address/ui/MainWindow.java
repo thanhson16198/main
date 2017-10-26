@@ -51,7 +51,7 @@ public class MainWindow extends UiPart<Region> {
     private Logic logic;
 
     // Independent Ui parts residing in this Ui container
-    private PersonListPanel personListPanel;
+    private PlaceListPanel placeListPanel;
     private Config config;
     private UserPrefs prefs;
 
@@ -74,7 +74,7 @@ public class MainWindow extends UiPart<Region> {
     private MenuItem mrtMapItem;
 
     @FXML
-    private StackPane personListPanelPlaceholder;
+    private StackPane placeListPanelPlaceholder;
 
     @FXML
     private StackPane resultDisplayPlaceholder;
@@ -151,15 +151,15 @@ public class MainWindow extends UiPart<Region> {
 
         //browserPanel.loadPage("http://www.nea.gov.sg/weather-climate/forecasts/24-hour-forecast");
 
-        personListPanel = new PersonListPanel(logic.getFilteredPersonList());
-        personListPanelPlaceholder.getChildren().add(personListPanel.getRoot());
+        placeListPanel = new PlaceListPanel(logic.getFilteredPlaceList());
+        placeListPanelPlaceholder.getChildren().add(placeListPanel.getRoot());
 
         ResultDisplay resultDisplay = new ResultDisplay();
         resultDisplayPlaceholder.getChildren().add(resultDisplay.getRoot());
 
         //StatusBarFooter statusBarFooter = new StatusBarFooter(prefs.getAddressBookFilePath());
         StatusBarFooter statusBarFooter = new StatusBarFooter(prefs.getAddressBookFilePath(),
-            logic.getFilteredPersonList().size());
+            logic.getFilteredPlaceList().size());
         statusbarPlaceholder.getChildren().add(statusBarFooter.getRoot());
 
         CommandBox commandBox = new CommandBox(logic);
@@ -259,8 +259,8 @@ public class MainWindow extends UiPart<Region> {
         raise(new ExitAppRequestEvent());
     }
 
-    public PersonListPanel getPersonListPanel() {
-        return this.personListPanel;
+    public PlaceListPanel getPlaceListPanel() {
+        return this.placeListPanel;
     }
 
     void releaseResources() {
