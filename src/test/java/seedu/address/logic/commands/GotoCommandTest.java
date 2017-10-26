@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import static seedu.address.logic.commands.CommandTestUtil.showFirstPersonOnly;
-import static seedu.address.testutil.TypicalIndexes.INDEX_NINETH_PERSON;
+import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_PERSON;
 import static seedu.address.testutil.TypicalPersons.getTypicalAddressBook;
 
 import org.junit.Before;
@@ -36,7 +36,7 @@ public class GotoCommandTest {
     public void execute_goto_success() throws CommandException {
         showFirstPersonOnly(model);
 
-        assertExecutionFailure(INDEX_NINETH_PERSON, "The person index provided is invalid");
+        assertExecutionFailure(INDEX_SECOND_PERSON, "The person index provided is invalid");
     }
 
     /**
