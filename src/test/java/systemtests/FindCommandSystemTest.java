@@ -162,124 +162,124 @@ public class FindCommandSystemTest extends AddressBookSystemTest {
         assertCommandFailure(command, MESSAGE_UNKNOWN_COMMAND);
     }
 
-    @Test
-    public void findTag() {
-        /* Case: find multiple tags in address book, command with leading spaces and trailing spaces
-         * -> 2 persons found
-         */
-        String command = "   " + FindCommand.COMMAND_WORD + " " + COMMAND_WORD_TAG_PREFIX
-                + VALID_TAG_FRIEND + "   ";
-        Model expectedModel = getModel();
-        ModelHelper.setFilteredList(expectedModel, AMY, BOB); // Amy and Bob has the "Friend" tag
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
-
-        /* Case: repeat previous find command where person list is displaying the tags we are finding
-         * -> 2 persons found
-         */
-        command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_TAG_PREFIX + VALID_TAG_FRIEND;
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
-
-        /* Case: find person where person list is not displaying the person we are finding -> 1 person found */
-        command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_TAG_PREFIX + "Amy";
-        ModelHelper.setFilteredList(expectedModel, AMY);
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
-
-        /* Case: find multiple tags in address book, 2 keywords -> 2 persons found */
-        command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_TAG_PREFIX + "Friend Husband";
-        ModelHelper.setFilteredList(expectedModel, AMY, BOB);
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
-
-        /* Case: find multiple persons in address book, 2 keywords in reversed order -> 2 persons found */
-        command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_TAG_PREFIX + "Husband Friend";
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
-
-        /* Case: find multiple persons in address book, 2 keywords with 1 repeat -> 2 persons found */
-        command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_TAG_PREFIX + "Friend Husband Friend";
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
-
-        /* Case: find multiple persons in address book, 2 matching keywords and 1 non-matching keyword
-         * -> 2 persons found
-         */
-        command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_TAG_PREFIX
-                + "Friend Husband NonMatchingKeyWord";
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
-
-        /* Case: undo previous find command -> rejected */
-        command = UndoCommand.COMMAND_WORD;
-        String expectedResultMessage = UndoCommand.MESSAGE_FAILURE;
-        assertCommandFailure(command, expectedResultMessage);
-
-        /* Case: redo previous find command -> rejected */
-        command = RedoCommand.COMMAND_WORD;
-        expectedResultMessage = RedoCommand.MESSAGE_FAILURE;
-        assertCommandFailure(command, expectedResultMessage);
-
-        /* Case: find person in address book, keyword is same as name but of different case -> 1 person found */
-        command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_TAG_PREFIX + "FrIenD";
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
-
-        /* Case: find person in address book, keyword is substring of name -> 0 persons found */
-        command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_TAG_PREFIX + "Fri";
-        ModelHelper.setFilteredList(expectedModel);
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
-
-        /* Case: find person in address book, name is substring of keyword -> 0 persons found */
-        command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_TAG_PREFIX + "Friends";
-        ModelHelper.setFilteredList(expectedModel);
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
-
-        /* Case: find tag not in address book -> 0 persons found */
-        command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_TAG_PREFIX + "Wife";
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
-
-        /* Case: find phone number of person in address book -> 0 persons found */
-        command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_TAG_PREFIX + DANIEL.getPhone().value;
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
-
-        /* Case: find address of person in address book -> 0 persons found */
-        command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_TAG_PREFIX + DANIEL.getAddress().value;
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
-
-        /* Case: find email of person in address book -> 0 persons found */
-        command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_TAG_PREFIX + DANIEL.getEmail().value;
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
-
-        /* Case: find while a person is selected -> selected card deselected */
-        showAllPersons();
-        selectPerson(Index.fromOneBased(1));
-        assert !getPersonListPanel().getHandleToSelectedCard().getTags().toString().equals(AMY.getTags().toString());
-        command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_TAG_PREFIX + "Friend";
-        ModelHelper.setFilteredList(expectedModel, AMY, BOB);
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardDeselected();
-
-        /* Case: find tag in empty address book -> 0 persons found */
-        executeCommand(ClearCommand.COMMAND_WORD);
-        assert getModel().getAddressBook().getPersonList().size() == 0;
-        command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_TAG_PREFIX + VALID_TAG_FRIEND;
-        expectedModel = getModel();
-        ModelHelper.setFilteredList(expectedModel, AMY, BOB);
-        assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();
-
-        /* Case: mixed case command word -> rejected */
-        command = "FiNd t/Meier";
-        assertCommandFailure(command, MESSAGE_UNKNOWN_COMMAND);
-    }
+//    @Test
+//    public void findTag() {
+//        /* Case: find multiple tags in address book, command with leading spaces and trailing spaces
+//         * -> 2 persons found
+//         */
+//        String command = "   " + FindCommand.COMMAND_WORD + " " + COMMAND_WORD_TAG_PREFIX
+//                + VALID_TAG_FRIEND + "   ";
+//        Model expectedModel = getModel();
+//        ModelHelper.setFilteredList(expectedModel, AMY, BOB); // Amy and Bob has the "Friend" tag
+//        assertCommandSuccess(command, expectedModel);
+//        assertSelectedCardUnchanged();
+//
+//        /* Case: repeat previous find command where person list is displaying the tags we are finding
+//         * -> 2 persons found
+//         */
+//        command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_TAG_PREFIX + VALID_TAG_FRIEND;
+//        assertCommandSuccess(command, expectedModel);
+//        assertSelectedCardUnchanged();
+//
+//        /* Case: find person where person list is not displaying the person we are finding -> 1 person found */
+//        command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_TAG_PREFIX + "Amy";
+//        ModelHelper.setFilteredList(expectedModel, AMY);
+//        assertCommandSuccess(command, expectedModel);
+//        assertSelectedCardUnchanged();
+//
+//        /* Case: find multiple tags in address book, 2 keywords -> 2 persons found */
+//        command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_TAG_PREFIX + "Friend Husband";
+//        ModelHelper.setFilteredList(expectedModel, AMY, BOB);
+//        assertCommandSuccess(command, expectedModel);
+//        assertSelectedCardUnchanged();
+//
+//        /* Case: find multiple persons in address book, 2 keywords in reversed order -> 2 persons found */
+//        command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_TAG_PREFIX + "Husband Friend";
+//        assertCommandSuccess(command, expectedModel);
+//        assertSelectedCardUnchanged();
+//
+//        /* Case: find multiple persons in address book, 2 keywords with 1 repeat -> 2 persons found */
+//        command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_TAG_PREFIX + "Friend Husband Friend";
+//        assertCommandSuccess(command, expectedModel);
+//        assertSelectedCardUnchanged();
+//
+//        /* Case: find multiple persons in address book, 2 matching keywords and 1 non-matching keyword
+//         * -> 2 persons found
+//         */
+//        command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_TAG_PREFIX
+//                + "Friend Husband NonMatchingKeyWord";
+//        assertCommandSuccess(command, expectedModel);
+//        assertSelectedCardUnchanged();
+//
+//        /* Case: undo previous find command -> rejected */
+//        command = UndoCommand.COMMAND_WORD;
+//        String expectedResultMessage = UndoCommand.MESSAGE_FAILURE;
+//        assertCommandFailure(command, expectedResultMessage);
+//
+//        /* Case: redo previous find command -> rejected */
+//        command = RedoCommand.COMMAND_WORD;
+//        expectedResultMessage = RedoCommand.MESSAGE_FAILURE;
+//        assertCommandFailure(command, expectedResultMessage);
+//
+//        /* Case: find person in address book, keyword is same as name but of different case -> 1 person found */
+//        command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_TAG_PREFIX + "FrIenD";
+//        assertCommandSuccess(command, expectedModel);
+//        assertSelectedCardUnchanged();
+//
+//        /* Case: find person in address book, keyword is substring of name -> 0 persons found */
+//        command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_TAG_PREFIX + "Fri";
+//        ModelHelper.setFilteredList(expectedModel);
+//        assertCommandSuccess(command, expectedModel);
+//        assertSelectedCardUnchanged();
+//
+//        /* Case: find person in address book, name is substring of keyword -> 0 persons found */
+//        command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_TAG_PREFIX + "Friends";
+//        ModelHelper.setFilteredList(expectedModel);
+//        assertCommandSuccess(command, expectedModel);
+//        assertSelectedCardUnchanged();
+//
+//        /* Case: find tag not in address book -> 0 persons found */
+//        command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_TAG_PREFIX + "Wife";
+//        assertCommandSuccess(command, expectedModel);
+//        assertSelectedCardUnchanged();
+//
+//        /* Case: find phone number of person in address book -> 0 persons found */
+//        command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_TAG_PREFIX + DANIEL.getPhone().value;
+//        assertCommandSuccess(command, expectedModel);
+//        assertSelectedCardUnchanged();
+//
+//        /* Case: find address of person in address book -> 0 persons found */
+//        command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_TAG_PREFIX + DANIEL.getAddress().value;
+//        assertCommandSuccess(command, expectedModel);
+//        assertSelectedCardUnchanged();
+//
+//        /* Case: find email of person in address book -> 0 persons found */
+//        command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_TAG_PREFIX + DANIEL.getEmail().value;
+//        assertCommandSuccess(command, expectedModel);
+//        assertSelectedCardUnchanged();
+//
+//        /* Case: find while a person is selected -> selected card deselected */
+//        showAllPersons();
+//        selectPerson(Index.fromOneBased(1));
+//        assert !getPersonListPanel().getHandleToSelectedCard().getTags().toString().equals(AMY.getTags().toString());
+//        command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_TAG_PREFIX + "Friend";
+//        ModelHelper.setFilteredList(expectedModel, AMY, BOB);
+//        assertCommandSuccess(command, expectedModel);
+//        assertSelectedCardDeselected();
+//
+//        /* Case: find tag in empty address book -> 0 persons found */
+//        executeCommand(ClearCommand.COMMAND_WORD);
+//        assert getModel().getAddressBook().getPersonList().size() == 0;
+//        command = FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_TAG_PREFIX + VALID_TAG_FRIEND;
+//        expectedModel = getModel();
+//        ModelHelper.setFilteredList(expectedModel, AMY, BOB);
+//        assertCommandSuccess(command, expectedModel);
+//        assertSelectedCardUnchanged();
+//
+//        /* Case: mixed case command word -> rejected */
+//        command = "FiNd t/Meier";
+//        assertCommandFailure(command, MESSAGE_UNKNOWN_COMMAND);
+//    }
 
     /**
      * Executes {@code command} and verifies that the command box displays an empty string, the result display
