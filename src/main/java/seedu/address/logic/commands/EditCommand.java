@@ -5,6 +5,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_POSTAL_CODE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PLACES;
 
@@ -21,6 +22,7 @@ import seedu.address.model.place.Email;
 import seedu.address.model.place.Name;
 import seedu.address.model.place.Phone;
 import seedu.address.model.place.Place;
+import seedu.address.model.place.PostalCode;
 import seedu.address.model.place.ReadOnlyPlace;
 import seedu.address.model.place.exceptions.DuplicatePlaceException;
 import seedu.address.model.place.exceptions.PlaceNotFoundException;
@@ -42,10 +44,12 @@ public class EditCommand extends UndoableCommand {
             + "[" + PREFIX_PHONE + "PHONE] "
             + "[" + PREFIX_EMAIL + "EMAIL] "
             + "[" + PREFIX_ADDRESS + "ADDRESS] "
+            + "[" + PREFIX_POSTAL_CODE + "POSTAL CODE] "
             + "[" + PREFIX_TAG + "TAG]...\n"
             + "Example: " + COMMAND_WORD + " 1 "
             + PREFIX_PHONE + "91234567 "
-            + PREFIX_EMAIL + "johndoe@example.com";
+            + PREFIX_EMAIL + "johndoe@example.com"
+            + PREFIX_POSTAL_CODE + "639304";
 
     public static final String MESSAGE_EDIT_PLACE_SUCCESS = "Edited Place: %1$s";
     public static final String MESSAGE_NOT_EDITED = "At least one field to edit must be provided.";
@@ -100,9 +104,10 @@ public class EditCommand extends UndoableCommand {
         Phone updatedPhone = editPlaceDescriptor.getPhone().orElse(placeToEdit.getPhone());
         Email updatedEmail = editPlaceDescriptor.getEmail().orElse(placeToEdit.getEmail());
         Address updatedAddress = editPlaceDescriptor.getAddress().orElse(placeToEdit.getAddress());
+        PostalCode updatedPostalCode = editPlaceDescriptor.getPostalCode().orElse(placeToEdit.getPostalCode());
         Set<Tag> updatedTags = editPlaceDescriptor.getTags().orElse(placeToEdit.getTags());
 
-        return new Place(updatedName, updatedPhone, updatedEmail, updatedAddress, updatedTags);
+        return new Place(updatedName, updatedPhone, updatedEmail, updatedAddress, updatedPostalCode, updatedTags);
     }
 
     @Override
@@ -132,6 +137,7 @@ public class EditCommand extends UndoableCommand {
         private Phone phone;
         private Email email;
         private Address address;
+        private PostalCode postalCode;
         private Set<Tag> tags;
 
         public EditPlaceDescriptor() {}
@@ -141,6 +147,7 @@ public class EditCommand extends UndoableCommand {
             this.phone = toCopy.phone;
             this.email = toCopy.email;
             this.address = toCopy.address;
+            this.postalCode = toCopy.postalCode;
             this.tags = toCopy.tags;
         }
 
@@ -148,7 +155,13 @@ public class EditCommand extends UndoableCommand {
          * Returns true if at least one field is edited.
          */
         public boolean isAnyFieldEdited() {
-            return CollectionUtil.isAnyNonNull(this.name, this.phone, this.email, this.address, this.tags);
+            return CollectionUtil.isAnyNonNull(
+                    this.name,
+                    this.phone,
+                    this.email,
+                    this.address,
+                    this.postalCode,
+                    this.tags);
         }
 
         public void setName(Name name) {
@@ -183,6 +196,14 @@ public class EditCommand extends UndoableCommand {
             return Optional.ofNullable(address);
         }
 
+        public void setPostalCode(PostalCode postalCode) {
+            this.postalCode = postalCode;
+        }
+
+        public Optional<PostalCode> getPostalCode() {
+            return Optional.ofNullable(postalCode);
+        }
+
         public void setTags(Set<Tag> tags) {
             this.tags = tags;
         }
@@ -210,6 +231,7 @@ public class EditCommand extends UndoableCommand {
                     && getPhone().equals(e.getPhone())
                     && getEmail().equals(e.getEmail())
                     && getAddress().equals(e.getAddress())
+                    && getPostalCode().equals(e.getPostalCode())
                     && getTags().equals(e.getTags());
         }
     }

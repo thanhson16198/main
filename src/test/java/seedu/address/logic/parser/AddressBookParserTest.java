@@ -30,6 +30,7 @@ import seedu.address.logic.commands.UndoCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.place.NameContainsKeywordsPredicate;
 import seedu.address.model.place.Place;
+import seedu.address.model.place.TagContainsKeywordsPredicate;
 import seedu.address.testutil.EditPlaceDescriptorBuilder;
 import seedu.address.testutil.PlaceBuilder;
 import seedu.address.testutil.PlaceUtil;
@@ -76,11 +77,21 @@ public class AddressBookParserTest {
     }
 
     @Test
-    public void parseCommand_find() throws Exception {
+    public void parseCommand_findName() throws Exception {
         List<String> keywords = Arrays.asList("foo", "bar", "baz");
         FindCommand command = (FindCommand) parser.parseCommand(
-                FindCommand.COMMAND_WORD + " " + keywords.stream().collect(Collectors.joining(" ")));
+                FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_NAME_PREFIX
+                        + keywords.stream().collect(Collectors.joining(" ")));
         assertEquals(new FindCommand(new NameContainsKeywordsPredicate(keywords)), command);
+    }
+
+    @Test
+    public void parseCommand_findTag() throws Exception {
+        List<String> keywords = Arrays.asList("foo", "bar", "baz");
+        FindCommand command = (FindCommand) parser.parseCommand(
+                FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_TAG_PREFIX
+                        + keywords.stream().collect(Collectors.joining(" ")));
+        assertEquals(new FindCommand(new TagContainsKeywordsPredicate(keywords)), command);
     }
 
     @Test

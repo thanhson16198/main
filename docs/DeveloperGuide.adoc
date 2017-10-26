@@ -502,7 +502,48 @@ The code above shows the setting up of `MrtWindow.java` for MrtWindow Browser.
 **Pros:** Load faster in accessing the map +
 **Cons:** Complexity in implementing the ImageView functionality.
 
+=== Location on Google Map
+
+The command `goto` followed by an INDEX (must be positive) shows the location of the place on Google Map in the `BrowserPanel`.
+
+The command takes the INDEX from the argument and get the name of the `place` in the list, in link:{repoURL}/src/main/java/seedu/address/logic/commands/BrowserPanel.java[`GotoCommand.java`], and pass it to the method `loadUrl` in `browserPanel' in link:{repoURL}/src/main/java/seedu/address/ui/MainWindow.java[`MainWindow`].
+
+The method `loadUrl` will pass the Google Map url to link:{repoURL}/src/main/java/seedu/address/ui/BrowserPanel.java[`BrowserPanel`] to display the location in `BrowserPanel`.
+
+----
+MainWindow.loadUrl("https://www.google.com.sg/maps/place/"
+                + locationToGo.getName().fullName.replaceAll(" ", "+"));
+----
+
+
 ---
+
+=== Editing the Find Command to search by Name and Tag
+
+The Find command is able to search the Tourist Book by Name of the place of by the Tags of the place.
+
+The user is able to invoke the command with `find` or `fd`, followed by a PREFIX.
+
+*Prefixes*
+* `n/` : prefix for searching by Name.
+* `t/` : prefix for searching by Tag.
+
+==== Design Considerations
+
+**Aspect:** Implementation of `find` +
+**Alternative 1 (current choice)** Enhancing the find command to find by name and tags. +
+**Pros:** User does not need to remember many commands. +
+**Cons:** User has to use prefixes to search for name or tags.  +
+**Alternative 2:** Create a new command to search by other details. +
+**Pros:** Relatively easier to implement. +
+**Cons:** Tedious to test, not very intuitive for the user. +
+
+---
+
+**Aspect:** User experience for `find`  +
+**Alternative 1 (current choice)** Have 1 command and 2 dedicated prefixes. +
+**Pros:** Allows user a more flexible choice of find through the contacts list. +
+**Cons:** Can only search for one type of attribute at any time.
 
 == Documentation
 

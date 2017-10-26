@@ -33,6 +33,7 @@ public class EditPlaceDescriptorBuilder {
         descriptor.setPhone(place.getPhone());
         descriptor.setEmail(place.getEmail());
         descriptor.setAddress(place.getAddress());
+        descriptor.setPostalCode(place.getPostalCode());
         descriptor.setTags(place.getTags());
     }
 
@@ -80,6 +81,18 @@ public class EditPlaceDescriptorBuilder {
             ParserUtil.parseAddress(Optional.of(address)).ifPresent(descriptor::setAddress);
         } catch (IllegalValueException ive) {
             throw new IllegalArgumentException("address is expected to be unique.");
+        }
+        return this;
+    }
+
+    /**
+     * Sets the {@code Phone} of the {@code EditPlaceDescriptor} that we are building.
+     */
+    public EditPlaceDescriptorBuilder withPostalCode(String postalcode) {
+        try {
+            ParserUtil.parsePostalCode(Optional.of(postalcode)).ifPresent(descriptor::setPostalCode);
+        } catch (IllegalValueException ive) {
+            throw new IllegalArgumentException("phone is expected to be unique.");
         }
         return this;
     }

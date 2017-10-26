@@ -127,7 +127,7 @@ public abstract class AddressBookSystemTest {
      * Displays all places with any parts of their names matching {@code keyword} (case-insensitive).
      */
     protected void showPlacesWithName(String keyword) {
-        executeCommand(FindCommand.COMMAND_WORD + " " + keyword);
+        executeCommand(FindCommand.COMMAND_WORD + " " + FindCommand.COMMAND_WORD_NAME_PREFIX + keyword);
         assert getModel().getFilteredPlaceList().size() < getModel().getAddressBook().getPlaceList().size();
     }
 

@@ -11,6 +11,7 @@ import seedu.address.model.place.Email;
 import seedu.address.model.place.Name;
 import seedu.address.model.place.Phone;
 import seedu.address.model.place.Place;
+import seedu.address.model.place.PostalCode;
 import seedu.address.model.place.exceptions.DuplicatePlaceException;
 import seedu.address.model.tag.Tag;
 
@@ -22,22 +23,22 @@ public class SampleDataUtil {
         try {
             return new Place[] {
                 new Place(new Name("Alex Yeoh"), new Phone("87438807"), new Email("alexyeoh@example.com"),
-                    new Address("Blk 30 Geylang Street 29, #06-40"),
+                    new Address("Blk 30 Geylang Street 29, #06-40"), new PostalCode("600123"),
                     getTagSet("friends")),
                 new Place(new Name("Bernice Yu"), new Phone("99272758"), new Email("berniceyu@example.com"),
-                    new Address("Blk 30 Lorong 3 Serangoon Gardens, #07-18"),
+                    new Address("Blk 30 Lorong 3 Serangoon Gardens, #07-18"), new PostalCode("532494"),
                     getTagSet("colleagues", "friends")),
                 new Place(new Name("Charlotte Oliveiro"), new Phone("93210283"), new Email("charlotte@example.com"),
-                    new Address("Blk 11 Ang Mo Kio Street 74, #11-04"),
+                    new Address("Blk 11 Ang Mo Kio Street 74, #11-04"), new PostalCode("532494"),
                     getTagSet("neighbours")),
                 new Place(new Name("David Li"), new Phone("91031282"), new Email("lidavid@example.com"),
-                    new Address("Blk 436 Serangoon Gardens Street 26, #16-43"),
+                    new Address("Blk 436 Serangoon Gardens Street 26, #16-43"), new PostalCode("532494"),
                     getTagSet("family")),
                 new Place(new Name("Irfan Ibrahim"), new Phone("92492021"), new Email("irfan@example.com"),
-                    new Address("Blk 47 Tampines Street 20, #17-35"),
+                    new Address("Blk 47 Tampines Street 20, #17-35"), new PostalCode("532494"),
                     getTagSet("classmates")),
                 new Place(new Name("Roy Balakrishnan"), new Phone("92624417"), new Email("royb@example.com"),
-                    new Address("Blk 45 Aljunied Street 85, #11-31"),
+                    new Address("Blk 45 Aljunied Street 85, #11-31"), new PostalCode("532494"),
                     getTagSet("colleagues"))
             };
         } catch (IllegalValueException e) {
