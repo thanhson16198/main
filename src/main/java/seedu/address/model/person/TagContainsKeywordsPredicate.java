@@ -22,7 +22,8 @@ public class TagContainsKeywordsPredicate implements Predicate<ReadOnlyPerson> {
         Set<Tag> tags = person.getTags();
         List<Tag> tagsList = tags.stream().collect(Collectors.toList());
         return keywords.stream()
-                .anyMatch(keyword -> tagsList.stream().anyMatch(tag -> keyword.contains(tag.tagName.toString())) & true);
+                .anyMatch(keyword -> tagsList.stream().anyMatch(tag ->
+                        keyword.contains(tag.tagName.toString())) & true);
     }
 
     @Override
