@@ -4,7 +4,7 @@ import seedu.address.commons.core.index.Index;
 import seedu.address.commons.events.BaseEvent;
 
 /**
- * Indicates a request to go to the list of persons
+ * Indicates a request to go to the list of places
  */
 public class GotoRequestEvent extends BaseEvent {
 

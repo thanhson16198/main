@@ -19,7 +19,7 @@ public class GotoCommand extends Command {
     public static final String COMMAND_WORD_ALIAS = "Goto";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
-            + ": Display the place on Google Map identified by the index number used in the last person listing.\n"
+            + ": Display the place on Google Map identified by the index number used in the last place listing.\n"
             + "Parameters: INDEX (must be a positive integer)\n"
             + "Example: " + COMMAND_WORD + " 1";
 
