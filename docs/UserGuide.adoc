@@ -356,15 +356,9 @@ Format: `[VALUE] [CURRENCY] to [DESIRED_CURRENCY]`
 
 == Command Summary
 
-<<<<<<< HEAD
-* *Add* `add n/NAME a/ADDRESS [t/TAG]...` +
-e.g. `add n/Marina Bay Sands a/10 Bayfront Avenue, Singapore 018956`f
-or `a n/Marina Bay Sands a/10 Bayfront Avenue, Singapore 018956 t/attractions`
-=======
 * *Add* `add n/NAME a/ADDRESS p/POSTALCODE [t/TAG]...` +
 e.g. `add n/Marina Bay Sands a/10 Bayfront Avenue p/018956`
 or `a n/Marina Bay Sands a/10 Bayfront Avenue p/018956 t/attractions`
->>>>>>> upstream/master
 * *Bookmark* : `bookmark INDEX` +
 e.g. `bookmark 2`
 * *Clear Bookmarks*: `clear_bookmark`
