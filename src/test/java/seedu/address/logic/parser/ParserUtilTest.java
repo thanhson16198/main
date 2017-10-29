@@ -151,11 +151,6 @@ public class ParserUtilTest {
     }
 
     @Test
-    public void parseEmail_optionalEmpty_returnsOptionalEmpty() throws Exception {
-        assertFalse(ParserUtil.parseEmail(Optional.empty()).isPresent());
-    }
-
-    @Test
     public void parseEmail_validValue_returnsEmail() throws Exception {
         Email expectedEmail = new Email(VALID_EMAIL);
         Optional<Email> actualEmail = ParserUtil.parseEmail(Optional.of(VALID_EMAIL));
