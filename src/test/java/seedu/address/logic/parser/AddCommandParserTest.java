@@ -102,14 +102,9 @@ public class AddCommandParserTest {
         // missing name prefix
         assertParseFailure(parser, AddCommand.COMMAND_WORD + VALID_NAME_BOB + PHONE_DESC_BOB
                 + EMAIL_DESC_BOB + ADDRESS_DESC_BOB + POSTAL_CODE_DESC_AMY, expectedMessage);
-
-        // missing phone prefix
-        assertParseFailure(parser, AddCommand.COMMAND_WORD + NAME_DESC_BOB + VALID_PHONE_BOB
-                + EMAIL_DESC_BOB + ADDRESS_DESC_BOB + POSTAL_CODE_DESC_AMY, expectedMessage);
-
-        // missing address prefix
+        // missing postalcode prefix
         assertParseFailure(parser, AddCommand.COMMAND_WORD + NAME_DESC_BOB + PHONE_DESC_BOB
-                + EMAIL_DESC_BOB + VALID_ADDRESS_BOB + POSTAL_CODE_DESC_AMY, expectedMessage);
+                + EMAIL_DESC_BOB + ADDRESS_DESC_BOB + VALID_POSTAL_CODE_BOB, expectedMessage);
 
         // all prefixes missing
         assertParseFailure(parser, AddCommand.COMMAND_WORD + VALID_NAME_BOB + VALID_PHONE_BOB

@@ -101,11 +101,6 @@ public class ParserUtilTest {
     }
 
     @Test
-    public void parsePhone_optionalEmpty_returnsOptionalEmpty() throws Exception {
-        assertFalse(ParserUtil.parsePhone(Optional.empty()).isPresent());
-    }
-
-    @Test
     public void parsePhone_validValue_returnsPhone() throws Exception {
         Phone expectedPhone = new Phone(VALID_PHONE);
         Optional<Phone> actualPhone = ParserUtil.parsePhone(Optional.of(VALID_PHONE));
@@ -123,11 +118,6 @@ public class ParserUtilTest {
     public void parseAddress_invalidValue_throwsIllegalValueException() throws Exception {
         thrown.expect(IllegalValueException.class);
         ParserUtil.parseAddress(Optional.of(INVALID_ADDRESS));
-    }
-
-    @Test
-    public void parseAddress_optionalEmpty_returnsOptionalEmpty() throws Exception {
-        assertFalse(ParserUtil.parseAddress(Optional.empty()).isPresent());
     }
 
     @Test
