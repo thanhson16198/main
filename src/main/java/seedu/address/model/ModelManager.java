@@ -15,10 +15,10 @@ import javafx.collections.transformation.FilteredList;
 import seedu.address.commons.core.ComponentManager;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.events.model.AddressBookChangedEvent;
-import seedu.address.model.person.Person;
-import seedu.address.model.person.ReadOnlyPerson;
-import seedu.address.model.person.exceptions.DuplicatePersonException;
-import seedu.address.model.person.exceptions.PersonNotFoundException;
+import seedu.address.model.place.Place;
+import seedu.address.model.place.ReadOnlyPlace;
+import seedu.address.model.place.exceptions.DuplicatePlaceException;
+import seedu.address.model.place.exceptions.PlaceNotFoundException;
 import seedu.address.model.tag.Tag;
 import seedu.address.model.tag.UniqueTagList;
 
@@ -30,7 +30,7 @@ public class ModelManager extends ComponentManager implements Model {
     private static final Logger logger = LogsCenter.getLogger(ModelManager.class);
 
     private final AddressBook addressBook;
-    private final FilteredList<ReadOnlyPerson> filteredPersons;
+    private final FilteredList<ReadOnlyPlace> filteredPlaces;
 
     /**
      * Initializes a ModelManager with the given addressBook and userPrefs.
@@ -42,7 +42,7 @@ public class ModelManager extends ComponentManager implements Model {
         logger.fine("Initializing with address book: " + addressBook + " and user prefs " + userPrefs);
 
         this.addressBook = new AddressBook(addressBook);
-        filteredPersons = new FilteredList<>(this.addressBook.getPersonList());
+        filteredPlaces = new FilteredList<>(this.addressBook.getPlaceList());
     }
 
     public ModelManager() {
@@ -66,43 +66,43 @@ public class ModelManager extends ComponentManager implements Model {
     }
 
     @Override
-    public synchronized void deletePerson(ReadOnlyPerson target) throws PersonNotFoundException {
-        addressBook.removePerson(target);
+    public synchronized void deletePlace(ReadOnlyPlace target) throws PlaceNotFoundException {
+        addressBook.removePlace(target);
         indicateAddressBookChanged();
     }
 
     @Override
-    public synchronized void addPerson(ReadOnlyPerson person) throws DuplicatePersonException {
-        addressBook.addPerson(person);
-        updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
+    public synchronized void addPlace(ReadOnlyPlace place) throws DuplicatePlaceException {
+        addressBook.addPlace(place);
+        updateFilteredPlaceList(PREDICATE_SHOW_ALL_PLACES);
         indicateAddressBookChanged();
     }
 
     @Override
-    public void updatePerson(ReadOnlyPerson target, ReadOnlyPerson editedPerson)
-            throws DuplicatePersonException, PersonNotFoundException {
-        requireAllNonNull(target, editedPerson);
+    public void updatePlace(ReadOnlyPlace target, ReadOnlyPlace editedPlace)
+            throws DuplicatePlaceException, PlaceNotFoundException {
+        requireAllNonNull(target, editedPlace);
 
-        addressBook.updatePerson(target, editedPerson);
+        addressBook.updatePlace(target, editedPlace);
         indicateAddressBookChanged();
     }
 
     /**
-     * Adds given tag to target person
-     * @param target
+     * Adds given tag to target place
+     * @param place
      * @param newTag
-     * @throws DuplicatePersonException
-     * @throws PersonNotFoundException
+     * @throws DuplicatePlaceException
+     * @throws PlaceNotFoundException
      * @throws UniqueTagList.DuplicateTagException
      */
-    public void addTag(ReadOnlyPerson target, Tag newTag) throws DuplicatePersonException, PersonNotFoundException,
+    public void addTag(ReadOnlyPlace place, Tag newTag) throws DuplicatePlaceException, PlaceNotFoundException,
                                                                     UniqueTagList.DuplicateTagException {
-        Predicate oldPredicate = filteredPersons.getPredicate();
-        filteredPersons.setPredicate(PREDICATE_SHOW_ALL_PERSONS);
+        Predicate oldPredicate = filteredPlaces.getPredicate();
+        filteredPlaces.setPredicate(PREDICATE_SHOW_ALL_PLACES);
 
-        Person updatedPerson = new Person(target);
+        Place updatedPlace = new Place(place);
 
-        Set<Tag> currentTags = updatedPerson.getTags();
+        Set<Tag> currentTags = updatedPlace.getTags();
         Set<Tag> updatedTags = new HashSet<Tag>();
 
         updatedTags.addAll(currentTags);
@@ -111,30 +111,30 @@ public class ModelManager extends ComponentManager implements Model {
             throw new UniqueTagList.DuplicateTagException();
         } else {
             updatedTags.add(newTag);
-            updatedPerson.setTags(updatedTags);
-            addressBook.updatePerson(target, updatedPerson);
+            updatedPlace.setTags(updatedTags);
+            addressBook.updatePlace(place, updatedPlace);
             indicateAddressBookChanged();
         }
 
-        filteredPersons.setPredicate(oldPredicate);
+        filteredPlaces.setPredicate(oldPredicate);
     }
 
     /**
-     * Removes given Tag from all persons in address book
+     * Removes given Tag from all places in address book
      * @param tag
-     * @throws PersonNotFoundException
-     * @throws DuplicatePersonException
+     * @throws PlaceNotFoundException
+     * @throws DuplicatePlaceException
      */
 
-    public void removeAllTags(Tag tag) throws PersonNotFoundException, DuplicatePersonException {
-        Predicate oldPredicate = filteredPersons.getPredicate();
-        filteredPersons.setPredicate(PREDICATE_SHOW_ALL_PERSONS);
+    public void removeAllTags(Tag tag) throws PlaceNotFoundException, DuplicatePlaceException {
+        Predicate oldPredicate = filteredPlaces.getPredicate();
+        filteredPlaces.setPredicate(PREDICATE_SHOW_ALL_PLACES);
 
-        for (int i = 0; i < addressBook.getPersonList().size(); i++) {
-            ReadOnlyPerson currentPerson = addressBook.getPersonList().get(i);
-            Person updatedPerson = new Person(currentPerson);
+        for (int i = 0; i < addressBook.getPlaceList().size(); i++) {
+            ReadOnlyPlace currentPlace = addressBook.getPlaceList().get(i);
+            Place updatedPlace = new Place(currentPlace);
 
-            Set<Tag> currentTags = updatedPerson.getTags();
+            Set<Tag> currentTags = updatedPlace.getTags();
             Set<Tag> updatedTags = new HashSet<Tag>();
 
             Iterator<Tag> iter = currentTags.iterator();
@@ -146,30 +146,30 @@ public class ModelManager extends ComponentManager implements Model {
                 }
             }
 
-            updatedPerson.setTags(updatedTags);
+            updatedPlace.setTags(updatedTags);
             indicateAddressBookChanged();
 
-            addressBook.updatePerson(currentPerson, updatedPerson);
+            addressBook.updatePlace(currentPlace, updatedPlace);
         }
 
-        filteredPersons.setPredicate(oldPredicate);
+        filteredPlaces.setPredicate(oldPredicate);
     }
 
-    //=========== Filtered Person List Accessors =============================================================
+    //=========== Filtered Place List Accessors =============================================================
 
     /**
-     * Returns an unmodifiable view of the list of {@code ReadOnlyPerson} backed by the internal list of
+     * Returns an unmodifiable view of the list of {@code ReadOnlyPlace} backed by the internal list of
      * {@code addressBook}
      */
     @Override
-    public ObservableList<ReadOnlyPerson> getFilteredPersonList() {
-        return FXCollections.unmodifiableObservableList(filteredPersons);
+    public ObservableList<ReadOnlyPlace> getFilteredPlaceList() {
+        return FXCollections.unmodifiableObservableList(filteredPlaces);
     }
 
     @Override
-    public void updateFilteredPersonList(Predicate<ReadOnlyPerson> predicate) {
+    public void updateFilteredPlaceList(Predicate<ReadOnlyPlace> predicate) {
         requireNonNull(predicate);
-        filteredPersons.setPredicate(predicate);
+        filteredPlaces.setPredicate(predicate);
     }
 
     @Override
@@ -187,7 +187,7 @@ public class ModelManager extends ComponentManager implements Model {
         // state check
         ModelManager other = (ModelManager) obj;
         return addressBook.equals(other.addressBook)
-                && filteredPersons.equals(other.filteredPersons);
+                && filteredPlaces.equals(other.filteredPlaces);
     }
 
 }

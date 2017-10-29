@@ -2,8 +2,9 @@ package seedu.address.logic.commands;
 
 import java.util.function.Predicate;
 
+
 /**
- * Finds and lists all persons in address book whose name contains any of the argument keywords.
+ * Finds and lists all places in address book whose name contains any of the argument keywords.
  * Keyword matching is case sensitive.
  */
 public class FindCommand extends Command {
@@ -14,7 +15,7 @@ public class FindCommand extends Command {
     public static final String COMMAND_WORD_NAME_PREFIX = "n/";
     public static final String COMMAND_WORD_TAG_PREFIX = "t/";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Finds all persons that contain any of "
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Finds all places whose names contain any of "
             + "the specified keywords (case-sensitive) and displays them as a list with index numbers.\n"
             + "Parameters: KEYWORD [MORE_KEYWORDS]...\n"
             + "Example: " + COMMAND_WORD + COMMAND_WORD_NAME_PREFIX + "alice bob charlie"
@@ -28,9 +29,9 @@ public class FindCommand extends Command {
 
     @Override
     public CommandResult execute() {
-        model.updateFilteredPersonList(predicate);
+        model.updateFilteredPlaceList(predicate);
 
-        return new CommandResult(getMessageForPersonListShownSummary(model.getFilteredPersonList().size()));
+        return new CommandResult(getMessageForPlaceListShownSummary(model.getFilteredPlaceList().size()));
     }
 
     @Override

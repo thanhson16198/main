@@ -10,11 +10,11 @@ import java.util.Set;
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.commons.util.StringUtil;
-import seedu.address.model.person.Address;
-import seedu.address.model.person.Email;
-import seedu.address.model.person.Name;
-import seedu.address.model.person.Phone;
-import seedu.address.model.person.PostalCode;
+import seedu.address.model.place.Address;
+import seedu.address.model.place.Email;
+import seedu.address.model.place.Name;
+import seedu.address.model.place.Phone;
+import seedu.address.model.place.PostalCode;
 import seedu.address.model.tag.Tag;
 
 /**

@@ -3,9 +3,9 @@ package seedu.address.logic.commands;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
-import static seedu.address.logic.commands.CommandTestUtil.showFirstPersonOnly;
-import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_PERSON;
-import static seedu.address.testutil.TypicalPersons.getTypicalAddressBook;
+import static seedu.address.logic.commands.CommandTestUtil.showFirstPlaceOnly;
+import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_PLACE;
+import static seedu.address.testutil.TypicalPlaces.getTypicalAddressBook;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -34,9 +34,9 @@ public class GotoCommandTest {
 
     @Test
     public void execute_goto_success() throws CommandException {
-        showFirstPersonOnly(model);
+        showFirstPlaceOnly(model);
 
-        assertExecutionFailure(INDEX_SECOND_PERSON, "The person index provided is invalid");
+        assertExecutionFailure(INDEX_SECOND_PLACE, "The place index provided is invalid");
     }
 
     /**

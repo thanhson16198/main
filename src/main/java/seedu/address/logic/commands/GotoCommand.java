@@ -7,7 +7,7 @@ import seedu.address.commons.core.Messages;
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.events.ui.GotoRequestEvent;
 import seedu.address.logic.commands.exceptions.CommandException;
-import seedu.address.model.person.ReadOnlyPerson;
+import seedu.address.model.place.ReadOnlyPlace;
 import seedu.address.ui.MainWindow;
 
 /**
@@ -34,13 +34,13 @@ public class GotoCommand extends Command {
     @Override
     public CommandResult execute() throws CommandException {
 
-        List<ReadOnlyPerson> lastShownList = model.getFilteredPersonList();
+        List<ReadOnlyPlace> lastShownList = model.getFilteredPlaceList();
 
         if (targetIndex.getZeroBased() >= lastShownList.size()) {
-            throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
+            throw new CommandException(Messages.MESSAGE_INVALID_PLACE_DISPLAYED_INDEX);
         }
 
-        ReadOnlyPerson locationToGo = lastShownList.get(targetIndex.getZeroBased());
+        ReadOnlyPlace locationToGo = lastShownList.get(targetIndex.getZeroBased());
 
         //  Open the Google Maps on BrowserPanel
         MainWindow.loadUrl("https://www.google.com.sg/maps/place/"
