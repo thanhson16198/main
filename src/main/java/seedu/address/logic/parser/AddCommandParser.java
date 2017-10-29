@@ -24,8 +24,6 @@ import seedu.address.model.place.PostalCode;
 import seedu.address.model.place.ReadOnlyPlace;
 import seedu.address.model.tag.Tag;
 
-import javax.rmi.CORBA.Util;
-
 /**
  * Parses input arguments and creates a new AddCommand object
  */

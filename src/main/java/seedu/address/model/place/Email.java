@@ -1,7 +1,5 @@
 package seedu.address.model.place;
 
-import static java.util.Objects.requireNonNull;
-
 import seedu.address.commons.exceptions.IllegalValueException;
 
 /**
@@ -23,11 +21,11 @@ public class Email {
      * @throws IllegalValueException if given email address string is invalid.
      */
     public Email(String email) throws IllegalValueException {
-        if (email== null){
+        if (email == null) {
             this.value = EMAIL_UNKNOWN;
         } else {
             String trimmedEmail = email.trim();
-            if (!isValidEmail(trimmedEmail)){
+            if (!isValidEmail(trimmedEmail)) {
                 throw new IllegalValueException((MESSAGE_EMAIL_CONSTRAINTS));
             }
             this.value = trimmedEmail;
