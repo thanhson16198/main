@@ -21,6 +21,7 @@ public class Email {
      * @throws IllegalValueException if given email address string is invalid.
      */
     public Email(String email) throws IllegalValueException {
+        //@@author aungmyin23
         if (email == null) {
             this.value = EMAIL_UNKNOWN;
         } else {

@@ -114,9 +114,10 @@ public class AddressBookParser {
 
         case BookmarkCommand.COMMAND_WORD:
             return new BookmarkCommandParser().parse(arguments);
-
+        //@@author aungmyin23
         case MrtCommand.COMMAND_WORD:
             return new MrtCommand();
+        //@@author aungmyin23
 
         case ContactsCommand.COMMAND_WORD:
         case ContactsCommand.COMMAND_WORD_ALIAS:
