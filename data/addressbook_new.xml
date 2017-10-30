@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addressbook>
+    <places>
+        <name>Jurong East</name>
+        <phone>98765432</phone>
+        <email>johnd@example.com</email>
+        <address>311, Clementi Ave 2, #02-25</address>
+        <postalcode>699434</postalcode>
+        <tagged>owesMoney</tagged>
+        <tagged>friends</tagged>
+    </places>
+    <tags>owesMoney</tags>
+    <tags>colleagues</tags>
+    <tags>classmates</tags>
+    <tags>neighbours</tags>
+    <tags>family</tags>
+    <tags>friends</tags>
+</addressbook>
