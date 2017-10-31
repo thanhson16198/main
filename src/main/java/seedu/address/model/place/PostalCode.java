@@ -4,6 +4,7 @@ import static java.util.Objects.requireNonNull;
 
 import seedu.address.commons.exceptions.IllegalValueException;
 
+//@@author aungmyin23
 /**
  * Represents a place's postal code in the Tourist-book.
  * Guarantees: immutable; is valid as declared in {@link #isValidPostalCode(String)}

@@ -188,7 +188,7 @@ _Figure 2.3.1 : Interactions Inside the Logic Component for the `delete 1` Comma
 
 === Model component
 
-image::ModelClassDiagram.png[width="800"]
+image::ModelComponentClassDiagram.PNG[width="800"]
 _Figure 2.4.1 : Structure of the Model Component_
 
 *API* : link:{repoURL}/src/main/java/seedu/address/model/Model.java[`Model.java`]
@@ -466,6 +466,7 @@ Where `browserPanel` is the object link:{repoURL}/src/main/java/seedu/address/ui
 
 Certain properties of the application can be controlled (e.g App name, logging level) through the configuration file (default: `config.json`).
 
+//@@author aungmyin23
 === MRT Map mechanism
 
 MRT Map mechanism displays the latest Singapore MRT map from LTA website using the browser display.
@@ -502,6 +503,7 @@ The code above shows the setting up of `MrtWindow.java` for MrtWindow Browser.
 **Pros:** Load faster in accessing the map +
 **Cons:** Complexity in implementing the ImageView functionality.
 
+//@@author
 === Location on Google Map
 
 The command `goto` followed by an INDEX (must be positive) shows the location of the place on Google Map in the `BrowserPanel`.
@@ -987,7 +989,7 @@ Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (ve
 [appendix]
 == Use Cases
 
-(For all use cases below, the *System* is the `Tourist Book` and the *Tourist* is the `user`, unless specified otherwise)
+(For all use cases below, the *System* is the `Tourist-Book` and the *Tourist* is the `user`, unless specified otherwise)
 
 [discrete]
 === Use case: Example Delete place
@@ -1002,6 +1004,7 @@ Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (ve
 Use case ends.
 
 *Extensions*
+
 [none]
 * 2a. The list is empty.
 +
@@ -1014,6 +1017,7 @@ Use case ends.
 +
 Use case resumes at step 2.
 
+//@@author aungmyin23
 [discrete]
 === Use case: Bookmark a place
 
@@ -1033,7 +1037,6 @@ Use case ends.
 * 2a1. User searches for place to bookmark
 * 2a2. AB lists results
 * Steps 2a1-2a2 are repeated until user is satisfied with result
-
 Use case continue from step 3.
 
 [discrete]
@@ -1057,7 +1060,6 @@ Use case ends.
 ** 2a1. AB request for new entry
 ** 2a2. User enter new keyword
 ** Steps 2a1-2a2 are repeated until the keyword entered is correct
-
 Use case continue from step 3.
 
 * 3a. The rating index is invalid.
@@ -1087,7 +1089,6 @@ Use case ends.
 ** 2a1. AB request for new entry
 ** 2a2. User enter new keyword
 ** Steps 2a1-2a2 are repeated until the keyword entered is correct
-
 Use case continue from step 3.
 
 [discrete]
@@ -1109,7 +1110,6 @@ Use case ends.
 ** 2a1. AB request for new entry
 ** 2a2. User enter new keyword
 ** Steps 2a1-2a2 are repeated until the keyword entered is correct
-
 Use case continue from step 3.
 
 [discrete]
@@ -1131,9 +1131,9 @@ Use case ends.
 ** 2a1. AB request for new entry
 ** 2a2. User enter new data
 ** Steps 2a1-2a2 are repeated until the data entered is correct
-
 Use case continue from step 3.
 
+//@@author
 [appendix]
 == Non Functional Requirements
 

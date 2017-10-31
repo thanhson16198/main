@@ -1,7 +1,5 @@
 package seedu.address.model.place;
 
-import static java.util.Objects.requireNonNull;
-
 import seedu.address.commons.exceptions.IllegalValueException;
 
 /**
@@ -18,6 +16,7 @@ public class Address {
      * otherwise " " (a blank string) becomes a valid input.
      */
     public static final String ADDRESS_VALIDATION_REGEX = "[^\\s].*";
+    public static final String ADDRESS_UNKNOWN = "-";
 
     public final String value;
 
@@ -27,11 +26,15 @@ public class Address {
      * @throws IllegalValueException if given address string is invalid.
      */
     public Address(String address) throws IllegalValueException {
-        requireNonNull(address);
-        if (!isValidAddress(address)) {
-            throw new IllegalValueException(MESSAGE_ADDRESS_CONSTRAINTS);
+        if (address == null) {
+            this.value = ADDRESS_UNKNOWN;
+        } else {
+            String trimmedAddress = address.trim();
+            if (!isValidAddress(trimmedAddress)) {
+                throw new IllegalValueException((MESSAGE_ADDRESS_CONSTRAINTS));
+            }
+            this.value = address;
         }
-        this.value = address;
     }
 
     /**

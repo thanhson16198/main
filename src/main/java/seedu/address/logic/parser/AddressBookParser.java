@@ -71,7 +71,6 @@ public class AddressBookParser {
             return new DeleteCommandParser().parse(arguments);
 
         case ClearCommand.COMMAND_WORD:
-        case ClearCommand.COMMAND_WORD_ALIAS:
             return new ClearCommand();
 
         case FindCommand.COMMAND_WORD:
@@ -114,9 +113,10 @@ public class AddressBookParser {
 
         case BookmarkCommand.COMMAND_WORD:
             return new BookmarkCommandParser().parse(arguments);
-
+        //@@author aungmyin23
         case MrtCommand.COMMAND_WORD:
             return new MrtCommand();
+        //@@author aungmyin23
 
         case ContactsCommand.COMMAND_WORD:
         case ContactsCommand.COMMAND_WORD_ALIAS:

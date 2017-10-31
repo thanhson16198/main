@@ -61,10 +61,13 @@ Format: `add n/NAME a/ADDRESS p/POSTALCODE [t/TAG]...`
 
 or
 
-Format: `a n/NAME a/ADDRESS p/POSTALCODE [t/TAG]...`
+Format: `a n/NAME p/POSTALCODE [t/TAG]...`
 
 [TIP]
 A place can have any number of tags (including 0)
+
+[TIP]
+A place can have null for Address, Email and Phone fields.
 
 Examples:
 
@@ -220,10 +223,10 @@ The `redo` command fails as there are no `undo` commands executed previously.
 `redo` (reapplies the `clear` command) +
 // end::undoredo[]
 
-=== Clearing all entries : `clear` or `c`
+=== Clearing all entries : `confirm_clear`
 
 Clears all entries from the Tourist Book. +
-Format: `clear` or `c`
+Format: `confirm_clear`
 
 === Exiting the program : `exit` or `ex`
 
@@ -239,11 +242,13 @@ There is no need to save manually.
 
 == Changes from v1.2
 
+//@@author aungmyin23
 === Displaying MRT map of Singapore
 
 *Display MRT map of Singapore by clicking on `MRT Map` -> `MRT Map` +
 *Display MRT map of Singapore by typing in Command Line `mrt`
 
+//@@author
 === Useful contact numbers in Singapore
 
 Display a list of useful contact numbers by clicking on `Help -> Useful Contacts` +
@@ -297,6 +302,14 @@ Format: `weather`
 Format: `goto` + INDEX (must be positive)
 Examples:
 * `goto 1`
+
+== Changes in v1.4
+
+//@@author aungmyin23
+=== Allowing the tourist to just input 2 compulsory field
+
+Tourist can opt to leave Address, Email and Phone field empty when adding in new attraction.
+//@@author
 
 == Coming in v2.0
 

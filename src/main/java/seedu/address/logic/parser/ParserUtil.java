@@ -58,10 +58,10 @@ public class ParserUtil {
      * See header comment of this class regarding the use of {@code Optional} parameters.
      */
     public static Optional<Phone> parsePhone(Optional<String> phone) throws IllegalValueException {
-        requireNonNull(phone);
         return phone.isPresent() ? Optional.of(new Phone(phone.get())) : Optional.empty();
     }
 
+    //@@author aungmyin23
     /**
      * Parses a {@code Optional<String> postalcode} into an {@code Optional<PostalCode>} if {@code PostalCode}
      * is present.
@@ -71,13 +71,13 @@ public class ParserUtil {
         requireNonNull(postalcode);
         return postalcode.isPresent() ? Optional.of(new PostalCode(postalcode.get())) : Optional.empty();
     }
+    //@@author
 
     /**
      * Parses a {@code Optional<String> address} into an {@code Optional<Address>} if {@code address} is present.
      * See header comment of this class regarding the use of {@code Optional} parameters.
      */
     public static Optional<Address> parseAddress(Optional<String> address) throws IllegalValueException {
-        requireNonNull(address);
         return address.isPresent() ? Optional.of(new Address(address.get())) : Optional.empty();
     }
 
@@ -86,7 +86,6 @@ public class ParserUtil {
      * See header comment of this class regarding the use of {@code Optional} parameters.
      */
     public static Optional<Email> parseEmail(Optional<String> email) throws IllegalValueException {
-        requireNonNull(email);
         return email.isPresent() ? Optional.of(new Email(email.get())) : Optional.empty();
     }
 

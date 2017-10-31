@@ -1,12 +1,21 @@
-package seedu.address.model.place;
+# aungmyin23
+###### \java\seedu\address\logic\commands\MrtCommandTest.java
+``` java
+public class MrtCommandTest {
+    @Rule
+    public final EventsCollectorRule eventsCollectorRule = new EventsCollectorRule();
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
-import org.junit.Test;
-
-
-//@@author aungmyin23
+    @Test
+    public void execute_mrt_success() {
+        CommandResult result = new MrtCommand().execute();
+        assertEquals(SHOWING_MRT_MESSAGE, result.feedbackToUser);
+        assertTrue(eventsCollectorRule.eventsCollector.getMostRecent() instanceof ShowMrtRequestEvent);
+        assertTrue(eventsCollectorRule.eventsCollector.getSize() == 1);
+    }
+}
+```
+###### \java\seedu\address\model\place\PostalCodeTest.java
+``` java
 public class PostalCodeTest {
 
     @Test
@@ -24,3 +33,4 @@ public class PostalCodeTest {
         assertTrue(PostalCode.isValidPostalCode("931215"));
     }
 }
+```

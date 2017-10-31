@@ -10,6 +10,7 @@ import org.junit.Test;
 import seedu.address.commons.events.ui.ShowMrtRequestEvent;
 import seedu.address.ui.testutil.EventsCollectorRule;
 
+//@@author aungmyin23
 public class MrtCommandTest {
     @Rule
     public final EventsCollectorRule eventsCollectorRule = new EventsCollectorRule();

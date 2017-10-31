@@ -11,7 +11,7 @@ import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.util.FxViewUtil;
 
 /**
- * Controller for a help page
+ * Controller for a Useful Coontacts page
  */
 public class ContactWindow extends UiPart<Region> {
 
