@@ -1,3 +1,4 @@
+//@@author thanhson16198
 package seedu.address.logic.commands;
 
 import static org.junit.Assert.assertEquals;
@@ -22,3 +23,4 @@ public class WeatherCommandTest {
         assertTrue(eventsCollectorRule.eventsCollector.getSize() == 1);
     }
 }
+//@@author
