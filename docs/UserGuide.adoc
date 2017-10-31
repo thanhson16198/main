@@ -223,10 +223,10 @@ The `redo` command fails as there are no `undo` commands executed previously.
 `redo` (reapplies the `clear` command) +
 // end::undoredo[]
 
-=== Clearing all entries : `clear` or `c`
+=== Clearing all entries : `confirm_clear`
 
 Clears all entries from the Tourist Book. +
-Format: `clear` or `c`
+Format: `confirm_clear`
 
 === Exiting the program : `exit` or `ex`
 
