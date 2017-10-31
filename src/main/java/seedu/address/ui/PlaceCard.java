@@ -17,11 +17,12 @@ import seedu.address.model.place.ReadOnlyPlace;
 public class PlaceCard extends UiPart<Region> {
 
     private static final String FXML = "PlaceListCard.fxml";
-    private static String[] colors = { "red", "blue", "orange", "brown", "green", "grey", "burlywood", "coral",
-        "cyan", "dodgerblue", "olivedrab", "turquoise", "darksalmon", "slategray", "teal", "mediumturquoise",
-        "lawngreen", "darkcyan", "saddlebrown", "darkblue"};
+    //@@author thanhson16198
+    private static String[] colors = {"silver", "gray", "maroon", "red", "purple", "fuchsia", "green", "lime",
+        "olive", "yellow", "navy", "blue", "teal", "aqua"};
     private static HashMap<String, String> tagColors = new HashMap<String, String>();
     private static Random random = new Random();
+    //@@author
 
     /**
      * Note: Certain keywords such as "location" and "resources" are reserved keywords in JavaFX.

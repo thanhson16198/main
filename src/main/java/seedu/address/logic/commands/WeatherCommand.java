@@ -1,3 +1,4 @@
+//@@author thanhson16198
 package seedu.address.logic.commands;
 
 import seedu.address.commons.core.EventsCenter;
@@ -21,3 +22,4 @@ public class WeatherCommand extends Command {
         return new CommandResult(SHOWING_WEATHER_MESSAGE);
     }
 }
+//@@author

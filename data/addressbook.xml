@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addressbook>
-    <persons>
-        <name>Buona Vista</name>
+    <places>
+        <name>Buona Vista MRT</name>
         <phone>87438807</phone>
         <email>alexyeoh@example.com</email>
         <address>Blk 30 Geylang Street 29, #06-40</address>
         <postalcode>139349</postalcode>
         <tagged>friends</tagged>
-    </persons>
-    <persons>
-        <name>Jurong East</name>
+    </places>
+    <places>
+        <name>Jurong East MRT</name>
         <phone>99272758</phone>
         <email>berniceyu@example.com</email>
         <address>Blk 30 Lorong 3 Serangoon Gardens, #07-18</address>
         <postalcode>609690</postalcode>
         <tagged>colleagues</tagged>
         <tagged>friends</tagged>
-    </persons>
-    <persons>
+    </places>
+    <places>
         <name>Ascott Raffles Place</name>
         <phone>93210283</phone>
         <email>charlotte@example.com</email>
         <address>Blk 11 Ang Mo Kio Street 74, #11-04</address>
         <postalcode>609690</postalcode>
         <tagged>neighbours</tagged>
-    </persons>
-    <persons>
+    </places>
+    <places>
         <name>National University Health</name>
         <phone>91031282</phone>
         <email>lidavid@example.com</email>
         <address>Blk 436 Serangoon Gardens Street 26, #16-43</address>
         <postalcode>119077</postalcode>
         <tagged>family</tagged>
-    </persons>
-    <persons>
+    </places>
+    <places>
         <name>Clementi Mall</name>
         <phone>92492021</phone>
         <email>irfan@example.com</email>
         <address>Blk 47 Tampines Street 20, #17-35</address>
         <postalcode>129588</postalcode>
         <tagged>classmates</tagged>
-    </persons>
-    <persons>
+    </places>
+    <places>
         <name>Ridge View Residence</name>
         <phone>92624417</phone>
         <email>royb@example.com</email>
         <address>Blk 45 Aljunied Street 85, #11-31</address>
         <postalcode>119081</postalcode>
         <tagged>colleagues</tagged>
-    </persons>
-    <persons>
+    </places>
+    <places>
         <name>Yusof Ishak House</name>
         <phone>98765432</phone>
         <email>johnd@example.com</email>
@@ -57,8 +57,8 @@
         <postalcode>119078</postalcode>
         <tagged>owesMoney</tagged>
         <tagged>friends</tagged>
-    </persons>
-    <persons>
+    </places>
+    <places>
         <name>Central Library</name>
         <phone>98765432</phone>
         <email>johnd@example.com</email>
@@ -66,16 +66,16 @@
         <postalcode>119078</postalcode>
         <tagged>owesMoney</tagged>
         <tagged>friends</tagged>
-    </persons>
-    <persons>
-        <name>Kent Ridge</name>
+    </places>
+    <places>
+        <name>Chinatown</name>
         <phone>98765432</phone>
         <email>johnd@example.com</email>
         <address>311, Clementi Ave 2, #02-25</address>
-        <postalcode>119078</postalcode>
+        <postalcode>058362</postalcode>
         <tagged>owesMoney</tagged>
         <tagged>friends</tagged>
-    </persons>
+    </places>
     <tags>owesMoney</tags>
     <tags>colleagues</tags>
     <tags>classmates</tags>

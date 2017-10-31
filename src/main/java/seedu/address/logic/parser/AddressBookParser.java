@@ -81,9 +81,11 @@ public class AddressBookParser {
         case ListCommand.COMMAND_WORD_ALIAS:
             return new ListCommand();
 
+        //@@author thanhson16198
         case GotoCommand.COMMAND_WORD:
         case GotoCommand.COMMAND_WORD_ALIAS:
             return new GotoCommandParser().parse(arguments);
+        //@@author
 
         case HistoryCommand.COMMAND_WORD:
         case HistoryCommand.COMMAND_WORD_ALIAS:
@@ -101,8 +103,10 @@ public class AddressBookParser {
         case UndoCommand.COMMAND_WORD_ALIAS:
             return new UndoCommand();
 
+        //@@author thanhson16198
         case WeatherCommand.COMMAND_WORD:
             return new WeatherCommand();
+        //@@author
 
         case RedoCommand.COMMAND_WORD:
         case RedoCommand.COMMAND_WORD_ALIAS:

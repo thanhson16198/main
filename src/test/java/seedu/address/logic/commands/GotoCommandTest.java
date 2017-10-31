@@ -1,3 +1,4 @@
+//@@author thanhson16198
 package seedu.address.logic.commands;
 
 import static org.junit.Assert.assertEquals;
@@ -80,3 +81,4 @@ public class GotoCommandTest {
         return gotoCommand;
     }
 }
+//@@author

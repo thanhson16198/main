@@ -1,3 +1,4 @@
+//@@author thanhson16198
 package seedu.address.logic.parser;
 
 import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
@@ -27,3 +28,4 @@ public class GotoCommandParser implements Parser<GotoCommand> {
         }
     }
 }
+//@@author
