@@ -103,25 +103,32 @@ Edits the address and tag of the 1st place to be `20 Bayfront Avenue` and `bookm
 * `ed 2 n/Singapore Zoo t/` +
 Edits the name of the 2nd place to be `Singapore Zoo` and clears all existing tags.
 
-=== Locating places by name: `find` or  `fd`
+=== Locating places by name or tag: `find` or  `fd`
 
-Finds places whose names contain any of the given keywords. +
-Format: `find KEYWORD [MORE_KEYWORDS]` or  `fd KEYWORD [MORE_KEYWORDS]`
+Finds places whose names or tags contain any of the given keywords. +
+Format: `find [PREFIX]KEYWORD [MORE_KEYWORDS]` or  `fd [PREFIX]KEYWORD [MORE_KEYWORDS]`
 
 ****
 * The search is case insensitive. e.g `zoo` will match `Zoo`
+* The prefix will determine which field you are searching for. +
+`n/` is the prefix for name, while `t/` is the prefix for tag.
 * The order of the keywords does not matter. e.g. `Singapore Zoo` will match `Zoo Singapore`
-* Only the name is searched.
+* Only the name or tag is searched.
+* Only one field can be searched at a time, i.e. you cannot search both tag and name at the same time.
 * Only full words will be matched e.g. `Singa` will not match `Singapore`
 * Places matching at least one keyword will be returned (i.e. `OR` search). e.g. `Singapore Gardens` will return `Singapore Zoo`, `Singapore Botanical Gardens`
 ****
 
 Examples:
 
-* `find Singapore` +
+* `find n/Singapore` +
 Returns `Singapore Zoo` and `Singapore Flyer`
-* `fd Singapore Sands Botanic` +
+* `fd n/Singapore Sands Botanic` +
 Returns any place having names `Singapore`, `Sands`, or `Botanic`
+* `find t/attractions` +
+Returns a list of places tagged as `attractions`
+* `fd t/onestar` +
+Returns a list of places tagged as `onestar`
 
 === Deleting a place : `delete` or `del`
 
