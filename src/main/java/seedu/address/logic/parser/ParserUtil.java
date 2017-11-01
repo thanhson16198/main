@@ -45,6 +45,35 @@ public class ParserUtil {
     }
 
     /**
+     * Parses {@code oneBasedIndex} into an {@code Index} at the given position and returns it.
+     * Leading and trailing whitespaces will be trimmed.
+     *
+     * @throws IllegalValueException if the specified index is invalid (not non-zero unsigned integer) or
+     * if the position is out of string index bounds.
+     */
+    public static Index parseIndexFromPosition(String oneBasedIndex, int zeroBasedPosition)
+                                                        throws IllegalValueException {
+        String indexAtPosition = "";
+        String[] indexes;
+
+        try {
+            String trimmedIndex = oneBasedIndex.trim();
+            indexes = trimmedIndex.split(" ");
+
+            indexAtPosition = indexes[zeroBasedPosition];
+
+        } catch (IndexOutOfBoundsException iobe) {
+            throw new IllegalValueException(MESSAGE_INVALID_INDEX);
+        }
+
+        if (!StringUtil.isNonZeroUnsignedInteger(indexAtPosition)) {
+            throw new IllegalValueException(MESSAGE_INVALID_INDEX);
+        }
+        return Index.fromOneBased(Integer.parseInt(indexAtPosition));
+
+    }
+
+    /**
      * Parses a {@code Optional<String> name} into an {@code Optional<Name>} if {@code name} is present.
      * See header comment of this class regarding the use of {@code Optional} parameters.
      */

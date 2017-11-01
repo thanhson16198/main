@@ -318,6 +318,23 @@ Examples:
 Tourist can opt to leave Address, Email and Phone field empty when adding in new attraction.
 //@@author
 
+=== Get directions to selected destination
+Displays the directions from location A to selected destination. +
+Format: `dir [INDEX_FROM] [INDEX_TO]`
+
+****
+* Displays the location from `INDEX_FROM` to `INDEX_TO`. The index refers to the index number shown in the last place listing.
+* Both fields must be provided.
+* The index *must be a positive integer* >= 1 and within the range of the list shown
+****
+
+Examples:
+
+* `dir 1 2` +
+Returns the directions from the location at index 1 to index 2 of the places listing.
+* `dir 4 1` +
+Returns the directions from the location at index 4 to index 1 of the places listing.
+
 == Coming in v2.0
 
 === Changing the display color of a tag
@@ -327,24 +344,6 @@ Format: `color /t TAG` or `col t/TAG`
 === View current PSI
 Displays the current PSI levels in Singapore. +
 Format: `psi`
-
-=== Get directions to selected destination
-Displays the directions from location A to selected destination. +
-Format: `dir [INDEX_FROM] [INDEX_TO]`
-
-****
-* Displays the location from `INDEX_FROM` to `INDEX_TO`. The index refers to the index number shown in the last place listing.
-* Both fields must be provided.
-* The index *must be a positive integer* >= 0 and within the range of the last places listing.
-* An index which is 0 indicates to or from current location.
-****
-
-Examples:
-
-* `dir 1 2` +
-Returns the directions from the location at index 1 to index 2 of the places listing.
-* `dir 2 0` +
-Returns the directions from the location at index 2 to current location (index 0).
 
 === Tourist Book save files are now exportable to .csv format
 Export your data to .csv file format for printing purposes. +
@@ -385,10 +384,15 @@ e.g. `bookmark 2`
 * *Clear* : `clear` or `c`
 * *Delete* : `delete INDEX`  or `del INDEX` +
 e.g. `delete 3`
+* *Direction* : `dir` +
+* *Direction* : `dir` +
+e.g `dir 1 3`
 * *Edit* : `edit INDEX [n/NAME] [a/ADDRESS] [p/POSTALCODE] [t/TAG]...` +
 e.g. `edit 2 a/20 Bayfront Avenue t/bookmarks` or ``ed 2 a/20 Bayfront Avenue`
 * *Find* : `find KEYWORD [MORE_KEYWORDS]`  or `fd KEYWORD` +
 e.g. `find Bay Park`
+* *Go to* : `goto` +
+e.g. `goto 2`
 * *List* : `list` or `l`
 * *Help* : `help` or `h`
 * *Weather* : 'weather'

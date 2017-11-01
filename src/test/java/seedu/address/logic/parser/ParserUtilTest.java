@@ -48,10 +48,24 @@ public class ParserUtilTest {
     }
 
     @Test
+    public void parseIndexPosition_invalidInput_throwsIllegalValueException() throws Exception {
+        thrown.expect(IllegalValueException.class);
+        thrown.expectMessage(MESSAGE_INVALID_INDEX);
+        ParserUtil.parseIndexFromPosition(" a 2 ", 0);
+    }
+
+    @Test
     public void parseIndex_outOfRangeInput_throwsIllegalValueException() throws Exception {
         thrown.expect(IllegalValueException.class);
         thrown.expectMessage(MESSAGE_INVALID_INDEX);
         ParserUtil.parseIndex(Long.toString(Integer.MAX_VALUE + 1));
+    }
+
+    @Test
+    public void parseIndexPosition_outOfRangeInput_throwsIllegalValueException() throws Exception {
+        thrown.expect(IllegalValueException.class);
+        thrown.expectMessage(MESSAGE_INVALID_INDEX);
+        ParserUtil.parseIndexFromPosition(" 0 1 2 3 4", 5);
     }
 
     @Test
@@ -61,6 +75,15 @@ public class ParserUtilTest {
 
         // Leading and trailing whitespaces
         assertEquals(INDEX_FIRST_PLACE, ParserUtil.parseIndex("  1  "));
+    }
+
+    @Test
+    public void parseIndexPosition_validInput_success() throws Exception {
+
+        assertEquals(INDEX_FIRST_PLACE, ParserUtil.parseIndexFromPosition("1 2", 0));
+
+        assertEquals(INDEX_FIRST_PLACE, ParserUtil.parseIndexFromPosition("   1 2   ",
+                                                                                                0));
     }
 
     @Test
