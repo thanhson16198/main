@@ -17,7 +17,7 @@ import seedu.address.model.tag.Tag;
 /**
  * An Immutable AddressBook that is serializable to XML format
  */
-@XmlRootElement(name = "addressbook")
+@XmlRootElement(name = "touristbook")
 public class XmlSerializableAddressBook implements ReadOnlyAddressBook {
 
     @XmlElement
