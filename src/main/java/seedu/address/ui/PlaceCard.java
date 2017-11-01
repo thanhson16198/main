@@ -39,7 +39,7 @@ public class PlaceCard extends UiPart<Region> {
      */
     private static String[] colors = {"#800000", "#FF0000", "#800080",
         "#FF00FF", "#008000", "#808000", "#FFFF00", "#000080",
-        "#FB6542", "#8E7970", "#D55448", "#063852", "#2D4262", "07575B"};
+        "#FB6542", "#8E7970", "#D55448", "#063852", "#2D4262", "#07575B"};
     private static HashMap<String, String> tagColors = new HashMap<String, String>();
     private static Random random = new Random();
     //@@author
