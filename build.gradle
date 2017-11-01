@@ -224,17 +224,7 @@ task deployOfflineDocs(type: Copy) {
     }
 }
 
-task copyDataFile (type: Copy) {
-    into('build/jar/data')
-
-    from('data/') {
-        include 'touristbook.xml'
-    }
-
-}
-
 deployOfflineDocs.dependsOn asciidoctor
 processResources.dependsOn deployOfflineDocs
-shadowJar.dependsOn copyDataFile
 
 defaultTasks 'clean', 'headless', 'allTests', 'coverage', 'asciidoctor'

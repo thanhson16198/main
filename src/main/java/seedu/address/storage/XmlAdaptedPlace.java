@@ -34,7 +34,7 @@ public class XmlAdaptedPlace {
     private String postalcode;
 
     @XmlElement
-    private List<XmlAdaptedTag> tags = new ArrayList<>();
+    private List<XmlAdaptedTag> tagged = new ArrayList<>();
 
     /**
      * Constructs an XmlAdaptedPlace.
@@ -54,9 +54,9 @@ public class XmlAdaptedPlace {
         email = source.getEmail().value;
         address = source.getAddress().value;
         postalcode = source.getPostalCode().value;
-        tags = new ArrayList<>();
+        tagged = new ArrayList<>();
         for (Tag tag : source.getTags()) {
-            tags.add(new XmlAdaptedTag(tag));
+            tagged.add(new XmlAdaptedTag(tag));
         }
     }
 
@@ -67,7 +67,7 @@ public class XmlAdaptedPlace {
      */
     public Place toModelType() throws IllegalValueException {
         final List<Tag> placeTags = new ArrayList<>();
-        for (XmlAdaptedTag tag : tags) {
+        for (XmlAdaptedTag tag : tagged) {
             placeTags.add(tag.toModelType());
         }
         final Name name = new Name(this.name);

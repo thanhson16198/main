@@ -10,8 +10,7 @@ public class Email {
 
     public static final String MESSAGE_EMAIL_CONSTRAINTS =
             "Place emails should be 2 alphanumeric/period strings separated by '@'";
-    public static final String EMAIL_VALIDATION_REGEX = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
-            + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+    public static final String EMAIL_VALIDATION_REGEX = "[\\w\\.]+@[\\w\\.]+";
     public static final String EMAIL_UNKNOWN = "-";
 
     public final String value;
