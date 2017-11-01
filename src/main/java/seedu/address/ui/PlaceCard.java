@@ -20,7 +20,7 @@ public class PlaceCard extends UiPart<Region> {
     //@@author thanhson16198
     /**
      * Names of the hex values in `colors` array:
-     * @Format: `HEX VALUE` : `NAME`    (`NAME` would be replaced with a description of the color if not exists)
+     * Format: `HEX VALUE` : `NAME`    (`NAME` would be replaced with a description of the color if not exists)
      *
      * 800000 : Maroon
      * FF0000 : Red
