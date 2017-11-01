@@ -54,18 +54,14 @@ public class ParserUtil {
     public static Index parseIndexFromPosition(String oneBasedIndex, int zeroBasedPosition)
                                                         throws IllegalValueException {
         String indexAtPosition = "";
+        String[] indexes;
 
         try {
             String trimmedIndex = oneBasedIndex.trim();
+            indexes = trimmedIndex.split(" ");
 
-            if (zeroBasedPosition == 0) {
-                indexAtPosition = trimmedIndex.substring(zeroBasedPosition, zeroBasedPosition + 1);
-            } else if (zeroBasedPosition > 0) {
-                //Account for spacing between indexes
-                zeroBasedPosition = zeroBasedPosition * 2;
-                indexAtPosition = trimmedIndex.substring(zeroBasedPosition, zeroBasedPosition + 1);
+            indexAtPosition = indexes[zeroBasedPosition];
 
-            }
         } catch (IndexOutOfBoundsException iobe) {
             throw new IllegalValueException(MESSAGE_INVALID_INDEX);
         }

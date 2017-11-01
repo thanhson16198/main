@@ -22,12 +22,6 @@ public class DirCommandParser implements Parser<DirCommand> {
      */
     public DirCommand parse(String args) throws ParseException {
 
-        //Checking if more than 2 indexes were passed in
-        if (args.trim().length() > 3) {
-            throw new ParseException(
-                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, DirCommand.MESSAGE_USAGE));
-        }
-
         try {
             Index fromIndex = ParserUtil.parseIndexFromPosition(args, firstIndex);
             Index toIndex = ParserUtil.parseIndexFromPosition(args, secondIndex);
