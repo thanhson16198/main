@@ -1,3 +1,4 @@
+//@@author thanhson16198
 package seedu.address.logic.commands;
 
 import java.util.List;
@@ -44,7 +45,8 @@ public class GotoCommand extends Command {
 
         //  Open the Google Maps on BrowserPanel
         MainWindow.loadUrl("https://www.google.com.sg/maps/place/"
-                + locationToGo.getName().fullName.replaceAll(" ", "+"));
+                + locationToGo.getName().fullName.replaceAll(" ", "+") + "+"
+                + locationToGo.getPostalCode().toString().replaceAll(" ", "+"));
 
         EventsCenter.getInstance().post(new GotoRequestEvent(targetIndex));
         return new CommandResult(String.format(MESSAGE_GOTO_SUCCESS, targetIndex.getOneBased()));
@@ -58,3 +60,4 @@ public class GotoCommand extends Command {
                 && this.targetIndex.equals(((GotoCommand) other).targetIndex)); // state check
     }
 }
+//@@author

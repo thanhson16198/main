@@ -199,9 +199,11 @@ public class MainWindow extends UiPart<Region> {
         primaryStage.setMinWidth(MIN_WIDTH);
     }
 
+    //@@author thanhson16198
     public static void loadUrl(String url) {
         browserPanel.loadPage(url);
     }
+    //@@author
 
     /**
      * Returns the current size and the position of the main Window.
@@ -220,6 +222,7 @@ public class MainWindow extends UiPart<Region> {
         helpWindow.show();
     }
 
+    //@@author thanhson16198
     /**
      * Opens the Weather on browser.
      */
@@ -228,6 +231,7 @@ public class MainWindow extends UiPart<Region> {
         logger.info("Open a weather forecast for today on BrowerPanel.");
         browserPanel.loadPage("https://www.accuweather.com/en/sg/singapore/300597/hourly-weather-forecast/300597");
     }
+    //@@author
 
     /**
      * Opens the useful contacts window.
@@ -273,11 +277,13 @@ public class MainWindow extends UiPart<Region> {
         handleHelp();
     }
 
+    //@@author thanhson16198
     @Subscribe
     private void handleShowWeatherEvent(ShowWeatherRequestEvent event) {
         logger.info(LogsCenter.getEventHandlingLogMessage(event));
         handleWeather();
     }
+    //@@author
 
     @Subscribe
     private void handleShowContactsEvent(ShowContactsEvent event) {

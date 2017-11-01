@@ -1,3 +1,4 @@
+//@@author thanhson16198
 package seedu.address.commons.events.ui;
 
 import seedu.address.commons.core.index.Index;
@@ -20,3 +21,4 @@ public class GotoRequestEvent extends BaseEvent {
     }
 
 }
+//@@author
