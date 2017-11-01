@@ -18,8 +18,8 @@ public class PlaceCard extends UiPart<Region> {
 
     private static final String FXML = "PlaceListCard.fxml";
     //@@author thanhson16198
-    private static String[] colors = {"silver", "gray", "maroon", "red", "purple", "fuchsia", "green", "lime",
-        "olive", "yellow", "navy", "blue", "teal", "aqua"};
+    private static String[] colors = {"#FB6542", "#FF420E", "maroon", "red", "purple", "fuchsia", "green", "07575B",
+         "olive", "yellow", "navy", "#D55448", "#063852", "#2D4262"};
     private static HashMap<String, String> tagColors = new HashMap<String, String>();
     private static Random random = new Random();
     //@@author

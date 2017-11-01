@@ -9,13 +9,13 @@ import seedu.address.logic.commands.GotoCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 
 /**
- * Parses input arguments and creates a new SelectCommand object
+ * Parses input arguments and creates a new GotoCommand object
  */
 public class GotoCommandParser implements Parser<GotoCommand> {
 
     /**
-     * Parses the given {@code String} of arguments in the context of the SelectCommand
-     * and returns an SelectCommand object for execution.
+     * Parses the given {@code String} of arguments in the context of the GotoCommand
+     * and returns an GotoCommand object for execution.
      * @throws ParseException if the user input does not conform the expected format
      */
     public GotoCommand parse(String args) throws ParseException {
