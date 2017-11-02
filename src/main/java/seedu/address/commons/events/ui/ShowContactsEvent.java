@@ -2,6 +2,7 @@ package seedu.address.commons.events.ui;
 
 import seedu.address.commons.events.BaseEvent;
 
+//@@author huyuanrong
 /**
  * An event requesting to view the contacts page.
  */

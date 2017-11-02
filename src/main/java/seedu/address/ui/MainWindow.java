@@ -66,10 +66,10 @@ public class MainWindow extends UiPart<Region> {
 
     @FXML
     private MenuItem helpMenuItem;
-
+    //@@author huyuanrong
     @FXML
     private MenuItem contactsMenuItem;
-
+    //@@author
     @FXML
     private MenuItem mrtMapItem;
 
@@ -109,7 +109,9 @@ public class MainWindow extends UiPart<Region> {
 
     private void setAccelerators() {
         setAccelerator(helpMenuItem, KeyCombination.valueOf("F1"));
+        //@@author huyuanrong
         setAccelerator(contactsMenuItem, KeyCombination.valueOf("F2"));
+        //@@author
     }
 
     /**
@@ -232,7 +234,7 @@ public class MainWindow extends UiPart<Region> {
         browserPanel.loadPage("https://www.accuweather.com/en/sg/singapore/300597/hourly-weather-forecast/300597");
     }
     //@@author
-
+    //@@author huyuanrong
     /**
      * Opens the useful contacts window.
      */
@@ -241,7 +243,7 @@ public class MainWindow extends UiPart<Region> {
         ContactWindow contactWindow = new ContactWindow();
         contactWindow.show();
     }
-
+    //@@author
     /**
      * Opens the mrt map window.
      */
@@ -284,12 +286,13 @@ public class MainWindow extends UiPart<Region> {
         handleWeather();
     }
     //@@author
-
+    //@@author huyuanrong
     @Subscribe
     private void handleShowContactsEvent(ShowContactsEvent event) {
         logger.info(LogsCenter.getEventHandlingLogMessage(event));
         showNumbers();
     }
+    //@@author
 
     @Subscribe
     private void handleShowMrtEvent(ShowMrtRequestEvent event) {

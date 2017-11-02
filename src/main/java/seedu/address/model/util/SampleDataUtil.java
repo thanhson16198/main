@@ -22,6 +22,7 @@ public class SampleDataUtil {
     public static Place[] getSamplePlaces() {
         try {
             return new Place[] {
+                //@@author huyuanrong
                 new Place(new Name("Marina Bay Sands"), new Phone("66888868"),
                         new Email("inquiries@marinabaysands.com"),
                     new Address("10 Bayfront Avenue"), new PostalCode("018956"),
@@ -42,6 +43,7 @@ public class SampleDataUtil {
                         new Email("robuchon@rwsentosa.com"),
                     new Address("26 Sentosa Gateway, Hotel Michael, #01-104 and 105"), new PostalCode("098138"),
                     getTagSet("threestars"))
+                //@@author
             };
         } catch (IllegalValueException e) {
             throw new AssertionError("sample data cannot be invalid", e);

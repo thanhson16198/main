@@ -21,6 +21,8 @@ public class NameTest {
         assertTrue(Name.isValidName("peter jack")); // alphabets only
         assertTrue(Name.isValidName("Capital Tan")); // with capital letters
         assertTrue(Name.isValidName("David Roger Jackson Ray Jr")); // long names
+        //@@author huyuanrong
         assertTrue(Name.isValidName("ëëëëéééé")); //Weird Characters
+        //@@author
     }
 }

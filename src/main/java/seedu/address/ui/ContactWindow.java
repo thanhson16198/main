@@ -10,8 +10,9 @@ import javafx.stage.Stage;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.util.FxViewUtil;
 
+//@@author huyuanrong
 /**
- * Controller for a Useful Coontacts page
+ * Controller for a Useful Contacts page
  */
 public class ContactWindow extends UiPart<Region> {
 
