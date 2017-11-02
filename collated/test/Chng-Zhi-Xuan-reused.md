@@ -1,31 +1,6 @@
-package seedu.address.logic.commands;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
-import static seedu.address.logic.commands.CommandTestUtil.showFirstPlaceOnly;
-import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_PLACE;
-//import static seedu.address.testutil.TypicalIndexes.INDEX_NINETH_PLACE;
-import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_PLACE;
-import static seedu.address.testutil.TypicalIndexes.INDEX_THIRD_PLACE;
-import static seedu.address.testutil.TypicalPlaces.getTypicalAddressBook;
-
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-
-import seedu.address.commons.core.Messages;
-import seedu.address.commons.core.index.Index;
-import seedu.address.commons.events.ui.GotoRequestEvent;
-import seedu.address.logic.CommandHistory;
-import seedu.address.logic.UndoRedoStack;
-import seedu.address.logic.commands.exceptions.CommandException;
-import seedu.address.model.Model;
-import seedu.address.model.ModelManager;
-import seedu.address.model.UserPrefs;
-import seedu.address.ui.testutil.EventsCollectorRule;
-//@@author Chng-Zhi-Xuan-reused
+# Chng-Zhi-Xuan-reused
+###### \java\seedu\address\logic\commands\DirCommandTest.java
+``` java
 /**
  * Contains integration tests (interaction with the Model) for {@code DirCommand}.
  */
@@ -135,3 +110,63 @@ public class DirCommandTest {
         return dirCommand;
     }
 }
+```
+###### \java\seedu\address\logic\parser\BookmarkCommandParserTest.java
+``` java
+public class BookmarkCommandParserTest {
+
+    private BookmarkCommandParser parser = new BookmarkCommandParser();
+
+    @Test
+    public void parse_validArgs_returnsBookmarkCommand() {
+        assertParseSuccess(parser, "1", new BookmarkCommand(INDEX_FIRST_PLACE));
+    }
+
+    @Test
+    public void parse_invalidArgs_throwsParseException() {
+        assertParseFailure(parser, "a", String.format(MESSAGE_INVALID_COMMAND_FORMAT, BookmarkCommand.MESSAGE_USAGE));
+    }
+}
+```
+###### \java\seedu\address\logic\parser\ClearBookmarkCommandParserTest.java
+``` java
+public class ClearBookmarkCommandParserTest {
+
+    private ClearBookmarkCommandParser parser = new ClearBookmarkCommandParser();
+
+    public ClearBookmarkCommandParserTest() throws IllegalValueException {
+    }
+
+    @Test
+    public void parse_validArgs_returnsClearBookmarkCommand() {
+        assertParseSuccess(parser,  "", new ClearBookmarkCommand());
+    }
+
+    @Test
+    public void parse_invalidArgs_throwsParseException() {
+        assertParseFailure(parser, "a", String.format(MESSAGE_INVALID_COMMAND_FORMAT,
+                                                                    ClearBookmarkCommand.MESSAGE_USAGE));
+    }
+}
+```
+###### \java\seedu\address\logic\parser\DirCommandParserTest.java
+``` java
+/**
+ * Test scope: similar to {@code DeleteCommandParserTest}.
+ * @see DeleteCommandParserTest
+ */
+public class DirCommandParserTest {
+
+    private DirCommandParser parser = new DirCommandParser();
+
+    @Test
+    public void parse_validArgs_returnsDirCommand() {
+        assertParseSuccess(parser, "1 2", new DirCommand(INDEX_FIRST_PLACE, INDEX_SECOND_PLACE));
+    }
+
+    @Test
+    public void parse_invalidArgs_throwsParseException() {
+        assertParseFailure(parser, "a", String.format(MESSAGE_INVALID_COMMAND_FORMAT, DirCommand.MESSAGE_USAGE));
+    }
+}
+```

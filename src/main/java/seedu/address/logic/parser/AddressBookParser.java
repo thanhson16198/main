@@ -88,9 +88,11 @@ public class AddressBookParser {
             return new GotoCommandParser().parse(arguments);
         //@@author
 
+        //@@author Chng-Zhi-Xuan
         case DirCommand.COMMAND_WORD:
         case DirCommand.COMMAND_WORD_ALIAS:
             return new DirCommandParser().parse(arguments);
+        //@@author
 
         case HistoryCommand.COMMAND_WORD:
         case HistoryCommand.COMMAND_WORD_ALIAS:
@@ -117,11 +119,14 @@ public class AddressBookParser {
         case RedoCommand.COMMAND_WORD_ALIAS:
             return new RedoCommand();
 
+        //@@author Chng-Zhi-Xuan
         case ClearBookmarkCommand.COMMAND_WORD:
             return new ClearBookmarkCommandParser().parse(arguments);
 
         case BookmarkCommand.COMMAND_WORD:
             return new BookmarkCommandParser().parse(arguments);
+        //@@author
+
         //@@author aungmyin23
         case MrtCommand.COMMAND_WORD:
             return new MrtCommand();

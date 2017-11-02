@@ -6,14 +6,14 @@ import seedu.address.commons.core.index.Index;
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.logic.commands.DirCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
-
+//@@author Chng-Zhi-Xuan
 /**
  * Parses input arguments and creates a new DirCommand object
  */
 public class DirCommandParser implements Parser<DirCommand> {
 
-    private final int firstIndex = 0;
-    private final int secondIndex = 1;
+    private final int indexFirst = 0;
+    private final int indexSecond = 1;
 
     /**
      * Parses the given {@code String} of arguments in the context of the DirCommand
@@ -23,8 +23,8 @@ public class DirCommandParser implements Parser<DirCommand> {
     public DirCommand parse(String args) throws ParseException {
 
         try {
-            Index fromIndex = ParserUtil.parseIndexFromPosition(args, firstIndex);
-            Index toIndex = ParserUtil.parseIndexFromPosition(args, secondIndex);
+            Index fromIndex = ParserUtil.parseIndexFromPosition(args, indexFirst);
+            Index toIndex = ParserUtil.parseIndexFromPosition(args, indexSecond);
             return new DirCommand(fromIndex, toIndex);
         } catch (IllegalValueException ive) {
             throw new ParseException(

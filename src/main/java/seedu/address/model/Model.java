@@ -28,7 +28,7 @@ public interface Model {
     /** Adds the given place */
     void addPlace(ReadOnlyPlace place) throws DuplicatePlaceException;
 
-
+    //@@author Chng-Zhi-Xuan
     /**
      * Adds tag to target place in address book.
      *
@@ -51,6 +51,7 @@ public interface Model {
      *      equivalent to another existing place in the list.
      */
     void removeAllTags(Tag tagName) throws PlaceNotFoundException, DuplicatePlaceException;
+    //@@author Chng-Zhi-Xuan
 
     /**
      * Replaces the given place {@code target} with {@code editedPlace}.

@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.logic.commands.ClearBookmarkCommand;
-
+//@@author Chng-Zhi-Xuan-reused
 public class ClearBookmarkCommandParserTest {
 
     private ClearBookmarkCommandParser parser = new ClearBookmarkCommandParser();

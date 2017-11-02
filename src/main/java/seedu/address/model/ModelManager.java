@@ -87,6 +87,7 @@ public class ModelManager extends ComponentManager implements Model {
         indicateAddressBookChanged();
     }
 
+    //@@author Chng-Zhi-Xuan
     /**
      * Adds given tag to target place
      * @param place
@@ -154,6 +155,7 @@ public class ModelManager extends ComponentManager implements Model {
 
         filteredPlaces.setPredicate(oldPredicate);
     }
+    //@@author
 
     //=========== Filtered Place List Accessors =============================================================
 
