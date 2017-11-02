@@ -74,20 +74,6 @@ public class MrtCommand extends Command {
         case MrtCommand.COMMAND_WORD:
             return new MrtCommand();
 ```
-###### \java\seedu\address\logic\parser\AddressBookParser.java
-``` java
-
-        case ContactsCommand.COMMAND_WORD:
-        case ContactsCommand.COMMAND_WORD_ALIAS:
-            return new ContactsCommand();
-
-        default:
-            throw new ParseException(MESSAGE_UNKNOWN_COMMAND);
-        }
-    }
-
-}
-```
 ###### \java\seedu\address\logic\parser\ParserUtil.java
 ``` java
     /**

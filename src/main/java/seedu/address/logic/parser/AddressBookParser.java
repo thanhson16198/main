@@ -125,12 +125,12 @@ public class AddressBookParser {
         //@@author aungmyin23
         case MrtCommand.COMMAND_WORD:
             return new MrtCommand();
-        //@@author aungmyin23
-
+        //@@author
+        //@@author huyuanrong
         case ContactsCommand.COMMAND_WORD:
         case ContactsCommand.COMMAND_WORD_ALIAS:
             return new ContactsCommand();
-
+        //@@author
         default:
             throw new ParseException(MESSAGE_UNKNOWN_COMMAND);
         }

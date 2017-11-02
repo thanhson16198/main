@@ -11,7 +11,7 @@ public class FindCommand extends Command {
 
     public static final String COMMAND_WORD = "find";
     public static final String COMMAND_WORD_ALIAS = "fd";
-
+    //@@author huyuanrong
     public static final String COMMAND_WORD_NAME_PREFIX = "n/";
     public static final String COMMAND_WORD_TAG_PREFIX = "t/";
 
@@ -20,13 +20,12 @@ public class FindCommand extends Command {
             + "Parameters: KEYWORD [MORE_KEYWORDS]...\n"
             + "Example: " + COMMAND_WORD + COMMAND_WORD_NAME_PREFIX + "alice bob charlie"
             + "Example: " + COMMAND_WORD + COMMAND_WORD_TAG_PREFIX + "[bookmark] [attractions]";
-
+    //@@author
     private final Predicate predicate;
 
     public FindCommand(Predicate predicate) {
         this.predicate = predicate;
     }
-
     @Override
     public CommandResult execute() {
         model.updateFilteredPlaceList(predicate);

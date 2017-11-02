@@ -3,6 +3,7 @@ package seedu.address.logic.commands;
 import seedu.address.commons.core.EventsCenter;
 import seedu.address.commons.events.ui.ShowContactsEvent;
 
+//@@author huyuanrong
 /**
  * Format useful contact instructions for every command for display.
  */
