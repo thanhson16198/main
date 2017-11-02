@@ -43,7 +43,7 @@ public class SampleDataUtil {
                         new Email("robuchon@rwsentosa.com"),
                     new Address("26 Sentosa Gateway, Hotel Michael, #01-104 and 105"), new PostalCode("098138"),
                     getTagSet("threestars"))
-                //@@author
+                    //@@author
             };
         } catch (IllegalValueException e) {
             throw new AssertionError("sample data cannot be invalid", e);
