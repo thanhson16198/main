@@ -1,27 +1,6 @@
-package seedu.address.logic.commands;
-
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
-import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
-import static seedu.address.logic.commands.CommandTestUtil.showFirstPlaceOnly;
-import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_PLACE;
-import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_PLACE;
-import static seedu.address.testutil.TypicalPlaces.getTypicalAddressBook;
-
-import org.junit.Test;
-
-import seedu.address.commons.core.Messages;
-import seedu.address.commons.core.index.Index;
-import seedu.address.commons.exceptions.IllegalValueException;
-import seedu.address.logic.CommandHistory;
-import seedu.address.logic.UndoRedoStack;
-import seedu.address.model.Model;
-import seedu.address.model.ModelManager;
-import seedu.address.model.UserPrefs;
-import seedu.address.model.place.ReadOnlyPlace;
-import seedu.address.model.tag.Tag;
-//@@author Chng-Zhi-Xuan
+# Chng-Zhi-Xuan
+###### \java\seedu\address\logic\commands\BookmarkCommandTest.java
+``` java
 public class BookmarkCommandTest {
 
     private Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
@@ -112,3 +91,74 @@ public class BookmarkCommandTest {
         assert model.getFilteredPlaceList().isEmpty();
     }
 }
+```
+###### \java\seedu\address\logic\commands\ClearBookmarkCommandTest.java
+``` java
+public class ClearBookmarkCommandTest {
+
+    @Test
+    public void execute_emptyAddressBook_success() {
+        Model model = new ModelManager();
+        assertCommandSuccess(prepareCommand(model), model, ClearBookmarkCommand.MESSAGE_CLEAR_BOOKMARK_SUCCESS, model);
+    }
+
+    @Test
+    public void execute_nonEmptyAddressBook_success() {
+        Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
+        assertCommandSuccess(prepareCommand(model), model, ClearBookmarkCommand.MESSAGE_CLEAR_BOOKMARK_SUCCESS, model);
+    }
+
+    @Test
+    public void equals() {
+        ClearBookmarkCommand clearBookmarkFirstCommand = new ClearBookmarkCommand();
+
+        // same object -> returns true
+        assertTrue(clearBookmarkFirstCommand.equals(clearBookmarkFirstCommand));
+
+        // same values -> returns true
+        ClearBookmarkCommand clearBookmarkFirstCommandCopy = new ClearBookmarkCommand();
+        assertTrue(clearBookmarkFirstCommand.equals(clearBookmarkFirstCommandCopy));
+
+        // different types -> returns false
+        assertFalse(clearBookmarkFirstCommand.equals(1));
+
+        // null -> returns false
+        assertFalse(clearBookmarkFirstCommand.equals(null));
+    }
+
+    private ClearBookmarkCommand prepareCommand(Model model) {
+        ClearBookmarkCommand command = new ClearBookmarkCommand();
+        command.setData(model, new CommandHistory(), new UndoRedoStack());
+        return command;
+    }
+}
+```
+###### \java\seedu\address\logic\parser\ParserUtilTest.java
+``` java
+    @Test
+    public void parseIndexPosition_invalidInput_throwsIllegalValueException() throws Exception {
+        thrown.expect(IllegalValueException.class);
+        thrown.expectMessage(MESSAGE_INVALID_INDEX);
+        ParserUtil.parseIndexFromPosition(" a 2 ", 0);
+    }
+```
+###### \java\seedu\address\logic\parser\ParserUtilTest.java
+``` java
+    @Test
+    public void parseIndexPosition_outOfRangeInput_throwsIllegalValueException() throws Exception {
+        thrown.expect(IllegalValueException.class);
+        thrown.expectMessage(MESSAGE_INVALID_INDEX);
+        ParserUtil.parseIndexFromPosition(" 0 1 2 3 4", 5);
+    }
+```
+###### \java\seedu\address\logic\parser\ParserUtilTest.java
+``` java
+    @Test
+    public void parseIndexPosition_validInput_success() throws Exception {
+
+        assertEquals(INDEX_FIRST_PLACE, ParserUtil.parseIndexFromPosition("1 2", 0));
+
+        assertEquals(INDEX_FIRST_PLACE, ParserUtil.parseIndexFromPosition("   1 2   ",
+                                                                                                0));
+    }
+```

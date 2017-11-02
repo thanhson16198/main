@@ -9,7 +9,7 @@ import seedu.address.model.place.exceptions.DuplicatePlaceException;
 import seedu.address.model.place.exceptions.PlaceNotFoundException;
 import seedu.address.model.tag.Tag;
 
-
+//@@author Chng-Zhi-Xuan
 /**
  * Clears all bookmark tags from all places
  */

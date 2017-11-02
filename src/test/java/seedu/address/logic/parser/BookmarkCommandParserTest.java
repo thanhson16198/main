@@ -9,7 +9,7 @@ import org.junit.Test;
 
 import seedu.address.logic.commands.BookmarkCommand;
 
-
+//@@author Chng-Zhi-Xuan-reused
 public class BookmarkCommandParserTest {
 
     private BookmarkCommandParser parser = new BookmarkCommandParser();

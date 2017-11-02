@@ -47,12 +47,14 @@ public class ParserUtilTest {
         ParserUtil.parseIndex("10 a");
     }
 
+    //@@author Chng-Zhi-Xuan
     @Test
     public void parseIndexPosition_invalidInput_throwsIllegalValueException() throws Exception {
         thrown.expect(IllegalValueException.class);
         thrown.expectMessage(MESSAGE_INVALID_INDEX);
         ParserUtil.parseIndexFromPosition(" a 2 ", 0);
     }
+    //@@author
 
     @Test
     public void parseIndex_outOfRangeInput_throwsIllegalValueException() throws Exception {
@@ -61,12 +63,14 @@ public class ParserUtilTest {
         ParserUtil.parseIndex(Long.toString(Integer.MAX_VALUE + 1));
     }
 
+    //@@author Chng-Zhi-Xuan
     @Test
     public void parseIndexPosition_outOfRangeInput_throwsIllegalValueException() throws Exception {
         thrown.expect(IllegalValueException.class);
         thrown.expectMessage(MESSAGE_INVALID_INDEX);
         ParserUtil.parseIndexFromPosition(" 0 1 2 3 4", 5);
     }
+    //@@author
 
     @Test
     public void parseIndex_validInput_success() throws Exception {
@@ -77,6 +81,7 @@ public class ParserUtilTest {
         assertEquals(INDEX_FIRST_PLACE, ParserUtil.parseIndex("  1  "));
     }
 
+    //@@author Chng-Zhi-Xuan
     @Test
     public void parseIndexPosition_validInput_success() throws Exception {
 
@@ -85,6 +90,7 @@ public class ParserUtilTest {
         assertEquals(INDEX_FIRST_PLACE, ParserUtil.parseIndexFromPosition("   1 2   ",
                                                                                                 0));
     }
+    //@@author
 
     @Test
     public void parseName_null_throwsNullPointerException() throws Exception {

@@ -14,7 +14,7 @@ import seedu.address.model.place.exceptions.PlaceNotFoundException;
 import seedu.address.model.tag.Tag;
 import seedu.address.model.tag.UniqueTagList;
 
-
+//@@author Chng-Zhi-Xuan
 /**
  * Bookmarks a place identified using it's last displayed index from the address book.
  */

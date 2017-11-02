@@ -6,7 +6,7 @@ import seedu.address.commons.core.index.Index;
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.logic.commands.BookmarkCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
-
+//@@author Chng-Zhi-Xuan
 /**
  * Parses input arguments and creates a new BookmarkCommand object
  */
