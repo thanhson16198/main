@@ -2,11 +2,11 @@
 package seedu.address.testutil;
 
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_POSTAL_CODE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_WEBSITE;
 
 import seedu.address.logic.commands.AddCommand;
 import seedu.address.model.place.ReadOnlyPlace;
@@ -30,7 +30,7 @@ public class PlaceUtil {
         StringBuilder sb = new StringBuilder();
         sb.append(PREFIX_NAME + place.getName().fullName + " ");
         sb.append(PREFIX_PHONE + place.getPhone().value + " ");
-        sb.append(PREFIX_EMAIL + place.getEmail().value + " ");
+        sb.append(PREFIX_WEBSITE + place.getWebsite().value + " ");
         sb.append(PREFIX_ADDRESS + place.getAddress().value + " ");
         sb.append(PREFIX_POSTAL_CODE + place.getPostalCode().value + " ");
         place.getTags().stream().forEach(
