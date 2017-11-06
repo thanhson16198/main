@@ -67,7 +67,7 @@ public class PlaceCard extends UiPart<Region> {
     @FXML
     private Label postalcode;
     @FXML
-    private Label email;
+    private Label website;
     @FXML
     private FlowPane tags;
 
@@ -98,7 +98,7 @@ public class PlaceCard extends UiPart<Region> {
         phone.textProperty().bind(Bindings.convert(place.phoneProperty()));
         address.textProperty().bind(Bindings.convert(place.addressProperty()));
         postalcode.textProperty().bind(Bindings.convert(place.postalcodeProperty()));
-        email.textProperty().bind(Bindings.convert(place.emailProperty()));
+        website.textProperty().bind(Bindings.convert(place.websiteProperty()));
         place.tagProperty().addListener((observable, oldValue, newValue) -> {
             tags.getChildren().clear();
             //place.getTags().forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
