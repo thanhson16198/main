@@ -2,11 +2,11 @@ package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_POSTAL_CODE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_WEBSITE;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PLACES;
 
 import java.util.List;
@@ -18,12 +18,12 @@ import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.CollectionUtil;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.place.Address;
-import seedu.address.model.place.Email;
 import seedu.address.model.place.Name;
 import seedu.address.model.place.Phone;
 import seedu.address.model.place.Place;
 import seedu.address.model.place.PostalCode;
 import seedu.address.model.place.ReadOnlyPlace;
+import seedu.address.model.place.Website;
 import seedu.address.model.place.exceptions.DuplicatePlaceException;
 import seedu.address.model.place.exceptions.PlaceNotFoundException;
 import seedu.address.model.tag.Tag;
@@ -42,13 +42,13 @@ public class EditCommand extends UndoableCommand {
             + "Parameters: INDEX (must be a positive integer) "
             + "[" + PREFIX_NAME + "NAME] "
             + "[" + PREFIX_PHONE + "PHONE] "
-            + "[" + PREFIX_EMAIL + "EMAIL] "
+            + "[" + PREFIX_WEBSITE + "WEBSITE] "
             + "[" + PREFIX_ADDRESS + "ADDRESS] "
             + "[" + PREFIX_POSTAL_CODE + "POSTAL CODE] "
             + "[" + PREFIX_TAG + "TAG]...\n"
             + "Example: " + COMMAND_WORD + " 1 "
             + PREFIX_PHONE + "91234567 "
-            + PREFIX_EMAIL + "johndoe@example.com"
+            + PREFIX_WEBSITE + "www.marinabaysands.com"
             + PREFIX_POSTAL_CODE + "639304";
 
     public static final String MESSAGE_EDIT_PLACE_SUCCESS = "Edited Place: %1$s";
@@ -102,12 +102,12 @@ public class EditCommand extends UndoableCommand {
 
         Name updatedName = editPlaceDescriptor.getName().orElse(placeToEdit.getName());
         Phone updatedPhone = editPlaceDescriptor.getPhone().orElse(placeToEdit.getPhone());
-        Email updatedEmail = editPlaceDescriptor.getEmail().orElse(placeToEdit.getEmail());
+        Website updatedWebsite = editPlaceDescriptor.getWebsite().orElse(placeToEdit.getWebsite());
         Address updatedAddress = editPlaceDescriptor.getAddress().orElse(placeToEdit.getAddress());
         PostalCode updatedPostalCode = editPlaceDescriptor.getPostalCode().orElse(placeToEdit.getPostalCode());
         Set<Tag> updatedTags = editPlaceDescriptor.getTags().orElse(placeToEdit.getTags());
 
-        return new Place(updatedName, updatedPhone, updatedEmail, updatedAddress, updatedPostalCode, updatedTags);
+        return new Place(updatedName, updatedPhone, updatedWebsite, updatedAddress, updatedPostalCode, updatedTags);
     }
 
     @Override
@@ -135,7 +135,7 @@ public class EditCommand extends UndoableCommand {
     public static class EditPlaceDescriptor {
         private Name name;
         private Phone phone;
-        private Email email;
+        private Website website;
         private Address address;
         private PostalCode postalCode;
         private Set<Tag> tags;
@@ -145,7 +145,7 @@ public class EditCommand extends UndoableCommand {
         public EditPlaceDescriptor(EditPlaceDescriptor toCopy) {
             this.name = toCopy.name;
             this.phone = toCopy.phone;
-            this.email = toCopy.email;
+            this.website = toCopy.website;
             this.address = toCopy.address;
             this.postalCode = toCopy.postalCode;
             this.tags = toCopy.tags;
@@ -158,7 +158,7 @@ public class EditCommand extends UndoableCommand {
             return CollectionUtil.isAnyNonNull(
                     this.name,
                     this.phone,
-                    this.email,
+                    this.website,
                     this.address,
                     this.postalCode,
                     this.tags);
@@ -180,12 +180,12 @@ public class EditCommand extends UndoableCommand {
             return Optional.ofNullable(phone);
         }
 
-        public void setEmail(Email email) {
-            this.email = email;
+        public void setWebsite(Website website) {
+            this.website = website;
         }
 
-        public Optional<Email> getEmail() {
-            return Optional.ofNullable(email);
+        public Optional<Website> getWebsite() {
+            return Optional.ofNullable(website);
         }
 
         public void setAddress(Address address) {
@@ -229,7 +229,7 @@ public class EditCommand extends UndoableCommand {
 
             return getName().equals(e.getName())
                     && getPhone().equals(e.getPhone())
-                    && getEmail().equals(e.getEmail())
+                    && getWebsite().equals(e.getWebsite())
                     && getAddress().equals(e.getAddress())
                     && getPostalCode().equals(e.getPostalCode())
                     && getTags().equals(e.getTags());
