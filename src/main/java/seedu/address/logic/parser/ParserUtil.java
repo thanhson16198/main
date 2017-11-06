@@ -11,10 +11,10 @@ import seedu.address.commons.core.index.Index;
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.commons.util.StringUtil;
 import seedu.address.model.place.Address;
-import seedu.address.model.place.Email;
 import seedu.address.model.place.Name;
 import seedu.address.model.place.Phone;
 import seedu.address.model.place.PostalCode;
+import seedu.address.model.place.Website;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -116,8 +116,8 @@ public class ParserUtil {
      * Parses a {@code Optional<String> email} into an {@code Optional<Email>} if {@code email} is present.
      * See header comment of this class regarding the use of {@code Optional} parameters.
      */
-    public static Optional<Email> parseEmail(Optional<String> email) throws IllegalValueException {
-        return email.isPresent() ? Optional.of(new Email(email.get())) : Optional.empty();
+    public static Optional<Website> parseWebsite(Optional<String> website) throws IllegalValueException {
+        return website.isPresent() ? Optional.of(new Website(website.get())) : Optional.empty();
     }
 
     /**
