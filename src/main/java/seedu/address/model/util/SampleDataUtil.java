@@ -7,11 +7,11 @@ import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.AddressBook;
 import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.place.Address;
-import seedu.address.model.place.Email;
 import seedu.address.model.place.Name;
 import seedu.address.model.place.Phone;
 import seedu.address.model.place.Place;
 import seedu.address.model.place.PostalCode;
+import seedu.address.model.place.Website;
 import seedu.address.model.place.exceptions.DuplicatePlaceException;
 import seedu.address.model.tag.Tag;
 
@@ -24,23 +24,27 @@ public class SampleDataUtil {
             return new Place[] {
                 //@@author huyuanrong
                 new Place(new Name("Marina Bay Sands"), new Phone("66888868"),
-                        new Email("inquiries@marinabaysands.com"),
+                        new Website("https://www.marinabaysands.com"),
                     new Address("10 Bayfront Avenue"), new PostalCode("018956"),
                     getTagSet("attractions")),
-                new Place(new Name("Singapore Flyer"), new Phone("6333311"), new Email("media@singaporeflyer.com"),
+                new Place(new Name("Singapore Flyer"), new Phone("6333311"),
+                        new Website("https://www.singaporeflyer.com"),
                     new Address("30 Raffles Ave"), new PostalCode("039803"),
                     getTagSet("attractions")),
-                new Place(new Name("Singapore Zoo"), new Phone("62693411"), new Email("enquiry@wrs.com.sg"),
+                new Place(new Name("Singapore Zoo"), new Phone("62693411"),
+                        new Website("https://www.wrs.com.sg"),
                     new Address("80 Mandai Lake Rd"), new PostalCode("729826"),
                     getTagSet("attractions")),
-                new Place(new Name("Beni Singapore"), new Phone("91593177"), new Email("enquiry@beni-sg.com"),
+                new Place(new Name("Beni Singapore"), new Phone("91593177"),
+                        new Website("https://www.beni-sg.com"),
                     new Address("333A Orchard Rd, #02-37"), new PostalCode("238897"),
                     getTagSet("onestar")),
-                new Place(new Name("Odette"), new Phone("63850498"), new Email("enquiry@odetterestaurant.com"),
+                new Place(new Name("Odette"), new Phone("63850498"),
+                        new Website("https://www.odetterestaurant.com"),
                     new Address("1 Saint Andrew's Rd, #01-04, National Gallery"), new PostalCode("178957"),
                     getTagSet("twostars")),
                 new Place(new Name("Joël Robuchon Restaurant"), new Phone("65777888"),
-                        new Email("robuchon@rwsentosa.com"),
+                        new Website("https://www.rwsentosa.com"),
                     new Address("26 Sentosa Gateway, Hotel Michael, #01-104 and 105"), new PostalCode("098138"),
                     getTagSet("threestars"))
                     //@@author
