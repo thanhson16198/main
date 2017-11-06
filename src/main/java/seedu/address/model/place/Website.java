@@ -6,7 +6,7 @@ import seedu.address.commons.exceptions.IllegalValueException;
  * Represents a Place's phone number in the address book.
  * Guarantees: immutable; is valid as declared in {@link #isValidEmail(String)}
  */
-public class Email {
+public class Website {
 
     public static final String MESSAGE_EMAIL_CONSTRAINTS =
             "Place emails should be 2 alphanumeric/period strings separated by '@'";
