@@ -10,7 +10,7 @@ import seedu.address.commons.exceptions.IllegalValueException;
 public class Website {
 
     public static final String MESSAGE_WEBSITE_CONSTRAINTS =
-            "Place website should contain http://www https://www.";
+            "Place website should contain http://www https://www";
     public static final String WEBSITE_VALIDATION_REGEX =
             "https?://(www\\.)?[-a-z0-9]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%_+.~#?&//=]*)";
     public static final String WEBSITE_UNKNOWN = "http://www.-.com";
