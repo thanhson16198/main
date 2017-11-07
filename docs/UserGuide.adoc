@@ -253,7 +253,15 @@ There is no need to save manually.
 === Displaying MRT map of Singapore
 
 *Display MRT map of Singapore by clicking on `MRT Map` -> `MRT Map` +
-*Display MRT map of Singapore by typing in Command Line `mrt`
+
+or
+
+*Display MRT map of Singapore by using the CLI. +
+ Format: `mrt` +
+
+ or
+
+ Using the shortcut key `F3`
 
 //@@author
 === Useful contact numbers in Singapore
@@ -263,7 +271,12 @@ Display a list of useful contact numbers by clicking on `Help -> Useful Contacts
 or
 
 Display a list of useful contact numbers by using the CLI. +
-Format: `emergency` or `sos`
+Format: `emergency` or `sos` +
+
+or
+
+Using the shortcut key.
+Format: `F2`
 
 === Bookmark a place: `bookmark`
 
