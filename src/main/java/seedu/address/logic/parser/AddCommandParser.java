@@ -2,11 +2,11 @@ package seedu.address.logic.parser;
 
 import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_POSTAL_CODE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_WEBSITE;
 
 import java.util.Optional;
 import java.util.Set;
@@ -16,12 +16,12 @@ import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.logic.commands.AddCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.place.Address;
-import seedu.address.model.place.Email;
 import seedu.address.model.place.Name;
 import seedu.address.model.place.Phone;
 import seedu.address.model.place.Place;
 import seedu.address.model.place.PostalCode;
 import seedu.address.model.place.ReadOnlyPlace;
+import seedu.address.model.place.Website;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -35,12 +35,11 @@ public class AddCommandParser implements Parser<AddCommand> {
      * @throws ParseException if the user input does not conform the expected format
      */
     public AddCommand parse(String args) throws ParseException {
-        //@@author aungmyin23
-        Email email;
+        Website website;
         Phone phone;
         Address address;
         ArgumentMultimap argMultimap =
-                ArgumentTokenizer.tokenize(args, PREFIX_NAME, PREFIX_PHONE, PREFIX_EMAIL, PREFIX_ADDRESS,
+                ArgumentTokenizer.tokenize(args, PREFIX_NAME, PREFIX_PHONE, PREFIX_WEBSITE, PREFIX_ADDRESS,
                         PREFIX_POSTAL_CODE, PREFIX_TAG);
 
         if (!arePrefixesPresent(argMultimap, PREFIX_NAME, PREFIX_POSTAL_CODE)) {
@@ -49,17 +48,18 @@ public class AddCommandParser implements Parser<AddCommand> {
 
         try {
             Name name = ParserUtil.parseName(argMultimap.getValue(PREFIX_NAME)).get();
+            //@@author aungmyin23
             Optional<Phone> optionalPhone = ParserUtil.parsePhone(argMultimap.getValue(PREFIX_PHONE));
             if (optionalPhone.isPresent()) {
                 phone = optionalPhone.get();
             } else {
                 phone = new Phone (null);
             }
-            Optional<Email> optionalEmail = ParserUtil.parseEmail(argMultimap.getValue(PREFIX_EMAIL));
-            if (optionalEmail.isPresent()) {
-                email = optionalEmail.get();
+            Optional<Website> optionalWebsite = ParserUtil.parseWebsite(argMultimap.getValue(PREFIX_WEBSITE));
+            if (optionalWebsite.isPresent()) {
+                website = optionalWebsite.get();
             } else {
-                email = new Email(null);
+                website = new Website(null);
             }
             Optional<Address> optionalAddress = ParserUtil.parseAddress(argMultimap.getValue(PREFIX_ADDRESS));
             if (optionalAddress.isPresent()) {
@@ -71,7 +71,7 @@ public class AddCommandParser implements Parser<AddCommand> {
             //@@author
             Set<Tag> tagList = ParserUtil.parseTags(argMultimap.getAllValues(PREFIX_TAG));
 
-            ReadOnlyPlace place = new Place(name, phone, email, address, postalcode, tagList);
+            ReadOnlyPlace place = new Place(name, phone, website, address, postalcode, tagList);
 
             return new AddCommand(place);
         } catch (IllegalValueException ive) {

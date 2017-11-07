@@ -9,12 +9,12 @@ import javax.xml.bind.annotation.XmlElement;
 
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.place.Address;
-import seedu.address.model.place.Email;
 import seedu.address.model.place.Name;
 import seedu.address.model.place.Phone;
 import seedu.address.model.place.Place;
 import seedu.address.model.place.PostalCode;
 import seedu.address.model.place.ReadOnlyPlace;
+import seedu.address.model.place.Website;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -27,7 +27,7 @@ public class XmlAdaptedPlace {
     @XmlElement(required = true)
     private String phone;
     @XmlElement(required = true)
-    private String email;
+    private String website;
     @XmlElement(required = true)
     private String address;
     @XmlElement(required = true)
@@ -51,7 +51,7 @@ public class XmlAdaptedPlace {
     public XmlAdaptedPlace(ReadOnlyPlace source) {
         name = source.getName().fullName;
         phone = source.getPhone().value;
-        email = source.getEmail().value;
+        website = source.getWebsite().value;
         address = source.getAddress().value;
         postalcode = source.getPostalCode().value;
         tags = new ArrayList<>();
@@ -72,10 +72,10 @@ public class XmlAdaptedPlace {
         }
         final Name name = new Name(this.name);
         final Phone phone = new Phone(this.phone);
-        final Email email = new Email(this.email);
+        final Website website = new Website(this.website);
         final Address address = new Address(this.address);
         final PostalCode postalcode = new PostalCode((this.postalcode));
         final Set<Tag> tags = new HashSet<>(placeTags);
-        return new Place(name, phone, email, address, postalcode, tags);
+        return new Place(name, phone, website, address, postalcode, tags);
     }
 }

@@ -20,7 +20,7 @@ public class Place implements ReadOnlyPlace {
 
     private ObjectProperty<Name> name;
     private ObjectProperty<Phone> phone;
-    private ObjectProperty<Email> email;
+    private ObjectProperty<Website> website;
     private ObjectProperty<Address> address;
     private ObjectProperty<PostalCode> postalcode;
 
@@ -29,11 +29,11 @@ public class Place implements ReadOnlyPlace {
     /**
      * Every field must be present and not null.
      */
-    public Place(Name name, Phone phone, Email email, Address address, PostalCode postalcode, Set<Tag> tags) {
-        requireAllNonNull(name, phone, email, address, postalcode, tags);
+    public Place(Name name, Phone phone, Website website, Address address, PostalCode postalcode, Set<Tag> tags) {
+        requireAllNonNull(name, phone, website, address, postalcode, tags);
         this.name = new SimpleObjectProperty<>(name);
         this.phone = new SimpleObjectProperty<>(phone);
-        this.email = new SimpleObjectProperty<>(email);
+        this.website = new SimpleObjectProperty<>(website);
         this.address = new SimpleObjectProperty<>(address);
         // protect internal tags from changes in the arg list
         this.tags = new SimpleObjectProperty<>(new UniqueTagList(tags));
@@ -44,7 +44,7 @@ public class Place implements ReadOnlyPlace {
      * Creates a copy of the given ReadOnlyPlace.
      */
     public Place(ReadOnlyPlace source) {
-        this(source.getName(), source.getPhone(), source.getEmail(), source.getAddress(), source.getPostalCode(),
+        this(source.getName(), source.getPhone(), source.getWebsite(), source.getAddress(), source.getPostalCode(),
                 source.getTags());
     }
 
@@ -76,18 +76,18 @@ public class Place implements ReadOnlyPlace {
         return phone.get();
     }
 
-    public void setEmail(Email email) {
-        this.email.set(requireNonNull(email));
+    public void setWebsite(Website website) {
+        this.website.set(requireNonNull(website));
     }
 
     @Override
-    public ObjectProperty<Email> emailProperty() {
-        return email;
+    public ObjectProperty<Website> websiteProperty() {
+        return website;
     }
 
     @Override
-    public Email getEmail() {
-        return email.get();
+    public Website getWebsite() {
+        return website.get();
     }
 
     public void setAddress(Address address) {
@@ -148,7 +148,7 @@ public class Place implements ReadOnlyPlace {
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name, phone, email, address, postalcode, tags);
+        return Objects.hash(name, phone, website, address, postalcode, tags);
     }
 
     @Override

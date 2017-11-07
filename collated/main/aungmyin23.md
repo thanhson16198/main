@@ -13,6 +13,19 @@ public class ShowMrtRequestEvent extends BaseEvent {
 
 }
 ```
+###### \java\seedu\address\commons\events\ui\ShowPsiRequestEvent.java
+``` java
+/**
+ * An event requesting to view the psi webpage.
+ */
+public class ShowPsiRequestEvent extends BaseEvent {
+
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName();
+    }
+}
+```
 ###### \java\seedu\address\logic\commands\MrtCommand.java
 ``` java
 /**
@@ -34,32 +47,40 @@ public class MrtCommand extends Command {
     }
 }
 ```
+###### \java\seedu\address\logic\commands\PsiCommand.java
+``` java
+/**
+ * Format full help instructions for every command for display.
+ */
+public class PsiCommand extends Command {
+
+    public static final String COMMAND_WORD = "psi";
+
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Shows PSI of Singapore.\n"
+            + "Example: " + COMMAND_WORD;
+
+    public static final String SHOWING_PSI_MESSAGE = "Latest PSI webpage loaded.";
+
+    @Override
+    public CommandResult execute() {
+        EventsCenter.getInstance().post(new ShowPsiRequestEvent());
+        return new CommandResult(SHOWING_PSI_MESSAGE);
+    }
+}
+```
 ###### \java\seedu\address\logic\parser\AddCommandParser.java
 ``` java
-        Email email;
-        Phone phone;
-        Address address;
-        ArgumentMultimap argMultimap =
-                ArgumentTokenizer.tokenize(args, PREFIX_NAME, PREFIX_PHONE, PREFIX_EMAIL, PREFIX_ADDRESS,
-                        PREFIX_POSTAL_CODE, PREFIX_TAG);
-
-        if (!arePrefixesPresent(argMultimap, PREFIX_NAME, PREFIX_POSTAL_CODE)) {
-            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddCommand.MESSAGE_USAGE));
-        }
-
-        try {
-            Name name = ParserUtil.parseName(argMultimap.getValue(PREFIX_NAME)).get();
             Optional<Phone> optionalPhone = ParserUtil.parsePhone(argMultimap.getValue(PREFIX_PHONE));
             if (optionalPhone.isPresent()) {
                 phone = optionalPhone.get();
             } else {
                 phone = new Phone (null);
             }
-            Optional<Email> optionalEmail = ParserUtil.parseEmail(argMultimap.getValue(PREFIX_EMAIL));
-            if (optionalEmail.isPresent()) {
-                email = optionalEmail.get();
+            Optional<Website> optionalWebsite = ParserUtil.parseWebsite(argMultimap.getValue(PREFIX_WEBSITE));
+            if (optionalWebsite.isPresent()) {
+                website = optionalWebsite.get();
             } else {
-                email = new Email(null);
+                website = new Website(null);
             }
             Optional<Address> optionalAddress = ParserUtil.parseAddress(argMultimap.getValue(PREFIX_ADDRESS));
             if (optionalAddress.isPresent()) {
@@ -73,6 +94,8 @@ public class MrtCommand extends Command {
 ``` java
         case MrtCommand.COMMAND_WORD:
             return new MrtCommand();
+        case PsiCommand.COMMAND_WORD:
+            return new PsiCommand();
 ```
 ###### \java\seedu\address\logic\parser\ParserUtil.java
 ``` java
@@ -85,45 +108,14 @@ public class MrtCommand extends Command {
         requireNonNull(postalcode);
         return postalcode.isPresent() ? Optional.of(new PostalCode(postalcode.get())) : Optional.empty();
     }
-```
-###### \java\seedu\address\model\place\Email.java
-``` java
-        if (email == null) {
-            this.value = EMAIL_UNKNOWN;
-        } else {
-            String trimmedEmail = email.trim();
-            if (!isValidEmail(trimmedEmail)) {
-                throw new IllegalValueException((MESSAGE_EMAIL_CONSTRAINTS));
-            }
-            this.value = trimmedEmail;
-        }
-    }
 
     /**
-     * Returns if a given string is a valid place email.
+     * Parses a {@code Optional<String> email} into an {@code Optional<Email>} if {@code email} is present.
+     * See header comment of this class regarding the use of {@code Optional} parameters.
      */
-    public static boolean isValidEmail(String test) {
-        return test.matches(EMAIL_VALIDATION_REGEX) || test.equals(EMAIL_UNKNOWN);
+    public static Optional<Website> parseWebsite(Optional<String> website) throws IllegalValueException {
+        return website.isPresent() ? Optional.of(new Website(website.get())) : Optional.empty();
     }
-
-    @Override
-    public String toString() {
-        return value;
-    }
-
-    @Override
-    public boolean equals(Object other) {
-        return other == this // short circuit if same object
-                || (other instanceof Email // instanceof handles nulls
-                && this.value.equals(((Email) other).value)); // state check
-    }
-
-    @Override
-    public int hashCode() {
-        return value.hashCode();
-    }
-
-}
 ```
 ###### \java\seedu\address\model\place\PostalCode.java
 ``` java
@@ -177,6 +169,66 @@ public class PostalCode {
         return value.hashCode();
     }
 
+}
+```
+###### \java\seedu\address\model\place\Website.java
+``` java
+/**
+ * Represents a Place's phone number in the address book.
+ * Guarantees: immutable; is valid as declared in {@link #isValidWebsite(String)}
+ */
+public class Website {
+
+    public static final String MESSAGE_WEBSITE_CONSTRAINTS =
+            "Place website should contain http://www https://www";
+    public static final String WEBSITE_VALIDATION_REGEX =
+            "https?://(www\\.)?[-a-z0-9]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%_+.~#?&//=]*)";
+    public static final String WEBSITE_UNKNOWN = "http://www.-.com";
+
+    public final String value;
+
+    /**
+     * Validates given website.
+     *
+     * @throws IllegalValueException if given website string is invalid.
+     */
+    public Website(String website) throws IllegalValueException {
+        if (website == null) {
+            this.value = WEBSITE_UNKNOWN;
+        } else {
+            String trimmedWebsite = website.trim();
+            if (!isValidWebsite(trimmedWebsite)) {
+                throw new IllegalValueException((MESSAGE_WEBSITE_CONSTRAINTS));
+            }
+            this.value = trimmedWebsite;
+        }
+    }
+```
+###### \java\seedu\address\ui\MainWindow.java
+``` java
+    @FXML
+    private MenuItem mrtMapItem;
+    @FXML
+    private MenuItem psiItem;
+```
+###### \java\seedu\address\ui\MainWindow.java
+``` java
+    @Subscribe
+    private void handleShowMrtEvent(ShowMrtRequestEvent event) {
+        logger.info(LogsCenter.getEventHandlingLogMessage(event));
+        handleMrtMap();
+
+    }
+
+    @Subscribe
+    private void handleShowPsiEvent(ShowPsiRequestEvent event) {
+        logger.info(LogsCenter.getEventHandlingLogMessage(event));
+        handlePsi();
+
+    }
+```
+###### \java\seedu\address\ui\MainWindow.java
+``` java
 }
 ```
 ###### \java\seedu\address\ui\MrtWindow.java
@@ -233,4 +285,19 @@ public class MrtWindow extends UiPart<Region> {
         dialogStage.showAndWait();
     }
 }
+```
+###### \resources\view\MrtMapWindow.fxml
+``` fxml
+
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.web.WebView?>
+
+<StackPane fx:id="mrtWindowRoot" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <WebView fx:id="browser" />
+</StackPane>
+```
+###### \resources\view\PlaceListCard.fxml
+``` fxml
+      <Label fx:id="postalcode" styleClass="cell_small_label" text="\$postalcode" />
+      <Label fx:id="website" styleClass="cell_small_label" text="\$website" />
 ```

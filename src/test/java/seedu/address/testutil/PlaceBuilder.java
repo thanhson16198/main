@@ -4,12 +4,12 @@ import java.util.Set;
 
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.place.Address;
-import seedu.address.model.place.Email;
 import seedu.address.model.place.Name;
 import seedu.address.model.place.Phone;
 import seedu.address.model.place.Place;
 import seedu.address.model.place.PostalCode;
 import seedu.address.model.place.ReadOnlyPlace;
+import seedu.address.model.place.Website;
 import seedu.address.model.tag.Tag;
 import seedu.address.model.util.SampleDataUtil;
 
@@ -20,9 +20,9 @@ public class PlaceBuilder {
 
     public static final String DEFAULT_NAME = "Alice Pauline";
     public static final String DEFAULT_PHONE = "85355255";
-    public static final String DEFAULT_EMAIL = "alice@gmail.com";
+    public static final String DEFAULT_WEBSITE = "https://www.example.com";
     public static final String DEFAULT_ADDRESS = "123, Jurong West Ave 6, #08-111";
-    public static final String DEFAULT_POSTAL_CODE = "600123";
+    public static final String DEFAULT_POSTAL_CODE = "111111";
     public static final String DEFAULT_TAGS = "friends";
 
     private Place place;
@@ -31,11 +31,12 @@ public class PlaceBuilder {
         try {
             Name defaultName = new Name(DEFAULT_NAME);
             Phone defaultPhone = new Phone(DEFAULT_PHONE);
-            Email defaultEmail = new Email(DEFAULT_EMAIL);
+            Website defaultWebsite = new Website(DEFAULT_WEBSITE);
             Address defaultAddress = new Address(DEFAULT_ADDRESS);
             PostalCode defaultPostalCode = new PostalCode(DEFAULT_POSTAL_CODE);
             Set<Tag> defaultTags = SampleDataUtil.getTagSet(DEFAULT_TAGS);
-            this.place = new Place(defaultName, defaultPhone, defaultEmail, defaultAddress, defaultPostalCode,
+            this.place = new Place(defaultName, defaultPhone, defaultWebsite, defaultAddress,
+                    defaultPostalCode,
                     defaultTags);
         } catch (IllegalValueException ive) {
             throw new AssertionError("Default place's values are invalid.");
@@ -97,6 +98,7 @@ public class PlaceBuilder {
         return this;
     }
 
+    //@@author aungmyin23
     /**
      * Sets the {@code PostalCode} of the {@code PostalCode} that we are building.
      */
@@ -110,16 +112,17 @@ public class PlaceBuilder {
     }
 
     /**
-     * Sets the {@code Email} of the {@code Place} that we are building.
+     * Sets the {@code Website} of the {@code Place} that we are building.
      */
-    public PlaceBuilder withEmail(String email) {
+    public PlaceBuilder withWebsite(String website) {
         try {
-            this.place.setEmail(new Email(email));
+            this.place.setWebsite(new Website(website));
         } catch (IllegalValueException ive) {
-            throw new IllegalArgumentException("email is expected to be unique.");
+            throw new IllegalArgumentException("website is expected to be unique.");
         }
         return this;
     }
+    //@@author
 
     public Place build() {
         return this.place;
