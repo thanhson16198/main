@@ -157,6 +157,20 @@ public class GotoCommandParser implements Parser<GotoCommand> {
     }
 }
 ```
+###### \java\seedu\address\ui\BrowserPanel.java
+``` java
+    private void loadPlacePage(ReadOnlyPlace place) {
+        // Check if the website is not filled
+        if (place.getWebsite().toString().contains("www.-.com")) {
+            loadPage(GOOGLE_SEARCH_URL_PREFIX + place.getName().fullName.replaceAll(" ", "+")
+                    + GOOGLE_SEARCH_URL_SUFFIX);
+        }
+        else {
+            loadPage(place.getWebsite().toString().replaceAll(" ", "+"));
+        }
+
+    }
+```
 ###### \java\seedu\address\ui\MainWindow.java
 ``` java
     public static void loadUrl(String url) {

@@ -40,11 +40,19 @@ public class BrowserPanel extends UiPart<Region> {
         loadDefaultPage();
         registerAsAnEventHandler(this);
     }
-
+    //@@author thanhson16198
     private void loadPlacePage(ReadOnlyPlace place) {
-        loadPage(GOOGLE_SEARCH_URL_PREFIX + place.getName().fullName.replaceAll(" ", "+")
-                + GOOGLE_SEARCH_URL_SUFFIX);
+        // Check if the website is not filled
+        if (place.getWebsite().toString().contains("www.-.com")) {
+            loadPage(GOOGLE_SEARCH_URL_PREFIX + place.getName().fullName.replaceAll(" ", "+")
+                    + GOOGLE_SEARCH_URL_SUFFIX);
+        }
+        else {
+            loadPage(place.getWebsite().toString().replaceAll(" ", "+"));
+        }
+
     }
+    //@@author
 
     public void loadPage(String url) {
         Platform.runLater(() -> browser.getEngine().load(url));
