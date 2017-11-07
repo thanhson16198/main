@@ -1,5 +1,7 @@
 package seedu.address.model.place;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 import javafx.beans.property.ObjectProperty;
@@ -39,6 +41,21 @@ public interface ReadOnlyPlace {
     }
 
     /**
+     * Returns a List containing all the property names of a Place.
+     */
+    default List<String> getPropertyNamesAsList() {
+        List<String> propertyNames = new ArrayList<String>();
+
+        propertyNames.add("Name");
+        propertyNames.add("Phone");
+        propertyNames.add("Address");
+        propertyNames.add("Postal Code");
+        propertyNames.add("Website");
+
+        return propertyNames;
+    }
+
+    /**
      * Formats the place as text, showing all contact details.
      */
     default String getAsText() {
@@ -46,12 +63,12 @@ public interface ReadOnlyPlace {
         builder.append(getName())
                 .append(" Phone: ")
                 .append(getPhone())
-                .append(" Website: ")
-                .append(getWebsite())
                 .append(" Address: ")
                 .append(getAddress())
                 .append(" PostalCode: ")
                 .append(getPostalCode())
+                .append(" Website: ")
+                .append(getWebsite())
                 .append(" Tags: ");
         getTags().forEach(builder::append);
         return builder.toString();
