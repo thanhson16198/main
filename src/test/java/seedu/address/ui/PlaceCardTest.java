@@ -33,7 +33,7 @@ public class PlaceCardTest extends GuiUnitTest {
         guiRobot.interact(() -> {
             placeWithTags.setName(ALICE.getName());
             placeWithTags.setAddress(ALICE.getAddress());
-            placeWithTags.setEmail(ALICE.getEmail());
+            placeWithTags.setWebsite(ALICE.getWebsite());
             placeWithTags.setPhone(ALICE.getPhone());
             placeWithTags.setTags(ALICE.getTags());
         });

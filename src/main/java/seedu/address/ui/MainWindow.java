@@ -21,6 +21,7 @@ import seedu.address.commons.events.ui.ExitAppRequestEvent;
 import seedu.address.commons.events.ui.ShowContactsEvent;
 import seedu.address.commons.events.ui.ShowHelpRequestEvent;
 import seedu.address.commons.events.ui.ShowMrtRequestEvent;
+import seedu.address.commons.events.ui.ShowPsiRequestEvent;
 import seedu.address.commons.events.ui.ShowWeatherRequestEvent;
 import seedu.address.commons.util.FxViewUtil;
 import seedu.address.logic.Logic;
@@ -70,9 +71,12 @@ public class MainWindow extends UiPart<Region> {
     @FXML
     private MenuItem contactsMenuItem;
     //@@author
+    //@@author aungmyin23
     @FXML
     private MenuItem mrtMapItem;
-
+    @FXML
+    private MenuItem psiItem;
+    //@@author
     @FXML
     private StackPane placeListPanelPlaceholder;
 
@@ -245,6 +249,7 @@ public class MainWindow extends UiPart<Region> {
         contactWindow.show();
     }
     //@@author
+    //@aurhor aungmyin23
     /**
      * Opens the mrt map window.
      */
@@ -253,6 +258,15 @@ public class MainWindow extends UiPart<Region> {
         MrtWindow mrtWindow = new MrtWindow();
         mrtWindow.show();
     }
+    /**
+     * Opens the have webstite at Browser window.
+     */
+    @FXML
+    public void handlePsi() {
+        logger.info("Open the PSI value around Singapore for today on BrowerPanel.");
+        browserPanel.loadPage("http://www.haze.gov.sg/air-quality-information");
+    }
+    //@@author
 
     void show() {
         primaryStage.show();
@@ -294,11 +308,19 @@ public class MainWindow extends UiPart<Region> {
         showNumbers();
     }
     //@@author
-
+    //@@author aungmyin23
     @Subscribe
     private void handleShowMrtEvent(ShowMrtRequestEvent event) {
         logger.info(LogsCenter.getEventHandlingLogMessage(event));
         handleMrtMap();
 
     }
+
+    @Subscribe
+    private void handleShowPsiEvent(ShowPsiRequestEvent event) {
+        logger.info(LogsCenter.getEventHandlingLogMessage(event));
+        handlePsi();
+
+    }
+    //@@author aungmyin23
 }

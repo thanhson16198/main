@@ -16,8 +16,8 @@ public interface ReadOnlyPlace {
     Name getName();
     ObjectProperty<Phone> phoneProperty();
     Phone getPhone();
-    ObjectProperty<Email> emailProperty();
-    Email getEmail();
+    ObjectProperty<Website> websiteProperty();
+    Website getWebsite();
     ObjectProperty<Address> addressProperty();
     Address getAddress();
     ObjectProperty<UniqueTagList> tagProperty();
@@ -33,7 +33,7 @@ public interface ReadOnlyPlace {
                 || (other != null // this is first to avoid NPE below
                 && other.getName().equals(this.getName()) // state checks here onwards
                 && other.getPhone().equals(this.getPhone())
-                && other.getEmail().equals(this.getEmail())
+                && other.getWebsite().equals(this.getWebsite())
                 && other.getAddress().equals(this.getAddress())
                 && other.getPostalCode().equals(this.getPostalCode()));
     }
@@ -46,8 +46,8 @@ public interface ReadOnlyPlace {
         builder.append(getName())
                 .append(" Phone: ")
                 .append(getPhone())
-                .append(" Email: ")
-                .append(getEmail())
+                .append(" Website: ")
+                .append(getWebsite())
                 .append(" Address: ")
                 .append(getAddress())
                 .append(" PostalCode: ")

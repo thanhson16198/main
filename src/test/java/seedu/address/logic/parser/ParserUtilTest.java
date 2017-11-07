@@ -19,22 +19,22 @@ import org.junit.rules.ExpectedException;
 
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.place.Address;
-import seedu.address.model.place.Email;
 import seedu.address.model.place.Name;
 import seedu.address.model.place.Phone;
+import seedu.address.model.place.Website;
 import seedu.address.model.tag.Tag;
 
 public class ParserUtilTest {
     private static final String INVALID_NAME = "R@chel";
     private static final String INVALID_PHONE = "+651234";
     private static final String INVALID_ADDRESS = " ";
-    private static final String INVALID_EMAIL = "example.com";
+    private static final String INVALID_WEBSITE = "example.com";
     private static final String INVALID_TAG = "#friend";
 
     private static final String VALID_NAME = "Rachel Walker";
     private static final String VALID_PHONE = "123456";
     private static final String VALID_ADDRESS = "123 Main Street #0505";
-    private static final String VALID_EMAIL = "rachel@example.com";
+    private static final String VALID_WEBSITE = "http://www.rachel.com";
     private static final String VALID_TAG_1 = "friend";
     private static final String VALID_TAG_2 = "neighbour";
 
@@ -158,24 +158,25 @@ public class ParserUtilTest {
     }
 
     @Test
-    public void parseEmail_null_throwsNullPointerException() throws Exception {
+    public void parseWebsite_null_throwsNullPointerException() throws Exception {
         thrown.expect(NullPointerException.class);
-        ParserUtil.parseEmail(null);
+        ParserUtil.parseWebsite(null);
     }
 
     @Test
-    public void parseEmail_invalidValue_throwsIllegalValueException() throws Exception {
+    public void parseWebsite_invalidValue_throwsIllegalValueException() throws Exception {
         thrown.expect(IllegalValueException.class);
-        ParserUtil.parseEmail(Optional.of(INVALID_EMAIL));
+        ParserUtil.parseWebsite(Optional.of(INVALID_WEBSITE));
     }
-
+    //@@author aungmyin23
     @Test
-    public void parseEmail_validValue_returnsEmail() throws Exception {
-        Email expectedEmail = new Email(VALID_EMAIL);
-        Optional<Email> actualEmail = ParserUtil.parseEmail(Optional.of(VALID_EMAIL));
+    public void parseWebsite_validValue_returnsWebsite() throws Exception {
+        Website expectedWebsite = new Website(VALID_WEBSITE);
+        Optional<Website> actualWebsite = ParserUtil.parseWebsite(Optional.of(VALID_WEBSITE));
 
-        assertEquals(expectedEmail, actualEmail.get());
+        assertEquals(expectedWebsite, actualWebsite.get());
     }
+    //@@author
 
     @Test
     public void parseTags_null_throwsNullPointerException() throws Exception {

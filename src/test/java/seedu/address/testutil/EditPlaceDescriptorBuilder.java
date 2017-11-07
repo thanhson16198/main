@@ -31,7 +31,7 @@ public class EditPlaceDescriptorBuilder {
         descriptor = new EditCommand.EditPlaceDescriptor();
         descriptor.setName(place.getName());
         descriptor.setPhone(place.getPhone());
-        descriptor.setEmail(place.getEmail());
+        descriptor.setWebsite(place.getWebsite());
         descriptor.setAddress(place.getAddress());
         descriptor.setPostalCode(place.getPostalCode());
         descriptor.setTags(place.getTags());
@@ -64,11 +64,11 @@ public class EditPlaceDescriptorBuilder {
     /**
      * Sets the {@code Email} of the {@code EditPlaceDescriptor} that we are building.
      */
-    public EditPlaceDescriptorBuilder withEmail(String email) {
+    public EditPlaceDescriptorBuilder withWebsite(String website) {
         try {
-            ParserUtil.parseEmail(Optional.of(email)).ifPresent(descriptor::setEmail);
+            ParserUtil.parseWebsite(Optional.of(website)).ifPresent(descriptor::setWebsite);
         } catch (IllegalValueException ive) {
-            throw new IllegalArgumentException("email is expected to be unique.");
+            throw new IllegalArgumentException("website is expected to be unique.");
         }
         return this;
     }
