@@ -21,7 +21,7 @@
     </Menu>
       <Menu mnemonicParsing="false" text="MRT Map">
         <items>
-          <MenuItem fx:id="mrtmap" mnemonicParsing="false" onAction="#handleMrtMap" text="MRT Map" />
+          <MenuItem fx:id="mrtMapItem" mnemonicParsing="false" onAction="#handleMrtMap" text="MRT Map" />
         </items>
       </Menu>
     <Menu mnemonicParsing="false" text="Help">

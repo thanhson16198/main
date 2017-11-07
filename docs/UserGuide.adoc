@@ -260,7 +260,15 @@ Added a shorthand equivalent alias for each of the individual commands. For exam
 === Displaying MRT map of Singapore
 // tag::mrtmap[]
 *Display MRT map of Singapore by clicking on `MRT Map` -> `MRT Map` +
-*Display MRT map of Singapore by typing in Command Line `mrt`
+
+or
+
+*Display MRT map of Singapore by using the CLI. +
+ Format: `mrt` +
+
+ or
+
+ Using the shortcut key `F3`
 // end::mrtmap[]
 
 === Useful contact numbers in Singapore
@@ -268,7 +276,12 @@ Added a shorthand equivalent alias for each of the individual commands. For exam
 Display a list of useful contact numbers by clicking on `Help -> Useful Contacts` +
 or
 Display a list of useful contact numbers by using the CLI. +
-Format: `emergency` or `sos`
+Format: `emergency` or `sos` +
+
+or
+
+Using the shortcut key.
+Format: `F2`
 
 === Bookmark a place: `bookmark`
 

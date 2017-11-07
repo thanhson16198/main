@@ -116,6 +116,7 @@ public class MainWindow extends UiPart<Region> {
         //@@author huyuanrong
         setAccelerator(contactsMenuItem, KeyCombination.valueOf("F2"));
         //@@author
+        setAccelerator(mrtMapItem, KeyCombination.valueOf("F3"));
     }
 
     /**
