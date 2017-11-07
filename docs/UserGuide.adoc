@@ -57,7 +57,7 @@ Format: `help` or `h`
 === Adding a place: `add` or `a`
 
 Adds a place to the Tourist Book +
-Format: `add n/NAME a/ADDRESS p/POSTALCODE [t/TAG]...`
+Format: `add n/NAME ph/PHONE w/WEBSITE a/ADDRESS p/POSTALCODE [t/TAG]...`
 
 or
 
@@ -67,7 +67,10 @@ Format: `a n/NAME p/POSTALCODE [t/TAG]...`
 A place can have any number of tags (including 0)
 
 [TIP]
-A place can have null for Address, Email and Phone fields.
+A place can have null for Address, Website and Phone fields.
+
+[TIP]
+It is compulsory for a place to have the Name and Postalcode.
 
 Examples:
 
@@ -247,21 +250,23 @@ There is no need to save manually.
 
 == Changes in v1.1
 
+// tag::aung1.1[]
+==== `Logic` component
+Added a shorthand equivalent alias for each of the individual commands. For example, besides typing `add`, the user can also type `a` to remove all places in the list.
+// end::aung1.1[]
+
 == Changes from v1.2
 
-//@@author aungmyin23
 === Displaying MRT map of Singapore
-
+// tag::mrtmap[]
 *Display MRT map of Singapore by clicking on `MRT Map` -> `MRT Map` +
 *Display MRT map of Singapore by typing in Command Line `mrt`
+// end::mrtmap[]
 
-//@@author
 === Useful contact numbers in Singapore
 
 Display a list of useful contact numbers by clicking on `Help -> Useful Contacts` +
-
 or
-
 Display a list of useful contact numbers by using the CLI. +
 Format: `emergency` or `sos`
 
@@ -312,11 +317,19 @@ Examples:
 
 == Changes in v1.4
 
-//@@author aungmyin23
-=== Allowing the tourist to just input 2 compulsory field
-
+=== Allowing the tourist to just input 2 compulsory fields
+// tag::aung1.4[]
 Tourist can opt to leave Address, Email and Phone field empty when adding in new attraction.
-//@@author
+
+* For Example:
+*  Instead of: `add n/Marina Bay Sands ph/698837 /https://www.marinabay.com.sg a/10 Bayfront Avenue p/018956`
+* User to can key in: `add n/Marina Bay Sands p/018956`
+
+If the user left as blank the default values are as follow: +
+- Phone: `000` +
+- Address: `-` +
+- Website `http://www.-.com`
+// end::aung1.4[]
 
 === Get directions to selected destination
 Displays the directions from location A to selected destination. +
@@ -335,15 +348,29 @@ Returns the directions from the location at index 1 to index 2 of the places lis
 * `dir 4 1` +
 Returns the directions from the location at index 4 to index 1 of the places listing.
 
+== Changes in v1.5rc
+// tag::aung1.5[]
+=== View current PSI
+
+Displays the current PSI levels in Singapore. +
+Format: `psi`
+
+image::PSICommand.png[width="600"]
+_Figure 2.1.1 : Display PSI values through BrowswerPanel
+
+// end::aung1.5[]
+
+=== Changes from Email attribute to Website attributes
+
+Initial Addressbook has Email attributes with the prefix  of e/. +
+This attribute is refactored into Website attributes with the prefix of w/
+
+
 == Coming in v2.0
 
 === Changing the display color of a tag
 Changes the color of a selected tag to a colour of choice. +
 Format: `color /t TAG` or `col t/TAG`
-
-=== View current PSI
-Displays the current PSI levels in Singapore. +
-Format: `psi`
 
 === Tourist Book save files are now exportable to .csv format
 Export your data to .csv file format for printing purposes. +
@@ -381,7 +408,7 @@ or `a n/Marina Bay Sands a/10 Bayfront Avenue p/018956 t/attractions`
 * *Bookmark* : `bookmark INDEX` +
 e.g. `bookmark 2`
 * *Clear Bookmarks*: `clear_bookmark`
-* *Clear* : `clear` or `c`
+* *Clear* : `confirm_clear`
 * *Delete* : `delete INDEX`  or `del INDEX` +
 e.g. `delete 3`
 * *Direction* : `dir` +
@@ -402,3 +429,4 @@ e.g.`select 2`
 * *Undo* : `undo` or `un`
 * *Redo* : `redo` or `re`
 * *MRT Map* : `mrt`
+* *PSI Value* : `psi`
