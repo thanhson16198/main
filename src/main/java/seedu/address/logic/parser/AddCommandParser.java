@@ -35,7 +35,6 @@ public class AddCommandParser implements Parser<AddCommand> {
      * @throws ParseException if the user input does not conform the expected format
      */
     public AddCommand parse(String args) throws ParseException {
-        //@@author aungmyin23
         Website website;
         Phone phone;
         Address address;
@@ -49,6 +48,7 @@ public class AddCommandParser implements Parser<AddCommand> {
 
         try {
             Name name = ParserUtil.parseName(argMultimap.getValue(PREFIX_NAME)).get();
+            //@@author aungmyin23
             Optional<Phone> optionalPhone = ParserUtil.parsePhone(argMultimap.getValue(PREFIX_PHONE));
             if (optionalPhone.isPresent()) {
                 phone = optionalPhone.get();

@@ -59,7 +59,7 @@ public class CommandTestUtil {
     public static final String INVALID_WEBSITE_DESC = " " + PREFIX_WEBSITE + "bobyahoo.com";
     // missing http://wwww symbol
     public static final String INVALID_ADDRESS_DESC = " " + PREFIX_ADDRESS; // empty string not allowed for addresses
-    public static final String INVALID_POSTAL_CODE_DESC = " " + PREFIX_POSTAL_CODE + "12345"; // less than 6 digits
+    public static final String INVALID_POSTALCODE_DESC = " " + PREFIX_POSTAL_CODE + "12345"; // less than 6 digits
     public static final String INVALID_TAG_DESC = " " + PREFIX_TAG + "hubby*"; // '*' not allowed in tags
 
     public static final EditCommand.EditPlaceDescriptor DESC_AMY;

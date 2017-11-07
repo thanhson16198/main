@@ -102,6 +102,14 @@ public class ParserUtil {
         requireNonNull(postalcode);
         return postalcode.isPresent() ? Optional.of(new PostalCode(postalcode.get())) : Optional.empty();
     }
+
+    /**
+     * Parses a {@code Optional<String> email} into an {@code Optional<Email>} if {@code email} is present.
+     * See header comment of this class regarding the use of {@code Optional} parameters.
+     */
+    public static Optional<Website> parseWebsite(Optional<String> website) throws IllegalValueException {
+        return website.isPresent() ? Optional.of(new Website(website.get())) : Optional.empty();
+    }
     //@@author
 
     /**
@@ -111,15 +119,6 @@ public class ParserUtil {
     public static Optional<Address> parseAddress(Optional<String> address) throws IllegalValueException {
         return address.isPresent() ? Optional.of(new Address(address.get())) : Optional.empty();
     }
-
-    /**
-     * Parses a {@code Optional<String> email} into an {@code Optional<Email>} if {@code email} is present.
-     * See header comment of this class regarding the use of {@code Optional} parameters.
-     */
-    public static Optional<Website> parseWebsite(Optional<String> website) throws IllegalValueException {
-        return website.isPresent() ? Optional.of(new Website(website.get())) : Optional.empty();
-    }
-
     /**
      * Parses {@code Collection<String> tags} into a {@code Set<Tag>}.
      */

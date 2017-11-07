@@ -6,6 +6,7 @@ import static seedu.address.logic.commands.CommandTestUtil.ADDRESS_DESC_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_ADDRESS_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_NAME_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_PHONE_DESC;
+import static seedu.address.logic.commands.CommandTestUtil.INVALID_POSTALCODE_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_TAG_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_WEBSITE_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.NAME_DESC_AMY;
@@ -40,6 +41,7 @@ import seedu.address.model.place.Address;
 import seedu.address.model.place.Name;
 import seedu.address.model.place.Phone;
 import seedu.address.model.place.Place;
+import seedu.address.model.place.PostalCode;
 import seedu.address.model.place.Website;
 
 import seedu.address.model.tag.Tag;
@@ -62,14 +64,20 @@ public class AddCommandParserTest {
 
         // multiple phones - last phone accepted
         assertParseSuccess(parser, AddCommand.COMMAND_WORD + NAME_DESC_BOB + PHONE_DESC_AMY + PHONE_DESC_BOB
-                + WEBSITE_DESC_BOB + ADDRESS_DESC_BOB + POSTAL_CODE_DESC_BOB + TAG_DESC_FRIEND,
+                        + WEBSITE_DESC_BOB + ADDRESS_DESC_BOB + POSTAL_CODE_DESC_BOB + TAG_DESC_FRIEND,
+                new AddCommand(expectedPlace));
+        //@@author aungmyin23
+        // multiple postalcode - last postalcode accepted
+        assertParseSuccess(parser, AddCommand.COMMAND_WORD + NAME_DESC_BOB + PHONE_DESC_BOB
+                        + WEBSITE_DESC_BOB + ADDRESS_DESC_BOB + POSTAL_CODE_DESC_AMY
+                        + POSTAL_CODE_DESC_BOB + TAG_DESC_FRIEND,
                 new AddCommand(expectedPlace));
 
-        // multiple emails - last email accepted
+        // multiple website - last website accepted
         assertParseSuccess(parser, AddCommand.COMMAND_WORD + NAME_DESC_BOB + PHONE_DESC_BOB + WEBSITE_DESC_AMY
                 + WEBSITE_DESC_BOB + ADDRESS_DESC_BOB + POSTAL_CODE_DESC_BOB + TAG_DESC_FRIEND,
                 new AddCommand(expectedPlace));
-
+        //@@author
         // multiple addresses - last address accepted
         assertParseSuccess(parser, AddCommand.COMMAND_WORD + NAME_DESC_BOB + PHONE_DESC_BOB + WEBSITE_DESC_BOB
                 + ADDRESS_DESC_AMY + ADDRESS_DESC_BOB + POSTAL_CODE_DESC_BOB + TAG_DESC_FRIEND,
@@ -102,9 +110,11 @@ public class AddCommandParserTest {
         // missing name prefix
         assertParseFailure(parser, AddCommand.COMMAND_WORD + VALID_NAME_BOB + PHONE_DESC_BOB
                 + WEBSITE_DESC_BOB + ADDRESS_DESC_BOB + POSTAL_CODE_DESC_AMY, expectedMessage);
+        //@@author aungmyin23
         // missing postalcode prefix
         assertParseFailure(parser, AddCommand.COMMAND_WORD + NAME_DESC_BOB + PHONE_DESC_BOB
                 + WEBSITE_DESC_BOB + ADDRESS_DESC_BOB + VALID_POSTAL_CODE_BOB, expectedMessage);
+        //@@author
 
         // all prefixes missing
         assertParseFailure(parser, AddCommand.COMMAND_WORD + VALID_NAME_BOB + VALID_PHONE_BOB
@@ -125,10 +135,18 @@ public class AddCommandParserTest {
                         + TAG_DESC_FRIEND,
                 Phone.MESSAGE_PHONE_CONSTRAINTS);
 
-        // invalid email
+        //@@author aungmyin23
+        // invalid postalcode
+        assertParseFailure(parser, AddCommand.COMMAND_WORD + NAME_DESC_BOB + PHONE_DESC_BOB
+                        + WEBSITE_DESC_BOB + ADDRESS_DESC_BOB + INVALID_POSTALCODE_DESC + TAG_DESC_HUSBAND
+                        + TAG_DESC_FRIEND,
+                PostalCode.MESSAGE_POSTAL_CODE_CONSTRAINTS);
+
+        // invalid website
         assertParseFailure(parser, AddCommand.COMMAND_WORD + NAME_DESC_BOB + PHONE_DESC_BOB
                         + INVALID_WEBSITE_DESC + ADDRESS_DESC_BOB + POSTAL_CODE_DESC_BOB + TAG_DESC_HUSBAND
                         + TAG_DESC_FRIEND, Website.MESSAGE_WEBSITE_CONSTRAINTS);
+        //@@author
 
         // invalid address
         assertParseFailure(parser, AddCommand.COMMAND_WORD + NAME_DESC_BOB + PHONE_DESC_BOB
