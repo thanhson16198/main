@@ -7,6 +7,6 @@
       "y" : 100
     }
   },
-  "addressBookFilePath" : "touristbook.xml",
+  "addressBookFilePath" : "addressbook.xml",
   "addressBookName" : "TypicalTouristBookName"
 }
