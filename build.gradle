@@ -228,7 +228,7 @@ task copyDataFile (type: Copy) {
     into('build/jar/data')
 
     from('data/') {
-        include 'touristbook.xml'
+        include 'addressbook.xml'
     }
 
 }
