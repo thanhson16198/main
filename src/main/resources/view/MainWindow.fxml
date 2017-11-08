@@ -29,7 +29,6 @@
       <!-- @@author huyuanrong -->
       <MenuItem fx:id="contactsMenuItem" mnemonicParsing="false" onAction="#showNumbers" text="Useful Numbers" />
       <!-- @@author -->
-	  <MenuItem fx:id="weatherItem" mnemonicParsing="false" onAction="#handleWeather" text="Weather" />
     </Menu>
   </MenuBar>
 
