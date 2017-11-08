@@ -379,6 +379,12 @@ Export your data to .csv file format for printing purposes. +
 Format: `export`
 //end::export
 
+//tag::backup
+=== Tourist book save files can now be backed-up
+Backup a copy of your data to the same folder of the save file. +
+Format: `backup`
+//end::backup
+
 === Changes from Email attribute to Website attributes
 
 Initial Addressbook has Email attributes with the prefix  of e/. +
