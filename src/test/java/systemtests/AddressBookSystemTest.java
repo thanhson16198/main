@@ -190,7 +190,8 @@ public abstract class AddressBookSystemTest {
                     + GOOGLE_SEARCH_URL_SUFFIX); */
             if (selectedCardWebsite.contains("www.-.com")) {
                 expectedUrl = new URL(GOOGLE_SEARCH_URL_PREFIX
-                        + getPlaceListPanel().getHandleToSelectedCard().getName().replaceAll(" ", "+") + GOOGLE_SEARCH_URL_SUFFIX);
+                        + getPlaceListPanel().getHandleToSelectedCard().getName().replaceAll(" ", "+")
+                        + GOOGLE_SEARCH_URL_SUFFIX);
             } else {
                 expectedUrl = new URL(selectedCardWebsite.replaceAll(" ", "+"));
             }
