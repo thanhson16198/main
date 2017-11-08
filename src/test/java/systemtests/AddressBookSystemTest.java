@@ -182,11 +182,18 @@ public abstract class AddressBookSystemTest {
      * @see PlaceListPanelHandle#isSelectedPlaceCardChanged()
      */
     protected void assertSelectedCardChanged(Index expectedSelectedCardIndex) {
-        String selectedCardName = getPlaceListPanel().getHandleToSelectedCard().getName();
+        //String selectedCardName = getPlaceListPanel().getHandleToSelectedCard().getName();
+        String selectedCardWebsite = getPlaceListPanel().getHandleToSelectedCard().getWebsite().toString();
         URL expectedUrl;
         try {
-            expectedUrl = new URL(GOOGLE_SEARCH_URL_PREFIX + selectedCardName.replaceAll(" ", "+")
-                    + GOOGLE_SEARCH_URL_SUFFIX);
+            /*expectedUrl = new URL(GOOGLE_SEARCH_URL_PREFIX + selectedCardName.replaceAll(" ", "+")
+                    + GOOGLE_SEARCH_URL_SUFFIX); */
+            if (selectedCardWebsite.contains("www.-.com")) {
+                expectedUrl = new URL(GOOGLE_SEARCH_URL_PREFIX
+                        + getPlaceListPanel().getHandleToSelectedCard().getName().replaceAll(" ", "+") + GOOGLE_SEARCH_URL_SUFFIX);
+            } else {
+                expectedUrl = new URL(selectedCardWebsite.replaceAll(" ", "+"));
+            }
         } catch (MalformedURLException mue) {
             throw new AssertionError("URL expected to be valid.");
         }
