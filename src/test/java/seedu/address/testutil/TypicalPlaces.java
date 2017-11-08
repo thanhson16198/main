@@ -34,24 +34,24 @@ public class TypicalPlaces {
             .withTags("friends").build();
     public static final ReadOnlyPlace BENSON = new PlaceBuilder().withName("Benson Meier")
             .withAddress("311, Clementi Ave 2, #02-25").withPostalCode("111111")
-            .withWebsite("https://alice.com/").withPhone("98765432")
+            .withWebsite("http://www.singaporeflyer.com/").withPhone("98765432")
             .withTags("owesMoney", "friends").build();
     public static final ReadOnlyPlace CARL = new PlaceBuilder().withName("Carl Kurz").withPhone("95352563")
-            .withWebsite("https://alice.com/").withAddress("wall street").withPostalCode("111111").build();
+            .withWebsite("http://www.wrs.com.sg/").withAddress("wall street").withPostalCode("111111").build();
     public static final ReadOnlyPlace DANIEL = new PlaceBuilder().withName("Daniel Meier").withPhone("87652533")
-            .withWebsite("https://alice.com/").withAddress("10th street").withPostalCode("111111").build();
+            .withWebsite("http://www.beni-sg.com/").withAddress("10th street").withPostalCode("111111").build();
     public static final ReadOnlyPlace ELLE = new PlaceBuilder().withName("Elle Meyer").withPhone("9482224")
-            .withWebsite("https://alice.com/").withAddress("michegan ave").withPostalCode("111111").build();
+            .withWebsite("http://www.odetterestaurant.com/").withAddress("michegan ave").withPostalCode("111111").build();
     public static final ReadOnlyPlace FIONA = new PlaceBuilder().withName("Fiona Kunz").withPhone("9482427")
-            .withWebsite("https://alice.com/").withAddress("little tokyo").withPostalCode("111111").build();
+            .withWebsite("http://www.odetterestaurant.com/").withAddress("little tokyo").withPostalCode("111111").build();
     public static final ReadOnlyPlace GEORGE = new PlaceBuilder().withName("George Best").withPhone("9482442")
-            .withWebsite("https://alice.com/").withAddress("4th street").withPostalCode("111111").build();
+            .withWebsite("http://www.wrs.com.sg/").withAddress("4th street").withPostalCode("111111").build();
 
     // Manually added
     public static final ReadOnlyPlace HOON = new PlaceBuilder().withName("Hoon Meier").withPhone("8482424")
             .withWebsite("https://alice.com/").withAddress("little india").withPostalCode("111111").build();
     public static final ReadOnlyPlace IDA = new PlaceBuilder().withName("Ida Mueller").withPhone("8482131")
-            .withWebsite("https://alice.com/").withAddress("chicago ave").withPostalCode("111111").build();
+            .withWebsite("http://www.wrs.com.sg/").withAddress("chicago ave").withPostalCode("111111").build();
 
     // Manually added - Place's details found in {@code CommandTestUtil}
     public static final ReadOnlyPlace AMY = new PlaceBuilder().withName(VALID_NAME_AMY)

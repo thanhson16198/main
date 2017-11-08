@@ -41,6 +41,7 @@ public class BrowserPanel extends UiPart<Region> {
         registerAsAnEventHandler(this);
     }
 
+    //@@author thanhson16198
     /**
      * Load the url to the `BrowserPanel` in `MainWindow.java`
     */
@@ -53,6 +54,7 @@ public class BrowserPanel extends UiPart<Region> {
             loadPage(place.getWebsite().toString().replaceAll(" ", "+"));
         }
     }
+    //@@author
 
     public void loadPage(String url) {
         Platform.runLater(() -> browser.getEngine().load(url));
