@@ -1,0 +1,23 @@
+package seedu.address.logic.commands;
+
+import static java.util.Objects.requireNonNull;
+
+import seedu.address.commons.core.EventsCenter;
+import seedu.address.commons.events.model.BackupEvent;
+import seedu.address.logic.commands.exceptions.CommandException;
+
+/**
+ * A command to create a backup of user's Tourist Book data.
+ */
+public class BackupCommand extends UndoableCommand {
+
+    public static final String COMMAND_WORD = "backup";
+    public static final String MESSAGE_SUCCESS = "A Tourist Book backup has been created!";
+
+    @Override
+    protected CommandResult executeUndoableCommand() throws CommandException {
+        requireNonNull(model);
+        EventsCenter.getInstance().post(new BackupEvent(model.getAddressBook()));
+        return new CommandResult(String.format(MESSAGE_SUCCESS));
+    }
+}
