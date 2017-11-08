@@ -383,6 +383,10 @@ Format: `export`
 === Tourist book save files can now be backed-up
 Backup a copy of your data to the same folder of the save file. +
 Format: `backup`
++
+[NOTE]
+Running the command again if you already have a previous backup will overwrite the previous +
+backup file!
 //end::backup
 
 === Changes from Email attribute to Website attributes
@@ -448,3 +452,4 @@ e.g.`select 2`
 * *MRT Map* : `mrt`
 * *PSI Value* : `psi`
 * *Export* : `export`
+* *Backup* : `backup`
