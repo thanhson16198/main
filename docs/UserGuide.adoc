@@ -284,6 +284,7 @@ or
 Using the shortcut key.
 Format: `F2`
 
+// tag::bookmark[]
 === Bookmark a place: `bookmark`
 
 Adds a bookmark tag to the specified place from the address book. +
@@ -304,11 +305,14 @@ Bookmarks the first place in the address book.
 * `find attractions` +
 `bookmark 3` +
 Bookmarks the 3rd place in the results of the `find` command.
+// end::bookmark[]
 
+// tag::clearBookmark[]
 === Clearing all bookmarks: `clear_bookmark`
 
 Clears all bookmarks from the address book. +
 Format: `clear_bookmark`
+// end::clearBookmark[]
 
 // tag::weather[]
 === Displaying Weather of Singapore
@@ -344,6 +348,7 @@ If the user left as blank the default values are as follow: +
 - Website `http://www.-.com`
 // end::aung1.4[]
 
+// tag::direction[]
 === Get directions to selected destination
 Displays the directions from location A to selected destination. +
 Format: `dir [INDEX_FROM] [INDEX_TO]`
@@ -360,6 +365,7 @@ Examples:
 Returns the directions from the location at index 1 to index 2 of the places listing.
 * `dir 4 1` +
 Returns the directions from the location at index 4 to index 1 of the places listing.
+// end::direction[]
 
 == Changes in v1.5rc
 
@@ -375,9 +381,11 @@ Export your data to .csv file format for printing purposes. +
 Format: `export`
 //end::export
 
-=== Display bookmarks
-List all bookmarked places in Tourist Book
+// tag::showBookmark[]
+=== Display bookmarks: `show_bookmark`
+List all bookmarked places in Tourist Book +
 Format: `show_bookmark`
+// end::showBookmark[]
 
 === Changed Email to Website
 
@@ -399,10 +407,6 @@ Format: `color /t TAG` or `col t/TAG`
 === Common statutes/laws in Singapore
 Display a list of common statutes/laws for quick reference.
 
-=== Displays the selected place's website (if any)
-Displays the selected place's homepage if available, otherwise it will perform a Google search. +
-Format: `select 1`
-
 === Rating system
 Add and edit a rating to a place in the Tourist Book. +
 Format: `rate [INDEX] [RATING]`
@@ -410,6 +414,9 @@ Format: `rate [INDEX] [RATING]`
 === Exchange Rate
 Get the latest exchange rates of currencies in Singaore. +
 Format: `[VALUE] [CURRENCY] to [DESIRED_CURRENCY]`
+
+=== Description for places
+Be able to view a short description of each place in the place list
 
 == FAQ
 
