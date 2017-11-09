@@ -91,7 +91,7 @@ public class XmlAddressBookStorage implements AddressBookStorage {
         Path mainFile = Paths.get(filePath);
         Path backupFile = Paths.get(trimmedfilePath + "-backup.xml");
 
-        try{
+        try {
             List<String> listMain = Files.readAllLines(mainFile);
             List<String> listBackup = Files.readAllLines(backupFile);
             if (!listMain.containsAll(listBackup)) {
@@ -99,7 +99,7 @@ public class XmlAddressBookStorage implements AddressBookStorage {
             }
 
         } catch (IOException e) {
-            assert false: "MainFile and BackupFile are copies, and should be equal";
+            assert false : "MainFile and BackupFile are copies, and should be equal";
         }
     }
     //@@author
