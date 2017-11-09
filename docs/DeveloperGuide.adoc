@@ -505,7 +505,6 @@ _Figure 3.6.3 : UI button added to the `MainWindow`.
 **Alternative 2 (current choice):** Include MRT map picture +
 **Pros:** Load faster in accessing the map +
 **Cons:** Might not be the latest one. However, this can overcome with frequent updates.
-
 // end::mrtmap[]
 
 //tag::sort[]

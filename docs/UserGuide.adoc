@@ -258,8 +258,8 @@ Added a shorthand equivalent alias for each of the individual commands. For exam
 == Changes from v1.2
 
 === Displaying MRT map of Singapore
-// tag::mrtmap[]
 
+// tag::mrtmap[]
 Display MRT map of Singapore by clicking on `MRT Map` -> `MRT Map` +
 
 or
@@ -363,15 +363,14 @@ Returns the directions from the location at index 1 to index 2 of the places lis
 Returns the directions from the location at index 4 to index 1 of the places listing.
 
 == Changes in v1.5rc
-// tag::aung1.5[]
-=== View current PSI
 
+=== View current PSI
+// tag::aung1.5[]
 Displays the current PSI levels in Singapore. +
 Format: `psi`
 
 image::PSICommand.png[width="600"]
 _Figure 2.1.1 : Display PSI values through BrowserPanel
-
 // end::aung1.5[]
 
 //tag::export
