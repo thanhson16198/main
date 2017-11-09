@@ -76,8 +76,12 @@ code data found in the Tourist-Book to help the tourist search for the direction
 
 === Enhancement Proposed: Add place attribute : "Description"
 
+Currently, there isn't a short summary on what the various places offer, the tourist would need to select a place and visit
+the its website to find out more. However, the website might load slowly, and would require a few mouse clicks
+to find what is the place about.
 
-
+To alleviate this issue, we can pre-load the description into a new place attribute<optional> and have it display
+on the place list.
 
 === Other contributions
 
