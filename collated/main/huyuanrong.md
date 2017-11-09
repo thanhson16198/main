@@ -1,11 +1,10 @@
 # huyuanrong
-###### \addressbook.xml
 ``` xml
 <touristbook>
     <places>
         <name>Marina Bay Sands</name>
         <phone>66888868</phone>
-        <wesite>https://www.marinabaysands.com</wesite>
+        <website>https://www.marinabaysands.com</wesite>
         <address>10 Bayfront Avenue</address>
         <postalcode>018956</postalcode>
         <tags>attractions</tags>

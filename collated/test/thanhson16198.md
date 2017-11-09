@@ -111,3 +111,29 @@ public class WeatherCommandTest {
     }
 }
 ```
+###### \java\seedu\address\ui\BrowserPanelTest.java
+``` java
+        URL expectedPlaceUrl;
+        if (ALICE.getWebsite().toString().contains("www.-.com")) {
+            expectedPlaceUrl = new URL(GOOGLE_SEARCH_URL_PREFIX
+                    + ALICE.getName().fullName.replaceAll(" ", "+") + GOOGLE_SEARCH_URL_SUFFIX);
+        } else {
+            expectedPlaceUrl = new URL(ALICE.getWebsite().toString().replaceAll(" ", "+"));
+        }
+```
+###### \java\systemtests\AddressBookSystemTest.java
+``` java
+        try {
+            /*expectedUrl = new URL(GOOGLE_SEARCH_URL_PREFIX + selectedCardName.replaceAll(" ", "+")
+                    + GOOGLE_SEARCH_URL_SUFFIX); */
+            if (selectedCardWebsite.contains("www.-.com")) {
+                expectedUrl = new URL(GOOGLE_SEARCH_URL_PREFIX
+                        + getPlaceListPanel().getHandleToSelectedCard().getName().replaceAll(" ", "+")
+                        + GOOGLE_SEARCH_URL_SUFFIX);
+            } else {
+                expectedUrl = new URL(selectedCardWebsite.replaceAll(" ", "+"));
+            }
+        } catch (MalformedURLException mue) {
+            throw new AssertionError("URL expected to be valid.");
+        }
+```

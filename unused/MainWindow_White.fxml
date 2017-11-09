@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<!-- @@author thanhson16198 -->
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Menu?>
@@ -11,19 +11,23 @@
 
 <VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
   <stylesheets>
-    <URL value="@DarkTheme_Black.css" />
-    <URL value="@Extensions_Black.css" />
+    <URL value="@DarkTheme_White.css" />
+    <URL value="@Extensions_White.css" />
   </stylesheets>
 
   <MenuBar fx:id="menuBar" VBox.vgrow="NEVER">
     <Menu mnemonicParsing="false" text="File">
       <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit" />
     </Menu>
+      <Menu mnemonicParsing="false" text="MRT Map">
+        <items>
+          <MenuItem fx:id="mrtmap" mnemonicParsing="false" onAction="#handleMrtMap" text="MRT Map" />
+        </items>
+      </Menu>
     <Menu mnemonicParsing="false" text="Help">
       <MenuItem fx:id="helpMenuItem" mnemonicParsing="false" onAction="#handleHelp" text="Help" />
-    </Menu>
-	<Menu mnemonicParsing="false" text="Services">
-      <MenuItem fx:id="weatherItem" mnemonicParsing="false" onAction="#handleWeather" text="Weather" />
+      <MenuItem fx:id="contactsMenuItem" mnemonicParsing="false" onAction="#showNumbers" text="Useful Numbers" />
+	  <MenuItem fx:id="weatherItem" mnemonicParsing="false" onAction="#handleWeather" text="Weather" />
     </Menu>
   </MenuBar>
 
@@ -57,3 +61,4 @@
 
   <StackPane fx:id="statusbarPlaceholder" VBox.vgrow="NEVER" />
 </VBox>
+<!-- @@author -->
