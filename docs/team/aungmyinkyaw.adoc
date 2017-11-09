@@ -38,6 +38,35 @@ include::../DeveloperGuide.adoc[tag=mrtmap]
 
 ---
 
+=== Enhancement Added: Sorrting
+
+==== External behavior
+
+---
+#Start of Extract [from: User Guide]#
+
+include::../UserGuide.adoc[tag=sort]
+
+#End of Extract#
+
+---
+==== Justification
+
+The list of Places that added to the list will appear at the bottom of the list. By sorting the list, it allows the user to view the
+list in alphabetical order.
+
+==== Implementation
+
+---
+#Start of Extract [from: Developer Guide]#
+
+include::../DeveloperGuide.adoc[tag=sort]
+
+* (Pull requests https://github.com/CS2103AUG2017-F09-B2/main/pull/92[#92])
+
+#End of Extract#
+
+---
 === Enhancement Added: Short Commands
 
 ==== External behavior

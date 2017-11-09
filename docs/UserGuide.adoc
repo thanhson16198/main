@@ -149,7 +149,7 @@ Examples:
 * `list` +
 `delete 2` +
 Deletes the 2nd place in the address book.
-* `find Bay` +
+* `find n/Bay` +
 `del 1` +
 Deletes the 1st place in the results of the `find` command.
 
@@ -251,7 +251,7 @@ There is no need to save manually.
 == Changes in v1.1
 
 // tag::aung1.1[]
-==== `Logic` component
+=== `Logic` component
 Added a shorthand equivalent alias for each of the individual commands. For example, besides typing `add`, the user can also type `a` to remove all places in the list.
 // end::aung1.1[]
 
@@ -381,9 +381,14 @@ Format: `export`
 
 === Changes from Email attribute to Website attributes
 
-Initial Addressbook has Email attributes with the prefix  of e/. +
-This attribute is refactored into Website attributes with the prefix of w/
+Initial Addressbook has Email attributes with the prefix  of `e/`. +
+This attribute is refactored into Website attributes with the prefix of `w/`
 
+=== Sort Command `sort`
+//tag::sort[]
+Sort command allows you to sort the places in alphabetical order.
+Format: `sort`
+//end::sort[]
 
 == Coming in v2.0
 
@@ -442,3 +447,4 @@ e.g.`select 2`
 * *MRT Map* : `mrt`
 * *PSI Value* : `psi`
 * *Export* : `export`
+* *Sort* : `sort`
