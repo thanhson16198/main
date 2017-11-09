@@ -1,25 +1,40 @@
 package seedu.address.logic.commands;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static seedu.address.logic.commands.MrtCommand.SHOWING_MRT_MESSAGE;
+import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
+import static seedu.address.testutil.TypicalPlaces.getTypicalAddressBook;
 
-import org.junit.Rule;
+import org.junit.Before;
 import org.junit.Test;
 
-import seedu.address.commons.events.ui.ShowMrtRequestEvent;
-import seedu.address.ui.testutil.EventsCollectorRule;
+import seedu.address.logic.CommandHistory;
+import seedu.address.logic.UndoRedoStack;
+import seedu.address.model.Model;
+import seedu.address.model.ModelManager;
+import seedu.address.model.UserPrefs;
 
 //@@author aungmyin23
-public class MrtCommandTest {
-    @Rule
-    public final EventsCollectorRule eventsCollectorRule = new EventsCollectorRule();
+public class SortCommandTest {
 
+    private Model compareModel;
+    private Model expectedModel;
+    private SortCommand executeSort;
+
+    /*
+    * Setting up the model to compare with for the testing.
+     */
+    @Before
+    public void setUp() {
+        compareModel = new ModelManager(getTypicalAddressBook(), new UserPrefs());
+        expectedModel = new ModelManager(compareModel.getAddressBook(), new UserPrefs());
+        executeSort = new SortCommand();
+        executeSort.setData(expectedModel, new CommandHistory(), new UndoRedoStack());
+    }
+
+    /*
+    * Comparing the two model to check whether the sort command give expected outcome
+     */
     @Test
-    public void execute_mrt_success() {
-        CommandResult result = new MrtCommand().execute();
-        assertEquals(SHOWING_MRT_MESSAGE, result.feedbackToUser);
-        assertTrue(eventsCollectorRule.eventsCollector.getMostRecent() instanceof ShowMrtRequestEvent);
-        assertTrue(eventsCollectorRule.eventsCollector.getSize() == 1);
+    public void execute() {
+        assertCommandSuccess(executeSort, compareModel, SortCommand.SHOWING_SORT_MESSAGE, expectedModel);
     }
 }
