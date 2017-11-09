@@ -16,7 +16,7 @@ import seedu.address.model.tag.UniqueTagList;
  * Represents a Place in the address book.
  * Guarantees: details are present and not null, field values are validated.
  */
-public class Place implements ReadOnlyPlace {
+public class Place implements ReadOnlyPlace, Comparable<Place> {
 
     private ObjectProperty<Name> name;
     private ObjectProperty<Phone> phone;
@@ -150,6 +150,14 @@ public class Place implements ReadOnlyPlace {
         // use this method for custom fields hashing instead of implementing your own
         return Objects.hash(name, phone, website, address, postalcode, tags);
     }
+
+    //@@author aungmyin23
+    @Override
+    public int compareTo(Place otherPlace) {
+        int toUpdate = this.name.toString().toUpperCase().compareTo((otherPlace.name.toString().toUpperCase()));
+        return toUpdate;
+    }
+    //@@author
 
     @Override
     public String toString() {
