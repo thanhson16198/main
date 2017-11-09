@@ -28,6 +28,10 @@ public interface Model {
     /** Adds the given place */
     void addPlace(ReadOnlyPlace place) throws DuplicatePlaceException;
 
+    //@@author aungmyin23
+    /**Sorts the current places*/
+    void sortPlaces();
+    //@@author
     //@@author Chng-Zhi-Xuan
     /**
      * Adds tag to target place in address book.
