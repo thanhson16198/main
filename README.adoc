@@ -8,16 +8,22 @@ https://coveralls.io/github/se-edu/addressbook-level4?branch=master[image:https:
 https://www.codacy.com/app/damith/addressbook-level4?utm_source=github.com&utm_medium=referral&utm_content=se-edu/addressbook-level4&utm_campaign=Badge_Grade[image:https://api.codacy.com/project/badge/Grade/fc0b7775cf7f4fdeaf08776f3d8e364a[Codacy Badge]]
 
 ifdef::env-github[]
-image::docs/images/Ui.PNG[width="600"]
+image::docs/images/Ui.png[width="600"]
 endif::[]
 
 ifndef::env-github[]
 image::images/Ui.png[width="600"]
 endif::[]
 
-* This is a desktop Tourist Book application. It has a GUI but most of the user interactions happen using a CLI (Command Line Interface).
-* It is a Java application intended for tourists coming to Singapore for sightseeing.
-* It provides a comprehensive list of the popular attractions in Singapore, as well as some *useful features* like a MRT map and a list of useful numbers.
+* This is a desktop Tourist Book application. It has a GUI but most of the user interactions happen using a CLI (Command Line Interface) for people who prefer typing commands.
+
+* It is a Java application intended for tourists who are visiting Singapore and doesn't know where to start exploring.
+
+* This application provides a comprehensive list of the popular attractions in Singapore for the tourists to explore.
+
+* `go to` and `dir` functions are huge help in navigating from one location to another in second.
+
+* Moreover, *useful features* like latest `MRT map`, `weather`, `psi values` and a list of `useful contacts`.
 
 == Site Map
 

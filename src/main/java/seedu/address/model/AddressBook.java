@@ -50,7 +50,11 @@ public class AddressBook implements ReadOnlyAddressBook {
     }
 
     //// list overwrite operations
-
+    //@@author aungmyin23
+    public void sortPlaces() {
+        places.sort();
+    }
+    //@@author
     public void setPlaces(List<? extends ReadOnlyPlace> places) throws DuplicatePlaceException {
         this.places.setPlaces(places);
     }

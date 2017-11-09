@@ -27,11 +27,12 @@ public class AddCommand extends UndoableCommand {
             + PREFIX_PHONE + "PHONE "
             + PREFIX_WEBSITE + "WEBSITE "
             + PREFIX_ADDRESS + "ADDRESS "
+            + PREFIX_POSTAL_CODE + "POSTALCODE "
             + "[" + PREFIX_TAG + "TAG]...\n"
             + "Example: " + COMMAND_WORD + " "
             + PREFIX_NAME + "Marina Bay Sands "
             + PREFIX_PHONE + "66888868 "
-            + PREFIX_WEBSITE + "https://www.marinabaysands.com/ "
+            + PREFIX_WEBSITE + "http://www.marinabaysands.com/ "
             + PREFIX_ADDRESS + "10 Bayfront Avenue "
             + PREFIX_POSTAL_CODE + "018956 "
             + PREFIX_TAG + "attractions";

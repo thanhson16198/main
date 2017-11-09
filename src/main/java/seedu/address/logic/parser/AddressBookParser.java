@@ -27,6 +27,8 @@ import seedu.address.logic.commands.MrtCommand;
 import seedu.address.logic.commands.PsiCommand;
 import seedu.address.logic.commands.RedoCommand;
 import seedu.address.logic.commands.SelectCommand;
+import seedu.address.logic.commands.ShowBookmarkCommand;
+import seedu.address.logic.commands.SortCommand;
 import seedu.address.logic.commands.UndoCommand;
 import seedu.address.logic.commands.WeatherCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
@@ -95,6 +97,9 @@ public class AddressBookParser {
         case DirCommand.COMMAND_WORD:
         case DirCommand.COMMAND_WORD_ALIAS:
             return new DirCommandParser().parse(arguments);
+
+        case ShowBookmarkCommand.COMMAND_WORD:
+            return new ShowBookmarkCommandParser().parse(arguments);
         //@@author
 
         case HistoryCommand.COMMAND_WORD:
@@ -135,6 +140,8 @@ public class AddressBookParser {
             return new MrtCommand();
         case PsiCommand.COMMAND_WORD:
             return new PsiCommand();
+        case SortCommand.COMMAND_WORD:
+            return new SortCommand();
         //@@author
         //@@author huyuanrong
         case ContactsCommand.COMMAND_WORD:

@@ -2,6 +2,7 @@ package seedu.address.model.place;
 
 import static java.util.Objects.requireNonNull;
 
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -34,7 +35,6 @@ public class UniquePlaceList implements Iterable<Place> {
         requireNonNull(toCheck);
         return internalList.contains(toCheck);
     }
-
     /**
      * Adds a place to the list.
      *
@@ -112,8 +112,13 @@ public class UniquePlaceList implements Iterable<Place> {
     public boolean equals(Object other) {
         return other == this // short circuit if same object
                 || (other instanceof UniquePlaceList // instanceof handles nulls
-                        && this.internalList.equals(((UniquePlaceList) other).internalList));
+                && this.internalList.equals(((UniquePlaceList) other).internalList));
     }
+    //@@author aungmyin23
+    public void sort() {
+        Collections.sort(internalList);
+    }
+    //@@author
 
     @Override
     public int hashCode() {
