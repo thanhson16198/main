@@ -30,7 +30,7 @@ public class TypicalPlaces {
 
     public static final ReadOnlyPlace ALICE = new PlaceBuilder().withName("Alice Pauline")
             .withAddress("123, Jurong West Ave 6, #08-111").withPostalCode("111111")
-            .withWebsite("https://alice.com/")
+            .withWebsite("http://www.singaporeflyer.com/")
             .withPhone("85355255")
             .withTags("friends").build();
     public static final ReadOnlyPlace BENSON = new PlaceBuilder().withName("Benson Meier")
@@ -38,22 +38,22 @@ public class TypicalPlaces {
             .withWebsite("http://www.singaporeflyer.com/").withPhone("98765432")
             .withTags("owesMoney", "friends").build();
     public static final ReadOnlyPlace CARL = new PlaceBuilder().withName("Carl Kurz").withPhone("95352563")
-            .withWebsite("http://www.wrs.com.sg/").withAddress("wall street").withPostalCode("111111").build();
+            .withWebsite("http://www.singaporeflyer.com/").withAddress("wall street").withPostalCode("111111").build();
     public static final ReadOnlyPlace DANIEL = new PlaceBuilder().withName("Daniel Meier").withPhone("87652533")
-            .withWebsite("http://www.wrs.com.sg/").withAddress("10th street").withPostalCode("111111").build();
+            .withWebsite("http://www.singaporeflyer.com/").withAddress("10th street").withPostalCode("111111").build();
     public static final ReadOnlyPlace ELLE = new PlaceBuilder().withName("Elle Meyer").withPhone("9482224")
-            .withWebsite("http://www.wrs.com.sg/").withAddress("michegan ave").withPostalCode("111111")
+            .withWebsite("http://www.singaporeflyer.com/").withAddress("michegan ave").withPostalCode("111111")
             .withTags(VALID_TAG_BOOKMARK).build();
     public static final ReadOnlyPlace FIONA = new PlaceBuilder().withName("Fiona Kunz").withPhone("9482427")
-            .withWebsite("https://alice.com/").withAddress("little tokyo").withPostalCode("111111").build();
+            .withWebsite("http://www.singaporeflyer.com/").withAddress("little tokyo").withPostalCode("111111").build();
     public static final ReadOnlyPlace GEORGE = new PlaceBuilder().withName("George Best").withPhone("9482442")
-            .withWebsite("http://www.wrs.com.sg/").withAddress("4th street").withPostalCode("111111").build();
+            .withWebsite("http://www.singaporeflyer.com/").withAddress("4th street").withPostalCode("111111").build();
 
     // Manually added
     public static final ReadOnlyPlace HOON = new PlaceBuilder().withName("Hoon Meier").withPhone("8482424")
-            .withWebsite("https://alice.com/").withAddress("little india").withPostalCode("111111").build();
+            .withWebsite("http://www.singaporeflyer.com/").withAddress("little india").withPostalCode("111111").build();
     public static final ReadOnlyPlace IDA = new PlaceBuilder().withName("Ida Mueller").withPhone("8482131")
-            .withWebsite("http://www.wrs.com.sg/").withAddress("chicago ave").withPostalCode("111111").build();
+            .withWebsite("http://www.singaporeflyer.com/").withAddress("chicago ave").withPostalCode("111111").build();
 
     // Manually added - Place's details found in {@code CommandTestUtil}
     public static final ReadOnlyPlace AMY = new PlaceBuilder().withName(VALID_NAME_AMY)
