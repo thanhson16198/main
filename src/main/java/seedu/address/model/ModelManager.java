@@ -55,6 +55,13 @@ public class ModelManager extends ComponentManager implements Model {
         indicateAddressBookChanged();
     }
 
+    //@@author aungmyin23
+    @Override
+    public void sortPlaces() {
+        addressBook.sortPlaces();
+    }
+    //@@author
+
     @Override
     public ReadOnlyAddressBook getAddressBook() {
         return addressBook;
