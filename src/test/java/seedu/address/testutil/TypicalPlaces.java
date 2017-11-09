@@ -8,6 +8,7 @@ import static seedu.address.logic.commands.CommandTestUtil.VALID_PHONE_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_PHONE_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_POSTAL_CODE_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_POSTAL_CODE_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_BOOKMARK;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_FRIEND;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_WEBSITE_AMY;
@@ -41,7 +42,8 @@ public class TypicalPlaces {
     public static final ReadOnlyPlace DANIEL = new PlaceBuilder().withName("Daniel Meier").withPhone("87652533")
             .withWebsite("http://www.wrs.com.sg/").withAddress("10th street").withPostalCode("111111").build();
     public static final ReadOnlyPlace ELLE = new PlaceBuilder().withName("Elle Meyer").withPhone("9482224")
-            .withWebsite("http://www.wrs.com.sg/").withAddress("michegan ave").withPostalCode("111111").build();
+            .withWebsite("http://www.wrs.com.sg/").withAddress("michegan ave").withPostalCode("111111")
+            .withTags(VALID_TAG_BOOKMARK).build();
     public static final ReadOnlyPlace FIONA = new PlaceBuilder().withName("Fiona Kunz").withPhone("9482427")
             .withWebsite("https://alice.com/").withAddress("little tokyo").withPostalCode("111111").build();
     public static final ReadOnlyPlace GEORGE = new PlaceBuilder().withName("George Best").withPhone("9482442")
