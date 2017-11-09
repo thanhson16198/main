@@ -259,16 +259,17 @@ Added a shorthand equivalent alias for each of the individual commands. For exam
 
 === Displaying MRT map of Singapore
 // tag::mrtmap[]
-*Display MRT map of Singapore by clicking on `MRT Map` -> `MRT Map` +
+
+Display MRT map of Singapore by clicking on `MRT Map` -> `MRT Map` +
 
 or
 
-*Display MRT map of Singapore by using the CLI. +
- Format: `mrt` +
+Display MRT map of Singapore by using the CLI. +
+Format: `mrt`
 
- or
+or
 
- Using the shortcut key `F3`
+Using the shortcut key `F3`
 // end::mrtmap[]
 
 === Useful contact numbers in Singapore
