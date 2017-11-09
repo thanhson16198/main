@@ -188,7 +188,7 @@ _Figure 2.3.1 : Interactions Inside the Logic Component for the `delete 1` Comma
 
 === Model component
 
-image::ModelComponentClassDiagram.PNG[width="800"]
+image::ModelComponentClassDiagram.png[width="800"]
 _Figure 2.4.1 : Structure of the Model Component_
 
 *API* : link:{repoURL}/src/main/java/seedu/address/model/Model.java[`Model.java`]
@@ -476,13 +476,13 @@ It can be access by using `Command Line` and `UI`.
 Figure 3.4.1 shows the new structure of the UI component.
 
 image::UiComponentwithMrtClassDiagram.png[width="800"]
-_Figure 3.4.1 : Structure of the UI Component with MRTWindow_
+_Figure 3.6.1 : Structure of the UI Component with MRTWindow_
 
 Command `mrt` is used to open mrt map window from Command Line.
 Following Figure 3.4.2 shows the sequence when `mrt` is key in by the user.
 
 image::MRTSequenceDiagrams.jpg[width="600"]
-_Figure 3.4.2 : Structure of the UI Component with MRTWindow_
+_Figure 3.6.2 : Structure of the UI Component with MRTWindow_
 
 ----
 public static final String MRT_FILE_PATH = "/docs/MrtMap.jpg";
@@ -495,7 +495,7 @@ private static final String TITLE = "MRT Map";
 The code above shows the setting up of `MrtWindow.java` for MrtWindow Browser.
 
 image::MrtMapButtonUI.png[width="600"]
-_Figure 3.4.3 : UI button added to the `MainWindow`.
+_Figure 3.6.3 : UI button added to the `MainWindow`.
 
 ==== Design Considerations
 
@@ -506,8 +506,30 @@ _Figure 3.4.3 : UI button added to the `MainWindow`.
 **Alternative 2 (current choice):** Include MRT map picture +
 **Pros:** Load faster in accessing the map +
 **Cons:** Might not be the latest one. However, this can overcome with frequent updates.
-
 // end::mrtmap[]
+
+//tag::sort[]
+=== Sort Mechanism
+
+Sort mechanism operates by sorting the `internalList` in `UniquePersonList`. This command allows the user to sort the list in alphebitacal orders.
+Sort command will inherit from `commands`.
+
+Following is the sequence diagram of `sort` command.
+
+image::SortCommandSequenceDiagram.png[width="600"]
+
+_Figure 3.7.1 : Sequence diagram of `sort` command.
+
+    @Override
+    public int compareTo(Place otherPlace) {
+        int toUpdate = this.name.toString().toUpperCase().compareTo((otherPlace.name.toString().toUpperCase()));
+        return toUpdate;
+    }
+
+The code above shows the implementation of `compareTo` method. This method converts the names of the Places to `CAPITAL LETTERS`,
+which allows us to compare easily. After the end of the comparison it will return the most updated list of places to display.
+// end::sort[]
+
 === Location on Google Map
 
 The command `goto` followed by an INDEX (must be positive) shows the location of the place on Google Map in the `BrowserPanel`.

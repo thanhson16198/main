@@ -149,7 +149,7 @@ Examples:
 * `list` +
 `delete 2` +
 Deletes the 2nd place in the address book.
-* `find Bay` +
+* `find n/Bay` +
 `del 1` +
 Deletes the 1st place in the results of the `find` command.
 
@@ -251,24 +251,25 @@ There is no need to save manually.
 == Changes in v1.1
 
 // tag::aung1.1[]
-==== `Logic` component
+=== `Logic` component
 Added a shorthand equivalent alias for each of the individual commands. For example, besides typing `add`, the user can also type `a` to remove all places in the list.
 // end::aung1.1[]
 
 == Changes from v1.2
 
 === Displaying MRT map of Singapore
+
 // tag::mrtmap[]
-*Display MRT map of Singapore by clicking on `MRT Map` -> `MRT Map` +
+Display MRT map of Singapore by clicking on `MRT Map` -> `MRT Map` +
 
 or
 
-*Display MRT map of Singapore by using the CLI. +
- Format: `mrt` +
+Display MRT map of Singapore by using the CLI. +
+Format: `mrt`
 
- or
+or
 
- Using the shortcut key `F3`
+Using the shortcut key `F3`
 // end::mrtmap[]
 
 === Useful contact numbers in Singapore
@@ -361,15 +362,14 @@ Returns the directions from the location at index 1 to index 2 of the places lis
 Returns the directions from the location at index 4 to index 1 of the places listing.
 
 == Changes in v1.5rc
-// tag::aung1.5[]
-=== View current PSI
 
+=== View current PSI
+// tag::aung1.5[]
 Displays the current PSI levels in Singapore. +
 Format: `psi`
 
 image::PSICommand.png[width="600"]
 _Figure 2.1.1 : Display PSI values through BrowserPanel
-
 // end::aung1.5[]
 
 //tag::export
@@ -380,9 +380,14 @@ Format: `export`
 
 === Changes from Email attribute to Website attributes
 
-Initial Addressbook has Email attributes with the prefix  of e/. +
-This attribute is refactored into Website attributes with the prefix of w/
+Initial Addressbook has Email attributes with the prefix  of `e/`. +
+This attribute is refactored into Website attributes with the prefix of `w/`
 
+=== Sort Command `sort`
+//tag::sort[]
+Sort command allows you to sort the places in alphabetical order.
+Format: `sort`
+//end::sort[]
 
 == Coming in v2.0
 
@@ -422,7 +427,7 @@ e.g. `bookmark 2`
 * *Delete* : `delete INDEX`  or `del INDEX` +
 e.g. `delete 3`
 * *Direction* : `dir` +
-* *Direction* : `dir` +
+* *Direction* : `dir` `INDEX` `INDEX` +
 e.g `dir 1 3`
 * *Edit* : `edit INDEX [n/NAME] [a/ADDRESS] [p/POSTALCODE] [t/TAG]...` +
 e.g. `edit 2 a/20 Bayfront Avenue t/bookmarks` or ``ed 2 a/20 Bayfront Avenue`
@@ -432,7 +437,7 @@ e.g. `find n/Bay Park`
 e.g. `goto 2`
 * *List* : `list` or `l`
 * *Help* : `help` or `h`
-* *Weather* : 'weather'
+* *Weather* : `weather`
 * *Select* : `select INDEX`  or `s` +
 e.g.`select 2`
 * *History* : `history` or `hy`
@@ -441,3 +446,5 @@ e.g.`select 2`
 * *MRT Map* : `mrt`
 * *PSI Value* : `psi`
 * *Export* : `export`
+* *Sort* : `sort`e
+* *Useful Contacts* : `emergency` or `sos`

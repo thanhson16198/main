@@ -97,6 +97,12 @@ public class AddCommandTest {
      * A default model stub that have all of the methods failing.
      */
     private class ModelStub implements Model {
+        //@@author aungmyin23
+        @Override
+        public void sortPlaces() {
+            fail("This method should not be called.");
+        }
+        //@@author
         @Override
         public void addPlace(ReadOnlyPlace place) throws DuplicatePlaceException {
             fail("This method should not be called.");
