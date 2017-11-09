@@ -68,6 +68,24 @@ public class PsiCommand extends Command {
     }
 }
 ```
+###### \java\seedu\address\logic\commands\SortCommand.java
+``` java
+/**
+ * Sorts the list of places in alphabetical order
+ */
+public class SortCommand extends Command {
+
+    public static final String COMMAND_WORD = "sort";
+    public static final String MESSAGE_USAGE = COMMAND_WORD;
+    public static final String SHOWING_SORT_MESSAGE = "The list is sorted in alphabetical order.";
+
+    @Override
+    public CommandResult execute() {
+        model.sortPlaces();
+        return new CommandResult(SHOWING_SORT_MESSAGE);
+    }
+}
+```
 ###### \java\seedu\address\logic\parser\AddCommandParser.java
 ``` java
             Optional<Phone> optionalPhone = ParserUtil.parsePhone(argMultimap.getValue(PREFIX_PHONE));
@@ -96,6 +114,8 @@ public class PsiCommand extends Command {
             return new MrtCommand();
         case PsiCommand.COMMAND_WORD:
             return new PsiCommand();
+        case SortCommand.COMMAND_WORD:
+            return new SortCommand();
 ```
 ###### \java\seedu\address\logic\parser\ParserUtil.java
 ``` java
@@ -115,6 +135,32 @@ public class PsiCommand extends Command {
      */
     public static Optional<Website> parseWebsite(Optional<String> website) throws IllegalValueException {
         return website.isPresent() ? Optional.of(new Website(website.get())) : Optional.empty();
+    }
+```
+###### \java\seedu\address\model\AddressBook.java
+``` java
+    public void sortPlaces() {
+        places.sort();
+    }
+```
+###### \java\seedu\address\model\Model.java
+``` java
+    /**Sorts the current places*/
+    void sortPlaces();
+```
+###### \java\seedu\address\model\ModelManager.java
+``` java
+    @Override
+    public void sortPlaces() {
+        addressBook.sortPlaces();
+    }
+```
+###### \java\seedu\address\model\place\Place.java
+``` java
+    @Override
+    public int compareTo(Place otherPlace) {
+        int toUpdate = this.name.toString().toUpperCase().compareTo((otherPlace.name.toString().toUpperCase()));
+        return toUpdate;
     }
 ```
 ###### \java\seedu\address\model\place\PostalCode.java
@@ -170,6 +216,12 @@ public class PostalCode {
     }
 
 }
+```
+###### \java\seedu\address\model\place\UniquePlaceList.java
+``` java
+    public void sort() {
+        Collections.sort(internalList);
+    }
 ```
 ###### \java\seedu\address\model\place\Website.java
 ``` java

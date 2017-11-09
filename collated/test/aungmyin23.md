@@ -1,4 +1,11 @@
 # aungmyin23
+###### \java\seedu\address\logic\commands\AddCommandTest.java
+``` java
+        @Override
+        public void sortPlaces() {
+            fail("This method should not be called.");
+        }
+```
 ###### \java\seedu\address\logic\commands\MrtCommandTest.java
 ``` java
 public class MrtCommandTest {
@@ -26,6 +33,34 @@ public class PsiCommandTest {
         assertEquals(SHOWING_PSI_MESSAGE, result.feedbackToUser);
         assertTrue(eventsCollectorRule.eventsCollector.getMostRecent() instanceof ShowPsiRequestEvent);
         assertTrue(eventsCollectorRule.eventsCollector.getSize() == 1);
+    }
+}
+```
+###### \java\seedu\address\logic\commands\SortCommandTest.java
+``` java
+public class SortCommandTest {
+
+    private Model compareModel;
+    private Model expectedModel;
+    private SortCommand executeSort;
+
+    /*
+    * Setting up the model to compare with for the testing.
+     */
+    @Before
+    public void setUp() {
+        compareModel = new ModelManager(getTypicalAddressBook(), new UserPrefs());
+        expectedModel = new ModelManager(compareModel.getAddressBook(), new UserPrefs());
+        executeSort = new SortCommand();
+        executeSort.setData(expectedModel, new CommandHistory(), new UndoRedoStack());
+    }
+
+    /*
+    * Comparing the two model to check whether the sort command give expected outcome
+     */
+    @Test
+    public void execute() {
+        assertCommandSuccess(executeSort, compareModel, SortCommand.SHOWING_SORT_MESSAGE, expectedModel);
     }
 }
 ```
