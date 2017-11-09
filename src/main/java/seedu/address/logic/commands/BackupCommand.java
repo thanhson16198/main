@@ -9,6 +9,7 @@ import seedu.address.logic.commands.exceptions.CommandException;
 /**
  * A command to create a backup of user's Tourist Book data.
  */
+//@@author huyuanrong
 public class BackupCommand extends UndoableCommand {
 
     public static final String COMMAND_WORD = "backup";
@@ -21,3 +22,4 @@ public class BackupCommand extends UndoableCommand {
         return new CommandResult(String.format(MESSAGE_SUCCESS));
     }
 }
+//@@author

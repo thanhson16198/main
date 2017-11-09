@@ -6,6 +6,7 @@ import seedu.address.model.ReadOnlyAddressBook;
 /**
  * A Backup event indicating that the user is requesting to save a backup of Tourist Book.
  */
+//@@author huyuanrong
 public class BackupEvent extends BaseEvent {
 
     public final ReadOnlyAddressBook data;
@@ -19,3 +20,4 @@ public class BackupEvent extends BaseEvent {
         return this.getClass().getSimpleName();
     }
 }
+//@@author
