@@ -366,10 +366,6 @@ Returns the directions from the location at index 4 to index 1 of the places lis
 
 Displays the current PSI levels in Singapore. +
 Format: `psi`
-
-image::PSICommand.png[width="600"]
-_Figure 2.1.1 : Display PSI values through BrowserPanel
-
 // end::aung1.5[]
 
 //tag::export
@@ -378,11 +374,14 @@ Export your data to .csv file format for printing purposes. +
 Format: `export`
 //end::export
 
-=== Changes from Email attribute to Website attributes
+=== Display bookmarks
+List all bookmarked places in Tourist Book
+Format: `show_bookmark`
 
-Initial Addressbook has Email attributes with the prefix  of e/. +
-This attribute is refactored into Website attributes with the prefix of w/
+=== Changed Email to Website
 
+The previous versions had Email attached to place details, we changed it to Website to better
+align our product with the user needs.
 
 == Coming in v2.0
 
@@ -417,6 +416,7 @@ e.g. `add n/Marina Bay Sands a/10 Bayfront Avenue p/018956`
 or `a n/Marina Bay Sands a/10 Bayfront Avenue p/018956 t/attractions`
 * *Bookmark* : `bookmark INDEX` +
 e.g. `bookmark 2`
+* *Show Bookmarks* : `show_bookmark`
 * *Clear Bookmarks*: `clear_bookmark`
 * *Clear* : `confirm_clear`
 * *Delete* : `delete INDEX`  or `del INDEX` +
