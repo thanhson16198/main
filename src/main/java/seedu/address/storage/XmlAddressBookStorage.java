@@ -5,6 +5,10 @@ import static java.util.Objects.requireNonNull;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
 import java.util.Optional;
 import java.util.logging.Logger;
 
@@ -83,6 +87,20 @@ public class XmlAddressBookStorage implements AddressBookStorage {
 
         trimmedfilePath = filePath.substring(0, filePath.length() - 4);
         saveAddressBook(addressBook, trimmedfilePath + "-backup.xml");
+
+        Path mainFile = Paths.get(filePath);
+        Path backupFile = Paths.get(trimmedfilePath + "-backup.xml");
+
+        try{
+            List<String> listMain = Files.readAllLines(mainFile);
+            List<String> listBackup = Files.readAllLines(backupFile);
+            if (!listMain.containsAll(listBackup)) {
+                throw new IOException();
+            }
+
+        } catch (IOException e) {
+            assert false: "MainFile and BackupFile are copies, and should be equal";
+        }
     }
     //@@author
 
