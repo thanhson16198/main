@@ -428,7 +428,7 @@ e.g. `bookmark 2`
 * *Delete* : `delete INDEX`  or `del INDEX` +
 e.g. `delete 3`
 * *Direction* : `dir` +
-* *Direction* : `dir` +
+* *Direction* : `dir` `INDEX` `INDEX` +
 e.g `dir 1 3`
 * *Edit* : `edit INDEX [n/NAME] [a/ADDRESS] [p/POSTALCODE] [t/TAG]...` +
 e.g. `edit 2 a/20 Bayfront Avenue t/bookmarks` or ``ed 2 a/20 Bayfront Avenue`
@@ -438,7 +438,7 @@ e.g. `find n/Bay Park`
 e.g. `goto 2`
 * *List* : `list` or `l`
 * *Help* : `help` or `h`
-* *Weather* : 'weather'
+* *Weather* : `weather`
 * *Select* : `select INDEX`  or `s` +
 e.g.`select 2`
 * *History* : `history` or `hy`
@@ -447,4 +447,5 @@ e.g.`select 2`
 * *MRT Map* : `mrt`
 * *PSI Value* : `psi`
 * *Export* : `export`
-* *Sort* : `sort`
+* *Sort* : `sort`e
+* *Useful Contacts* : `emergency` or `sos`
