@@ -1,3 +1,4 @@
+/* @@author thanhson16198 */
 .background {
     -fx-background-color: derive(#1d1d1d, 20%);
     background-color: #ffffff; /* Used in the default.html file */
@@ -348,3 +349,4 @@
     -fx-background-radius: 2;
     -fx-font-size: 11;
 }
+/* @@author */
