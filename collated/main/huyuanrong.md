@@ -112,23 +112,27 @@ public class TagContainsKeywordsPredicate implements Predicate<ReadOnlyPlace> {
 ###### \java\seedu\address\model\util\SampleDataUtil.java
 ``` java
                 new Place(new Name("Marina Bay Sands"), new Phone("66888868"),
-                        new Email("inquiries@marinabaysands.com"),
+                        new Website("http://www.marinabaysands.com/"),
                     new Address("10 Bayfront Avenue"), new PostalCode("018956"),
                     getTagSet("attractions")),
-                new Place(new Name("Singapore Flyer"), new Phone("6333311"), new Email("media@singaporeflyer.com"),
+                new Place(new Name("Singapore Flyer"), new Phone("6333311"),
+                        new Website("http://www.singaporeflyer.com/"),
                     new Address("30 Raffles Ave"), new PostalCode("039803"),
                     getTagSet("attractions")),
-                new Place(new Name("Singapore Zoo"), new Phone("62693411"), new Email("enquiry@wrs.com.sg"),
+                new Place(new Name("Singapore Zoo"), new Phone("62693411"),
+                        new Website("http://www.wrs.com.sg/"),
                     new Address("80 Mandai Lake Rd"), new PostalCode("729826"),
                     getTagSet("attractions")),
-                new Place(new Name("Beni Singapore"), new Phone("91593177"), new Email("enquiry@beni-sg.com"),
+                new Place(new Name("Beni Singapore"), new Phone("91593177"),
+                        new Website("http://www.beni-sg.com/"),
                     new Address("333A Orchard Rd, #02-37"), new PostalCode("238897"),
                     getTagSet("onestar")),
-                new Place(new Name("Odette"), new Phone("63850498"), new Email("enquiry@odetterestaurant.com"),
+                new Place(new Name("Odette"), new Phone("63850498"),
+                        new Website("http://www.odetterestaurant.com/"),
                     new Address("1 Saint Andrew's Rd, #01-04, National Gallery"), new PostalCode("178957"),
                     getTagSet("twostars")),
                 new Place(new Name("Joël Robuchon Restaurant"), new Phone("65777888"),
-                        new Email("robuchon@rwsentosa.com"),
+                        new Website("https://www.rwsentosa.com/en"),
                     new Address("26 Sentosa Gateway, Hotel Michael, #01-104 and 105"), new PostalCode("098138"),
                     getTagSet("threestars"))
 ```
@@ -253,7 +257,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>Marina Bay Sands</name>
         <phone>66888868</phone>
-        <email>inquiries@marinabaysands.com</email>
+        <wesite>https://www.marinabaysands.com</wesite>
         <address>10 Bayfront Avenue</address>
         <postalcode>018956</postalcode>
         <tags>attractions</tags>
@@ -261,7 +265,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>Singapore Flyer</name>
         <phone>63333311</phone>
-        <email>media@singaporeflyer.com</email>
+        <website>https://www.singaporeflyer.com</website>
         <address>30 Raffles Ave</address>
         <postalcode>039803</postalcode>
         <tags>attractions</tags>
@@ -269,7 +273,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>Gardens by the Bay</name>
         <phone>64206848</phone>
-        <email>feedback@gardensbythebay.com.sg</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>18 Marina Gardens Drive</address>
         <postalcode>018953</postalcode>
         <tags>attractions</tags>
@@ -277,7 +281,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>Singapore Botanic Gardens</name>
         <phone>64717138</phone>
-        <email>nparks_sbg_visitor_services@nparks.gov.sg</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>1 Cluny Rd</address>
         <postalcode>259569</postalcode>
         <tags>attractions</tags>
@@ -285,7 +289,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>Singapore Zoo</name>
         <phone>62693411</phone>
-        <email>enquiry@wrs.com.sg</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>80 Mandai Lake Rd</address>
         <postalcode>729826</postalcode>
         <tags>attractions</tags>
@@ -293,7 +297,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>Universal Studios Singapore</name>
         <phone>65778888</phone>
-        <email>enquiries@rwsentosa.com</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>8 Sentosa Gateway</address>
         <postalcode>098269</postalcode>
         <tags>attractions</tags>
@@ -301,7 +305,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>Jurong Bird Park</name>
         <phone>62693411</phone>
-        <email>enquiry@wrs.com.sg</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>2 Jurong Hill</address>
         <postalcode>628925</postalcode>
         <tags>attractions</tags>
@@ -309,7 +313,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>ArtScience Museum</name>
         <phone>66888868</phone>
-        <email>inquiries@marinabaysands.com</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>6 Bayfront Ave</address>
         <postalcode>018974</postalcode>
         <tags>attractions</tags>
@@ -317,7 +321,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>Science Centre Singapore</name>
         <phone>64252500</phone>
-        <email>feedback@science.edu.sg</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>15 Science Centre Rd</address>
         <postalcode>609081</postalcode>
         <tags>attractions</tags>
@@ -325,7 +329,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>Night Safari Singapore</name>
         <phone>62693411</phone>
-        <email>enquiry@wrs.com.sg</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>80 Mandai Lake Rd</address>
         <postalcode>729826</postalcode>
         <tags>attractions</tags>
@@ -333,7 +337,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>Alma by Juan Amador</name>
         <phone>67359937</phone>
-        <email>mail@alma.sg</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>22 Scotts Rd</address>
         <postalcode>228221</postalcode>
         <tags>onestar</tags>
@@ -341,7 +345,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>Bacchanalia</name>
         <phone>91794552</phone>
-        <email>reservations@bacchanalia.asia</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>39 Hongkong Street</address>
         <postalcode>059678</postalcode>
         <tags>onestar</tags>
@@ -349,7 +353,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>Beni Singapore</name>
         <phone>91593177</phone>
-        <email>enquiry@beni-sg.com</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>333A Orchard Road, #02-37 Mandarin Gallery</address>
         <postalcode>238897</postalcode>
         <tags>onestar</tags>
@@ -357,7 +361,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>Candlenut Kitchen</name>
         <phone>63041415</phone>
-        <email>media@comodempsey.sg</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>17A Dempsey Road</address>
         <postalcode>249676</postalcode>
         <tags>onestar</tags>
@@ -365,7 +369,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>Cut by Wolfgang Puck</name>
         <phone>66888517</phone>
-        <email>cutreservations@marinabaysands.com</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>2 Bayfront Avenue, #B1-71, Galleria Level The Shoppes at Marina Bay Sands</address>
         <postalcode>018972</postalcode>
         <tags>onestar</tags>
@@ -373,7 +377,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>Crystal Jade Golden Palace Restaurant</name>
         <phone>67346866</phone>
-        <email>-</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>290 Orchard Rd, #05-22, Paragon Shopping Centre</address>
         <postalcode>238859</postalcode>
         <tags>onestar</tags>
@@ -381,7 +385,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>Corner House</name>
         <phone>64691000</phone>
-        <email>enquiries@cornerhouse.com.sg</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>1 Cluny Road, E J H Corner House Singapore Botanic Gardens</address>
         <postalcode>259569</postalcode>
         <tags>onestar</tags>
@@ -389,7 +393,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>Forest</name>
         <phone>65777788</phone>
-        <email>forest@rwsentosa.com</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>16 Sentosa Gateway, Equarius Hotel, #01-521 and 522</address>
         <postalcode>098133</postalcode>
         <tags>onestar</tags>
@@ -397,7 +401,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>JAAN</name>
         <phone>68373322</phone>
-        <email>jaan.bookings@swissotel.com</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>2 Stomford Rd, Level 70, Equinox Complex</address>
         <postalcode>178882</postalcode>
         <tags>onestar</tags>
@@ -405,7 +409,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>Hong Kong Soya Sauce Chicken Rice and Noodle</name>
         <phone>000</phone>
-        <email>-</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>Blk 335, Smith Street #02-136, Chinatown Food Complex</address>
         <postalcode>050335</postalcode>
         <tags>onestar</tags>
@@ -413,7 +417,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>Hill Street Tai Hwa Pork Noodles</name>
         <phone>000</phone>
-        <email>-</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>Blk 466 Crawford Lane, Tai Hwa Eating House #01-12</address>
         <postalcode>190465</postalcode>
         <tags>onestar</tags>
@@ -421,7 +425,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>Lei Garden</name>
         <phone>63393822</phone>
-        <email>chijmes@leigarden.asia</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>30 Victoria St</address>
         <postalcode>187996</postalcode>
         <tags>onestar</tags>
@@ -429,7 +433,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>Osia Steak and Seafood Grill</name>
         <phone>65776560</phone>
-        <email>osia@rwsentosa.com</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>26 Sentosa Gateway, Festive Walk, #02-140 and 141</address>
         <postalcode>098138</postalcode>
         <tags>onestar</tags>
@@ -437,7 +441,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>PUTIEN</name>
         <phone>62956358</phone>
-        <email>-</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>127 Kitchener Rd</address>
         <postalcode>208514</postalcode>
         <tags>onestar</tags>
@@ -445,7 +449,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>Rhubarb Le Restaurant</name>
         <phone>81275001</phone>
-        <email>jerome@rhubarb.sg</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>3 Duxton Hill</address>
         <postalcode>089589</postalcode>
         <tags>onestar</tags>
@@ -453,7 +457,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>Shinji by Kanesaka</name>
         <phone>63386131</phone>
-        <email>reservations@shinjibykanesaka.com</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address> 76 Bras Basah Rd, Lobby Floor, Carlton Hotel</address>
         <postalcode>189558</postalcode>
         <tags>onestar</tags>
@@ -461,7 +465,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>Summer Pavilion</name>
         <phone>64345286</phone>
-        <email>rc.sinrz.summerpavilion@ritzcarlton.com</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>7 Raffles Ave, The Ritz-Carlton Millenia, Singapore</address>
         <postalcode>039799</postalcode>
         <tags>onestar</tags>
@@ -469,7 +473,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>Ginza Sushi Ichi</name>
         <phone>62355514</phone>
-        <email>-</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>320 Orchard Rd, #01-04 Singapore Marriott Tang Plaza Hotel</address>
         <postalcode>238865</postalcode>
         <tags>onestar</tags>
@@ -477,7 +481,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>terra Tokyo Italian</name>
         <phone>62215159</phone>
-        <email>-</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>54 Tras St</address>
         <postalcode>078993</postalcode>
         <tags>onestar</tags>
@@ -485,7 +489,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>The Song Of India</name>
         <phone>68360055</phone>
-        <email>namaste@songofindia.com.sg</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>33 Scotts Rd</address>
         <postalcode>228226</postalcode>
         <tags>onestar</tags>
@@ -493,7 +497,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>Waku Ghin</name>
         <phone>66888507</phone>
-        <email>wakughinreservation@marinabaysands.com</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>2 Bayfront Avenue, Level 2 Dining, L2-01, The Shoppes at Marina Bay Sands</address>
         <postalcode>018956</postalcode>
         <tags>onestar</tags>
@@ -501,7 +505,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>Restaurant André</name>
         <phone>65348880</phone>
-        <email>info@restaurantandre.com</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>41 Bukit Pasoh Rd</address>
         <postalcode>089855</postalcode>
         <tags>twostars</tags>
@@ -509,7 +513,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>L Atelier de Joël Robuchon</name>
         <phone>65777888</phone>
-        <email>robuchon@rwsentosa.com</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>8 Sentosa Gateway</address>
         <postalcode>098269</postalcode>
         <tags>twostars</tags>
@@ -517,7 +521,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>Les Amis</name>
         <phone>67332225</phone>
-        <email>lesamis@lesamis.com.sg</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>1 Scotts Road, #01-16 Shaw Centre</address>
         <postalcode>228208</postalcode>
         <tags>twostars</tags>
@@ -525,7 +529,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>Odette</name>
         <phone>63850498</phone>
-        <email>enquiry@odetterestaurant.com</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>1 Saint Andrew's Road, #01-04, National Gallery</address>
         <postalcode>178957</postalcode>
         <tags>twostars</tags>
@@ -533,7 +537,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>Shisen Hanten</name>
         <phone>68316262</phone>
-        <email>shisenhanten.orchard@meritushotels.com</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>333 Orchard Rd, Mandarin Orchard Singapore</address>
         <postalcode>238867</postalcode>
         <tags>twostars</tags>
@@ -541,7 +545,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>Shoukouwa Restaurant</name>
         <phone>64239939</phone>
-        <email>info@shoukouwa.com.sg</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>1 Fullerton Rd, #02-02A, One Fullerton</address>
         <postalcode>238867</postalcode>
         <tags>twostars</tags>
@@ -549,7 +553,7 @@ public class ContactWindow extends UiPart<Region> {
     <places>
         <name>Joël Robuchon Restaurant</name>
         <phone>65777888</phone>
-        <email>robuchon@rwsentosa.com</email>
+        <website>https://www.gardensbythebay.com.sg</website>
         <address>26 Sentosa Gateway, Hotel Michael, #01-104 and 105</address>
         <postalcode>098138</postalcode>
         <tags>threestars</tags>

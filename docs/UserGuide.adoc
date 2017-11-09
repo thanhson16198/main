@@ -304,29 +304,28 @@ Bookmarks the first place in the address book.
 `bookmark 3` +
 Bookmarks the 3rd place in the results of the `find` command.
 
-=== Display Singapore weather: `weather`
-Displays the current weather of Singapore. +
-Format: `weather`
-
 === Clearing all bookmarks: `clear_bookmark`
 
 Clears all bookmarks from the address book. +
 Format: `clear_bookmark`
 
+// tag::weather[]
 === Displaying Weather of Singapore
 
-*Display Weather of Singapore by clicking on `Help` -> `Weather` +
 *Display Weather of Singapore by typing in Command Line `weather`
 Format: `weather`
+// end::weather[]
 
 == Changes in v1.3
 
+// tag::goto[]
 === Display the location of the place
 
 *Display the location of the place in Google Map by typing in Command 'goto' followed by the INDEX of the place
 Format: `goto` + INDEX (must be positive)
 Examples:
 * `goto 1`
+// end::goto[]
 
 == Changes in v1.4
 

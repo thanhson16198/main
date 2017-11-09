@@ -42,9 +42,19 @@ public class BrowserPanelTest extends GuiUnitTest {
 
         // associated web page of a place
         postNow(selectionChangedEventStub);
+        /*
         URL expectedPlaceUrl = new URL(GOOGLE_SEARCH_URL_PREFIX
                 + ALICE.getName().fullName.replaceAll(" ", "+") + GOOGLE_SEARCH_URL_SUFFIX);
-
+        */
+        //@@author thanhson16198
+        URL expectedPlaceUrl;
+        if (ALICE.getWebsite().toString().contains("www.-.com")) {
+            expectedPlaceUrl = new URL(GOOGLE_SEARCH_URL_PREFIX
+                    + ALICE.getName().fullName.replaceAll(" ", "+") + GOOGLE_SEARCH_URL_SUFFIX);
+        } else {
+            expectedPlaceUrl = new URL(ALICE.getWebsite().toString().replaceAll(" ", "+"));
+        }
+        //@@author
         waitUntilBrowserLoaded(browserPanelHandle);
         assertEquals(expectedPlaceUrl, browserPanelHandle.getLoadedUrl());
     }
