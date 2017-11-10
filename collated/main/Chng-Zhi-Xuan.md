@@ -183,11 +183,35 @@ public class DirCommand extends Command {
     }
 }
 ```
+###### \java\seedu\address\logic\commands\ShowBookmarkCommand.java
+``` java
+/**
+ * Clears all bookmark tags from all places
+ */
+public class ShowBookmarkCommand extends Command {
+
+    public static final String COMMAND_WORD = "show_bookmark";
+
+    public static final String MESSAGE_USAGE = COMMAND_WORD
+            + ": show all bookmarks in address book\n"
+            + "Example: " + COMMAND_WORD;
+
+    public static final String MESSAGE_SHOW_BOOKMARK_SUCCESS = "Showing all bookmarks";
+    private final String[] bookmarkString = {"Bookmarked"};
+
+    public ShowBookmarkCommand() {
+
+    }
+
+```
 ###### \java\seedu\address\logic\parser\AddressBookParser.java
 ``` java
         case DirCommand.COMMAND_WORD:
         case DirCommand.COMMAND_WORD_ALIAS:
             return new DirCommandParser().parse(arguments);
+
+        case ShowBookmarkCommand.COMMAND_WORD:
+            return new ShowBookmarkCommandParser().parse(arguments);
 ```
 ###### \java\seedu\address\logic\parser\AddressBookParser.java
 ``` java

@@ -347,7 +347,7 @@ image::UndoRedoActivityDiagram.png[width="200"]
 **Cons:** Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as `HistoryManager` now needs to do two different things. +
 // end::undoredo[]
 
-// tag::bookmark
+// tag::bookmarkDesign[]
 === Bookmark & Clear Bookmark mechanism
 
 The underlying implementation of Bookmark (BM) and Clear Bookmark (CBM) is tag manipulation in the model component.
@@ -390,7 +390,7 @@ methods in `ModelManager`.
 **Alternative 2:** A more general command for user to change tags of specific place +
 **Pros:** More concise version of `edit`, allows user to have different bookmark "lists" E.G ("Near_West", "Near_East"). +
 **Cons:** A general version of `clear_bookmark` will be `remove_tag`, which would allow the user to delete important pre-allocated tags in the initial list. +
-// end::bookmark
+// end::bookmarkDesign[]
 
 //tag::emergency
 === Emergency/Useful Contacts
