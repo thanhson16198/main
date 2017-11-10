@@ -105,7 +105,7 @@ Examples:
 Edits the address and tag of the 1st place to be `20 Bayfront Avenue` and `bookmarks` respectively.
 * `ed 2 n/Singapore Zoo t/` +
 Edits the name of the 2nd place to be `Singapore Zoo` and clears all existing tags.
-
+//tag::find[]
 === Locating places by name or tag: `find` or  `fd`
 
 Finds places whose names or tags contain any of the given keywords. +
@@ -132,6 +132,7 @@ Returns any place having names `Singapore`, `Sands`, or `Botanic`
 Returns a list of places tagged as `attractions`
 * `fd t/onestar` +
 Returns a list of places tagged as `onestar`
+//end::find[]
 
 === Deleting a place : `delete` or `del`
 
@@ -169,7 +170,7 @@ Examples:
 * `list` +
 `select 2` +
 Selects the 2nd place in the address book.
-* `find Bay` +
+* `find n/Bay` +
 `select 1` +
 Selects the 1st place in the results of the `find` command.
 
@@ -255,6 +256,11 @@ There is no need to save manually.
 Added a shorthand equivalent alias for each of the individual commands. For example, besides typing `add`, the user can also type `a` to remove all places in the list.
 // end::aung1.1[]
 
+//tag::storage[]
+=== 'Storage' component
+Added a backup method in AddressBookStorage.
+//end::storage[]
+
 == Changes from v1.2
 
 === Displaying MRT map of Singapore
@@ -272,6 +278,7 @@ or
 Using the shortcut key `F3`
 // end::mrtmap[]
 
+//tag::usefulContacts[]
 === Useful contact numbers in Singapore
 
 Display a list of useful contact numbers by clicking on `Help -> Useful Contacts` +
@@ -283,6 +290,7 @@ or
 
 Using the shortcut key.
 Format: `F2`
+//end::usefulContacts[]
 
 // tag::bookmark[]
 === Bookmark a place: `bookmark`
@@ -302,7 +310,7 @@ Examples:
 `bookmark 1` +
 Bookmarks the first place in the address book.
 
-* `find attractions` +
+* `find n/attractions` +
 `bookmark 3` +
 Bookmarks the 3rd place in the results of the `find` command.
 // end::bookmark[]
@@ -367,6 +375,11 @@ Returns the directions from the location at index 1 to index 2 of the places lis
 Returns the directions from the location at index 4 to index 1 of the places listing.
 // end::direction[]
 
+//tag::defaultlist[]
+=== Default list of places
+Populated a default list of places for the user with 38 places.
+//end::defaultlist[]
+
 == Changes in v1.5rc
 
 === View current PSI
@@ -375,11 +388,21 @@ Displays the current PSI levels in Singapore. +
 Format: `psi`
 // end::aung1.5[]
 
-//tag::export
+//tag::export[]
 === Tourist Book save files are now exportable to .csv format
 Export your data to .csv file format for printing purposes. +
 Format: `export`
-//end::export
+//end::export[]
+
+//tag::backup[]
+=== Tourist book save files can now be backed-up
+Backup a copy of your data to the same folder of the save file. +
+Format: `backup`
++
+[NOTE]
+Running the command again if you already have a previous backup will overwrite the previous +
+backup file!
+//end::backup[]
 
 // tag::showBookmark[]
 === Display bookmarks: `show_bookmark`
@@ -455,5 +478,6 @@ e.g.`select 2`
 * *MRT Map* : `mrt`
 * *PSI Value* : `psi`
 * *Export* : `export`
+* *Backup* : `backup`
 * *Sort* : `sort`e
 * *Useful Contacts* : `emergency` or `sos`

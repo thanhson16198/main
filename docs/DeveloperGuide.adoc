@@ -392,7 +392,7 @@ methods in `ModelManager`.
 **Cons:** A general version of `clear_bookmark` will be `remove_tag`, which would allow the user to delete important pre-allocated tags in the initial list. +
 // end::bookmarkDesign[]
 
-//tag::emergency
+//tag::emergency[]
 === Emergency/Useful Contacts
 
 The Emergency/Useful Contacts function allows the user to quickly view a pre-defined list of contact numbers. +
@@ -426,7 +426,7 @@ Both commands will invoke the same contacts page.
 **Alternative 1 (current choice)** Have 2 dedicated commands and quick key button (F2). +
 **Pros:** Allows user a more flexible choice of invoking the contacts list. +
 **Cons:** Takes up a quick key combination which can be used to invoke other shortcuts.
-//end::emergency
+//end::emergency[]
 === Logging
 
 We are using `java.util.logging` package for logging. The `LogsCenter` class is used to manage the logging levels and logging destinations.
@@ -544,7 +544,7 @@ MainWindow.loadUrl("https://www.google.com.sg/maps/place/"
 ----
 // end::goto[]
 ---
-//tag::findCommand
+//tag::findCommand[]
 === Editing the Find Command to search by Name and Tag
 
 The Find command is able to search the Tourist Book by Name of the place of by the Tags of the place.
@@ -571,8 +571,9 @@ The user is able to invoke the command with `find` or `fd`, followed by a PREFIX
 **Alternative 1 (current choice)** Have 1 command and 2 dedicated prefixes. +
 **Pros:** Allows user a more flexible choice of find through the contacts list. +
 **Cons:** Can only search for one type of attribute at any time.
-//end::findCommand
+//end::findCommand[]
 
+//tag::exportCommand[]
 === Export
 
 The `ExportCommand` extends the `Command` class. It allows users to export the current Address Book data
@@ -651,7 +652,7 @@ From _Figure 3.9A_, the ExportCommand depends on `java.io` to carry out the file
 
  *Pros:*
 
- * Code is adaptable should new fields be added to `ReadOnlyPerson`.
+ * Code is adaptable should new fields be added to `ReadOnlyPlace`.
 
  *Cons:*
 
@@ -661,6 +662,7 @@ From _Figure 3.9A_, the ExportCommand depends on `java.io` to carry out the file
 
 The implementation of the method is credited to link:https://github.com/AceCentury[Ryan Teo] and +
 link:https://github.com/nus-cs2103-AY1718S1/forum/issues/158[this issue].
+//end::exportCommand[]
 
 == Documentation
 
@@ -877,6 +879,7 @@ image::getting-started-ui-status-after.png[width="500"]
 ** See this https://github.com/se-edu/addressbook-level4/pull/596/files[PR] for the full solution.
 ****
 
+//tag::backup[]
 [discrete]
 ==== `Storage` component
 
@@ -892,7 +895,7 @@ Do take a look at the link:#storage-component[Design: Storage Component] section
 * Solution
 ** See this https://github.com/se-edu/addressbook-level4/pull/594/files[PR] for the full solution.
 ****
-
+//end::backup[]
 === Creating a new command: `remark`
 
 By creating this command, you will get a chance to learn how to implement a feature end-to-end, touching all major components of the app.
