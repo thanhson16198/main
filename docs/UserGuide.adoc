@@ -341,8 +341,7 @@ Format: `weather`
 
 Display the location of the place in Google Map by typing in Command 'goto' followed by the INDEX of the place. +
 Format: `goto` + INDEX (must be positive) +
-Examples: +
-* `goto 1` +
+Examples: `goto 1` +
 // end::goto[]
 
 == Changes in v1.4

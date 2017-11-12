@@ -545,7 +545,9 @@ MainWindow.loadUrl("https://www.google.com.sg/maps/place/"
 image::LocationWebsiteUI.png[width="800"]
 _Figure 3.6.3 : Singapore Botanic Gardens' website_
 // end::goto[]
+
 ---
+
 //tag::findCommand[]
 === Editing the Find Command to search by Name and Tag
 
