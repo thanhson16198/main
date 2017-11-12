@@ -18,7 +18,7 @@ public class ExportCommand extends Command {
 
     public static final String MESSAGE_EXPORT_SUCCESS = "Successfully exported data.";
 
-    public static final String MESSAGE_EMPTY_ADDRESS_BOOK = "Export failed. Current Address Book is empty.";
+    public static final String MESSAGE_EMPTY_ADDRESS_BOOK = "Export failed. Current Tourist Book is empty.";
 
     public static final String DATA_FILE_PATH = "TouristBookData.csv";
 

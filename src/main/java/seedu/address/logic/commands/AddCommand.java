@@ -21,12 +21,12 @@ public class AddCommand extends UndoableCommand {
     public static final String COMMAND_WORD = "add";
     public static final String COMMAND_WORD_ALIAS = "a";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a place to the address book. "
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a place to the Tourist Book. "
             + "Parameters: "
             + PREFIX_NAME + "NAME "
-            + PREFIX_PHONE + "PHONE "
-            + PREFIX_WEBSITE + "WEBSITE "
-            + PREFIX_ADDRESS + "ADDRESS "
+            + "[" + PREFIX_PHONE + "PHONE "
+            + "[" + PREFIX_WEBSITE + "WEBSITE "
+            + "[" + PREFIX_ADDRESS + "ADDRESS "
             + PREFIX_POSTAL_CODE + "POSTALCODE "
             + "[" + PREFIX_TAG + "TAG]...\n"
             + "Example: " + COMMAND_WORD + " "
@@ -38,7 +38,7 @@ public class AddCommand extends UndoableCommand {
             + PREFIX_TAG + "attractions";
 
     public static final String MESSAGE_SUCCESS = "New place added: %1$s";
-    public static final String MESSAGE_DUPLICATE_PLACE = "This place already exists in the address book";
+    public static final String MESSAGE_DUPLICATE_PLACE = "This place already exists in the Tourist Book";
 
     private final Place toAdd;
 
