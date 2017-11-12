@@ -7,6 +7,10 @@
 This is a test script document to explain the steps to perform manual testing, including how to load the data file.
 
 == Quick Start
+. Download both .jar and .xml files
+. Put both files in the same folder
+. Create another folder named "data" and put the .xml file inside
+. Run touristbook.jar
 
 == Help Command
 //Specify the format here: e.g. Format: add n/NAME [ph/PHONE]
