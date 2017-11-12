@@ -220,6 +220,16 @@ public class MainWindow extends UiPart<Region> {
                 (int) primaryStage.getX(), (int) primaryStage.getY());
     }
 
+    //@@author thanhson16198
+    /**
+     * Opens the Weather on browser.
+     */
+    public void handleWeather() {
+        logger.info("Open a weather forecast for today on BrowerPanel.");
+        browserPanel.loadPage("https://www.accuweather.com/en/sg/singapore/300597/hourly-weather-forecast/300597");
+    }
+    //@@author
+
     /**
      * Opens the help window.
      */
@@ -229,16 +239,6 @@ public class MainWindow extends UiPart<Region> {
         helpWindow.show();
     }
 
-    //@@author thanhson16198
-    /**
-     * Opens the Weather on browser.
-     */
-    @FXML
-    public void handleWeather() {
-        logger.info("Open a weather forecast for today on BrowerPanel.");
-        browserPanel.loadPage("https://www.accuweather.com/en/sg/singapore/300597/hourly-weather-forecast/300597");
-    }
-    //@@author
     //@@author huyuanrong
     /**
      * Opens the useful contacts window.

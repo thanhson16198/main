@@ -97,7 +97,7 @@ import seedu.address.commons.events.ui.ShowWeatherRequestEvent;
 
 /**
  *
- * Format full help instructions for every command for display.
+ * Show the real-time weather on the `BrowserPanel`
  */
 public class WeatherCommand extends Command {
     public static final String COMMAND_WORD = "weather";
@@ -183,7 +183,6 @@ public class GotoCommandParser implements Parser<GotoCommand> {
     /**
      * Opens the Weather on browser.
      */
-    @FXML
     public void handleWeather() {
         logger.info("Open a weather forecast for today on BrowerPanel.");
         browserPanel.loadPage("https://www.accuweather.com/en/sg/singapore/300597/hourly-weather-forecast/300597");
