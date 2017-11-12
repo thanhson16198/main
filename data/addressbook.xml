@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-
-<!-- @@author huyuanrong -->
 <touristbook>
     <places>
         <name>Marina Bay Sands</name>
@@ -8,9 +6,9 @@
         <website>http://www.marinabaysands.com</website>
         <address>10 Bayfront Avenue</address>
         <postalcode>018956</postalcode>
+        <tags>indoors</tags>
         <tags>attractions</tags>
-		<tags>shopping</tags>
-		<tags>indoors</tags>
+        <tags>shopping</tags>
     </places>
     <places>
         <name>Singapore Flyer</name>
@@ -18,9 +16,9 @@
         <website>http://www.singaporeflyer.com</website>
         <address>30 Raffles Ave</address>
         <postalcode>039803</postalcode>
+        <tags>sightseeing</tags>
+        <tags>indoors</tags>
         <tags>attractions</tags>
-		<tags>sightseeing</tags>
-		<tags>indoors</tags>
     </places>
     <places>
         <name>Gardens by the Bay</name>
@@ -28,11 +26,11 @@
         <website>http://www.gardensbythebay.com.sg</website>
         <address>18 Marina Gardens Drive</address>
         <postalcode>018953</postalcode>
+        <tags>sightseeing</tags>
+        <tags>outdoors</tags>
+        <tags>nature</tags>
+        <tags>indoors</tags>
         <tags>attractions</tags>
-		<tags>sightseeing</tags>
-		<tags>indoors</tags>
-		<tags>outdoors</tags>
-		<tags>nature</tags>
     </places>
     <places>
         <name>Singapore Botanic Gardens</name>
@@ -40,10 +38,10 @@
         <website>http://www.sbg.org.sg/</website>
         <address>1 Cluny Rd</address>
         <postalcode>259569</postalcode>
+        <tags>sightseeing</tags>
+        <tags>outdoors</tags>
+        <tags>nature</tags>
         <tags>attractions</tags>
-		<tags>sightseeing</tags>
-		<tags>outdoors</tags>
-		<tags>nature</tags>
     </places>
     <places>
         <name>Singapore Zoo</name>
@@ -51,10 +49,10 @@
         <website>http://www.zoo.com.sg</website>
         <address>80 Mandai Lake Rd</address>
         <postalcode>729826</postalcode>
+        <tags>sightseeing</tags>
+        <tags>outdoors</tags>
+        <tags>nature</tags>
         <tags>attractions</tags>
-		<tags>sightseeing</tags>
-		<tags>outdoors</tags>
-		<tags>nature</tags>
     </places>
     <places>
         <name>Universal Studios Singapore</name>
@@ -62,9 +60,9 @@
         <website>http://www.rwsentosa.com/Homepage/Attractions/UniversalStudiosSingapore</website>
         <address>8 Sentosa Gateway</address>
         <postalcode>098269</postalcode>
+        <tags>sightseeing</tags>
+        <tags>indoors</tags>
         <tags>attractions</tags>
-		<tags>sightseeing</tags>
-		<tags>indoors</tags>
     </places>
     <places>
         <name>Jurong Bird Park</name>
@@ -72,10 +70,10 @@
         <website>http://www.birdpark.com.sg</website>
         <address>2 Jurong Hill</address>
         <postalcode>628925</postalcode>
+        <tags>sightseeing</tags>
+        <tags>outdoors</tags>
+        <tags>nature</tags>
         <tags>attractions</tags>
-		<tags>sightseeing</tags>
-		<tags>outdoors</tags>
-		<tags>nature</tags>
     </places>
     <places>
         <name>ArtScience Museum</name>
@@ -83,10 +81,10 @@
         <website>http://www.marinabaysands.com/museum.html</website>
         <address>6 Bayfront Ave</address>
         <postalcode>018974</postalcode>
+        <tags>museum</tags>
+        <tags>indoors</tags>
         <tags>attractions</tags>
-		<tags>museum</tags>
-		<tags>indoors</tags>
-		<tags>gallery</tags>
+        <tags>gallery</tags>
     </places>
     <places>
         <name>Science Centre Singapore</name>
@@ -94,10 +92,10 @@
         <website>http://www.science.edu.sg</website>
         <address>15 Science Centre Rd</address>
         <postalcode>609081</postalcode>
+        <tags>sightseeing</tags>
+        <tags>indoors</tags>
         <tags>attractions</tags>
-		<tags>sightseeing</tags>
-		<tags>indoors</tags>
-		<tags>gallery</tags>
+        <tags>gallery</tags>
     </places>
     <places>
         <name>Night Safari Singapore</name>
@@ -105,10 +103,10 @@
         <website>http://www.nightsafari.com.sg</website>
         <address>80 Mandai Lake Rd</address>
         <postalcode>729826</postalcode>
+        <tags>sightseeing</tags>
+        <tags>outdoors</tags>
+        <tags>nature</tags>
         <tags>attractions</tags>
-		<tags>sightseeing</tags>
-		<tags>outdoors</tags>
-		<tags>nature</tags>
     </places>
     <places>
         <name>Alma by Juan Amador</name>
@@ -116,11 +114,11 @@
         <website>http://alma.sg</website>
         <address>22 Scotts Rd</address>
         <postalcode>228221</postalcode>
+        <tags>spanish</tags>
         <tags>onestar</tags>
-		<tags>restaurant</tags>
-		<tags>asian</tags>
-		<tags>european</tags>
-		<tags>spanish</tags>
+        <tags>restaurant</tags>
+        <tags>european</tags>
+        <tags>asian</tags>
     </places>
     <places>
         <name>Bacchanalia</name>
@@ -129,9 +127,9 @@
         <address>39 Hongkong Street</address>
         <postalcode>059678</postalcode>
         <tags>onestar</tags>
-		<tags>restaurant</tags>
-		<tags>french</tags>
-		<tags>european</tags>
+        <tags>restaurant</tags>
+        <tags>european</tags>
+        <tags>french</tags>
     </places>
     <places>
         <name>Beni Singapore</name>
@@ -139,12 +137,12 @@
         <website>http://www.beni-sg.com</website>
         <address>333A Orchard Road, #02-37 Mandarin Gallery</address>
         <postalcode>238897</postalcode>
+        <tags>japanese</tags>
         <tags>onestar</tags>
-		<tags>restaurant</tags>
-		<tags>japanese</tags>
-		<tags>french</tags>
-		<tags>asian</tags>
-		<tags>european</tags>
+        <tags>restaurant</tags>
+        <tags>european</tags>
+        <tags>asian</tags>
+        <tags>french</tags>
     </places>
     <places>
         <name>Candlenut Kitchen</name>
@@ -152,11 +150,11 @@
         <website>http://comodempsey.sg/restaurant/candlenut</website>
         <address>17A Dempsey Road</address>
         <postalcode>249676</postalcode>
+        <tags>chinese</tags>
         <tags>onestar</tags>
-		<tags>restaurant</tags>
-		<tags>peranakan</tags>
-		<tags>chinese</tags>
-		<tags>asian</tags>
+        <tags>restaurant</tags>
+        <tags>asian</tags>
+        <tags>peranakan</tags>
     </places>
     <places>
         <name>Cut by Wolfgang Puck</name>
@@ -165,8 +163,8 @@
         <address>2 Bayfront Avenue, #B1-71, Galleria Level The Shoppes at Marina Bay Sands</address>
         <postalcode>018972</postalcode>
         <tags>onestar</tags>
-		<tags>restaurant</tags>
-		<tags>american</tags>
+        <tags>restaurant</tags>
+        <tags>american</tags>
     </places>
     <places>
         <name>Crystal Jade Golden Palace Restaurant</name>
@@ -174,10 +172,10 @@
         <website>http://www.crystaljade.com/goldenpalace</website>
         <address>290 Orchard Rd, #05-22, Paragon Shopping Centre</address>
         <postalcode>238859</postalcode>
+        <tags>chinese</tags>
         <tags>onestar</tags>
-		<tags>restaurant</tags>
-		<tags>chinese</tags>
-		<tags>asian</tags>
+        <tags>restaurant</tags>
+        <tags>asian</tags>
     </places>
     <places>
         <name>Corner House</name>
@@ -185,11 +183,11 @@
         <website>http://www.cornerhouse.com.sg/</website>
         <address>1 Cluny Road, E J H Corner House Singapore Botanic Gardens</address>
         <postalcode>259569</postalcode>
+        <tags>gastroBotanica</tags>
+        <tags>nature</tags>
         <tags>onestar</tags>
-		<tags>restaurant</tags>
-		<tags>gastroBotanica</tags>
-		<tags>asian</tags>
-		<tags>nature</tags>
+        <tags>restaurant</tags>
+        <tags>asian</tags>
     </places>
     <places>
         <name>Forest</name>
@@ -197,10 +195,10 @@
         <website>http://www.rwsentosa.com/Homepage/Restaurants/CelebrityChefs/Forest</website>
         <address>16 Sentosa Gateway, Equarius Hotel, #01-521 and 522</address>
         <postalcode>098133</postalcode>
+        <tags>chinese</tags>
         <tags>onestar</tags>
-		<tags>restaurant</tags>
-		<tags>chinese</tags>
-		<tags>asian</tags>
+        <tags>restaurant</tags>
+        <tags>asian</tags>
     </places>
     <places>
         <name>JAAN</name>
@@ -208,10 +206,10 @@
         <website>http://www.jaan.com.sg</website>
         <address>2 Stomford Rd, Level 70, Equinox Complex</address>
         <postalcode>178882</postalcode>
+        <tags>sightseeing</tags>
         <tags>onestar</tags>
-		<tags>restaurant</tags>
-		<tags>european</tags>
-		<tags>sightseeing</tags>
+        <tags>restaurant</tags>
+        <tags>european</tags>
     </places>
     <places>
         <name>Hong Kong Soya Sauce Chicken Rice and Noodle</name>
@@ -219,11 +217,11 @@
         <website>http://www.facebook.com/hawkerchanSG</website>
         <address>Blk 335, Smith Street #02-126, Chinatown Food Complex</address>
         <postalcode>050335</postalcode>
+        <tags>chinese</tags>
         <tags>onestar</tags>
-		<tags>coffeeshop</tags>
-		<tags>chickenrice</tags>
-		<tags>chinese</tags>
-		<tags>asian</tags>
+        <tags>coffeeshop</tags>
+        <tags>asian</tags>
+        <tags>chickenrice</tags>
     </places>
     <places>
         <name>Hill Street Tai Hwa Pork Noodles</name>
@@ -231,11 +229,11 @@
         <website>http://www.taihwa.com.sg</website>
         <address>Blk 466 Crawford Lane, Tai Hwa Eating House #01-12</address>
         <postalcode>190465</postalcode>
+        <tags>chinese</tags>
         <tags>onestar</tags>
-		<tags>coffeeshop</tags>
-		<tags>noodles</tags>
-		<tags>chinese</tags>
-		<tags>asian</tags>
+        <tags>coffeeshop</tags>
+        <tags>noodles</tags>
+        <tags>asian</tags>
     </places>
     <places>
         <name>Lei Garden</name>
@@ -243,10 +241,10 @@
         <website>http://chijmes.com.sg/lei-garden-restaurant</website>
         <address>30 Victoria St</address>
         <postalcode>187996</postalcode>
+        <tags>chinese</tags>
         <tags>onestar</tags>
-		<tags>restaurant</tags>
-		<tags>asian</tags>
-		<tags>chinese</tags>
+        <tags>restaurant</tags>
+        <tags>asian</tags>
     </places>
     <places>
         <name>Osia Steak and Seafood Grill</name>
@@ -255,8 +253,8 @@
         <address>26 Sentosa Gateway, Festive Walk, #02-140 and 141</address>
         <postalcode>098138</postalcode>
         <tags>onestar</tags>
-		<tags>restaurant</tags>
-		<tags>australian</tags>
+        <tags>restaurant</tags>
+        <tags>australian</tags>
     </places>
     <places>
         <name>PUTIEN</name>
@@ -264,11 +262,11 @@
         <website>http://www.putien.com</website>
         <address>127 Kitchener Rd</address>
         <postalcode>208514</postalcode>
+        <tags>chinese</tags>
         <tags>onestar</tags>
-		<tags>restaurant</tags>
-		<tags>chinese</tags>
-		<tags>asian</tags>
-		<tags>noodles</tags>
+        <tags>noodles</tags>
+        <tags>restaurant</tags>
+        <tags>asian</tags>
     </places>
     <places>
         <name>Rhubarb Le Restaurant</name>
@@ -277,9 +275,9 @@
         <address>3 Duxton Hill</address>
         <postalcode>089589</postalcode>
         <tags>onestar</tags>
-		<tags>restaurant</tags>
-		<tags>french</tags>
-		<tags>european</tags>
+        <tags>restaurant</tags>
+        <tags>european</tags>
+        <tags>french</tags>
     </places>
     <places>
         <name>Shinji by Kanesaka</name>
@@ -287,11 +285,11 @@
         <website>http://www.shinjibykanesaka.com</website>
         <address> 76 Bras Basah Rd, Lobby Floor, Carlton Hotel</address>
         <postalcode>189558</postalcode>
+        <tags>japanese</tags>
         <tags>onestar</tags>
-		<tags>restaurant</tags>
-		<tags>japanese</tags>
-		<tags>asian</tags>
-		<tags>sushi</tags>
+        <tags>restaurant</tags>
+        <tags>asian</tags>
+        <tags>sushi</tags>
     </places>
     <places>
         <name>Summer Pavilion</name>
@@ -299,10 +297,10 @@
         <website>http://www.ritzcarlton.com/en/hotels/singapore/dining/summer-pavilion</website>
         <address>7 Raffles Ave, The Ritz-Carlton Millenia, Singapore</address>
         <postalcode>039799</postalcode>
+        <tags>chinese</tags>
         <tags>onestar</tags>
-		<tags>restaurant</tags>
-		<tags>asian</tags>
-		<tags>chinese</tags>
+        <tags>restaurant</tags>
+        <tags>asian</tags>
     </places>
     <places>
         <name>Ginza Sushi Ichi</name>
@@ -310,11 +308,11 @@
         <website>http://www.ginza-sushiichi.jp/english/shop/singapore.html</website>
         <address>320 Orchard Rd, #01-04 Singapore Marriott Tang Plaza Hotel</address>
         <postalcode>238865</postalcode>
+        <tags>japanese</tags>
         <tags>onestar</tags>
-		<tags>restaurant</tags>
-		<tags>japanese</tags>
-		<tags>asian</tags>
-		<tags>sushi</tags>
+        <tags>restaurant</tags>
+        <tags>asian</tags>
+        <tags>sushi</tags>
     </places>
     <places>
         <name>terra Tokyo Italian</name>
@@ -322,12 +320,12 @@
         <website>http://www.terraseita.com</website>
         <address>54 Tras St</address>
         <postalcode>078993</postalcode>
+        <tags>japanese</tags>
         <tags>onestar</tags>
-		<tags>restaurant</tags>
-		<tags>italian</tags>
-		<tags>japanese</tags>
-		<tags>asian</tags>
-		<tags>european</tags>
+        <tags>restaurant</tags>
+        <tags>european</tags>
+        <tags>asian</tags>
+        <tags>italian</tags>
     </places>
     <places>
         <name>The Song Of India</name>
@@ -336,9 +334,9 @@
         <address>33 Scotts Rd</address>
         <postalcode>228226</postalcode>
         <tags>onestar</tags>
-		<tags>restaurant</tags>
-		<tags>indian</tags>
-		<tags>asian</tags>
+        <tags>restaurant</tags>
+        <tags>asian</tags>
+        <tags>indian</tags>
     </places>
     <places>
         <name>Waku Ghin</name>
@@ -346,10 +344,10 @@
         <website>http://www.marinabaysands.com/restaurants/celebrity-chefs/waku-ghin.html</website>
         <address>2 Bayfront Avenue, Level 2 Dining, L2-01, The Shoppes at Marina Bay Sands</address>
         <postalcode>018956</postalcode>
+        <tags>japanese</tags>
         <tags>onestar</tags>
-		<tags>restaurant</tags>
-		<tags>japanese</tags>
-		<tags>asian</tags>
+        <tags>restaurant</tags>
+        <tags>asian</tags>
     </places>
     <places>
         <name>Restaurant André</name>
@@ -358,9 +356,9 @@
         <address>41 Bukit Pasoh Rd</address>
         <postalcode>089855</postalcode>
         <tags>twostars</tags>
-		<tags>restaurant</tags>
-		<tags>french</tags>
-		<tags>european</tags>
+        <tags>restaurant</tags>
+        <tags>european</tags>
+        <tags>french</tags>
     </places>
     <places>
         <name>L Atelier de Joël Robuchon</name>
@@ -369,9 +367,9 @@
         <address>8 Sentosa Gateway</address>
         <postalcode>098269</postalcode>
         <tags>twostars</tags>
-		<tags>restaurant</tags>
-		<tags>french</tags>
-		<tags>european</tags>
+        <tags>restaurant</tags>
+        <tags>european</tags>
+        <tags>french</tags>
     </places>
     <places>
         <name>Les Amis</name>
@@ -380,10 +378,10 @@
         <address>1 Scotts Road, #01-16 Shaw Centre</address>
         <postalcode>228208</postalcode>
         <tags>twostars</tags>
-		<tags>restaurant</tags>
-		<tags>french</tags>
-		<tags>asian</tags>
-		<tags>european</tags>
+        <tags>restaurant</tags>
+        <tags>european</tags>
+        <tags>asian</tags>
+        <tags>french</tags>
     </places>
     <places>
         <name>Odette</name>
@@ -392,9 +390,9 @@
         <address>1 Saint Andrew's Road, #01-04, National Gallery</address>
         <postalcode>178957</postalcode>
         <tags>twostars</tags>
-		<tags>restaurant</tags>
-		<tags>french</tags>
-		<tags>european</tags>
+        <tags>restaurant</tags>
+        <tags>european</tags>
+        <tags>french</tags>
     </places>
     <places>
         <name>Shisen Hanten</name>
@@ -402,11 +400,11 @@
         <website>http://www.shisenhanten.com.sg</website>
         <address>333 Orchard Rd, Mandarin Orchard Singapore</address>
         <postalcode>238867</postalcode>
+        <tags>chinese</tags>
         <tags>twostars</tags>
-		<tags>restaurant</tags>
-		<tags>szechwan</tags>
-		<tags>chinese</tags>
-		<tags>asian</tags>
+        <tags>restaurant</tags>
+        <tags>asian</tags>
+        <tags>szechwan</tags>
     </places>
     <places>
         <name>Shoukouwa Restaurant</name>
@@ -414,11 +412,11 @@
         <website>http://www.shoukouwa.com.sg</website>
         <address>1 Fullerton Rd, #02-02A, One Fullerton</address>
         <postalcode>238867</postalcode>
+        <tags>japanese</tags>
         <tags>twostars</tags>
-		<tags>restaurant</tags>
-		<tags>japanese</tags>
-		<tags>asian</tags>
-		<tags>sushi</tags>
+        <tags>restaurant</tags>
+        <tags>asian</tags>
+        <tags>sushi</tags>
     </places>
     <places>
         <name>Joël Robuchon Restaurant</name>
@@ -427,39 +425,38 @@
         <address>26 Sentosa Gateway, Hotel Michael, #01-104 and 105</address>
         <postalcode>098138</postalcode>
         <tags>threestars</tags>
-		<tags>restaurant</tags>
-		<tags>french</tags>
-		<tags>european</tags>
+        <tags>restaurant</tags>
+        <tags>european</tags>
+        <tags>french</tags>
     </places>
+    <tags>australian</tags>
+    <tags>american</tags>
+    <tags>chickenrice</tags>
     <tags>bookmarks</tags>
-    <tags>onestar</tags>
-    <tags>twostars</tags>
     <tags>threestars</tags>
+    <tags>chinese</tags>
+    <tags>japanese</tags>
+    <tags>twostars</tags>
+    <tags>indoors</tags>
+    <tags>sushi</tags>
     <tags>attractions</tags>
-	<tags>sightseeing</tags>
-	<tags>indoors</tags>
-	<tags>outdoors</tags>
-	<tags>shopping</tags>
-	<tags>nature</tags>
-	<tags>museum</tags>
-	<tags>gallery</tags>
-	<tags>restaurant</tags>
-	<tags>asian</tags>
-	<tags>european</tags>
-	<tags>spanish</tags>
-	<tags>japanese</tags>
-	<tags>french</tags>
-	<tags>italian</tags>
-	<tags>peranakan</tags>
-	<tags>chinese</tags>
-	<tags>american</tags>
-	<tags>australian</tags>
-	<tags>indian</tags>
-	<tags>gastroBotanica</tags>
-	<tags>coffeeshop</tags>
-	<tags>chickenrice</tags>
-	<tags>noodles</tags>
-	<tags>sushi</tags>
-	<tags>szechwan</tags>
+    <tags>szechwan</tags>
+    <tags>gallery</tags>
+    <tags>french</tags>
+    <tags>shopping</tags>
+    <tags>sightseeing</tags>
+    <tags>spanish</tags>
+    <tags>nature</tags>
+    <tags>gastroBotanica</tags>
+    <tags>coffeeshop</tags>
+    <tags>noodles</tags>
+    <tags>restaurant</tags>
+    <tags>european</tags>
+    <tags>asian</tags>
+    <tags>italian</tags>
+    <tags>peranakan</tags>
+    <tags>outdoors</tags>
+    <tags>museum</tags>
+    <tags>onestar</tags>
+    <tags>indian</tags>
 </touristbook>
-<!-- @@author -->
