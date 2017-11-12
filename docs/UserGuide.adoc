@@ -37,7 +37,6 @@ e.g. typing *`help`* and pressing kbd:[Enter] will open the help window.
 * **`delete`**`3` : deletes the 3rd place shown in the current list
 * *`exit`* : exits the app
 
-.  Refer to the link:#features[Features] section below for details of each command.
 
 == Features in v1.0
 
@@ -47,7 +46,7 @@ e.g. typing *`help`* and pressing kbd:[Enter] will open the help window.
 * Words in `UPPER_CASE` are the parameters to be supplied by the user e.g. in `add n/NAME`, `NAME` is a parameter which can be used as `add n/Marina Bay Sands`.
 * Items in square brackets are optional e.g `n/NAME [t/TAG]` can be used as `n/Marina Bay Sands t/attractions` or as `n/Marina Bay Sands`.
 * Items with `…`​ after them can be used multiple times including zero times e.g. `[t/TAG]...` can be used as `{nbsp}` (i.e. 0 times), `t/attractions`, `t/onestar t/twostars` etc.
-* Parameters can be in any order e.g. if the command specifies `n/NAME a/ADDRESS`, `a/ADDRESS` n/NAME` is also acceptable.
+* Parameters can be in any order e.g. if the command specifies `n/NAME a/ADDRESS`, `a/ADDRESS n/NAME` is also acceptable.
 ====
 
 === Viewing help : `help` or `h`
@@ -57,7 +56,7 @@ Format: `help` or `h`
 === Adding a place: `add` or `a`
 
 Adds a place to the Tourist Book +
-Format: `add n/NAME ph/PHONE w/WEBSITE a/ADDRESS p/POSTALCODE [t/TAG]...`
+Format: `add n/NAME [ph/PHONE] [w/WEBSITE] [a/ADDRESS] p/POSTALCODE [t/TAG]...`
 
 or
 
@@ -67,10 +66,10 @@ Format: `a n/NAME p/POSTALCODE [t/TAG]...`
 A place can have any number of tags (including 0)
 
 [TIP]
-A place can have null for Address, Website and Phone fields.
+A place can have null for Address, Website, Tag and Phone fields.
 
 [TIP]
-It is compulsory for a place to have the Name and Postalcode.
+It is compulsory for a place to have the Name and Postalcode only.
 
 Examples:
 
@@ -157,7 +156,7 @@ Deletes the 1st place in the results of the `find` command.
 === Selecting a place : `select` or `s`
 
 Selects the place identified by the index number used in the last place listing. +
-Format: `select INDEX` or `se INDEX`
+Format: `select INDEX` or `s INDEX`
 
 ****
 * Selects the place and loads the Google search page the place at the specified `INDEX`.
@@ -257,7 +256,7 @@ Added a shorthand equivalent alias for each of the individual commands. For exam
 // end::aung1.1[]
 
 //tag::storage[]
-=== 'Storage' component
+=== `Storage` component
 Added a backup method in AddressBookStorage.
 //end::storage[]
 
@@ -448,7 +447,7 @@ Be able to view a short description of each place in the place list
 
 == Command Summary
 
-* *Add* `add n/NAME a/ADDRESS p/POSTALCODE [t/TAG]...` +
+* *Add* `add n/NAME [a/ADDRESS] p/POSTALCODE [t/TAG]...` +
 e.g. `add n/Marina Bay Sands a/10 Bayfront Avenue p/018956`
 or `a n/Marina Bay Sands a/10 Bayfront Avenue p/018956 t/attractions`
 * *Bookmark* : `bookmark INDEX` +
