@@ -243,6 +243,72 @@ This is a warning.
 ** *Expected output*
 //Put expected output here
 
+== Undo Command
+//Specify the format here: e.g. Format: add n/NAME [ph/PHONE]
+//And also any special requirement, like e.g. the note/warning for add command
+[NOTE]
+====
+This is a note.
+====
+
+[WARNING]
+====
+This is a warning.
+====
+=== Test Cases and Expected Outomes
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+== Redo Command
+//Specify the format here: e.g. Format: add n/NAME [ph/PHONE]
+//And also any special requirement, like e.g. the note/warning for add command
+[NOTE]
+====
+This is a note.
+====
+
+[WARNING]
+====
+This is a warning.
+====
+=== Test Cases and Expected Outomes
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
 == Delete Command
 //Specify the format here: e.g. Format: add n/NAME [ph/PHONE]
 //And also any special requirement, like e.g. the note/warning for add command
@@ -442,72 +508,6 @@ This is a warning.
 //Put expected output here
 
 == History Command
-//Specify the format here: e.g. Format: add n/NAME [ph/PHONE]
-//And also any special requirement, like e.g. the note/warning for add command
-[NOTE]
-====
-This is a note.
-====
-
-[WARNING]
-====
-This is a warning.
-====
-=== Test Cases and Expected Outomes
-. Test Case Here
-** *Expected output*
-//Put expected output here
-
-. Test Case Here
-** *Expected output*
-//Put expected output here
-
-. Test Case Here
-** *Expected output*
-//Put expected output here
-
-. Test Case Here
-** *Expected output*
-//Put expected output here
-
-. Test Case Here
-** *Expected output*
-//Put expected output here
-
-== Undo Command
-//Specify the format here: e.g. Format: add n/NAME [ph/PHONE]
-//And also any special requirement, like e.g. the note/warning for add command
-[NOTE]
-====
-This is a note.
-====
-
-[WARNING]
-====
-This is a warning.
-====
-=== Test Cases and Expected Outomes
-. Test Case Here
-** *Expected output*
-//Put expected output here
-
-. Test Case Here
-** *Expected output*
-//Put expected output here
-
-. Test Case Here
-** *Expected output*
-//Put expected output here
-
-. Test Case Here
-** *Expected output*
-//Put expected output here
-
-. Test Case Here
-** *Expected output*
-//Put expected output here
-
-== Redo Command
 //Specify the format here: e.g. Format: add n/NAME [ph/PHONE]
 //And also any special requirement, like e.g. the note/warning for add command
 [NOTE]
