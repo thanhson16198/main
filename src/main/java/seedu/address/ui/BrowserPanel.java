@@ -20,7 +20,7 @@ import seedu.address.model.place.ReadOnlyPlace;
  */
 public class BrowserPanel extends UiPart<Region> {
 
-    public static final String DEFAULT_PAGE = "default.html";
+    public static final String DEFAULT_PAGE = "http://www.visitsingapore.com/en/";
     public static final String GOOGLE_SEARCH_URL_PREFIX = "https://www.google.com.sg/search?safe=off&q=";
     public static final String GOOGLE_SEARCH_URL_SUFFIX = "&cad=h";
 
@@ -61,11 +61,10 @@ public class BrowserPanel extends UiPart<Region> {
     }
 
     /**
-     * Loads a default HTML file with a background that matches the general theme.
+     * Loads a default webpage for tourists
      */
     private void loadDefaultPage() {
-        URL defaultPage = MainApp.class.getResource(FXML_FILE_FOLDER + DEFAULT_PAGE);
-        loadPage(defaultPage.toExternalForm());
+        loadPage(DEFAULT_PAGE);
     }
 
     /**
