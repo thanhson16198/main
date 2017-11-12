@@ -1,0 +1,768 @@
+= Test Script
+:toc:
+:toc-placement: preamble
+:imagesDir: images
+:stylesDir: stylesheets
+
+This is a test script document to explain the steps to perform manual testing, including how to load the data file.
+
+== Quick Start
+
+== Help Command
+//Specify the format here: e.g. Format: add n/NAME [ph/PHONE]
+//And also any special requirement, like e.g. the note/warning for add command
+[NOTE]
+====
+This is a note.
+====
+
+[WARNING]
+====
+This is a warning.
+====
+=== Test Cases and Expected Outomes
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+== Add Command
+//Specify the format here: e.g. Format: add n/NAME [ph/PHONE]
+//And also any special requirement, like e.g. the note/warning for add command
+[NOTE]
+====
+This is a note.
+====
+
+[WARNING]
+====
+This is a warning.
+====
+=== Test Cases and Expected Outomes
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+== List Command
+//Specify the format here: e.g. Format: add n/NAME [ph/PHONE]
+//And also any special requirement, like e.g. the note/warning for add command
+[NOTE]
+====
+This is a note.
+====
+
+[WARNING]
+====
+This is a warning.
+====
+=== Test Cases and Expected Outomes
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+== Bookmark Command
+//Specify the format here: e.g. Format: add n/NAME [ph/PHONE]
+//And also any special requirement, like e.g. the note/warning for add command
+[NOTE]
+====
+This is a note.
+====
+
+[WARNING]
+====
+This is a warning.
+====
+=== Test Cases and Expected Outomes
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+== Show Bookmarks Command
+//Specify the format here: e.g. Format: add n/NAME [ph/PHONE]
+//And also any special requirement, like e.g. the note/warning for add command
+[NOTE]
+====
+This is a note.
+====
+
+[WARNING]
+====
+This is a warning.
+====
+=== Test Cases and Expected Outomes
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+== Clear Bookmarks Command
+//Specify the format here: e.g. Format: add n/NAME [ph/PHONE]
+//And also any special requirement, like e.g. the note/warning for add command
+[NOTE]
+====
+This is a note.
+====
+
+[WARNING]
+====
+This is a warning.
+====
+=== Test Cases and Expected Outomes
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+== Clear Command
+//Specify the format here: e.g. Format: add n/NAME [ph/PHONE]
+//And also any special requirement, like e.g. the note/warning for add command
+[NOTE]
+====
+This is a note.
+====
+
+[WARNING]
+====
+This is a warning.
+====
+=== Test Cases and Expected Outomes
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+== Delete Command
+//Specify the format here: e.g. Format: add n/NAME [ph/PHONE]
+//And also any special requirement, like e.g. the note/warning for add command
+[NOTE]
+====
+This is a note.
+====
+
+[WARNING]
+====
+This is a warning.
+====
+=== Test Cases and Expected Outomes
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+== Direction Command
+//Specify the format here: e.g. Format: add n/NAME [ph/PHONE]
+//And also any special requirement, like e.g. the note/warning for add command
+[NOTE]
+====
+This is a note.
+====
+
+[WARNING]
+====
+This is a warning.
+====
+=== Test Cases and Expected Outomes
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+== Edit Command
+//Specify the format here: e.g. Format: add n/NAME [ph/PHONE]
+//And also any special requirement, like e.g. the note/warning for add command
+[NOTE]
+====
+This is a note.
+====
+
+[WARNING]
+====
+This is a warning.
+====
+=== Test Cases and Expected Outomes
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+== Find Command
+//Specify the format here: e.g. Format: add n/NAME [ph/PHONE]
+//And also any special requirement, like e.g. the note/warning for add command
+[NOTE]
+====
+This is a note.
+====
+
+[WARNING]
+====
+This is a warning.
+====
+=== Test Cases and Expected Outomes
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+== Go to Command
+//Specify the format here: e.g. Format: add n/NAME [ph/PHONE]
+//And also any special requirement, like e.g. the note/warning for add command
+[NOTE]
+====
+This is a note.
+====
+
+[WARNING]
+====
+This is a warning.
+====
+=== Test Cases and Expected Outomes
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+== Select Command
+//Specify the format here: e.g. Format: add n/NAME [ph/PHONE]
+//And also any special requirement, like e.g. the note/warning for add command
+[NOTE]
+====
+This is a note.
+====
+
+[WARNING]
+====
+This is a warning.
+====
+=== Test Cases and Expected Outomes
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+== History Command
+//Specify the format here: e.g. Format: add n/NAME [ph/PHONE]
+//And also any special requirement, like e.g. the note/warning for add command
+[NOTE]
+====
+This is a note.
+====
+
+[WARNING]
+====
+This is a warning.
+====
+=== Test Cases and Expected Outomes
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+== Undo Command
+//Specify the format here: e.g. Format: add n/NAME [ph/PHONE]
+//And also any special requirement, like e.g. the note/warning for add command
+[NOTE]
+====
+This is a note.
+====
+
+[WARNING]
+====
+This is a warning.
+====
+=== Test Cases and Expected Outomes
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+== Redo Command
+//Specify the format here: e.g. Format: add n/NAME [ph/PHONE]
+//And also any special requirement, like e.g. the note/warning for add command
+[NOTE]
+====
+This is a note.
+====
+
+[WARNING]
+====
+This is a warning.
+====
+=== Test Cases and Expected Outomes
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+== Weather Command
+//Specify the format here: e.g. Format: add n/NAME [ph/PHONE]
+//And also any special requirement, like e.g. the note/warning for add command
+[NOTE]
+====
+This is a note.
+====
+
+[WARNING]
+====
+This is a warning.
+====
+=== Test Cases and Expected Outomes
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+== MRT Map Command
+//Specify the format here: e.g. Format: add n/NAME [ph/PHONE]
+//And also any special requirement, like e.g. the note/warning for add command
+[NOTE]
+====
+This is a note.
+====
+
+[WARNING]
+====
+This is a warning.
+====
+=== Test Cases and Expected Outomes
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+== PSI Value Command
+//Specify the format here: e.g. Format: add n/NAME [ph/PHONE]
+//And also any special requirement, like e.g. the note/warning for add command
+[NOTE]
+====
+This is a note.
+====
+
+[WARNING]
+====
+This is a warning.
+====
+=== Test Cases and Expected Outomes
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+== Export Command
+//Specify the format here: e.g. Format: add n/NAME [ph/PHONE]
+//And also any special requirement, like e.g. the note/warning for add command
+[NOTE]
+====
+This is a note.
+====
+
+[WARNING]
+====
+This is a warning.
+====
+=== Test Cases and Expected Outomes
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+== Backup Command
+//Specify the format here: e.g. Format: add n/NAME [ph/PHONE]
+//And also any special requirement, like e.g. the note/warning for add command
+[NOTE]
+====
+This is a note.
+====
+
+[WARNING]
+====
+This is a warning.
+====
+=== Test Cases and Expected Outomes
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+== Useful Contacts Command
+//Specify the format here: e.g. Format: add n/NAME [ph/PHONE]
+//And also any special requirement, like e.g. the note/warning for add command
+[NOTE]
+====
+This is a note.
+====
+
+[WARNING]
+====
+This is a warning.
+====
+=== Test Cases and Expected Outomes
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+== Sort Command
+//Specify the format here: e.g. Format: add n/NAME [ph/PHONE]
+//And also any special requirement, like e.g. the note/warning for add command
+[NOTE]
+====
+This is a note.
+====
+
+[WARNING]
+====
+This is a warning.
+====
+=== Test Cases and Expected Outomes
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
+
+. Test Case Here
+** *Expected output*
+//Put expected output here
